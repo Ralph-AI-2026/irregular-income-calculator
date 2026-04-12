@@ -1179,6 +1179,19 @@
       display: block;
     }
 
+    .lead-error {
+      display: none;
+      background: rgba(239,68,68,0.15);
+      border: 1px solid rgba(239,68,68,0.4);
+      border-radius: var(--radius-md);
+      padding: 0.75rem 1rem;
+      color: #fca5a5;
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-top: 0.75rem;
+      text-align: center;
+    }
+
     /* ========================
        FOOTER
     ======================== */
@@ -1712,6 +1725,7 @@
           <button type="submit" class="lead-submit">Send It</button>
         </form>
         <p class="lead-fine">No spam. Unsubscribe anytime.</p>
+        <div class="lead-error" id="leadError" role="alert"></div>
         <div class="lead-success" id="leadSuccess" role="status">
           Done. Check your inbox in the next few minutes.
         </div>
@@ -1989,22 +2003,74 @@
     /* =============================================
        LEAD FORM
     ============================================= */
-    document.getElementById('leadForm').addEventListener('submit', (e) => {
-      e.preventDefault();
-      const emailInput = document.getElementById('leadEmail');
-      const email = emailInput.value.trim();
+    (function () {
+      var form = document.getElementById('leadForm');
+      var emailInput = document.getElementById('leadEmail');
+      var submitBtn = form.querySelector('.lead-submit');
+      var successEl = document.getElementById('leadSuccess');
+      var errorEl = document.getElementById('leadError');
+      var submitted = false;
 
-      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        emailInput.style.borderColor = 'rgba(239,68,68,0.7)';
-        emailInput.focus();
-        return;
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        if (submitted) return;
+
+        var email = emailInput.value.trim();
+
+        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          emailInput.style.borderColor = 'rgba(239,68,68,0.7)';
+          emailInput.focus();
+          return;
+        }
+
+        emailInput.style.borderColor = '';
+        if (errorEl) errorEl.style.display = 'none';
+
+        // Loading state
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+
+        fetch('/api/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: email }),
+        })
+          .then(function (res) {
+            return res.json().then(function (data) {
+              return { status: res.status, data: data };
+            });
+          })
+          .then(function (result) {
+            if (result.status === 200 && result.data.success) {
+              submitted = true;
+              form.style.display = 'none';
+              successEl.classList.add('visible');
+            } else {
+              var msg = (result.data && result.data.error) || 'Something went wrong. Please try again.';
+              showError(msg);
+            }
+          })
+          .catch(function () {
+            showError('Could not connect. Please check your connection and try again.');
+          })
+          .finally(function () {
+            if (!submitted) {
+              submitBtn.disabled = false;
+              submitBtn.textContent = 'Send It';
+            }
+          });
+      });
+
+      function showError(msg) {
+        if (errorEl) {
+          errorEl.textContent = msg;
+          errorEl.style.display = 'block';
+        }
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send It';
       }
-
-      // Show success (wire to your email service here)
-      emailInput.style.borderColor = '';
-      document.getElementById('leadForm').style.display = 'none';
-      document.getElementById('leadSuccess').classList.add('visible');
-    });
+    }());
   </script>
 
   <script>
