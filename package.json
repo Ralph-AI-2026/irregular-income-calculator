@@ -1,0 +1,17 @@
+{
+  "name": "irregular-income-calculator",
+  "version": "1.0.0",
+  "description": "Irregular Income Tax Reserve and Take-Home Calculator — static site for self-employed individuals",
+  "scripts": {
+    "dev": "npx serve . -p 3000",
+    "build": "echo 'Static site — no build step required'"
+  },
+  "keywords": [
+    "tax-calculator",
+    "self-employed",
+    "irregular-income",
+    "freelance",
+    "tax-reserve"
+  ],
+  "license": "MIT"
+}
