@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Self-Employed Tax Calculator for Canadians: Federal and Provincial Rates Explained</title>
+  <meta name="description" content="Understand CPP contributions, federal tax brackets, Ontario/BC/Alberta provincial rates, GST/HST obligations, and CRA quarterly instalments as a Canadian self-employed worker." />
+  <meta name="keywords" content="self employed tax calculator Canada, Ontario self employed tax calculator, Canadian freelancer tax guide, Canada self employment tax rate" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Self-Employed Tax Calculator for Canadians: Federal and Provincial Rates Explained" />
+  <meta property="og:description" content="Understand CPP contributions, federal tax brackets, Ontario/BC/Alberta provincial rates, GST/HST obligations, and CRA quarterly instalments as a Canadian self-employed worker." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://irregular-income-calculator.vercel.app/blog/self-employed-tax-calculator-canada/" />
+  <meta property="article:published_time" content="2026-04-10" />
+  <link rel="canonical" href="https://irregular-income-calculator.vercel.app/blog/self-employed-tax-calculator-canada/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://irregular-income-calculator.vercel.app/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://irregular-income-calculator.vercel.app/blog/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Self-Employed Tax Calculator for Canadians",
+        "item": "https://irregular-income-calculator.vercel.app/blog/self-employed-tax-calculator-canada/"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the self-employment tax rate in Canada?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "There is no single \"self-employment tax rate\" in Canada. Your total tax obligation combines federal income tax (15% to 33% depending on your bracket), provincial income tax (varies by province), and CPP contributions (11.9% of net self-employment income up to the Year's Maximum Pensionable Earnings, which was $68,500 in 2024). In Ontario, a self-employed person earning $80,000 net might pay roughly 28-32% combined, including CPP."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do self-employed Canadians have to pay CPP?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Self-employed Canadians pay both the employee and employer share of CPP contributions, totalling 11.9% of net self-employment earnings (as of 2024) up to the Year's Maximum Pensionable Earnings. There is a basic exemption of $3,500. So on $70,000 net income, you would calculate CPP on $66,500, resulting in roughly $7,913 in CPP contributions. This is deductible from income, which softens the blow slightly."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When do self-employed Canadians have to register for GST/HST?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You must register for a GST/HST account once your total taxable revenues exceed $30,000 in a single calendar quarter or over four consecutive calendar quarters. You can register voluntarily before hitting this threshold, which allows you to claim input tax credits on business purchases. In Ontario, the HST rate is 13%. In BC it is 5% GST plus 7% PST (separate). In Alberta there is only 5% GST -- no provincial sales tax."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How are Canadian self-employment taxes different from US self-employment taxes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The structure is similar but the rates and thresholds differ. In the US, self-employed workers pay 15.3% self-employment tax (Social Security and Medicare combined) on net earnings, then federal and state income tax on top. In Canada, CPP contributions are 11.9% on net self-employment income up to the earnings ceiling, plus federal and provincial income tax. Canada does not have a Social Security equivalent beyond CPP, and provincial rates vary more widely than US state rates. Canada also has GST/HST obligations that have no direct US equivalent at the federal level."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Self-Employed Tax Calculator for Canadians: Federal and Provincial Rates Explained",
+    "description": "Understand CPP contributions, federal tax brackets, Ontario/BC/Alberta provincial rates, GST/HST obligations, and CRA quarterly instalments as a Canadian self-employed worker.",
+    "author": {
+      "@type": "Organization",
+      "name": "Irregular Income Calculator Team"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Income Reserve Calculator"
+    },
+    "datePublished": "2026-04-10",
+    "dateModified": "2026-04-10"
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --blue-900: #0f2744;
+      --blue-800: #1a3a5c;
+      --blue-700: #1e4976;
+      --blue-600: #2563eb;
+      --blue-500: #3b82f6;
+      --blue-200: #bfdbfe;
+      --blue-100: #dbeafe;
+      --blue-50: #eff6ff;
+      --green-700: #15803d;
+      --green-600: #16a34a;
+      --green-100: #dcfce7;
+      --green-50: #f0fdf4;
+      --amber-700: #b45309;
+      --amber-100: #fef3c7;
+      --amber-50: #fffbeb;
+      --gray-900: #111827;
+      --gray-800: #1f2937;
+      --gray-700: #374151;
+      --gray-600: #4b5563;
+      --gray-500: #6b7280;
+      --gray-400: #9ca3af;
+      --gray-300: #d1d5db;
+      --gray-200: #e5e7eb;
+      --gray-100: #f3f4f6;
+      --gray-50: #f9fafb;
+      --white: #ffffff;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--gray-800);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--gray-200);
+      padding: 0 1.5rem;
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+      gap: 1rem;
+    }
+
+    .nav-brand {
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--blue-700);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .nav-link {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--gray-600);
+      text-decoration: none;
+      padding: 0.4rem 0.75rem;
+      border-radius: var(--radius-sm);
+      transition: color 0.15s, background 0.15s;
+    }
+
+    .nav-link:hover {
+      color: var(--blue-700);
+      background: var(--blue-50);
+    }
+
+    .nav-cta {
+      background: var(--blue-600);
+      color: var(--white);
+      border: none;
+      border-radius: var(--radius-sm);
+      padding: 0.5rem 1.1rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.15s;
+      white-space: nowrap;
+    }
+
+    .nav-cta:hover {
+      background: var(--blue-700);
+    }
+
+    /* ARTICLE WRAPPER */
+    .article-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* BREADCRUMB */
+    .breadcrumb {
+      padding: 1.25rem 0 0;
+      font-size: 0.8rem;
+      color: var(--gray-500);
+    }
+
+    .breadcrumb a {
+      color: var(--gray-500);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--blue-600);
+      text-decoration: underline;
+    }
+
+    .breadcrumb span {
+      margin: 0 0.4rem;
+    }
+
+    /* ARTICLE HEADER */
+    .article-header {
+      padding: 2rem 0 2.5rem;
+      border-bottom: 1px solid var(--gray-200);
+      margin-bottom: 2.5rem;
+    }
+
+    .article-tag {
+      display: inline-block;
+      background: var(--blue-50);
+      color: var(--blue-700);
+      padding: 0.2rem 0.65rem;
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+    }
+
+    .article-header h1 {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: var(--gray-900);
+      margin-bottom: 1rem;
+    }
+
+    .article-lede {
+      font-size: 1.1rem;
+      color: var(--gray-600);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.85rem;
+      color: var(--gray-500);
+    }
+
+    .article-meta-dot {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--gray-400);
+    }
+
+    /* ARTICLE BODY */
+    .article-body h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      letter-spacing: -0.01em;
+      margin-top: 2.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .article-body h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-top: 1.75rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .article-body p {
+      margin-bottom: 1.25rem;
+      color: var(--gray-700);
+      line-height: 1.75;
+    }
+
+    .article-body ul,
+    .article-body ol {
+      margin: 0 0 1.25rem 1.5rem;
+      color: var(--gray-700);
+      line-height: 1.75;
+    }
+
+    .article-body li {
+      margin-bottom: 0.4rem;
+    }
+
+    .article-body strong {
+      color: var(--gray-900);
+      font-weight: 600;
+    }
+
+    /* CALLOUT BOX */
+    .callout-calculator {
+      background: var(--blue-50);
+      border: 1.5px solid var(--blue-200);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem 1.75rem;
+      margin: 2.5rem 0;
+    }
+
+    .callout-calculator-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--blue-600);
+      margin-bottom: 0.5rem;
+    }
+
+    .callout-calculator h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 0.5rem;
+      margin-top: 0;
+    }
+
+    .callout-calculator p {
+      font-size: 0.9rem;
+      color: var(--gray-600);
+      margin-bottom: 1rem;
+    }
+
+    .callout-calculator a {
+      display: inline-block;
+      background: var(--blue-600);
+      color: var(--white);
+      padding: 0.6rem 1.25rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+
+    .callout-calculator a:hover {
+      background: var(--blue-700);
+    }
+
+    /* INFO BOX */
+    .info-box {
+      background: var(--amber-50);
+      border-left: 4px solid var(--amber-700);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 1rem 1.25rem;
+      margin: 1.5rem 0;
+    }
+
+    .info-box p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--gray-700);
+    }
+
+    .info-box strong {
+      color: var(--amber-700);
+    }
+
+    /* RATE TABLE */
+    .rate-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.9rem;
+    }
+
+    .rate-table th {
+      text-align: left;
+      padding: 0.6rem 0.9rem;
+      background: var(--gray-100);
+      font-weight: 600;
+      color: var(--gray-700);
+      border-bottom: 2px solid var(--gray-200);
+    }
+
+    .rate-table td {
+      padding: 0.6rem 0.9rem;
+      border-bottom: 1px solid var(--gray-200);
+      color: var(--gray-700);
+    }
+
+    .rate-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .rate-table tr:nth-child(even) td {
+      background: var(--gray-50);
+    }
+
+    /* FAQ SECTION */
+    .faq-section {
+      margin-top: 3rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--gray-200);
+    }
+
+    .faq-section h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      letter-spacing: -0.01em;
+      margin-bottom: 1.5rem;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--gray-200);
+      padding-bottom: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--gray-900);
+      margin-bottom: 0.5rem;
+    }
+
+    .faq-answer {
+      font-size: 0.925rem;
+      color: var(--gray-600);
+      line-height: 1.7;
+    }
+
+    /* ARTICLE FOOTER */
+    .article-footer {
+      margin-top: 3rem;
+      padding: 2rem 0;
+      border-top: 1px solid var(--gray-200);
+    }
+
+    .disclaimer-box {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.25rem;
+      font-size: 0.82rem;
+      color: var(--gray-500);
+      line-height: 1.65;
+    }
+
+    /* SITE FOOTER */
+    footer {
+      border-top: 1px solid var(--gray-200);
+      padding: 2rem 1.5rem;
+      margin-top: 4rem;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .footer-disclaimer {
+      font-size: 0.8rem;
+      color: var(--gray-500);
+      max-width: 680px;
+      margin: 0 auto 0.75rem;
+      line-height: 1.7;
+    }
+
+    .footer-copy {
+      font-size: 0.8rem;
+      color: var(--gray-400);
+    }
+
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .article-meta-dot { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" aria-label="Site navigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">Income Reserve Calculator</a>
+      <div class="nav-links">
+        <a href="/" class="nav-link">Calculator</a>
+        <a href="/blog/" class="nav-link">Blog</a>
+      </div>
+      <a href="/" class="nav-cta">Try the Calculator</a>
+    </div>
+  </nav>
+
+  <!-- ARTICLE -->
+  <main>
+    <div class="article-wrap">
+
+      <!-- BREADCRUMB -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span aria-hidden="true">&rsaquo;</span>
+        <a href="/blog/">Blog</a>
+        <span aria-hidden="true">&rsaquo;</span>
+        <span aria-current="page">Self-Employed Tax Calculator Canada</span>
+      </nav>
+
+      <!-- HEADER -->
+      <header class="article-header">
+        <div class="article-tag">Canadian Tax Guide</div>
+        <h1>Self-Employed Tax Calculator for Canadians: Federal and Provincial Rates Explained</h1>
+        <p class="article-lede">Canadian self-employment taxes work differently from anything your salaried friends deal with. You owe both sides of CPP, federal and provincial income tax, and possibly GST/HST on top. Here is how all of it fits together and how to make sure you're not caught short.</p>
+        <div class="article-meta">
+          <span>By the Irregular Income Calculator Team</span>
+          <div class="article-meta-dot" aria-hidden="true"></div>
+          <span>April 10, 2026</span>
+          <div class="article-meta-dot" aria-hidden="true"></div>
+          <span>9 min read</span>
+        </div>
+      </header>
+
+      <!-- BODY -->
+      <article class="article-body">
+
+        <p>When a salaried employee gets paid, their employer deducts income tax, CPP, and EI from every paycheque. They never hold that money. They never have to think about it. By the time it lands in their bank account, the government's share is already gone.</p>
+
+        <p>When you're self-employed, you receive the full amount. All of it. The government trusts you to hold their portion until it's time to pay up. That trust is the source of every surprise tax bill that has ever ambushed a freelancer in April.</p>
+
+        <p>This guide breaks down every component of Canadian self-employment tax, gives you the current rates for the most common provinces, and gives you a system to make sure you're never surprised.</p>
+
+        <h2>The Three Components of Canadian Self-Employment Tax</h2>
+
+        <p>Unlike US self-employment tax, which is one line item (SE tax), Canadian self-employed workers actually face three separate obligations that stack on top of each other.</p>
+
+        <h3>1. CPP Contributions</h3>
+
+        <p>The Canada Pension Plan is the big one that catches most people off guard. Employees pay 5.95% of pensionable earnings toward CPP. Their employer matches it. When you're self-employed, you pay both sides: the combined rate of <strong>11.9% of net self-employment income</strong>, up to the Year's Maximum Pensionable Earnings (YMPE).</p>
+
+        <p>In 2024, the YMPE was $68,500. There is a basic exemption of $3,500, so you calculate CPP on the difference. At $70,000 net self-employment income, you'd calculate CPP on $66,500, resulting in roughly $7,913 in CPP contributions for the year. That's a significant line item.</p>
+
+        <p>There is a silver lining: you can deduct half of your CPP contributions (the "employer" portion) from your income, which reduces your taxable income before calculating income tax. You also get a non-refundable tax credit for the "employee" portion. The net effect is that the real after-tax cost of CPP is somewhat lower than the headline 11.9%.</p>
+
+        <p>Also note: starting in 2024, Canada introduced CPP2, an enhanced second tier. If your earnings exceed the YMPE, you contribute an additional 4% on income up to a second ceiling. For most freelancers this only applies at higher income levels.</p>
+
+        <div class="info-box">
+          <p><strong>EI for self-employed:</strong> Self-employed Canadians are not required to pay Employment Insurance premiums, and therefore cannot claim regular EI benefits if their income drops. You can opt into the self-employed EI program to access special benefits (maternity, parental, sickness), but it is voluntary. Most self-employed workers skip it and build their own buffer instead.</p>
+        </div>
+
+        <h3>2. Federal Income Tax</h3>
+
+        <p>Federal income tax applies to your net income: your gross business revenue minus legitimate business deductions, minus the CPP deduction. The 2024 federal brackets are:</p>
+
+        <table class="rate-table" aria-label="2024 Canadian federal income tax brackets">
+          <thead>
+            <tr>
+              <th>Taxable Income</th>
+              <th>Federal Tax Rate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>$0 to $55,867</td>
+              <td>15%</td>
+            </tr>
+            <tr>
+              <td>$55,867 to $111,733</td>
+              <td>20.5%</td>
+            </tr>
+            <tr>
+              <td>$111,733 to $154,906</td>
+              <td>26%</td>
+            </tr>
+            <tr>
+              <td>$154,906 to $220,000</td>
+              <td>29%</td>
+            </tr>
+            <tr>
+              <td>Over $220,000</td>
+              <td>33%</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>Note that these brackets are indexed to inflation each year. The Basic Personal Amount (BPA) for 2024 is $15,705, which means the first $15,705 of income is effectively sheltered from federal tax via a non-refundable credit.</p>
+
+        <h3>3. Provincial Income Tax</h3>
+
+        <p>On top of federal tax, each province levies its own income tax at its own rates. The combined federal and provincial rate is what matters for your planning. Here's a practical comparison across the three most common provinces for self-employed Canadians:</p>
+
+        <h2>Provincial Tax Rates: Ontario, BC, and Alberta</h2>
+
+        <h3>Ontario</h3>
+
+        <p>Ontario has a relatively moderate provincial rate at lower incomes, with a surtax that kicks in at higher earnings. The 2024 Ontario brackets:</p>
+
+        <table class="rate-table" aria-label="2024 Ontario provincial income tax brackets">
+          <thead>
+            <tr>
+              <th>Taxable Income</th>
+              <th>Ontario Tax Rate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>$0 to $51,446</td>
+              <td>5.05%</td>
+            </tr>
+            <tr>
+              <td>$51,446 to $102,894</td>
+              <td>9.15%</td>
+            </tr>
+            <tr>
+              <td>$102,894 to $150,000</td>
+              <td>11.16%</td>
+            </tr>
+            <tr>
+              <td>$150,000 to $220,000</td>
+              <td>12.16%</td>
+            </tr>
+            <tr>
+              <td>Over $220,000</td>
+              <td>13.16%</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>A self-employed Ontario resident earning $75,000 net (after deductions) would pay approximately $10,800 in federal income tax, $4,800 in Ontario provincial tax, and around $8,500 in CPP contributions. Total tax burden: roughly $24,100 on $75,000, or about 32% effective rate including CPP.</p>
+
+        <h3>British Columbia</h3>
+
+        <p>BC has generally lower provincial rates at mid-range incomes compared to Ontario, though rates climb steeply at higher brackets. The 2024 BC brackets start at 5.06% on the first $45,654 and rise to 20.5% above $240,716. At a $75,000 net income, the combined federal/BC effective rate is typically 2-3% lower than Ontario at the same income level.</p>
+
+        <h3>Alberta</h3>
+
+        <p>Alberta is the most tax-friendly province for self-employed Canadians. There is a flat 10% provincial tax on all income, with a generous personal amount exemption. There is no provincial surtax. A self-employed Albertan at $75,000 net typically pays 3-5% less in combined taxes than an equivalent Ontario earner. The absence of provincial sales tax (Alberta has no PST) also means that if you're registering for GST, you're only dealing with the federal 5% rate rather than the blended HST.</p>
+
+        <h2>GST/HST: The Obligation Most New Freelancers Miss</h2>
+
+        <p>Income tax and CPP are paid on your profits. GST/HST is different: it's collected on your revenue and passed to the CRA. You are not personally paying it; you are acting as a collection agent for the government.</p>
+
+        <p>You are required to register for a GST/HST account once your taxable revenues exceed <strong>$30,000 in any single calendar quarter or in four consecutive quarters</strong>. Once you hit that threshold in any quarter, you must register within 29 days and begin charging GST/HST on your invoices immediately.</p>
+
+        <p>The rates vary by province:</p>
+
+        <table class="rate-table" aria-label="GST/HST rates by province">
+          <thead>
+            <tr>
+              <th>Province</th>
+              <th>Rate</th>
+              <th>Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Ontario</td>
+              <td>13%</td>
+              <td>HST</td>
+            </tr>
+            <tr>
+              <td>British Columbia</td>
+              <td>5% GST + 7% PST</td>
+              <td>Separate</td>
+            </tr>
+            <tr>
+              <td>Alberta</td>
+              <td>5%</td>
+              <td>GST only</td>
+            </tr>
+            <tr>
+              <td>Nova Scotia</td>
+              <td>15%</td>
+              <td>HST</td>
+            </tr>
+            <tr>
+              <td>New Brunswick</td>
+              <td>15%</td>
+              <td>HST</td>
+            </tr>
+            <tr>
+              <td>PEI</td>
+              <td>15%</td>
+              <td>HST</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>The key benefit of registering: input tax credits. Once you have a GST/HST account, you can claim back the GST/HST you pay on business expenses. If you pay $1,000 for software with 13% HST, you can claim $130 back against what you remit to CRA. For freelancers with meaningful business expenses, this can partially offset the administrative overhead of registration.</p>
+
+        <p>Registering voluntarily before hitting $30,000 is often worth it precisely for these input tax credits. If you're buying equipment or software in your startup year, you may be able to claim back more than you remit.</p>
+
+        <!-- CALCULATOR CALLOUT -->
+        <div class="callout-calculator">
+          <div class="callout-calculator-label">Free Tool</div>
+          <h3>Stop guessing what you owe. Run the numbers now.</h3>
+          <p>Enter your average monthly income and estimated business expenses. The calculator shows your tax set-aside amount, your actual take-home, and what you can spend safely in your slowest months. Built for freelancers and self-employed Canadians.</p>
+          <a href="/">Try the free Irregular Income Calculator &rarr;</a>
+        </div>
+
+        <h2>Business Deductions That Reduce Your Tax Base</h2>
+
+        <p>Your taxable income is not your revenue. It is your revenue minus allowable business deductions. Every dollar you can legitimately deduct reduces your net income, which reduces both income tax and CPP contributions. In the 30% combined tax bracket, a $1,000 deduction saves you roughly $300 in total taxes.</p>
+
+        <p>Common deductions for Canadian self-employed workers:</p>
+
+        <ul>
+          <li><strong>Home office expenses:</strong> The business-use portion of rent (or mortgage interest), utilities, and maintenance. Calculate your workspace as a percentage of total square footage.</li>
+          <li><strong>Internet and phone:</strong> The portion used for business. Keep a log if your usage is mixed.</li>
+          <li><strong>Equipment and tools:</strong> Computers, cameras, tools of your trade. Larger purchases may need to be depreciated over time using Capital Cost Allowance (CCA) rather than expensed in full.</li>
+          <li><strong>Software and subscriptions:</strong> Any software used to run your business, from accounting tools to design software to project management platforms.</li>
+          <li><strong>Professional fees:</strong> Accounting, legal, and consulting fees paid in the course of running your business.</li>
+          <li><strong>Professional development:</strong> Courses, books, conferences directly related to your field.</li>
+          <li><strong>Vehicle expenses:</strong> If you use your vehicle for business travel, you can deduct the business-use portion of fuel, insurance, maintenance, and depreciation. Keep a mileage log.</li>
+          <li><strong>Marketing and advertising:</strong> Website costs, ad spending, business cards, photography.</li>
+          <li><strong>Business insurance:</strong> Liability insurance, professional errors and omissions coverage.</li>
+        </ul>
+
+        <div class="info-box">
+          <p><strong>The half-CPP deduction:</strong> You can deduct 50% of your CPP contributions from your self-employment income before calculating income tax. This is one of the more valuable automatic deductions available to self-employed Canadians. It is calculated on Schedule 8 of your T1 return and flows to line 22200.</p>
+        </div>
+
+        <h2>CRA Quarterly Instalments</h2>
+
+        <p>If you owe more than $3,000 in net federal and provincial tax (or $1,800 in Quebec) in the current tax year and in either of the two previous years, the CRA requires quarterly tax instalments. You do not wait until April; you pay in installments throughout the year.</p>
+
+        <p>The quarterly instalment due dates are:</p>
+
+        <ul>
+          <li>March 15</li>
+          <li>June 15</li>
+          <li>September 15</li>
+          <li>December 15</li>
+        </ul>
+
+        <p>The CRA sends instalment reminders in February and August. You can base your instalments on one of three methods: the prior-year method (pay the same as last year's total tax, divided into four), the current-year method (estimate this year's tax and divide by four), or the no-calculation option (use the amounts CRA suggests on the reminder letter).</p>
+
+        <p>Missing instalments or underpaying them results in interest charges from CRA at the prescribed rate, currently in the 9-10% range. It is not a catastrophic penalty, but it is money paid for nothing. If you keep your tax reserve in a separate savings account and transfer your set-aside with every payment received, making these quarterly instalments is trivial -- the money is already sitting there.</p>
+
+        <h2>How Canadian Self-Employment Tax Differs from the US</h2>
+
+        <p>If you've read US-focused freelance finance content, a few things to unlearn when applying that advice to Canada:</p>
+
+        <ul>
+          <li><strong>CPP vs. self-employment tax:</strong> The US self-employment tax rate is 15.3% (Social Security and Medicare combined) with a higher earnings ceiling than Canadian CPP. CPP at 11.9% applies only up to the YMPE ceiling. At most income levels, CPP costs are somewhat lower than US SE tax in absolute terms.</li>
+          <li><strong>No equivalent of the SE tax deduction structure:</strong> In the US, you can deduct 50% of SE tax directly from gross income. In Canada, you get a deduction for 50% of CPP contributions and a credit for the employee-side amount. The mechanics differ.</li>
+          <li><strong>No provincial equivalent of US state income tax brackets:</strong> Canadian provincial taxes are simpler and more uniform in structure than US state taxes, though rates vary significantly.</li>
+          <li><strong>GST/HST has no direct US federal equivalent:</strong> The US has no federal sales tax. State and local sales taxes exist, but freelancers generally do not collect and remit them the same way Canadian self-employed workers handle GST/HST.</li>
+          <li><strong>RRSP contributions:</strong> Canadians can shelter a meaningful portion of self-employment income through RRSP contributions (18% of prior-year earned income up to the annual limit). This is roughly equivalent to a US Solo 401(k) but with different contribution rules and no Roth equivalent for self-employed workers.</li>
+        </ul>
+
+        <h2>Building Your Set-Aside System</h2>
+
+        <p>With all three tax components understood, you can build a realistic reserve rate. For a self-employed Canadian earning around $70,000-$80,000 net in Ontario, the combined obligation typically runs 30-35% of net income including CPP. In Alberta at the same income, expect 27-30%. These are rough guides; your actual rate depends on your deductions and filing situation.</p>
+
+        <p>The practical system:</p>
+
+        <ol>
+          <li>Every client payment lands in your operating account.</li>
+          <li>Within 24 hours, transfer your set-aside percentage to a separate account labelled "CRA / Tax Reserve."</li>
+          <li>Track your deductible expenses monthly so you know your actual net income, not just your revenue.</li>
+          <li>Pay quarterly instalments from the tax reserve account when the CRA deadlines arrive.</li>
+          <li>File your T1 by June 15 (for self-employed). Any balance owing is due April 30; interest runs from May 1 if you underpaid.</li>
+          <li>Whatever remains in the reserve after filing rolls into next year's buffer.</li>
+        </ol>
+
+        <p>The goal is for the quarterly deadlines to feel like a scheduled transfer, not a crisis. That only happens if the money is already sitting in a dedicated account.</p>
+
+        <!-- FAQ -->
+        <section class="faq-section" aria-labelledby="faq-heading">
+          <h2 id="faq-heading">Frequently Asked Questions</h2>
+
+          <div class="faq-item">
+            <p class="faq-question">What is the self-employment tax rate in Canada?</p>
+            <p class="faq-answer">There is no single rate. Your total obligation combines federal income tax (15% to 33% by bracket), provincial income tax (varies), and CPP contributions (11.9% of net earnings up to the YMPE ceiling). In Ontario, a self-employed person earning $80,000 net will typically pay a combined effective rate of 30-34% including CPP. In Alberta at the same income, closer to 27-30%.</p>
+          </div>
+
+          <div class="faq-item">
+            <p class="faq-question">Do self-employed Canadians have to pay CPP?</p>
+            <p class="faq-answer">Yes. Self-employed Canadians pay both the employee and employer share of CPP, currently totalling 11.9% of net self-employment earnings up to the Year's Maximum Pensionable Earnings. The basic exemption is $3,500, so CPP is calculated on earnings above that floor. You can deduct 50% of your CPP contributions from income and claim a non-refundable credit for the other half.</p>
+          </div>
+
+          <div class="faq-item">
+            <p class="faq-question">When do self-employed Canadians have to register for GST/HST?</p>
+            <p class="faq-answer">Once your taxable revenues exceed $30,000 in any single quarter or across four consecutive quarters, you must register for a GST/HST account within 29 days and begin charging immediately. You can register voluntarily before this threshold to claim input tax credits on business expenses. In Ontario, the HST rate is 13%. Alberta charges only 5% GST with no PST.</p>
+          </div>
+
+          <div class="faq-item">
+            <p class="faq-question">How are Canadian self-employment taxes different from US self-employment taxes?</p>
+            <p class="faq-answer">Both systems have an income tax plus a payroll-style contribution (CPP in Canada, SE tax in the US). The US SE tax rate of 15.3% is higher than Canada's 11.9% CPP rate, though the Canadian rate applies to a lower income ceiling. Canada also has the GST/HST obligation, which has no direct US federal equivalent. RRSP contributions give Canadians a way to shelter self-employment income that differs in structure from US retirement account options.</p>
+          </div>
+        </section>
+
+        <!-- ARTICLE FOOTER -->
+        <div class="article-footer">
+          <div class="disclaimer-box">
+            <strong>Disclaimer:</strong> This article is educational content only and is not tax or legal advice. Tax rates, brackets, and thresholds change annually. Figures referenced are based on 2024 CRA information and may be out of date. Tax rules vary by province, income level, and individual circumstances. Consult a qualified Canadian accountant or tax professional for advice specific to your situation.
+          </div>
+        </div>
+
+      </article>
+    </div>
+  </main>
+
+  <!-- SITE FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <p class="footer-disclaimer">
+        Educational estimates only. Not tax or legal advice. This calculator uses simplified assumptions and is intended to help self-employed individuals think through their finances. Consult a qualified accountant or tax professional for advice specific to your situation.
+      </p>
+      <p class="footer-copy">&#169; 2026 Income Reserve Calculator. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

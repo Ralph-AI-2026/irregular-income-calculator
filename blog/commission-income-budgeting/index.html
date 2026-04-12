@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Budget on Commission Income: A Guide for Sales Professionals</title>
+  <meta name="description" content="Commission income is unpredictable by design. Learn how to budget from your base, handle windfall months, manage the draw system, and build real financial stability on variable pay." />
+  <meta name="keywords" content="commission income budget calculator, how to budget on commission, budgeting for commission earners, variable commission income planning" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="How to Budget on Commission Income: A Guide for Sales Professionals" />
+  <meta property="og:description" content="Commission income is unpredictable by design. Learn how to budget from your base, handle windfall months, manage the draw system, and build real financial stability on variable pay." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://irregular-income-calculator.vercel.app/blog/commission-income-budgeting/" />
+  <meta property="article:published_time" content="2026-04-10" />
+  <link rel="canonical" href="https://irregular-income-calculator.vercel.app/blog/commission-income-budgeting/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://irregular-income-calculator.vercel.app/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://irregular-income-calculator.vercel.app/blog/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "How to Budget on Commission Income",
+        "item": "https://irregular-income-calculator.vercel.app/blog/commission-income-budgeting/"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do you make a budget when your income from commissions varies every month?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Budget from your lowest reliable income, not your average or your best month. If you have a base salary, build your essential budget entirely on that. Commission income gets allocated in a separate, deliberate step: a portion to savings/buffer, a portion to debt or investments, and a small portion to discretionary spending. This way, a slow commission month never threatens your rent or groceries."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a draw against commission and how does it affect budgeting?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A draw is an advance payment against future commissions. In a recoverable draw structure, if your commissions don't cover the draw, you owe the difference back to the employer. In a non-recoverable draw, you keep the advance regardless. Recoverable draws are a debt that grows during slow periods and gets paid back during good ones -- they make budgeting more complex because your commission cheque in a good month may be partially consumed repaying the draw balance."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How are commissions taxed differently from regular salary?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In Canada, commission income earned as an employee is taxed as employment income, just like salary. It appears on your T4 and is subject to standard federal and provincial rates. However, because commissions are often paid in lump sums, employers may withhold at a higher rate in high-earning months. If you are a self-employed commissioned agent (not on payroll), your commission income is business income subject to CPP contributions as well. Either way, a large commission cheque will often result in a higher withholding rate that gets trued up at tax time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What percentage of a commission windfall should I save versus spend?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A useful starting allocation for a commission windfall: 50% to financial goals (debt repayment, emergency fund, investments), 30% to planned larger purchases you've been deferring, and 20% discretionary. If you have high-interest debt, the 50% going to financial goals should go there first. If you're debt-free with a funded emergency reserve, redirect more to investments. The specific percentages matter less than having a preset plan -- deciding in advance prevents the windfall from quietly evaporating into spending."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Budget on Commission Income: A Guide for Sales Professionals",
+    "description": "Commission income is unpredictable by design. Learn how to budget from your base, handle windfall months, manage the draw system, and build real financial stability on variable pay.",
+    "author": {
+      "@type": "Organization",
+      "name": "Irregular Income Calculator Team"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Income Reserve Calculator"
+    },
+    "datePublished": "2026-04-10",
+    "dateModified": "2026-04-10"
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --blue-900: #0f2744;
+      --blue-800: #1a3a5c;
+      --blue-700: #1e4976;
+      --blue-600: #2563eb;
+      --blue-500: #3b82f6;
+      --blue-200: #bfdbfe;
+      --blue-100: #dbeafe;
+      --blue-50: #eff6ff;
+      --green-700: #15803d;
+      --green-600: #16a34a;
+      --green-100: #dcfce7;
+      --green-50: #f0fdf4;
+      --amber-700: #b45309;
+      --amber-100: #fef3c7;
+      --amber-50: #fffbeb;
+      --gray-900: #111827;
+      --gray-800: #1f2937;
+      --gray-700: #374151;
+      --gray-600: #4b5563;
+      --gray-500: #6b7280;
+      --gray-400: #9ca3af;
+      --gray-300: #d1d5db;
+      --gray-200: #e5e7eb;
+      --gray-100: #f3f4f6;
+      --gray-50: #f9fafb;
+      --white: #ffffff;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--gray-800);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--gray-200);
+      padding: 0 1.5rem;
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+      gap: 1rem;
+    }
+
+    .nav-brand {
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--blue-700);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .nav-link {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--gray-600);
+      text-decoration: none;
+      padding: 0.4rem 0.75rem;
+      border-radius: var(--radius-sm);
+      transition: color 0.15s, background 0.15s;
+    }
+
+    .nav-link:hover {
+      color: var(--blue-700);
+      background: var(--blue-50);
+    }
+
+    .nav-cta {
+      background: var(--blue-600);
+      color: var(--white);
+      border: none;
+      border-radius: var(--radius-sm);
+      padding: 0.5rem 1.1rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.15s;
+      white-space: nowrap;
+    }
+
+    .nav-cta:hover {
+      background: var(--blue-700);
+    }
+
+    /* ARTICLE WRAPPER */
+    .article-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* BREADCRUMB */
+    .breadcrumb {
+      padding: 1.25rem 0 0;
+      font-size: 0.8rem;
+      color: var(--gray-500);
+    }
+
+    .breadcrumb a {
+      color: var(--gray-500);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--blue-600);
+      text-decoration: underline;
+    }
+
+    .breadcrumb span {
+      margin: 0 0.4rem;
+    }
+
+    /* ARTICLE HEADER */
+    .article-header {
+      padding: 2rem 0 2.5rem;
+      border-bottom: 1px solid var(--gray-200);
+      margin-bottom: 2.5rem;
+    }
+
+    .article-tag {
+      display: inline-block;
+      background: var(--blue-50);
+      color: var(--blue-700);
+      padding: 0.2rem 0.65rem;
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+    }
+
+    .article-header h1 {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: var(--gray-900);
+      margin-bottom: 1rem;
+    }
+
+    .article-lede {
+      font-size: 1.1rem;
+      color: var(--gray-600);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.85rem;
+      color: var(--gray-500);
+    }
+
+    .article-meta-dot {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--gray-400);
+    }
+
+    /* ARTICLE BODY */
+    .article-body h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      letter-spacing: -0.01em;
+      margin-top: 2.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .article-body h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-top: 1.75rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .article-body p {
+      margin-bottom: 1.25rem;
+      color: var(--gray-700);
+      line-height: 1.75;
+    }
+
+    .article-body ul,
+    .article-body ol {
+      margin: 0 0 1.25rem 1.5rem;
+      color: var(--gray-700);
+      line-height: 1.75;
+    }
+
+    .article-body li {
+      margin-bottom: 0.4rem;
+    }
+
+    .article-body strong {
+      color: var(--gray-900);
+      font-weight: 600;
+    }
+
+    /* CALLOUT BOX */
+    .callout-calculator {
+      background: var(--blue-50);
+      border: 1.5px solid var(--blue-200);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem 1.75rem;
+      margin: 2.5rem 0;
+    }
+
+    .callout-calculator-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--blue-600);
+      margin-bottom: 0.5rem;
+    }
+
+    .callout-calculator h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 0.5rem;
+      margin-top: 0;
+    }
+
+    .callout-calculator p {
+      font-size: 0.9rem;
+      color: var(--gray-600);
+      margin-bottom: 1rem;
+    }
+
+    .callout-calculator a {
+      display: inline-block;
+      background: var(--blue-600);
+      color: var(--white);
+      padding: 0.6rem 1.25rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+
+    .callout-calculator a:hover {
+      background: var(--blue-700);
+    }
+
+    /* INFO BOX */
+    .info-box {
+      background: var(--amber-50);
+      border-left: 4px solid var(--amber-700);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 1rem 1.25rem;
+      margin: 1.5rem 0;
+    }
+
+    .info-box p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--gray-700);
+    }
+
+    .info-box strong {
+      color: var(--amber-700);
+    }
+
+    /* RATE TABLE */
+    .rate-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.9rem;
+    }
+
+    .rate-table th {
+      text-align: left;
+      padding: 0.6rem 0.9rem;
+      background: var(--gray-100);
+      font-weight: 600;
+      color: var(--gray-700);
+      border-bottom: 2px solid var(--gray-200);
+    }
+
+    .rate-table td {
+      padding: 0.6rem 0.9rem;
+      border-bottom: 1px solid var(--gray-200);
+      color: var(--gray-700);
+    }
+
+    .rate-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .rate-table tr:nth-child(even) td {
+      background: var(--gray-50);
+    }
+
+    /* FAQ SECTION */
+    .faq-section {
+      margin-top: 3rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--gray-200);
+    }
+
+    .faq-section h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      letter-spacing: -0.01em;
+      margin-bottom: 1.5rem;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--gray-200);
+      padding-bottom: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--gray-900);
+      margin-bottom: 0.5rem;
+    }
+
+    .faq-answer {
+      font-size: 0.925rem;
+      color: var(--gray-600);
+      line-height: 1.7;
+    }
+
+    /* ARTICLE FOOTER */
+    .article-footer {
+      margin-top: 3rem;
+      padding: 2rem 0;
+      border-top: 1px solid var(--gray-200);
+    }
+
+    .disclaimer-box {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.25rem;
+      font-size: 0.82rem;
+      color: var(--gray-500);
+      line-height: 1.65;
+    }
+
+    /* SITE FOOTER */
+    footer {
+      border-top: 1px solid var(--gray-200);
+      padding: 2rem 1.5rem;
+      margin-top: 4rem;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .footer-disclaimer {
+      font-size: 0.8rem;
+      color: var(--gray-500);
+      max-width: 680px;
+      margin: 0 auto 0.75rem;
+      line-height: 1.7;
+    }
+
+    .footer-copy {
+      font-size: 0.8rem;
+      color: var(--gray-400);
+    }
+
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .article-meta-dot { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" aria-label="Site navigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">Income Reserve Calculator</a>
+      <div class="nav-links">
+        <a href="/" class="nav-link">Calculator</a>
+        <a href="/blog/" class="nav-link">Blog</a>
+      </div>
+      <a href="/" class="nav-cta">Try the Calculator</a>
+    </div>
+  </nav>
+
+  <!-- ARTICLE -->
+  <main>
+    <div class="article-wrap">
+
+      <!-- BREADCRUMB -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span aria-hidden="true">&rsaquo;</span>
+        <a href="/blog/">Blog</a>
+        <span aria-hidden="true">&rsaquo;</span>
+        <span aria-current="page">Commission Income Budgeting</span>
+      </nav>
+
+      <!-- HEADER -->
+      <header class="article-header">
+        <div class="article-tag">Income Planning</div>
+        <h1>How to Budget on Commission Income: A Guide for Sales Professionals</h1>
+        <p class="article-lede">Commission income is designed to be unpredictable. Standard budgeting advice assumes a number you can count on. Here's the framework that actually works when your paycheque changes every month.</p>
+        <div class="article-meta">
+          <span>By the Irregular Income Calculator Team</span>
+          <div class="article-meta-dot" aria-hidden="true"></div>
+          <span>April 10, 2026</span>
+          <div class="article-meta-dot" aria-hidden="true"></div>
+          <span>8 min read</span>
+        </div>
+      </header>
+
+      <!-- BODY -->
+      <article class="article-body">
+
+        <p>The standard budgeting advice you'll find online starts with the same assumption: you know what you're going to earn this month. You have a number. You allocate it.</p>
+
+        <p>If you work on commission, that assumption breaks immediately. Your income is the output of a pipeline you don't fully control. Deals slip. Quarters end early. Clients go dark. One month you're ahead of plan; the next you're wondering if your base covers rent.</p>
+
+        <p>The framework in this guide is built for that reality. It does not assume a stable income. It treats income variability as the starting condition, not an exception to plan around.</p>
+
+        <h2>Why Commission Income Is Uniquely Difficult to Budget</h2>
+
+        <p>Variable income of any kind is hard to budget around. Commission income has a specific set of features that make it harder than most:</p>
+
+        <p><strong>The timing gap.</strong> You close a deal in January. The commission hits your account in February or March. You're managing your spending in real time while your income lags by weeks. This means you can feel prosperous during a good month but the cash hasn't arrived yet.</p>
+
+        <p><strong>The boom-and-bust psychology.</strong> A $14,000 commission month feels like abundance. It is abundance -- but only if you treat it as covering the slower months that will follow. Most people don't. They spend at an elevated rate during the good months, then feel squeezed during the slow ones, and repeat the cycle indefinitely without building any real buffer.</p>
+
+        <p><strong>Clawbacks.</strong> In some sales roles, commissions on deals that cancel or default within a certain period are clawed back. You plan around income that later disappears. This is a nasty wrinkle that makes conservative planning even more important.</p>
+
+        <p><strong>The quota treadmill.</strong> Quotas typically reset annually and often increase. A record year does not guarantee a comfortable following year; it often means a higher baseline expectation. Budget planning needs to account for the fact that your comp plan may change.</p>
+
+        <h2>Base + Commission vs. 100% Commission: A Key Distinction</h2>
+
+        <p>How you budget depends heavily on your compensation structure. These two situations require different approaches.</p>
+
+        <h3>Base Salary Plus Commission</h3>
+
+        <p>If you have a base salary, you have an anchor. Your base represents a guaranteed floor of income regardless of commission performance. The foundational rule here is simple: <strong>build your entire essential budget on your base salary alone</strong>. Rent, groceries, insurance, debt payments, utilities. All of it should be coverable by base before commission is factored in.</p>
+
+        <p>If your essential expenses exceed your base, you have a structural problem that commission income can mask for a while but will eventually expose. Either the expenses need to come down or you need to negotiate a higher base.</p>
+
+        <p>Commission income above the base then gets allocated deliberately in a second step. It doesn't automatically become spending money. It goes through a predetermined allocation first.</p>
+
+        <h3>100% Commission</h3>
+
+        <p>If your entire income is variable, the anchor has to come from somewhere else. In this case, you build your floor from your <strong>worst realistic month</strong> over the past 12 months, not your average. Not your best month. Your worst month that you could expect to repeat.</p>
+
+        <p>Your essential budget should be survivable on that worst-month figure. Everything above it is surplus, to be allocated according to a plan you set in advance.</p>
+
+        <p>This feels conservative. It is. That conservatism is exactly what allows 100% commission earners to stay solvent through extended slow periods, which happen to everyone in sales eventually.</p>
+
+        <h2>The Draw System: What It Means for Your Cash Flow</h2>
+
+        <p>Many commission-based roles use a draw system, particularly during onboarding or when transitioning to a new territory. Understanding the type of draw you're under is critical for budgeting accurately.</p>
+
+        <h3>Non-Recoverable Draw</h3>
+
+        <p>A non-recoverable draw is essentially a guaranteed minimum. If your commissions for the month are $2,000 but your draw is $4,000, you receive $4,000. The shortfall does not carry forward as a debt. This functions like a base salary with an upside, and you can budget accordingly.</p>
+
+        <h3>Recoverable Draw</h3>
+
+        <p>A recoverable draw is an advance against future commissions, not a guarantee. If your commissions are $2,000 and your draw is $4,000, you receive $4,000 -- but you now owe $2,000 to the company, carried as a "draw balance." When you have a strong month and earn $8,000 in commissions, the first $2,000 goes to repay the outstanding draw balance, and you receive the remaining $6,000.</p>
+
+        <p>This creates a trap for people who don't track it. You have months of $4,000 paycheques that feel steady, then a good month arrives and your commission is significantly lower than expected because the draw balance comes out first. If you've budgeted based on those $4,000 draws as a reliable floor, you're in trouble when a good month is largely consumed by repayment.</p>
+
+        <div class="info-box">
+          <p><strong>Know your draw balance at all times.</strong> Ask your payroll or HR team to provide the running draw balance on your paystub or on request. Never assume a recoverable draw period is settled. When you have a strong month, calculate how much of the gross commission is actually yours versus how much repays the advance.</p>
+        </div>
+
+        <h2>Building Your Commission Budget: The Two-Account System</h2>
+
+        <p>The most reliable budgeting structure for commission earners uses two accounts that serve distinct purposes.</p>
+
+        <p><strong>Account 1: Operating Account.</strong> This receives all income. It covers all essential monthly expenses at the floor level you've set (base only, or worst-month equivalent). This account should be able to pay all your bills even in your worst realistic month without dipping into reserves.</p>
+
+        <p><strong>Account 2: Income Smoothing Reserve.</strong> Anytime your income exceeds your floor, the excess goes here. In strong months, you fund this account. In slow months, you draw from it to keep the operating account topped up. The goal is to make every month look like an average month to your operating account.</p>
+
+        <p>The reserve account has a target balance: three to six months of essential expenses. Until you hit that target, the surplus from every above-average month goes to building it up. After you hit it, the surplus gets reallocated to other financial goals.</p>
+
+        <p>This is not exciting advice. It is the thing that actually works over multi-year periods.</p>
+
+        <!-- CALCULATOR CALLOUT -->
+        <div class="callout-calculator">
+          <div class="callout-calculator-label">Free Tool</div>
+          <h3>Calculate your actual spending floor from your commission history.</h3>
+          <p>Enter your average income, your worst recent month, and your fixed expenses. The calculator shows you exactly how much buffer you need to build, and what you can safely spend without touching your reserve. Built for variable income earners.</p>
+          <a href="/">Try the free Irregular Income Calculator &rarr;</a>
+        </div>
+
+        <h2>The Windfall Problem: What to Do When a Big Month Hits</h2>
+
+        <p>The single most important financial decision a commission earner makes is not what to do in a slow month. It's what to do when a big one hits.</p>
+
+        <p>The pattern that repeats across sales roles at every level: a strong quarter arrives, income feels generous, lifestyle spending increases, and when performance normalizes, the elevated spending persists. The debt follows.</p>
+
+        <p>A windfall month is not extra money. It is the reserve that makes the slow months survivable. Treating it any other way is a common and expensive mistake.</p>
+
+        <p>Here is a preset windfall allocation that works before the money arrives, not after you've spent two weeks deciding:</p>
+
+        <table class="rate-table" aria-label="Suggested windfall allocation framework">
+          <thead>
+            <tr>
+              <th>Allocation</th>
+              <th>Percentage</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Income smoothing reserve</td>
+              <td>30-40%</td>
+              <td>Buffer for slow months</td>
+            </tr>
+            <tr>
+              <td>Financial goals (debt / investing)</td>
+              <td>30-40%</td>
+              <td>Accelerate progress</td>
+            </tr>
+            <tr>
+              <td>Planned purchases</td>
+              <td>10-20%</td>
+              <td>Deferred needs on a list</td>
+            </tr>
+            <tr>
+              <td>Discretionary / lifestyle</td>
+              <td>10-15%</td>
+              <td>Guilt-free spending</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>The specific percentages can flex based on where you are financially. If your reserve is underfunded, shift more there. If you carry high-interest debt, shift more to financial goals. The structure is less important than having one. Windfalls that land in an account without a plan evaporate. It is a well-documented phenomenon.</p>
+
+        <h2>Tax Implications of Commission Income</h2>
+
+        <p>Commission income carries a tax dimension that catches a lot of salespeople off guard.</p>
+
+        <h3>Withholding on Lump-Sum Payments</h3>
+
+        <p>When you receive a large commission in a single paycheque, your employer may withhold at a higher rate than your normal monthly withholding. This happens because payroll systems often annualize a single large payment -- if you receive $20,000 in one month, the system may calculate withholding as if you earn $240,000 per year, even though your actual annual income is $90,000.</p>
+
+        <p>This typically results in an overpayment of tax during the year, which is returned to you at filing time. That refund is not a gift from the government -- it's your own money that you overpaid throughout the year. If you're counting on a large tax refund to pay off debt or fund a purchase, you're giving the government an interest-free loan in the meantime.</p>
+
+        <p>The alternative is to adjust your withholding by filing a new TD1 with your employer. A tax professional can help you calibrate this so your withholding matches your actual tax liability more closely, without the year-end swing.</p>
+
+        <h3>Self-Employed Commission Agents</h3>
+
+        <p>If you're not on an employer's payroll but rather operate as a self-employed commissioned agent, your situation is different. Your commission income is self-employment income. You are responsible for your own tax remittances, CPP contributions (both sides, at 11.9% of net income in Canada), and quarterly instalment payments to the CRA once your tax owing exceeds $3,000 annually.</p>
+
+        <p>You can also deduct legitimate business expenses: vehicle expenses for client calls, phone and internet for business use, home office costs, professional development, and marketing costs you fund yourself. These deductions reduce your net income, which reduces both your income tax and CPP obligation.</p>
+
+        <h3>The Commission Spike and Marginal Rates</h3>
+
+        <p>Canadian income tax is marginal, meaning higher income is taxed at higher rates only on the portion that falls within each bracket. A $30,000 commission in a single year does not mean all $30,000 is taxed at your highest bracket -- only the portion that pushes your total income above each threshold.</p>
+
+        <p>However, in a particularly strong commission year, a meaningful portion of your income may land in higher brackets than you're used to. If you earn $60,000 base and an additional $50,000 in commissions, the income from $111,733 upward is taxed at the 26% federal rate rather than 20.5%. Combined with Ontario's provincial rate, the marginal rate above $111,733 is roughly 43.4%. This is not a reason to avoid high-earning years, but it is a reason to have a reserve for the tax bill that follows.</p>
+
+        <h2>Building Long-Term Stability on Variable Income</h2>
+
+        <p>Stability on commission income is not an accident and it does not come from having a good year. It comes from building systems that hold across both good and bad years.</p>
+
+        <p>The people who are genuinely comfortable on commission income share a few common habits:</p>
+
+        <ul>
+          <li><strong>They know their numbers precisely.</strong> Monthly fixed expenses, variable minimums, current reserve balance, draw balance if applicable. They are not estimating.</li>
+          <li><strong>They spend on a lag.</strong> Rather than spending what arrived this month, they spend what arrived last month. This builds a natural one-month buffer that insulates them from late-arriving commissions or unexpected gaps.</li>
+          <li><strong>They review and reforecast quarterly.</strong> Sales roles change. Comp plans change. Territories change. A static annual budget becomes irrelevant quickly. Quarterly reviews let them adjust before a problem develops.</li>
+          <li><strong>They automate what they can.</strong> Reserve transfers, bill payments, and investment contributions happen automatically so they don't depend on discipline in the moment. Discretionary spending is what's left after automation has already moved money where it belongs.</li>
+          <li><strong>They have a plan for windfalls before they receive them.</strong> The plan is written down or in a spreadsheet. When the money arrives, the allocation is not a decision; it's a transfer.</li>
+        </ul>
+
+        <p>None of this requires exceptional income. It requires a structure that treats variability as a feature of your financial life to plan around, not a bug to complain about. Commission income, managed correctly, can accelerate wealth building significantly faster than a fixed salary at the same average level. The upside potential is real. So is the downside if there's no system in place.</p>
+
+        <!-- FAQ -->
+        <section class="faq-section" aria-labelledby="faq-heading">
+          <h2 id="faq-heading">Frequently Asked Questions</h2>
+
+          <div class="faq-item">
+            <p class="faq-question">How do you make a budget when your commission income varies every month?</p>
+            <p class="faq-answer">Budget from your lowest reliable income, not your average or best month. If you have a base salary, build all essential expenses around that figure only. Commission goes through a preset allocation before you spend it: reserve first, financial goals second, planned purchases third, discretionary last. This means a slow month never threatens your core obligations.</p>
+          </div>
+
+          <div class="faq-item">
+            <p class="faq-question">What is a draw against commission and how does it affect budgeting?</p>
+            <p class="faq-answer">A draw is an advance against future commissions. Non-recoverable draws function like a guaranteed minimum -- shortfalls don't carry forward as debt. Recoverable draws are different: the advance is a loan against future commissions, and strong months may be significantly reduced by repayment of the outstanding draw balance. Track your draw balance at all times and never budget a recoverable draw as guaranteed income.</p>
+          </div>
+
+          <div class="faq-item">
+            <p class="faq-question">How is commission income taxed in Canada?</p>
+            <p class="faq-answer">Employee commission income is taxed as employment income and reported on your T4, subject to standard federal and provincial rates. Large lump-sum commissions may be withheld at a higher rate due to how payroll systems annualize the payment, often resulting in a refund at filing. If you are a self-employed commissioned agent rather than an employee, your commissions are business income subject to CPP contributions and quarterly CRA instalments, with the ability to deduct legitimate business expenses.</p>
+          </div>
+
+          <div class="faq-item">
+            <p class="faq-question">What percentage of a commission windfall should I save versus spend?</p>
+            <p class="faq-answer">A practical starting allocation: 30-40% to your income smoothing reserve, 30-40% to financial goals like debt repayment or investing, 10-20% to planned purchases you've been deferring, and 10-15% discretionary. The exact split depends on where your reserve stands and your current debt load. The important thing is deciding the allocation before the money arrives, not after it's sitting in your account.</p>
+          </div>
+        </section>
+
+        <!-- ARTICLE FOOTER -->
+        <div class="article-footer">
+          <div class="disclaimer-box">
+            <strong>Disclaimer:</strong> This article is educational content only and is not financial or tax advice. Income structures, tax rules, and commission plan terms vary widely. Figures and percentages used are illustrative and may not reflect your individual situation. Consult a qualified financial advisor or accountant for advice specific to your circumstances.
+          </div>
+        </div>
+
+      </article>
+    </div>
+  </main>
+
+  <!-- SITE FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <p class="footer-disclaimer">
+        Educational estimates only. Not tax or legal advice. This calculator uses simplified assumptions and is intended to help self-employed individuals think through their finances. Consult a qualified accountant or tax professional for advice specific to your situation.
+      </p>
+      <p class="footer-copy">&#169; 2026 Income Reserve Calculator. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
