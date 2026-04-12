@@ -171,6 +171,27 @@
       letter-spacing: -0.01em;
     }
 
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .nav-link {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--gray-600);
+      text-decoration: none;
+      padding: 0.4rem 0.75rem;
+      border-radius: var(--radius-sm);
+      transition: color 0.15s, background 0.15s;
+    }
+
+    .nav-link:hover {
+      color: var(--blue-700);
+      background: var(--blue-50);
+    }
+
     .nav-cta {
       background: var(--blue-600);
       color: var(--white);
@@ -186,6 +207,10 @@
 
     .nav-cta:hover {
       background: var(--blue-700);
+    }
+
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
     }
 
     /* ========================
@@ -1170,6 +1195,10 @@
   <nav class="nav" aria-label="Site navigation">
     <div class="nav-inner">
       <a href="#" class="nav-brand">Income Reserve Calculator</a>
+      <div class="nav-links">
+        <a href="#calculator" class="nav-link">Calculator</a>
+        <a href="/blog/" class="nav-link">Blog</a>
+      </div>
       <a href="#calculator" class="nav-cta">Calculate Now</a>
     </div>
   </nav>

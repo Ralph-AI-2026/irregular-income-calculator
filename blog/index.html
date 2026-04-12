@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog — Irregular Income Calculator</title>
+  <meta name="description" content="Practical tax and money guides for freelancers, contractors, and self-employed workers. Know what to set aside, how to plan for slow months, and how to stop stressing about tax season." />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Blog — Irregular Income Calculator" />
+  <meta property="og:description" content="Practical tax and money guides for freelancers, contractors, and self-employed workers." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --blue-900: #0f2744;
+      --blue-800: #1a3a5c;
+      --blue-700: #1e4976;
+      --blue-600: #2563eb;
+      --blue-500: #3b82f6;
+      --blue-100: #dbeafe;
+      --blue-50: #eff6ff;
+      --green-700: #15803d;
+      --green-600: #16a34a;
+      --green-500: #22c55e;
+      --green-100: #dcfce7;
+      --green-50: #f0fdf4;
+      --gray-900: #111827;
+      --gray-800: #1f2937;
+      --gray-700: #374151;
+      --gray-600: #4b5563;
+      --gray-500: #6b7280;
+      --gray-400: #9ca3af;
+      --gray-300: #d1d5db;
+      --gray-200: #e5e7eb;
+      --gray-100: #f3f4f6;
+      --gray-50: #f9fafb;
+      --white: #ffffff;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--gray-800);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--gray-200);
+      padding: 0 1.5rem;
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+      gap: 1rem;
+    }
+
+    .nav-brand {
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--blue-700);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .nav-link {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--gray-600);
+      text-decoration: none;
+      padding: 0.4rem 0.75rem;
+      border-radius: var(--radius-sm);
+      transition: color 0.15s, background 0.15s;
+    }
+
+    .nav-link:hover {
+      color: var(--blue-700);
+      background: var(--blue-50);
+    }
+
+    .nav-link.active {
+      color: var(--blue-700);
+      font-weight: 600;
+    }
+
+    .nav-cta {
+      background: var(--blue-600);
+      color: var(--white);
+      border: none;
+      border-radius: var(--radius-sm);
+      padding: 0.5rem 1.1rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.15s;
+      white-space: nowrap;
+    }
+
+    .nav-cta:hover {
+      background: var(--blue-700);
+    }
+
+    /* HERO */
+    .blog-hero {
+      background: linear-gradient(145deg, var(--blue-900) 0%, var(--blue-700) 60%, #1e5a8a 100%);
+      color: var(--white);
+      padding: 4rem 1.5rem 5rem;
+      text-align: center;
+    }
+
+    .blog-hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 100px;
+      padding: 0.35rem 0.9rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 1.25rem;
+    }
+
+    .blog-hero h1 {
+      font-size: clamp(1.7rem, 4vw, 2.8rem);
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      max-width: 700px;
+      margin: 0 auto 1rem;
+    }
+
+    .blog-hero p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.8);
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    /* BLOG GRID */
+    .blog-section {
+      padding: 4rem 1.5rem;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--blue-600);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--gray-900);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-sub {
+      color: var(--gray-600);
+      font-size: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .blog-card {
+      background: var(--white);
+      border: 1.5px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .blog-card:hover {
+      box-shadow: var(--shadow-md);
+      border-color: var(--blue-200, #bfdbfe);
+      transform: translateY(-2px);
+    }
+
+    .blog-card-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.8rem;
+      color: var(--gray-500);
+      font-weight: 500;
+    }
+
+    .blog-card-tag {
+      background: var(--blue-50);
+      color: var(--blue-700);
+      padding: 0.2rem 0.6rem;
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .blog-card h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--gray-900);
+      letter-spacing: -0.01em;
+    }
+
+    .blog-card-excerpt {
+      font-size: 0.9rem;
+      color: var(--gray-600);
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .blog-card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--blue-600);
+      text-decoration: none;
+      transition: gap 0.15s;
+    }
+
+    .blog-card-link:hover {
+      gap: 0.55rem;
+    }
+
+    .blog-card-link svg {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+    }
+
+    /* CTA STRIP */
+    .cta-strip {
+      background: var(--blue-50);
+      border-top: 1px solid var(--blue-100);
+      border-bottom: 1px solid var(--blue-100);
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+
+    .cta-strip h2 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--gray-900);
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    .cta-strip p {
+      color: var(--gray-600);
+      font-size: 0.95rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--blue-600);
+      color: var(--white);
+      padding: 0.75rem 1.75rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+
+    .btn-primary:hover {
+      background: var(--blue-700);
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--gray-200);
+      padding: 2rem 1.5rem;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .footer-disclaimer {
+      font-size: 0.8rem;
+      color: var(--gray-500);
+      max-width: 680px;
+      margin: 0 auto 0.75rem;
+      line-height: 1.7;
+    }
+
+    .footer-copy {
+      font-size: 0.8rem;
+      color: var(--gray-400);
+    }
+
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .blog-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" aria-label="Site navigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">Income Reserve Calculator</a>
+      <div class="nav-links">
+        <a href="/" class="nav-link">Calculator</a>
+        <a href="/blog/" class="nav-link active">Blog</a>
+      </div>
+      <a href="/" class="nav-cta">Try the Calculator</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="blog-hero">
+    <div class="blog-hero-eyebrow">Freelance Finance</div>
+    <h1>Tax and Money Guides for Self-Employed Workers</h1>
+    <p>No fluff. Practical advice on what to set aside, how to plan for slow months, and how to stop dreading tax season.</p>
+  </section>
+
+  <!-- ARTICLES -->
+  <section class="blog-section">
+    <div class="container">
+      <div class="section-label">All Articles</div>
+      <h2 class="section-title">Recent Posts</h2>
+      <p class="section-sub">Written for real freelancers. The kind dealing with slow months, surprise tax bills, and income that never seems predictable.</p>
+
+      <div class="blog-grid">
+
+        <div class="blog-card">
+          <div class="blog-card-meta">
+            <span class="blog-card-tag">Tax Planning</span>
+            <span>April 10, 2026</span>
+            <span>8 min read</span>
+          </div>
+          <h2>How Much Should I Set Aside for Taxes if I'm Self-Employed?</h2>
+          <p class="blog-card-excerpt">The 25-30% rule is a starting point, not the answer. Here's how to figure out your actual number based on your income, province or state, and real deductions — and how to make sure you don't blow it on a slow month.</p>
+          <a href="/blog/how-much-set-aside-taxes-self-employed/" class="blog-card-link">
+            Read article
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA STRIP -->
+  <section class="cta-strip">
+    <h2>Know your exact numbers before tax season hits.</h2>
+    <p>The free Irregular Income Tax Calculator shows you what to set aside each month, what you can actually spend, and how much runway you have in a slow month.</p>
+    <a href="/" class="btn-primary">Try the Free Calculator</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <p class="footer-disclaimer">
+        Educational content only. Not tax or legal advice. Always consult a qualified accountant or tax professional for advice specific to your situation.
+      </p>
+      <p class="footer-copy">&#169; 2026 Income Reserve Calculator. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
