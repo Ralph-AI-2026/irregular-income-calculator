@@ -1,18 +1,5 @@
 {
   "version": 2,
-  "buildCommand": "",
-  "outputDirectory": ".",
-  "functions": {
-    "api/subscribe.js": {
-      "runtime": "nodejs20.x"
-    }
-  },
-  "routes": [
-    {
-      "src": "/api/subscribe",
-      "dest": "/api/subscribe.js"
-    }
-  ],
   "headers": [
     {
       "source": "/(.*)",
