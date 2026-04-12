@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Should I Incorporate as a Freelancer? Sole Proprietorship vs. LLC vs. Corporation</title>
+  <meta name="description" content="Sole proprietorship, LLC, and corporation compared for freelancers. When incorporation makes financial sense, what it actually costs, and how to decide what structure fits where you are now." />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Should I Incorporate as a Freelancer? Sole Proprietorship vs. LLC vs. Corporation" />
+  <meta property="og:description" content="Sole proprietorship, LLC, and corporation compared for freelancers. When incorporation makes financial sense, what it actually costs, and how to decide what structure fits where you are now." />
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content="2026-04-10" />
+  <link rel="canonical" href="https://irregular-income-calculator.vercel.app/blog/should-i-incorporate-freelancer/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Should I incorporate as a freelancer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It depends on your income level and risk profile. In Canada, incorporating typically makes financial sense once you are earning more than you can spend personally, because the small business corporate tax rate (9% federally) is significantly lower than personal rates. In the US, an LLC or S-Corp structure can reduce self-employment tax once net profit regularly exceeds $50,000-$60,000. Below those thresholds, the administrative cost of a corporation often outweighs the tax benefit."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between sole proprietorship and LLC for freelancers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A sole proprietorship is the default structure: you and your business are the same legal entity. Income goes directly on your personal tax return. An LLC (Limited Liability Company) creates a legal separation between you and your business, which limits personal liability for business debts and legal claims. For tax purposes, a single-member LLC is treated the same as a sole proprietorship unless you elect otherwise. The key benefit of an LLC is liability protection, not automatic tax savings."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "At what income level should a freelancer incorporate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In the US, S-Corp election starts making sense when net self-employment income consistently exceeds $50,000-$60,000 per year, because the payroll structure can reduce self-employment tax on the portion above a reasonable salary. In Canada, incorporating becomes financially worthwhile once you are earning more than you need to live on, because you can leave retained earnings in the corporation at the lower small business tax rate rather than taking them all as personal income."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does it cost to incorporate as a freelancer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Federal incorporation in Canada runs roughly $200-$300 in filing fees plus $1,000-$2,000 in legal or accounting fees to set it up properly. Annual corporate tax filing typically costs $1,000-$2,500 with an accountant. In the US, LLC formation costs $50-$500 depending on the state, plus $500-$1,500 for a lawyer or accountant. Annual compliance costs vary by state but typically add $100-$800 in state fees. You need to weigh these ongoing costs against the actual tax saving you would achieve."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can a freelancer have an LLC in Canada?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Canada does not have the LLC structure. Canadian freelancers choose between sole proprietorship, incorporation as a Canadian Controlled Private Corporation (CCPC), or partnership. The CCPC is the closest Canadian equivalent to the US S-Corp for small business tax purposes, with a federal small business tax rate of 9% on the first $500,000 of active business income."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Should I Incorporate as a Freelancer? Sole Proprietorship vs. LLC vs. Corporation",
+    "description": "Sole proprietorship, LLC, and corporation compared for freelancers. When incorporation makes financial sense, what it actually costs, and how to decide what structure fits where you are now.",
+    "author": {
+      "@type": "Organization",
+      "name": "Irregular Income Calculator Team"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Income Reserve Calculator"
+    },
+    "datePublished": "2026-04-10",
+    "dateModified": "2026-04-10"
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --blue-900: #0f2744;
+      --blue-800: #1a3a5c;
+      --blue-700: #1e4976;
+      --blue-600: #2563eb;
+      --blue-500: #3b82f6;
+      --blue-200: #bfdbfe;
+      --blue-100: #dbeafe;
+      --blue-50: #eff6ff;
+      --green-700: #15803d;
+      --green-600: #16a34a;
+      --green-100: #dcfce7;
+      --green-50: #f0fdf4;
+      --amber-700: #b45309;
+      --amber-100: #fef3c7;
+      --amber-50: #fffbeb;
+      --gray-900: #111827;
+      --gray-800: #1f2937;
+      --gray-700: #374151;
+      --gray-600: #4b5563;
+      --gray-500: #6b7280;
+      --gray-400: #9ca3af;
+      --gray-300: #d1d5db;
+      --gray-200: #e5e7eb;
+      --gray-100: #f3f4f6;
+      --gray-50: #f9fafb;
+      --white: #ffffff;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--gray-800);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--gray-200);
+      padding: 0 1.5rem;
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+      gap: 1rem;
+    }
+
+    .nav-brand {
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--blue-700);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .nav-link {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--gray-600);
+      text-decoration: none;
+      padding: 0.4rem 0.75rem;
+      border-radius: var(--radius-sm);
+      transition: color 0.15s, background 0.15s;
+    }
+
+    .nav-link:hover {
+      color: var(--blue-700);
+      background: var(--blue-50);
+    }
+
+    .nav-cta {
+      background: var(--blue-600);
+      color: var(--white);
+      border: none;
+      border-radius: var(--radius-sm);
+      padding: 0.5rem 1.1rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.15s;
+      white-space: nowrap;
+    }
+
+    .nav-cta:hover {
+      background: var(--blue-700);
+    }
+
+    /* ARTICLE WRAPPER */
+    .article-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* BREADCRUMB */
+    .breadcrumb {
+      padding: 1.25rem 0 0;
+      font-size: 0.8rem;
+      color: var(--gray-500);
+    }
+
+    .breadcrumb a {
+      color: var(--gray-500);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--blue-600);
+      text-decoration: underline;
+    }
+
+    .breadcrumb span {
+      margin: 0 0.4rem;
+    }
+
+    /* ARTICLE HEADER */
+    .article-header {
+      padding: 2rem 0 2.5rem;
+      border-bottom: 1px solid var(--gray-200);
+      margin-bottom: 2.5rem;
+    }
+
+    .article-tag {
+      display: inline-block;
+      background: var(--blue-50);
+      color: var(--blue-700);
+      padding: 0.2rem 0.65rem;
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+    }
+
+    .article-header h1 {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: var(--gray-900);
+      margin-bottom: 1rem;
+    }
+
+    .article-lede {
+      font-size: 1.1rem;
+      color: var(--gray-600);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.85rem;
+      color: var(--gray-500);
+    }
+
+    .article-meta-dot {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--gray-400);
+    }
+
+    /* ARTICLE BODY */
+    .article-body h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      letter-spacing: -0.01em;
+      margin-top: 2.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .article-body h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-top: 1.75rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .article-body p {
+      margin-bottom: 1.25rem;
+      color: var(--gray-700);
+      line-height: 1.75;
+    }
+
+    .article-body ul,
+    .article-body ol {
+      margin: 0 0 1.25rem 1.5rem;
+      color: var(--gray-700);
+      line-height: 1.75;
+    }
+
+    .article-body li {
+      margin-bottom: 0.4rem;
+    }
+
+    .article-body strong {
+      color: var(--gray-900);
+      font-weight: 600;
+    }
+
+    /* CALLOUT BOX */
+    .callout-calculator {
+      background: var(--blue-50);
+      border: 1.5px solid var(--blue-200);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem 1.75rem;
+      margin: 2.5rem 0;
+    }
+
+    .callout-calculator-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--blue-600);
+      margin-bottom: 0.5rem;
+    }
+
+    .callout-calculator h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 0.5rem;
+      margin-top: 0;
+    }
+
+    .callout-calculator p {
+      font-size: 0.9rem;
+      color: var(--gray-600);
+      margin-bottom: 1rem;
+    }
+
+    .callout-calculator a {
+      display: inline-block;
+      background: var(--blue-600);
+      color: var(--white);
+      padding: 0.6rem 1.25rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+
+    .callout-calculator a:hover {
+      background: var(--blue-700);
+    }
+
+    /* INFO BOX */
+    .info-box {
+      background: var(--amber-50);
+      border-left: 4px solid var(--amber-700);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 1rem 1.25rem;
+      margin: 1.5rem 0;
+    }
+
+    .info-box p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--gray-700);
+    }
+
+    .info-box strong {
+      color: var(--amber-700);
+    }
+
+    /* GREEN INFO BOX */
+    .info-box-green {
+      background: var(--green-50);
+      border-left: 4px solid var(--green-600);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 1rem 1.25rem;
+      margin: 1.5rem 0;
+    }
+
+    .info-box-green p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--gray-700);
+    }
+
+    .info-box-green strong {
+      color: var(--green-700);
+    }
+
+    /* COMPARISON TABLE */
+    .rate-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.9rem;
+    }
+
+    .rate-table th {
+      text-align: left;
+      padding: 0.6rem 0.9rem;
+      background: var(--gray-100);
+      font-weight: 600;
+      color: var(--gray-700);
+      border-bottom: 2px solid var(--gray-200);
+    }
+
+    .rate-table td {
+      padding: 0.6rem 0.9rem;
+      border-bottom: 1px solid var(--gray-200);
+      color: var(--gray-700);
+      vertical-align: top;
+    }
+
+    .rate-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .rate-table tr:nth-child(even) td {
+      background: var(--gray-50);
+    }
+
+    /* FAQ SECTION */
+    .faq-section {
+      margin-top: 3rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--gray-200);
+    }
+
+    .faq-section h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      letter-spacing: -0.01em;
+      margin-bottom: 1.5rem;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--gray-200);
+      padding-bottom: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--gray-900);
+      margin-bottom: 0.5rem;
+    }
+
+    .faq-answer {
+      font-size: 0.925rem;
+      color: var(--gray-600);
+      line-height: 1.7;
+    }
+
+    /* ARTICLE FOOTER */
+    .article-footer {
+      margin-top: 3rem;
+      padding: 2rem 0;
+      border-top: 1px solid var(--gray-200);
+    }
+
+    .disclaimer-box {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.25rem;
+      font-size: 0.82rem;
+      color: var(--gray-500);
+      line-height: 1.65;
+    }
+
+    /* SITE FOOTER */
+    footer {
+      border-top: 1px solid var(--gray-200);
+      padding: 2rem 1.5rem;
+      margin-top: 4rem;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .footer-disclaimer {
+      font-size: 0.8rem;
+      color: var(--gray-500);
+      max-width: 680px;
+      margin: 0 auto 0.75rem;
+      line-height: 1.7;
+    }
+
+    .footer-copy {
+      font-size: 0.8rem;
+      color: var(--gray-400);
+    }
+
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .article-meta-dot { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" aria-label="Site navigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">Income Reserve Calculator</a>
+      <div class="nav-links">
+        <a href="/" class="nav-link">Calculator</a>
+        <a href="/blog/" class="nav-link">Blog</a>
+      </div>
+      <a href="/" class="nav-cta">Try the Calculator</a>
+    </div>
+  </nav>
+
+  <!-- ARTICLE -->
+  <main>
+    <div class="article-wrap">
+
+      <!-- BREADCRUMB -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span aria-hidden="true">&rsaquo;</span>
+        <a href="/blog/">Blog</a>
+        <span aria-hidden="true">&rsaquo;</span>
+        <span aria-current="page">Should I Incorporate as a Freelancer?</span>
+      </nav>
+
+      <!-- HEADER -->
+      <header class="article-header">
+        <div class="article-tag">Business Structure</div>
+        <h1>Should I Incorporate as a Freelancer? Sole Proprietorship vs. LLC vs. Corporation</h1>
+        <p class="article-lede">Incorporation isn't the right move for every freelancer, and the business structure advice you find online is often written for someone at a very different income level than you. Here is how to think through the decision for where you actually are.</p>
+        <div class="article-meta">
+          <span>By the Irregular Income Calculator Team</span>
+          <div class="article-meta-dot" aria-hidden="true"></div>
+          <span>April 10, 2026</span>
+          <div class="article-meta-dot" aria-hidden="true"></div>
+          <span>10 min read</span>
+        </div>
+      </header>
+
+      <!-- BODY -->
+      <article class="article-body">
+
+        <p>The question comes up early and often for freelancers: should I incorporate? It usually surfaces after a good month, when you feel like a real business. Or after a scary invoice, when you start worrying about liability. Or after a conversation with another freelancer who says their accountant saved them thousands by switching structures.</p>
+
+        <p>The honest answer is: it depends, and the threshold is probably higher than you think. Incorporation is not automatically better than operating as a sole proprietor. For many freelancers, especially those still building consistent income, the administrative overhead of a corporation costs more than it saves.</p>
+
+        <p>Here is a clear comparison of your options and a practical decision framework for figuring out where you are on that spectrum.</p>
+
+        <h2>The Three Main Structures (and What They Actually Mean)</h2>
+
+        <h3>Sole Proprietorship</h3>
+
+        <p>This is the default. If you are freelancing and have not registered a legal business entity, you are a sole proprietor. Your business is not a separate legal entity from you. Income goes directly on your personal tax return, expenses reduce your income, and you pay personal tax rates on the net result.</p>
+
+        <p>The advantages are simplicity and zero setup cost. The disadvantages are that you have unlimited personal liability for business debts and obligations, and your personal tax rate applies to all of your income regardless of what you do or don't take out of the business.</p>
+
+        <p>In Canada, you can register a business name (a "sole proprietorship" or "DBA" registration) for a small fee, which lets you operate under a name other than your own. This does not create a separate legal entity. You're still a sole proprietor.</p>
+
+        <h3>LLC (United States Only)</h3>
+
+        <p>An LLC is a US structure with no direct Canadian equivalent. It creates a legal entity that is separate from you, which means your personal assets are generally protected from business lawsuits and debts. A single-member LLC is taxed the same as a sole proprietorship by default: income flows through to your personal return and you pay self-employment tax on all of it.</p>
+
+        <p>The key benefit of an LLC for US freelancers is liability protection, not automatic tax savings. If a client sues you over a project, a properly maintained LLC limits their claim to business assets rather than your personal savings and home equity. That protection has real value, especially if you work with contracts involving significant deliverables or if you're in a field with meaningful professional liability exposure.</p>
+
+        <p>LLC formation costs $50-$500 depending on the state, with ongoing annual fees varying by state. The cost is low enough that most US freelancers earning over $40,000 should consider it, even if it provides no immediate tax benefit. The tax advantages come later, with an S-Corp election.</p>
+
+        <h3>Corporation (Canada) and S-Corp / C-Corp (US)</h3>
+
+        <p>A corporation is a fully separate legal entity. It files its own tax return. It pays its own tax rate. You are an employee of, and/or shareholder in, your own corporation, and you pay yourself through salary or dividends (or both). The corporation and your personal finances are legally and financially distinct.</p>
+
+        <p>In Canada, incorporating as a Canadian Controlled Private Corporation (CCPC) gives you access to the small business deduction, which reduces the federal corporate tax rate on the first $500,000 of active business income from the general rate (15%) down to 9%. Provincial rates vary, but the combined federal-provincial rate for eligible small businesses typically runs 11-15%, depending on province. Compare that to personal marginal rates that can reach 50%+ in higher brackets, and you can see why incorporation has appeal.</p>
+
+        <p>In the US, an S-Corporation election allows you to split your income between a salary and shareholder distributions. Self-employment tax (15.3%) applies only to the salary portion, not to distributions. If your net profit is $120,000 and you pay yourself a reasonable salary of $60,000, you pay self-employment tax on $60,000 rather than $120,000. At 15.3%, that's roughly $9,000 in annual savings, offset by the administrative costs of running payroll and filing a corporate return.</p>
+
+        <h2>The Side-by-Side Comparison</h2>
+
+        <table class="rate-table" aria-label="Business structure comparison for freelancers">
+          <thead>
+            <tr>
+              <th>Factor</th>
+              <th>Sole Proprietor</th>
+              <th>LLC (US)</th>
+              <th>Corporation / S-Corp</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Setup cost</td>
+              <td>None</td>
+              <td>$50-$500</td>
+              <td>$500-$2,500+</td>
+            </tr>
+            <tr>
+              <td>Annual admin cost</td>
+              <td>Minimal</td>
+              <td>$100-$800/yr</td>
+              <td>$1,500-$3,500/yr (accounting)</td>
+            </tr>
+            <tr>
+              <td>Liability protection</td>
+              <td>None</td>
+              <td>Yes (if maintained)</td>
+              <td>Yes (if maintained)</td>
+            </tr>
+            <tr>
+              <td>Tax on income</td>
+              <td>Personal rates</td>
+              <td>Personal rates (default)</td>
+              <td>Lower corporate rate</td>
+            </tr>
+            <tr>
+              <td>Self-employment tax</td>
+              <td>Full 15.3% (US) / CPP on net earnings (CA)</td>
+              <td>Full 15.3% (default)</td>
+              <td>On salary only (S-Corp) / Not personally (Corp)</td>
+            </tr>
+            <tr>
+              <td>Income splitting</td>
+              <td>Not available</td>
+              <td>Not available</td>
+              <td>Available (dividends to spouse in CA)</td>
+            </tr>
+            <tr>
+              <td>Tax deferral</td>
+              <td>Not available</td>
+              <td>Not available</td>
+              <td>Available (retain earnings in Corp)</td>
+            </tr>
+            <tr>
+              <td>Complexity</td>
+              <td>Low</td>
+              <td>Low to medium</td>
+              <td>High</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>When Incorporation Actually Makes Sense</h2>
+
+        <p>The tax math only works in your favour once you clear a certain income threshold, and that threshold is higher than most people expect.</p>
+
+        <h3>Canada: The Retained Earnings Test</h3>
+
+        <p>In Canada, the primary financial benefit of incorporation is the ability to leave money inside the corporation. Money retained in the corporation gets taxed at the small business rate (roughly 11-15%). If you withdrew it as personal income, you'd pay personal rates that can reach 50%+ in Ontario or BC at higher income levels.</p>
+
+        <p>This benefit only applies to money you don't need personally. If you're earning $80,000 and spending $80,000 on living expenses, there's nothing to retain in the corporation. You withdraw everything, pay personal tax on it, and have spent $1,500-$2,500 per year on corporate accounting for no tax benefit.</p>
+
+        <p>The general rule of thumb: Canadian freelancers should consider incorporation when they're consistently earning significantly more than they need to live on, or when their income regularly exceeds approximately $100,000 and they have capacity to leave retained earnings in the corporation. Below that, the accounting cost typically outweighs the saving.</p>
+
+        <div class="info-box">
+          <p><strong>The "deferral" benefit explained:</strong> When you leave $30,000 inside your corporation and invest it, you're investing pre-tax corporate dollars rather than post-tax personal dollars. Over many years, this produces a meaningfully larger investment account. But the tax doesn't disappear; it's deferred until you withdraw. Incorporation accelerates investment growth rather than eliminating tax.</p>
+        </div>
+
+        <h3>United States: The S-Corp Payroll Threshold</h3>
+
+        <p>In the US, the S-Corp self-employment tax saving becomes meaningful at around $50,000-$60,000 in net self-employment income. Below that, the saving is too small to justify the added complexity and cost of running payroll and filing a separate corporate return.</p>
+
+        <p>At $80,000 net profit with a $45,000 reasonable salary, you save roughly 15.3% on the $35,000 difference: about $5,300. Annual S-Corp compliance (bookkeeping, payroll processing, corporate return) typically runs $2,000-$4,000. You're ahead, but not by a huge margin.</p>
+
+        <p>At $150,000 net profit with a $70,000 reasonable salary, the saving on $80,000 is around $12,000. That's well past the break-even point, and the S-Corp structure starts making clear financial sense.</p>
+
+        <p>The IRS requires that you pay yourself a "reasonable compensation" salary before taking distributions. You cannot pay yourself $1 in salary and $200,000 in distributions to avoid payroll tax. The salary must be comparable to what you'd pay someone else to do your work.</p>
+
+        <!-- CALCULATOR CALLOUT -->
+        <div class="callout-calculator">
+          <div class="callout-calculator-label">Free Tool</div>
+          <h3>See what you actually take home under your current structure.</h3>
+          <p>Before weighing incorporation, it helps to have a clear picture of your current effective tax rate and real take-home pay. Enter your income and expenses into our calculator to see your true numbers as a sole proprietor, and what would need to change for a corporate structure to outperform it.</p>
+          <a href="/">Try the free Irregular Income Calculator &rarr;</a>
+        </div>
+
+        <h2>The Liability Argument for Incorporating Early</h2>
+
+        <p>Tax savings aren't the only reason to consider a formal structure. Liability protection matters independently of how much you earn.</p>
+
+        <p>As a sole proprietor, your personal assets are exposed to any claim against your business. If a client claims you made a costly error in your work and sues for damages, or if a contract dispute goes sideways, your personal savings, vehicle, and any home equity you hold are all fair game.</p>
+
+        <p>An LLC (US) or corporation (Canada), if properly maintained, keeps that exposure confined to the business entity and its assets. "Properly maintained" is a key phrase: you cannot comingle personal and business funds, you need to follow corporate formalities, and the structure needs to be real, not nominal.</p>
+
+        <p>If your freelance work involves contracts with significant deliverables, creative work that could be disputed, professional advice, or any area with meaningful liability exposure, the case for a formal structure starts at a lower income threshold than the pure tax analysis suggests. In those fields, professional liability insurance (errors and omissions coverage) is also worth having regardless of structure.</p>
+
+        <h2>The Hidden Costs of Incorporating</h2>
+
+        <p>The internet is full of accountants explaining why you should incorporate. They're not wrong about the tax mechanics. But the ongoing administrative cost of running a corporation is real and often understated.</p>
+
+        <p>In Canada, a corporate tax return is significantly more complex than a personal T1. A basic corporate return with an accountant typically costs $1,000-$2,500 per year, more if you have HST remittances, payroll, or complex transactions. You'll also need to maintain corporate records, file annual returns with the province or federal government, and potentially run formal payroll if you pay yourself a salary.</p>
+
+        <p>In the US, adding payroll means quarterly payroll tax filings, annual W-2 preparation, payroll processing software or a service, and a corporate return (Form 1120-S) in addition to your personal return. The combined annual cost for a one-person S-Corp with basic bookkeeping often runs $2,500-$5,000.</p>
+
+        <p>These are real costs that come out of your pocket before you see any tax benefit. If the tax saving is $3,000 and the compliance cost is $2,800, you have saved $200 per year. That might still be worth it for the liability protection, but you shouldn't go in thinking you're saving $3,000.</p>
+
+        <h2>Income Splitting in Canada: The Rules Have Changed</h2>
+
+        <p>Income splitting through a family corporation used to be a significant Canadian tax planning strategy. Shareholders who were family members (including spouses) could receive dividends at their own, lower personal tax rates. A freelancer earning $200,000 could split income with a lower-earning spouse and dramatically reduce the household tax bill.</p>
+
+        <p>The Tax on Split Income (TOSI) rules introduced in 2018 significantly restricted this strategy. Under current rules, dividends paid to family members who are not actively involved in the business are taxed at the top marginal rate rather than the recipient's personal rate. Income splitting is now largely limited to situations where a spouse or adult family member is genuinely contributing to the business.</p>
+
+        <p>If your accountant is pitching income splitting as a primary reason to incorporate in Canada, make sure they're accounting for TOSI in their projections. The landscape changed substantially and not all freelancer-facing advice has caught up.</p>
+
+        <h2>What to Do Right Now: A Decision Framework</h2>
+
+        <p>Here is a practical way to think through where you are:</p>
+
+        <h3>Stay a Sole Proprietor if:</h3>
+        <ul>
+          <li>Your net freelance income is under $60,000 (US) or you're not consistently retaining earnings beyond your living costs (Canada)</li>
+          <li>Your field has low professional liability risk</li>
+          <li>Your income is still variable and you're not sure it will hold</li>
+          <li>You want to minimize complexity while you're still building the business</li>
+        </ul>
+
+        <h3>Consider an LLC (US) if:</h3>
+        <ul>
+          <li>You work in a field with meaningful liability exposure (design, consulting, development, writing with significant deliverables)</li>
+          <li>You sign contracts worth meaningful sums</li>
+          <li>Your income is reasonably consistent, even if not yet high enough for S-Corp to make sense</li>
+          <li>You want the liability protection layer without the full S-Corp compliance burden</li>
+        </ul>
+
+        <h3>Consider incorporating if:</h3>
+        <ul>
+          <li>US freelancers: Net self-employment income consistently exceeds $60,000-$80,000 and you can pay yourself a reasonable salary below that level</li>
+          <li>Canadian freelancers: You're consistently earning more than you need to live on and can leave retained earnings in the corporation at the lower small business rate</li>
+          <li>You want to access benefits like a health spending account through your corporation (Canada) or self-employed health insurance deductions structured through a corporation</li>
+          <li>Your accountant has run the actual numbers for your situation and the math is clear</li>
+        </ul>
+
+        <div class="info-box-green">
+          <p><strong>The most important step before making this decision:</strong> Have an accountant run actual projections for your income level and province or state. The generic advice online is based on rules of thumb. Your situation has specific numbers, and the break-even point is different for a freelancer in Ontario versus Alberta versus Texas versus New York. Forty-five minutes with an accountant will save you from making a decision based on someone else's math.</p>
+        </div>
+
+        <h2>The Transition: What Incorporating Actually Involves</h2>
+
+        <p>If you do decide to incorporate, here is what the process looks like:</p>
+
+        <p>In Canada, federal incorporation through Corporations Canada costs $200-$300 in filing fees and takes a few days. Provincial incorporation varies by province. You'll need Articles of Incorporation, a registered address, at least one director (you), and share structure decisions. Most people hire a lawyer or use an online service to handle the filing. Once incorporated, you'll need a corporate bank account, a corporate credit card, and to run any business transactions through the corporation rather than personally.</p>
+
+        <p>In the US, LLC formation is a state-level process through your Secretary of State's office. Costs range from $50 (Kentucky) to $500 (Massachusetts). You'll file Articles of Organization, designate a registered agent, and create an operating agreement (required in most states). S-Corp election requires filing IRS Form 2553 within 75 days of incorporation or by March 15 of the prior tax year.</p>
+
+        <p>Both transitions require updating how clients pay you (payment goes to the entity, not you personally), opening new bank accounts, and adjusting your bookkeeping system. None of this is especially complicated, but it takes time to set up properly and has real ongoing maintenance requirements.</p>
+
+        <h2>The Bottom Line</h2>
+
+        <p>Sole proprietorship is not a failure mode. It's the right structure for a large portion of freelancers, and the right move is to stay there until the financial case for changing is actually clear.</p>
+
+        <p>An LLC gives US freelancers liability protection at low cost and is worth considering independently of the tax question.</p>
+
+        <p>A corporation, whether in Canada or the US under S-Corp election, makes sense when the tax saving clearly exceeds the compliance cost, which generally requires consistent income above $60,000-$80,000 net with room to optimize how you pay yourself.</p>
+
+        <p>The question "should I incorporate?" is really two questions: "do I need liability protection?" and "is the tax saving worth the administrative cost?" Answer both separately. Then talk to an accountant who will run the actual numbers for your province or state, your income level, and your personal financial situation. That conversation is worth more than anything you'll find in a general guide.</p>
+
+        <!-- FAQ -->
+        <section class="faq-section" aria-labelledby="faq-heading">
+          <h2 id="faq-heading">Frequently Asked Questions</h2>
+
+          <div class="faq-item">
+            <p class="faq-question">Should I incorporate as a freelancer?</p>
+            <p class="faq-answer">It depends on your income level and risk profile. In Canada, incorporating makes financial sense once you earn more than you spend personally, because the small business corporate rate (9% federal) is significantly lower than personal rates. In the US, an S-Corp structure can reduce self-employment tax once net profit consistently exceeds $50,000-$60,000. Below those thresholds, administrative costs often outweigh the tax benefit. Liability protection is a separate reason to consider an LLC (US) even at lower income levels.</p>
+          </div>
+
+          <div class="faq-item">
+            <p class="faq-question">What is the difference between sole proprietorship and LLC for freelancers?</p>
+            <p class="faq-answer">A sole proprietorship means you and your business are the same legal entity. An LLC creates legal separation that limits your personal liability for business debts and lawsuits. By default, a single-member LLC is taxed identically to a sole proprietorship: all income flows to your personal return and self-employment tax applies to all of it. The LLC's value is liability protection, not automatic tax savings.</p>
+          </div>
+
+          <div class="faq-item">
+            <p class="faq-question">At what income level should a freelancer incorporate?</p>
+            <p class="faq-answer">In the US, S-Corp election starts making sense when net self-employment income consistently exceeds $50,000-$60,000 per year. In Canada, incorporating is financially worthwhile once you earn more than you need to live on and can leave retained earnings in the corporation at the lower small business tax rate. The break-even point is different for every province and state, so actual projections from an accountant are essential.</p>
+          </div>
+
+          <div class="faq-item">
+            <p class="faq-question">What does it cost to incorporate as a freelancer?</p>
+            <p class="faq-answer">Federal incorporation in Canada runs $200-$300 in filing fees plus $1,000-$2,000 for professional setup. Annual corporate tax filing typically costs $1,000-$2,500. In the US, LLC formation costs $50-$500 depending on the state. Annual S-Corp compliance including payroll and corporate returns typically runs $2,500-$5,000. These ongoing costs must be weighed against the actual tax saving your income level generates.</p>
+          </div>
+
+          <div class="faq-item">
+            <p class="faq-question">Can a freelancer have an LLC in Canada?</p>
+            <p class="faq-answer">No. Canada does not have the LLC structure. Canadian freelancers choose between sole proprietorship or incorporating as a Canadian Controlled Private Corporation (CCPC). The CCPC is the closest equivalent to the US S-Corp for small business tax purposes, with a combined federal-provincial small business tax rate of roughly 11-15% on the first $500,000 of active business income.</p>
+          </div>
+        </section>
+
+        <!-- ARTICLE FOOTER -->
+        <div class="article-footer">
+          <div class="disclaimer-box">
+            <strong>Disclaimer:</strong> This article is educational content only and is not tax or legal advice. Business structure decisions have significant legal and financial consequences that vary by country, province, state, income level, and individual circumstances. Consult a qualified accountant and lawyer before making any structural changes to your business.
+          </div>
+        </div>
+
+      </article>
+    </div>
+  </main>
+
+  <!-- SITE FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <p class="footer-disclaimer">
+        Educational estimates only. Not tax or legal advice. This calculator uses simplified assumptions and is intended to help self-employed individuals think through their finances. Consult a qualified accountant or tax professional for advice specific to your situation.
+      </p>
+      <p class="footer-copy">&#169; 2026 Income Reserve Calculator. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
