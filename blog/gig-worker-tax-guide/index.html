@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gig Worker Tax Guide: What Uber, DoorDash, and Freelance Workers Need to Know</title>
+  <meta name="description" content="1099 income, self-employment tax, mileage tracking, quarterly payments, and the most common mistakes gig workers make on their taxes -- explained plainly." />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Gig Worker Tax Guide: What Uber, DoorDash, and Freelance Workers Need to Know" />
+  <meta property="og:description" content="1099 income, self-employment tax, mileage tracking, quarterly payments, and the most common mistakes gig workers make on their taxes -- explained plainly." />
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content="2026-04-10" />
+  <link rel="canonical" href="https://irregular-income-calculator.vercel.app/blog/gig-worker-tax-guide/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Do Uber and DoorDash drivers have to pay self-employment tax?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Gig platform drivers are classified as independent contractors, not employees, which means they owe self-employment tax on their net earnings. In the US, self-employment tax is 15.3% (12.4% Social Security plus 2.9% Medicare) on net income up to the Social Security wage base, plus 2.9% Medicare above that. This is separate from income tax and is in addition to federal and state income tax. You can deduct half of the self-employment tax paid as a business expense."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What expenses can Uber and DoorDash drivers deduct on their taxes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Gig platform drivers can deduct vehicle expenses (mileage or actual costs), phone and data plan costs related to business use, platform fees deducted from earnings, car washes, insulated bags and delivery equipment, and any other expense directly related to doing the work. Mileage is often the largest deduction -- at the IRS standard rate of 67 cents per mile for 2024, 20,000 business miles equals a $13,400 deduction. Keep a mileage log with dates, destinations, and purpose."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When do gig workers need to pay estimated quarterly taxes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In the US, if you expect to owe $1,000 or more in taxes for the year, the IRS requires quarterly estimated payments. The deadlines are April 15, June 15, September 15, and January 15 of the following year. In Canada, the CRA requires quarterly installments if your net tax owing exceeds $3,000 (or $1,800 in Quebec) in the current year and either of the two previous years. Missing these deadlines results in interest charges, even if you pay the full amount at tax time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens if I don't report gig income on my tax return?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Gig platform income is reported to the IRS and CRA by the platform itself. In the US, platforms are required to issue a 1099-K or 1099-NEC for payments above threshold amounts, and they report these to the IRS directly. The tax authority already has the income on file. Failing to report it results in a mismatch notice, back taxes owed, interest, and potential penalties. There is no effective way to hide gig platform income from tax authorities."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Gig Worker Tax Guide: What Uber, DoorDash, and Freelance Workers Need to Know",
+    "description": "1099 income, self-employment tax, mileage tracking, quarterly payments, and the most common mistakes gig workers make on their taxes -- explained plainly.",
+    "author": {
+      "@type": "Organization",
+      "name": "Irregular Income Calculator Team"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Income Reserve Calculator"
+    },
+    "datePublished": "2026-04-10",
+    "dateModified": "2026-04-10"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://irregular-income-calculator.vercel.app/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://irregular-income-calculator.vercel.app/blog/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Gig Worker Tax Guide",
+        "item": "https://irregular-income-calculator.vercel.app/blog/gig-worker-tax-guide/"
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --blue-900: #0f2744;
+      --blue-800: #1a3a5c;
+      --blue-700: #1e4976;
+      --blue-600: #2563eb;
+      --blue-500: #3b82f6;
+      --blue-200: #bfdbfe;
+      --blue-100: #dbeafe;
+      --blue-50: #eff6ff;
+      --green-700: #15803d;
+      --green-600: #16a34a;
+      --green-100: #dcfce7;
+      --green-50: #f0fdf4;
+      --amber-700: #b45309;
+      --amber-100: #fef3c7;
+      --amber-50: #fffbeb;
+      --gray-900: #111827;
+      --gray-800: #1f2937;
+      --gray-700: #374151;
+      --gray-600: #4b5563;
+      --gray-500: #6b7280;
+      --gray-400: #9ca3af;
+      --gray-300: #d1d5db;
+      --gray-200: #e5e7eb;
+      --gray-100: #f3f4f6;
+      --gray-50: #f9fafb;
+      --white: #ffffff;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--gray-800);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--gray-200);
+      padding: 0 1.5rem;
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+      gap: 1rem;
+    }
+
+    .nav-brand {
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--blue-700);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .nav-link {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--gray-600);
+      text-decoration: none;
+      padding: 0.4rem 0.75rem;
+      border-radius: var(--radius-sm);
+      transition: color 0.15s, background 0.15s;
+    }
+
+    .nav-link:hover {
+      color: var(--blue-700);
+      background: var(--blue-50);
+    }
+
+    .nav-cta {
+      background: var(--blue-600);
+      color: var(--white);
+      border: none;
+      border-radius: var(--radius-sm);
+      padding: 0.5rem 1.1rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.15s;
+      white-space: nowrap;
+    }
+
+    .nav-cta:hover {
+      background: var(--blue-700);
+    }
+
+    /* ARTICLE WRAPPER */
+    .article-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* BREADCRUMB */
+    .breadcrumb {
+      padding: 1.25rem 0 0;
+      font-size: 0.8rem;
+      color: var(--gray-500);
+    }
+
+    .breadcrumb a {
+      color: var(--gray-500);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--blue-600);
+      text-decoration: underline;
+    }
+
+    .breadcrumb span {
+      margin: 0 0.4rem;
+    }
+
+    /* ARTICLE HEADER */
+    .article-header {
+      padding: 2rem 0 2.5rem;
+      border-bottom: 1px solid var(--gray-200);
+      margin-bottom: 2.5rem;
+    }
+
+    .article-tag {
+      display: inline-block;
+      background: var(--blue-50);
+      color: var(--blue-700);
+      padding: 0.2rem 0.65rem;
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+    }
+
+    .article-header h1 {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: var(--gray-900);
+      margin-bottom: 1rem;
+    }
+
+    .article-lede {
+      font-size: 1.1rem;
+      color: var(--gray-600);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.85rem;
+      color: var(--gray-500);
+    }
+
+    .article-meta-dot {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--gray-400);
+    }
+
+    /* ARTICLE BODY */
+    .article-body h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      letter-spacing: -0.01em;
+      margin-top: 2.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .article-body h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-top: 1.75rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .article-body p {
+      margin-bottom: 1.25rem;
+      color: var(--gray-700);
+      line-height: 1.75;
+    }
+
+    .article-body ul,
+    .article-body ol {
+      margin: 0 0 1.25rem 1.5rem;
+      color: var(--gray-700);
+      line-height: 1.75;
+    }
+
+    .article-body li {
+      margin-bottom: 0.4rem;
+    }
+
+    .article-body strong {
+      color: var(--gray-900);
+      font-weight: 600;
+    }
+
+    /* CALLOUT BOX */
+    .callout-calculator {
+      background: var(--blue-50);
+      border: 1.5px solid var(--blue-200);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem 1.75rem;
+      margin: 2.5rem 0;
+    }
+
+    .callout-calculator-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--blue-600);
+      margin-bottom: 0.5rem;
+    }
+
+    .callout-calculator h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 0.5rem;
+      margin-top: 0;
+    }
+
+    .callout-calculator p {
+      font-size: 0.9rem;
+      color: var(--gray-600);
+      margin-bottom: 1rem;
+    }
+
+    .callout-calculator a {
+      display: inline-block;
+      background: var(--blue-600);
+      color: var(--white);
+      padding: 0.6rem 1.25rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+
+    .callout-calculator a:hover {
+      background: var(--blue-700);
+    }
+
+    /* INFO BOX */
+    .info-box {
+      background: var(--amber-50);
+      border-left: 4px solid var(--amber-700);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 1rem 1.25rem;
+      margin: 1.5rem 0;
+    }
+
+    .info-box p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--gray-700);
+    }
+
+    .info-box strong {
+      color: var(--amber-700);
+    }
+
+    /* RATE TABLE */
+    .rate-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.9rem;
+    }
+
+    .rate-table th {
+      text-align: left;
+      padding: 0.6rem 0.9rem;
+      background: var(--gray-100);
+      font-weight: 600;
+      color: var(--gray-700);
+      border-bottom: 2px solid var(--gray-200);
+    }
+
+    .rate-table td {
+      padding: 0.6rem 0.9rem;
+      border-bottom: 1px solid var(--gray-200);
+      color: var(--gray-700);
+    }
+
+    .rate-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .rate-table tr:nth-child(even) td {
+      background: var(--gray-50);
+    }
+
+    /* FAQ SECTION */
+    .faq-section {
+      margin-top: 3rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--gray-200);
+    }
+
+    .faq-section h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      letter-spacing: -0.01em;
+      margin-bottom: 1.5rem;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--gray-200);
+      padding-bottom: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--gray-900);
+      margin-bottom: 0.5rem;
+    }
+
+    .faq-answer {
+      font-size: 0.925rem;
+      color: var(--gray-600);
+      line-height: 1.7;
+    }
+
+    /* ARTICLE FOOTER */
+    .article-footer {
+      margin-top: 3rem;
+      padding: 2rem 0;
+      border-top: 1px solid var(--gray-200);
+    }
+
+    .disclaimer-box {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.25rem;
+      font-size: 0.82rem;
+      color: var(--gray-500);
+      line-height: 1.65;
+    }
+
+    /* SITE FOOTER */
+    footer {
+      border-top: 1px solid var(--gray-200);
+      padding: 2rem 1.5rem;
+      margin-top: 4rem;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .footer-disclaimer {
+      font-size: 0.8rem;
+      color: var(--gray-500);
+      max-width: 680px;
+      margin: 0 auto 0.75rem;
+      line-height: 1.7;
+    }
+
+    .footer-copy {
+      font-size: 0.8rem;
+      color: var(--gray-400);
+    }
+
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .article-meta-dot { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" aria-label="Site navigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">Income Reserve Calculator</a>
+      <div class="nav-links">
+        <a href="/" class="nav-link">Calculator</a>
+        <a href="/blog/" class="nav-link">Blog</a>
+      </div>
+      <a href="/" class="nav-cta">Try the Calculator</a>
+    </div>
+  </nav>
+
+  <!-- ARTICLE -->
+  <main>
+    <div class="article-wrap">
+
+      <!-- BREADCRUMB -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span aria-hidden="true">&rsaquo;</span>
+        <a href="/blog/">Blog</a>
+        <span aria-hidden="true">&rsaquo;</span>
+        <span aria-current="page">Gig Worker Tax Guide</span>
+      </nav>
+
+      <!-- HEADER -->
+      <header class="article-header">
+        <div class="article-tag">Gig Economy</div>
+        <h1>Gig Worker Tax Guide: What Uber, DoorDash, and Freelance Workers Need to Know</h1>
+        <p class="article-lede">Gig income looks like a paycheck but it's taxed completely differently. No withholding, no employer contributions, and a self-employment tax most new gig workers don't see coming. Here's how gig economy taxes actually work -- and how to avoid the mistakes that cost people hundreds or thousands every year.</p>
+        <div class="article-meta">
+          <span>By the Irregular Income Calculator Team</span>
+          <div class="article-meta-dot" aria-hidden="true"></div>
+          <span>April 10, 2026</span>
+          <div class="article-meta-dot" aria-hidden="true"></div>
+          <span>9 min read</span>
+        </div>
+      </header>
+
+      <!-- BODY -->
+      <article class="article-body">
+
+        <p>Working for Uber, DoorDash, Instacart, Fiverr, Upwork, or any other gig platform puts you in a category the tax system treats very differently from regular employment. You're an independent contractor. The platform doesn't withhold taxes from your payments. No one is sending quarterly installments to the IRS or CRA on your behalf. That responsibility -- and the liability that comes with it -- is entirely yours.</p>
+
+        <p>Most gig workers figure this out the hard way: at tax time, with a bill they weren't prepared for. This guide explains how gig economy taxes work from the beginning, so you can set up a system that keeps you out of that situation.</p>
+
+        <h2>Why Gig Income Is Different From a Regular Paycheck</h2>
+
+        <p>When you work as an employee, your employer handles two things automatically: they withhold income tax from each paycheck based on your W-4 (or TD1 in Canada), and they pay half of your Social Security and Medicare taxes (called FICA in the US, or CPP and EI contributions in Canada).</p>
+
+        <p>As a gig worker, neither of those things happens. Uber does not withhold any taxes from your earnings. DoorDash does not contribute to your Social Security. Every dollar you receive is gross income, pre-tax, and the full tax bill is on you.</p>
+
+        <p>This creates two problems most gig workers don't anticipate:</p>
+
+        <ol>
+          <li><strong>No withholding means no automatic tax payments.</strong> The money arrives in your account without any deduction. If you spend it all, you'll owe at tax time with nothing to pay with.</li>
+          <li><strong>Self-employment tax adds a layer most people don't expect.</strong> Employees pay 7.65% in FICA taxes; their employer pays another 7.65%. As a self-employed gig worker, you pay both halves -- the full 15.3% -- on your net earnings.</li>
+        </ol>
+
+        <p>The combination of income tax plus self-employment tax is what makes gig worker tax bills surprising. At $40,000 in net gig income, you might owe $8,000-$12,000 in combined federal and state/provincial taxes -- money that needs to come from somewhere.</p>
+
+        <h2>1099 vs. W-2: What the Forms Mean</h2>
+
+        <p>Employees receive a W-2 at year-end that shows their wages and all taxes withheld. Gig workers receive a 1099 -- either a 1099-K (for platform payment processors) or a 1099-NEC (for non-employee compensation paid directly). The 1099 shows gross income with nothing withheld.</p>
+
+        <p>Key things to understand about your 1099:</p>
+
+        <ul>
+          <li><strong>You may not receive a 1099 for small amounts.</strong> In the US, the threshold for a 1099-NEC is $600. Below that, the platform may not issue a form -- but you still owe taxes on the income. Not receiving a 1099 does not mean the income isn't taxable.</li>
+          <li><strong>The 1099 may show gross platform payments, not your net.</strong> If you drive for Uber and the app collected a $30 fare but took a 25% platform fee, your 1099 may show $30 (the gross payment) rather than the $22.50 you actually received. This depends on the platform and the type of 1099 issued. Read yours carefully before reporting income.</li>
+          <li><strong>The IRS has a copy.</strong> Platforms file 1099s directly with the IRS. If your tax return doesn't include income that appears on a 1099, you'll receive a notice. This is not a situation to gamble on.</li>
+        </ul>
+
+        <p>In Canada, gig platforms operating in the country are increasingly required to report income paid to contractors to the CRA. The principle is the same: the platform's records and your reported income need to match.</p>
+
+        <h2>Self-Employment Tax: The Number That Surprises Everyone</h2>
+
+        <p>Self-employment tax in the US is 15.3% of your net self-employment income up to the Social Security wage base (approximately $168,600 for 2024), and 2.9% above that. This is separate from income tax -- it's on top of whatever you owe in federal and state income taxes.</p>
+
+        <p>At $50,000 in net gig income, self-employment tax alone is approximately $7,065. Add federal income tax at an effective rate of around 14-16%, and your total federal tax bill is roughly $14,000-$15,000. For gig workers who treat their platform earnings like a regular paycheck and spend freely, this is a shock that can take years to dig out of.</p>
+
+        <div class="info-box">
+          <p><strong>One offset that helps:</strong> You can deduct 50% of the self-employment tax you pay as a business expense on your federal return. This doesn't eliminate the tax but it does reduce your adjusted gross income, which slightly lowers your income tax. It's automatic -- your tax software or accountant will apply it.</p>
+        </div>
+
+        <p>In Canada, self-employed gig workers contribute to the Canada Pension Plan (CPP) on net self-employment income. For 2024, the CPP contribution rate is 11.9% on earnings between the basic exemption ($3,500) and the maximum pensionable earnings ($68,500). This runs parallel to income tax and is due at the same time.</p>
+
+        <h2>Tracking Expenses and Mileage</h2>
+
+        <p>The tax bill above is on your <strong>net income</strong> -- income after deductible business expenses. For many gig workers, particularly drivers, expenses can meaningfully reduce the taxable amount. But only if they're tracked.</p>
+
+        <p>The most significant expense for delivery and rideshare drivers is mileage. In the US, the IRS standard mileage rate for 2024 is 67 cents per mile. If you drive 25,000 miles for Uber or DoorDash over the year, that's a $16,750 deduction -- directly off your taxable income.</p>
+
+        <p>Most gig platforms provide an annual earnings summary but do not automatically track your total mileage. They may track miles while you have a delivery or passenger in the car, but not the miles driven to pick up the first order of the day or returning home after a session. Those miles may also qualify as business miles depending on your situation. Use a mileage-tracking app from day one.</p>
+
+        <p>Other deductible expenses for gig workers include:</p>
+
+        <ul>
+          <li>Phone data plan costs attributable to business use (typically 50-80% for most gig workers)</li>
+          <li>Phone mount, charger, and accessories used for work</li>
+          <li>Insulated delivery bags and equipment (for delivery workers)</li>
+          <li>Platform fees or service fees deducted from your earnings</li>
+          <li>Car washes and interior cleaning for rideshare drivers who maintain a clean vehicle</li>
+          <li>Parking fees paid while on a delivery or waiting for a passenger</li>
+          <li>Tolls paid during business trips</li>
+        </ul>
+
+        <!-- CALCULATOR CALLOUT -->
+        <div class="callout-calculator">
+          <div class="callout-calculator-label">Free Tool</div>
+          <h3>Figure out what you should actually set aside each month.</h3>
+          <p>The gig worker tax calculator lets you enter your average monthly earnings and business expenses to see your monthly tax reserve, your actual take-home pay, and what you need for quarterly payments.</p>
+          <a href="/">Try the free Gig Worker Tax Calculator &rarr;</a>
+        </div>
+
+        <h2>Quarterly Estimated Payments: Why They Matter</h2>
+
+        <p>The US and Canadian tax systems are pay-as-you-go. For employees, this happens automatically through payroll withholding. For gig workers, it requires taking action four times a year.</p>
+
+        <p><strong>In the US:</strong> If you expect to owe $1,000 or more for the year, the IRS expects quarterly estimated payments. Underpay and you'll owe a penalty -- typically calculated as the federal short-term rate plus 3%, currently around 7-8% annualized on the underpayment. The deadlines:</p>
+
+        <table class="rate-table" aria-label="US quarterly estimated tax deadlines">
+          <thead>
+            <tr>
+              <th>Payment Period</th>
+              <th>Due Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>January 1 - March 31</td>
+              <td>April 15</td>
+            </tr>
+            <tr>
+              <td>April 1 - May 31</td>
+              <td>June 15</td>
+            </tr>
+            <tr>
+              <td>June 1 - August 31</td>
+              <td>September 15</td>
+            </tr>
+            <tr>
+              <td>September 1 - December 31</td>
+              <td>January 15 (following year)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p><strong>In Canada:</strong> The CRA requires quarterly installments if your net tax owing exceeded $3,000 in the current year and in either of the two previous years ($1,800 in Quebec). Installment due dates are March 15, June 15, September 15, and December 15.</p>
+
+        <p>The practical way to handle this: keep your tax reserve in a separate savings account. Transfer a set percentage of every gig payment to that account immediately. When a quarterly deadline arrives, the money is already sitting there. You're not scrambling or borrowing -- you're just making a scheduled transfer.</p>
+
+        <p>Most gig workers should set aside 25-30% of net earnings for taxes. If your state or province has high income taxes, lean toward 30%. If you're in a low-tax state with significant deductions, 25% may be sufficient. When in doubt, set aside more. A refund is better than a surprise bill.</p>
+
+        <h2>Common Mistakes Gig Workers Make on Their Taxes</h2>
+
+        <p>After the basics, here are the specific errors that show up most often -- and cost the most:</p>
+
+        <h3>Not tracking mileage from day one</h3>
+        <p>This is the single most expensive mistake gig workers make. Reconstructing a year of mileage from memory or partial platform data is unreliable and loses most of the deduction. Install a mileage tracking app the first day you start working. MileIQ, Stride, or Everlance all work. The IRS and CRA require a contemporaneous log -- created at the time of travel, not reconstructed later.</p>
+
+        <h3>Reporting gross platform income as net income</h3>
+        <p>If your 1099-K shows $52,000 in gross payments but the platform deducted $8,000 in fees and commissions, your actual income is $44,000. Paying tax on the gross number is over-reporting. Read your platform earnings summary carefully and reconcile it against your 1099 before filing.</p>
+
+        <h3>Missing the self-employment tax entirely</h3>
+        <p>Many first-year gig workers use a standard tax return template that doesn't prompt them to include Schedule SE (US) or the CPP contribution calculation (Canada). Tax software designed for self-employed workers handles this correctly. Generic filing tools sometimes don't. Use software specifically built for self-employed filers.</p>
+
+        <h3>Not making quarterly payments and then getting hit with penalties</h3>
+        <p>The penalty for underpaying quarterly estimates is not catastrophic, but it's real money for nothing. If you set aside money consistently and transfer it to the IRS or CRA on schedule, there's no penalty. The only barrier is building the habit.</p>
+
+        <h3>Treating gig income as supplemental instead of primary</h3>
+        <p>Some gig workers have a day job and treat platform income as "extra money." If that extra income pushes your total income into a higher bracket, or if you're also earning enough from the platforms to trigger self-employment tax, it needs to be tracked and handled the same way primary income does. "Side income" is still taxable income.</p>
+
+        <h2>Tools That Help</h2>
+
+        <p>Running gig economy taxes manually is possible but time-consuming. A few tools that make it significantly easier:</p>
+
+        <ul>
+          <li><strong>Stride:</strong> Free app specifically built for gig workers. Tracks mileage automatically, estimates taxes, organizes deductions. No subscription required.</li>
+          <li><strong>Everlance:</strong> Similar to Stride, with automatic mileage tracking and expense categorization. Paid tier adds tax reports.</li>
+          <li><strong>QuickBooks Self-Employed:</strong> More comprehensive than mileage apps. Connects to your bank account, categorizes income and expenses automatically, and calculates quarterly estimates. Good option if you're earning significant gig income.</li>
+          <li><strong>TurboTax Self-Employed / H&amp;R Block Self-Employed:</strong> Tax filing software that handles Schedule C, Schedule SE, and quarterly estimated payments correctly. Worth the upgrade over standard versions.</li>
+          <li><strong>Wave (free):</strong> Accounting software with income and expense tracking. Good for gig workers who want more structure than a spreadsheet without paying for QuickBooks.</li>
+        </ul>
+
+        <p>The common thread: whatever tool you use, start using it immediately. Data captured from the first day of gig work is infinitely more useful than a reconstructed estimate you're pulling together in April.</p>
+
+        <h2>What to Do If You're Behind on Gig Taxes</h2>
+
+        <p>If you've been gig working for a year or more without setting aside taxes and you're facing a larger-than-expected bill, a few things to know:</p>
+
+        <p>First, calculate what you actually owe before assuming the worst. Many gig workers over-estimate their tax liability when they don't account for mileage deductions. Even a rough mileage estimate for prior years may significantly reduce the amount owed.</p>
+
+        <p>Second, if you owe back taxes to the IRS, payment plans are available. An Installment Agreement lets you pay over time with interest, avoiding the more serious consequences of non-filing or non-payment. Apply on IRS.gov or through a tax professional. The CRA has similar options through their payment arrangement process.</p>
+
+        <p>Third, consider filing even if you can't pay the full amount. The failure-to-file penalty (5% per month, up to 25%) is significantly larger than the failure-to-pay penalty (0.5% per month). Filing on time -- even with a balance owing -- keeps the larger penalty from applying.</p>
+
+        <!-- FAQ -->
+        <section class="faq-section" aria-labelledby="faq-heading">
+          <h2 id="faq-heading">Frequently Asked Questions</h2>
+
+          <div class="faq-item">
+            <p class="faq-question">Do Uber and DoorDash drivers have to pay self-employment tax?</p>
+            <p class="faq-answer">Yes. Gig platform drivers are classified as independent contractors, which means they owe self-employment tax on their net earnings. In the US, that's 15.3% on net income up to the Social Security wage base, plus 2.9% Medicare above that. This is separate from income tax. You can deduct half of the self-employment tax paid as a business expense, which partially offsets the total.</p>
+          </div>
+
+          <div class="faq-item">
+            <p class="faq-question">What expenses can Uber and DoorDash drivers deduct on their taxes?</p>
+            <p class="faq-answer">The biggest deduction for most drivers is mileage -- at the IRS standard rate of 67 cents per mile for 2024, 20,000 business miles equals a $13,400 deduction. Other deductible expenses include phone and data costs attributable to business use, delivery equipment, platform fees, parking, and tolls during deliveries. Track mileage with an app from day one -- it's the deduction most drivers fail to capture in full.</p>
+          </div>
+
+          <div class="faq-item">
+            <p class="faq-question">When do gig workers need to pay estimated quarterly taxes?</p>
+            <p class="faq-answer">In the US, if you expect to owe $1,000 or more for the year, the IRS requires quarterly estimated payments due April 15, June 15, September 15, and January 15. In Canada, the CRA requires installments if your net tax owing exceeds $3,000 in the current year and either of the two prior years. Missing these deadlines results in interest charges even if you pay the full balance at year-end.</p>
+          </div>
+
+          <div class="faq-item">
+            <p class="faq-question">What happens if I don't report gig income on my tax return?</p>
+            <p class="faq-answer">Gig platforms report income to the IRS and CRA directly via 1099 forms. The tax authority already has the income on file. Not reporting it on your return creates a mismatch that triggers a notice, back taxes, interest, and penalties. There is no effective way to hide income paid through a gig platform. Always report it, and apply all legitimate deductions to minimize what you owe.</p>
+          </div>
+        </section>
+
+        <!-- ARTICLE FOOTER -->
+        <div class="article-footer">
+          <div class="disclaimer-box">
+            <strong>Disclaimer:</strong> This article is educational content only and is not tax or legal advice. Tax rules vary by country, province, state, income level, and individual circumstances. Rates and thresholds referenced are approximate and may have changed. Consult a qualified accountant or tax professional for advice specific to your situation.
+          </div>
+        </div>
+
+      </article>
+    </div>
+  </main>
+
+  <!-- SITE FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <p class="footer-disclaimer">
+        Educational estimates only. Not tax or legal advice. This calculator uses simplified assumptions and is intended to help self-employed individuals think through their finances. Consult a qualified accountant or tax professional for advice specific to your situation.
+      </p>
+      <p class="footer-copy">&#169; 2026 Income Reserve Calculator. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
