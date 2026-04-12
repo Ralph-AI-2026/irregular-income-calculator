@@ -523,8 +523,87 @@
       color: var(--gray-400);
     }
 
+    /* HAMBURGER */
+    .nav-hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.4rem;
+      border-radius: var(--radius-sm);
+      color: var(--blue-700);
+      transition: background 0.15s;
+    }
+
+    .nav-hamburger:hover {
+      background: var(--blue-50);
+    }
+
+    .nav-hamburger .bar {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: currentColor;
+      border-radius: 2px;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+      transform-origin: center;
+    }
+
+    .nav-hamburger .bar + .bar {
+      margin-top: 5px;
+    }
+
+    .nav-hamburger[aria-expanded="true"] .bar:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .nav-hamburger[aria-expanded="true"] .bar:nth-child(2) {
+      opacity: 0;
+    }
+
+    .nav-hamburger[aria-expanded="true"] .bar:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* MOBILE DROPDOWN */
+    .nav-dropdown {
+      display: none;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      right: 0;
+      background: rgba(255,255,255,0.98);
+      border-bottom: 1px solid var(--gray-200);
+      backdrop-filter: blur(10px);
+      z-index: 99;
+      padding: 0.75rem 1.5rem;
+    }
+
+    .nav-dropdown.open {
+      display: block;
+    }
+
+    .nav-dropdown a {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--gray-600);
+      text-decoration: none;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .nav-dropdown a:last-child {
+      border-bottom: none;
+    }
+
+    .nav-dropdown a:hover {
+      color: var(--blue-700);
+    }
+
     @media (max-width: 600px) {
       .nav-links { display: none; }
+      .nav-hamburger { display: flex; flex-direction: column; align-items: center; justify-content: center; }
       .article-meta-dot { display: none; }
     }
   </style>
@@ -532,14 +611,23 @@
 <body>
 
   <!-- NAV -->
-  <nav class="nav" aria-label="Site navigation">
+  <nav class="nav" aria-label="Site navigation" style="position:relative;">
     <div class="nav-inner">
       <a href="/" class="nav-brand">Income Reserve Calculator</a>
       <div class="nav-links">
         <a href="/" class="nav-link">Calculator</a>
         <a href="/blog/" class="nav-link">Blog</a>
       </div>
+      <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
       <a href="/" class="nav-cta">Try the Calculator</a>
+    </div>
+    <div class="nav-dropdown" id="nav-mobile-menu" role="menu">
+      <a href="/" class="nav-link" role="menuitem">Calculator</a>
+      <a href="/blog/" class="nav-link" role="menuitem">Blog</a>
     </div>
   </nav>
 
@@ -773,6 +861,26 @@
       <p class="footer-copy">&#169; 2026 Income Reserve Calculator. All rights reserved.</p>
     </div>
   </footer>
+
+  <script>
+    (function() {
+      var btn = document.querySelector('.nav-hamburger');
+      var dropdown = document.getElementById('nav-mobile-menu');
+      if (!btn || !dropdown) return;
+      btn.addEventListener('click', function() {
+        var open = dropdown.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      });
+      dropdown.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+          dropdown.classList.remove('open');
+          btn.setAttribute('aria-expanded', 'false');
+          btn.setAttribute('aria-label', 'Open menu');
+        });
+      });
+    })();
+  </script>
 
 </body>
 </html>
