@@ -1461,42 +1461,42 @@
 
       <div class="who-grid">
         <div class="who-card">
-          <div class="who-icon" aria-hidden="true">&#x1F4AA;</div>
+          <div class="who-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20a6 6 0 0 0-12 0"/><circle cx="12" cy="10" r="4"/><circle cx="12" cy="12" r="10"/></svg></div>
           <div>
             <div class="who-title">Massage Therapists</div>
             <div class="who-desc">Client volume swings seasonally. Know what your slow months can really sustain.</div>
           </div>
         </div>
         <div class="who-card">
-          <div class="who-icon" aria-hidden="true">&#x1F4BB;</div>
+          <div class="who-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div>
           <div>
             <div class="who-title">Freelancers</div>
             <div class="who-desc">Projects start and end. Use this freelancer tax calculator to set your reserve before a project drought hits.</div>
           </div>
         </div>
         <div class="who-card">
-          <div class="who-icon" aria-hidden="true">&#x1F3D7;</div>
+          <div class="who-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M12 12h.01"/><path d="M17 12h.01"/><path d="M7 12h.01"/></svg></div>
           <div>
             <div class="who-title">Contractors</div>
             <div class="who-desc">Between contracts, taxes still come due. Plan for the gap months in advance.</div>
           </div>
         </div>
         <div class="who-card">
-          <div class="who-icon" aria-hidden="true">&#x1F4F8;</div>
+          <div class="who-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg></div>
           <div>
             <div class="who-title">Photographers</div>
             <div class="who-desc">Wedding season then nothing. Your tax reserve should not shrink when bookings do.</div>
           </div>
         </div>
         <div class="who-card">
-          <div class="who-icon" aria-hidden="true">&#x1F697;</div>
+          <div class="who-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
           <div>
             <div class="who-title">Gig Workers</div>
             <div class="who-desc">Platform income is unpredictable. This gig worker tax calculator uses your real lowest month as the planning baseline.</div>
           </div>
         </div>
         <div class="who-card">
-          <div class="who-icon" aria-hidden="true">&#x1F4CA;</div>
+          <div class="who-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg></div>
           <div>
             <div class="who-title">Consultants</div>
             <div class="who-desc">Retainers end. New business takes time. Your worst month number keeps you protected.</div>
@@ -1775,21 +1775,21 @@
       if (surplus > TIGHT_THRESHOLD) {
         return {
           cls: 'stable',
-          icon: '&#x2705;',
+          icon: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>',
           title: 'Looking Stable',
           msg: 'Your current numbers suggest that even in a lower month, your spending plan still covers your fixed costs after reserving money for taxes and your emergency buffer.'
         };
       } else if (surplus >= -TIGHT_THRESHOLD) {
         return {
           cls: 'tight',
-          icon: '&#x26A0;&#xFE0F;',
+          icon: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>',
           title: 'Running Tight',
           msg: 'Your numbers suggest that your budget may still work, but your margin is thin in a lower month. Be careful about increasing recurring expenses.'
         };
       } else {
         return {
           cls: 'risky',
-          icon: '&#x26D4;',
+          icon: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>',
           title: 'Budget Risk Detected',
           msg: 'Your fixed costs appear too high for your weakest month after tax reserves and savings protection. Consider raising rates, cutting fixed costs, or increasing reserves.'
         };
