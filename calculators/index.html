@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculators &mdash; Skip the Surprise</title>
+  <meta name="description" content="Free financial calculators for freelancers, self-employed workers, and households. Plan your taxes, find subscription waste, estimate pet costs, and budget smarter." />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Calculators &mdash; Skip the Surprise" />
+  <meta property="og:description" content="Free financial calculators for freelancers, self-employed workers, and households." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --blue-900: #0f2744;
+      --blue-800: #1a3a5c;
+      --blue-700: #1e4976;
+      --blue-600: #2563eb;
+      --blue-500: #3b82f6;
+      --blue-100: #dbeafe;
+      --blue-50: #eff6ff;
+      --green-700: #15803d;
+      --green-600: #16a34a;
+      --green-500: #22c55e;
+      --green-100: #dcfce7;
+      --green-50: #f0fdf4;
+      --gray-900: #111827;
+      --gray-800: #1f2937;
+      --gray-700: #374151;
+      --gray-600: #4b5563;
+      --gray-500: #6b7280;
+      --gray-400: #9ca3af;
+      --gray-300: #d1d5db;
+      --gray-200: #e5e7eb;
+      --gray-100: #f3f4f6;
+      --gray-50: #f9fafb;
+      --white: #ffffff;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--gray-800);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--gray-200);
+      padding: 0 1.5rem;
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+      gap: 1rem;
+    }
+
+    .nav-brand {
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--blue-700);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .nav-link {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--gray-600);
+      text-decoration: none;
+      padding: 0.4rem 0.75rem;
+      border-radius: var(--radius-sm);
+      transition: color 0.15s, background 0.15s;
+    }
+
+    .nav-link:hover {
+      color: var(--blue-700);
+      background: var(--blue-50);
+    }
+
+    .nav-link.active {
+      color: var(--blue-700);
+      font-weight: 600;
+    }
+
+    .nav-cta {
+      background: var(--blue-600);
+      color: var(--white);
+      border: none;
+      border-radius: var(--radius-sm);
+      padding: 0.5rem 1.1rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.15s;
+      white-space: nowrap;
+    }
+
+    .nav-cta:hover {
+      background: var(--blue-700);
+    }
+
+    /* HAMBURGER */
+    .nav-hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.4rem;
+      border-radius: var(--radius-sm);
+      color: var(--blue-700);
+      transition: background 0.15s;
+    }
+
+    .nav-hamburger:hover {
+      background: var(--blue-50);
+    }
+
+    .nav-hamburger .bar {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: currentColor;
+      border-radius: 2px;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+      transform-origin: center;
+    }
+
+    .nav-hamburger .bar + .bar {
+      margin-top: 5px;
+    }
+
+    .nav-hamburger[aria-expanded="true"] .bar:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .nav-hamburger[aria-expanded="true"] .bar:nth-child(2) {
+      opacity: 0;
+    }
+
+    .nav-hamburger[aria-expanded="true"] .bar:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* MOBILE DROPDOWN */
+    .nav-dropdown {
+      display: none;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      right: 0;
+      background: rgba(255,255,255,0.98);
+      border-bottom: 1px solid var(--gray-200);
+      backdrop-filter: blur(10px);
+      z-index: 99;
+      padding: 0.75rem 1.5rem;
+    }
+
+    .nav-dropdown.open {
+      display: block;
+    }
+
+    .nav-dropdown a {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--gray-600);
+      text-decoration: none;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .nav-dropdown a:last-child {
+      border-bottom: none;
+    }
+
+    .nav-dropdown a:hover {
+      color: var(--blue-700);
+    }
+
+    /* HERO */
+    .blog-hero {
+      background: linear-gradient(145deg, var(--blue-900) 0%, var(--blue-700) 60%, #1e5a8a 100%);
+      color: var(--white);
+      padding: 4rem 1.5rem 5rem;
+      text-align: center;
+    }
+
+    .blog-hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 100px;
+      padding: 0.35rem 0.9rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 1.25rem;
+    }
+
+    .blog-hero h1 {
+      font-size: clamp(1.7rem, 4vw, 2.8rem);
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      max-width: 700px;
+      margin: 0 auto 1rem;
+    }
+
+    .blog-hero p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.8);
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    /* GRID */
+    .blog-section {
+      padding: 4rem 1.5rem;
+    }
+
+    .blog-section + .blog-section {
+      padding-top: 0;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--blue-600);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--gray-900);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-sub {
+      color: var(--gray-600);
+      font-size: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .blog-card {
+      background: var(--white);
+      border: 1.5px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .blog-card:hover {
+      box-shadow: var(--shadow-md);
+      border-color: var(--blue-200, #bfdbfe);
+      transform: translateY(-2px);
+    }
+
+    .blog-card-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.8rem;
+      color: var(--gray-500);
+      font-weight: 500;
+    }
+
+    .blog-card-tag {
+      background: var(--blue-50);
+      color: var(--blue-700);
+      padding: 0.2rem 0.6rem;
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .blog-card h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--gray-900);
+      letter-spacing: -0.01em;
+    }
+
+    .blog-card-excerpt {
+      font-size: 0.9rem;
+      color: var(--gray-600);
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .blog-card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--blue-600);
+      text-decoration: none;
+      transition: gap 0.15s;
+    }
+
+    .blog-card-link:hover {
+      gap: 0.55rem;
+    }
+
+    .blog-card-link svg {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+    }
+
+    /* CTA STRIP */
+    .cta-strip {
+      background: var(--blue-50);
+      border-top: 1px solid var(--blue-100);
+      border-bottom: 1px solid var(--blue-100);
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+
+    .cta-strip h2 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--gray-900);
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    .cta-strip p {
+      color: var(--gray-600);
+      font-size: 0.95rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--blue-600);
+      color: var(--white);
+      padding: 0.75rem 1.75rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+
+    .btn-primary:hover {
+      background: var(--blue-700);
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--gray-200);
+      padding: 2rem 1.5rem;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .footer-disclaimer {
+      font-size: 0.8rem;
+      color: var(--gray-500);
+      max-width: 680px;
+      margin: 0 auto 0.75rem;
+      line-height: 1.7;
+    }
+
+    .footer-copy {
+      font-size: 0.8rem;
+      color: var(--gray-400);
+    }
+
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; flex-direction: column; align-items: center; justify-content: center; }
+      .blog-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" aria-label="Site navigation" style="position:relative;">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand" style="display:flex;align-items:center;gap:0.5rem;"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display:block;flex-shrink:0;"><rect width="28" height="28" rx="7" fill="#2563eb"/><rect x="12.5" y="6" width="3" height="10" rx="1.5" fill="white"/><rect x="12.5" y="19" width="3" height="3" rx="1.5" fill="white"/><line x1="5" y1="23" x2="23" y2="5" stroke="#1e3a5f" stroke-width="2.5" stroke-linecap="round"/></svg><span style="font-size:1rem;font-weight:700;color:#1e4976;letter-spacing:-0.01em;">Skip the Surprise</span></a>
+      <div class="nav-links">
+        <a href="/" class="nav-link">Calculator</a>
+        <a href="/calculators/" class="nav-link active">Calculators</a>
+        <a href="/blog/" class="nav-link">Blog</a>
+      </div>
+      <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <a href="/" class="nav-cta">Try the Calculator</a>
+    </div>
+    <div class="nav-dropdown" id="nav-mobile-menu" role="menu">
+      <a href="/" class="nav-link" role="menuitem">Calculator</a>
+      <a href="/calculators/" class="nav-link" role="menuitem">Calculators</a>
+      <a href="/blog/" class="nav-link" role="menuitem">Blog</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="blog-hero">
+    <div class="blog-hero-eyebrow">Free Tools</div>
+    <h1>Financial Calculators for Real Life</h1>
+    <p>No sign-up. No fluff. Just calculators that help you see where your money is going and what to do about it.</p>
+  </section>
+
+  <!-- CALCULATORS GRID -->
+  <section class="blog-section">
+    <div class="container">
+      <div class="section-label">All Calculators</div>
+      <h2 class="section-title">Pick a Calculator</h2>
+      <p class="section-sub">Five free tools covering taxes, subscriptions, pets, food, and tariffs.</p>
+
+      <div class="blog-grid">
+
+        <div class="blog-card">
+          <div class="blog-card-meta">
+            <span class="blog-card-tag">Tax Planning</span>
+          </div>
+          <h2>Irregular Income Tax Calculator</h2>
+          <p class="blog-card-excerpt">Freelancer or contractor with variable income? This calculator figures out what to set aside for taxes each month, what you can actually spend, and how much runway you have in a slow month.</p>
+          <a href="/" class="blog-card-link">
+            Open calculator
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+        </div>
+
+        <div class="blog-card">
+          <div class="blog-card-meta">
+            <span class="blog-card-tag">Budgeting</span>
+          </div>
+          <h2>Subscription Graveyard Calculator</h2>
+          <p class="blog-card-excerpt">Find out how much you are throwing away on forgotten subscriptions. The average household wastes over $1,100 a year on services they no longer use.</p>
+          <a href="/calculators/subscription-graveyard/" class="blog-card-link">
+            Open calculator
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+        </div>
+
+        <div class="blog-card">
+          <div class="blog-card-meta">
+            <span class="blog-card-tag">Trade &amp; Policy</span>
+          </div>
+          <h2>Tariff Cost Calculator</h2>
+          <p class="blog-card-excerpt">Enter your monthly spending by category and see the real dollar cost that tariffs are adding to your groceries, clothing, electronics, and car payments.</p>
+          <a href="/calculators/tariff-cost/" class="blog-card-link">
+            Open calculator
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+        </div>
+
+        <div class="blog-card">
+          <div class="blog-card-meta">
+            <span class="blog-card-tag">Household Planning</span>
+          </div>
+          <h2>True Cost of a Pet Calculator</h2>
+          <p class="blog-card-excerpt">Dogs and cats cost far more than most people budget for. This calculator breaks down first-year and ongoing annual costs so there are no surprises after you bring one home.</p>
+          <a href="/calculators/pet-cost/" class="blog-card-link">
+            Open calculator
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+        </div>
+
+        <div class="blog-card">
+          <div class="blog-card-meta">
+            <span class="blog-card-tag">Household Planning</span>
+          </div>
+          <h2>Food Budget Calculator</h2>
+          <p class="blog-card-excerpt">Plan your grocery and food spending by household size. Get a realistic monthly budget based on USDA cost data, broken down by meal type so you know exactly where to cut if needed.</p>
+          <a href="/calculators/food-budget/" class="blog-card-link">
+            Open calculator
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA STRIP -->
+  <section class="cta-strip">
+    <h2>Start with the tax calculator.</h2>
+    <p>If you earn variable income, the Irregular Income Tax Calculator is the most important tool on this site. It tells you exactly what to set aside so you are never caught short at filing time.</p>
+    <a href="/" class="btn-primary">Try the Free Calculator</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <p class="footer-disclaimer">
+        Educational content only. Not tax or legal advice. Always consult a qualified accountant or tax professional for advice specific to your situation.
+      </p>
+      <p class="footer-copy">&#169; 2026 Skip the Surprise. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      var btn = document.querySelector('.nav-hamburger');
+      var dropdown = document.getElementById('nav-mobile-menu');
+      if (!btn || !dropdown) return;
+      btn.addEventListener('click', function() {
+        var open = dropdown.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      });
+      dropdown.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+          dropdown.classList.remove('open');
+          btn.setAttribute('aria-expanded', 'false');
+          btn.setAttribute('aria-label', 'Open menu');
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>
