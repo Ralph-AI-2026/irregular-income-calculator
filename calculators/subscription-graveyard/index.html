@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Subscription Graveyard Calculator - How Much Are You Wasting?</title>
+  <title>Subscription Calculator 2026 - How Much Are You Wasting on Forgotten Subscriptions?</title>
   <meta name="description" content="Find out how much money you're throwing away on forgotten subscriptions. The average American wastes over $1,100/year on subscriptions they don't use." />
   <meta name="robots" content="index, follow" />
-  <meta property="og:title" content="Subscription Graveyard Calculator - How Much Are You Wasting?" />
+  <meta property="og:title" content="Subscription Calculator 2026 - How Much Are You Wasting on Forgotten Subscriptions?" />
   <meta property="og:description" content="Find out how much money you're throwing away on forgotten subscriptions. The average American wastes over $1,100/year on subscriptions they don't use." />
   <meta property="og:type" content="website" />
-  <meta name="keywords" content="subscription creep calculator, hidden recurring charges, forgotten subscription cost, subscription waste calculator" />
+  <meta name="keywords" content="subscription spending calculator, hidden recurring charges calculator, subscription audit tool, subscription creep calculator, forgotten subscription cost, subscription waste calculator" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -1316,6 +1316,214 @@
         gap: 1.25rem;
       }
     }
+
+    /* Generational benchmarks */
+    .gen-benchmarks {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      border: 1.5px solid var(--blue-100);
+      padding: 1.1rem 1.25rem;
+      margin-top: 0.5rem;
+    }
+
+    .gen-benchmarks-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--blue-600);
+      margin-bottom: 0.75rem;
+    }
+
+    .gen-row {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 0.45rem;
+      font-size: 0.82rem;
+    }
+
+    .gen-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .gen-label {
+      width: 110px;
+      flex-shrink: 0;
+      color: var(--gray-600);
+      font-weight: 500;
+    }
+
+    .gen-bar-wrap {
+      flex: 1;
+      height: 8px;
+      background: var(--gray-100);
+      border-radius: 100px;
+      overflow: hidden;
+    }
+
+    .gen-bar {
+      height: 100%;
+      border-radius: 100px;
+      background: var(--blue-500);
+      transition: width 0.4s ease;
+    }
+
+    .gen-bar.active-gen {
+      background: var(--red-600);
+    }
+
+    .gen-amount {
+      width: 48px;
+      text-align: right;
+      font-weight: 700;
+      color: var(--gray-700);
+      font-size: 0.82rem;
+      flex-shrink: 0;
+    }
+
+    .gen-you-badge {
+      font-size: 0.68rem;
+      font-weight: 700;
+      background: var(--red-100);
+      color: var(--red-700);
+      padding: 0.1rem 0.4rem;
+      border-radius: 100px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      flex-shrink: 0;
+    }
+
+    .gen-bracket-msg {
+      margin-top: 0.65rem;
+      font-size: 0.8rem;
+      color: var(--gray-600);
+      line-height: 1.5;
+      padding-top: 0.65rem;
+      border-top: 1px solid var(--gray-100);
+    }
+
+    /* Shareable text */
+    .share-card {
+      background: var(--white);
+      border: 1.5px solid var(--gray-200);
+      border-radius: var(--radius-md);
+      padding: 1.1rem 1.25rem;
+      margin-top: 0.5rem;
+    }
+
+    .share-card-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--gray-500);
+      margin-bottom: 0.5rem;
+    }
+
+    .share-text {
+      font-size: 0.875rem;
+      color: var(--gray-700);
+      line-height: 1.55;
+      font-style: italic;
+      margin-bottom: 0.75rem;
+      padding: 0.65rem 0.85rem;
+      background: var(--gray-50);
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--gray-200);
+    }
+
+    .share-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.5rem 1rem;
+      background: var(--blue-600);
+      color: var(--white);
+      border: none;
+      border-radius: var(--radius-sm);
+      font-size: 0.825rem;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background 0.15s;
+    }
+
+    .share-btn:hover {
+      background: var(--blue-700);
+    }
+
+    .share-btn.copied {
+      background: var(--green-600);
+    }
+
+    /* Audit checklist */
+    .audit-checklist-section {
+      padding: 4rem 1.5rem;
+      background: var(--white);
+    }
+
+    .audit-checklist {
+      list-style: none;
+      margin-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      max-width: 680px;
+    }
+
+    .audit-checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.95rem;
+      color: var(--gray-700);
+      line-height: 1.55;
+    }
+
+    .audit-check-icon {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      background: var(--green-100);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 0.1rem;
+    }
+
+    .audit-savings-callout {
+      margin-top: 1.5rem;
+      padding: 1rem 1.25rem;
+      background: var(--amber-50);
+      border: 1.5px solid var(--amber-100);
+      border-radius: var(--radius-md);
+      font-size: 0.9rem;
+      color: var(--amber-700);
+      max-width: 680px;
+      line-height: 1.55;
+    }
+
+    .audit-savings-callout strong {
+      font-weight: 700;
+    }
+
+    /* Data sources footer */
+    .data-sources {
+      margin-top: 1.25rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.35);
+      line-height: 1.65;
+    }
+
+    .data-sources-title {
+      font-weight: 600;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 0.35rem;
+    }
   </style>
 </head>
 <body>
@@ -1380,7 +1588,7 @@
         <div class="hero-stat-label">Average annual waste</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-num">61%</div>
+        <div class="hero-stat-num">62%</div>
         <div class="hero-stat-label">Underestimate what they spend</div>
       </div>
       <div class="hero-stat">
@@ -1593,7 +1801,7 @@
 
               <!-- Perceived vs actual -->
               <div class="result-card card-compare">
-                <div class="result-card-label">What you think you spend vs reality</div>
+                <div class="result-card-label">Your blind spot: what you think you spend vs what you actually spend</div>
                 <div class="compare-row">
                   <div class="compare-col">
                     <div class="compare-col-label">You think</div>
@@ -1615,9 +1823,68 @@
                 <div id="statusMsg"></div>
               </div>
 
+              <!-- Generational benchmarks -->
+              <div class="gen-benchmarks" id="genBenchmarks">
+                <div class="gen-benchmarks-title">How you compare</div>
+                <div id="genRows"></div>
+                <div class="gen-bracket-msg" id="genBracketMsg"></div>
+              </div>
+
+              <!-- Shareable text -->
+              <div class="share-card">
+                <div class="share-card-label">Share your number</div>
+                <div class="share-text" id="shareText"></div>
+                <button class="share-btn" id="shareBtn" type="button">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                  Copy to share
+                </button>
+              </div>
+
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUDIT CHECKLIST -->
+  <section class="audit-checklist-section" aria-labelledby="audit-heading">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">Quick Audit</div>
+        <h2 class="section-title" id="audit-heading">Find every subscription you are paying for</h2>
+        <p class="section-sub">Run through this in 30 minutes. Most people recover $50-$100/month.</p>
+      </div>
+
+      <ul class="audit-checklist" aria-label="Subscription audit checklist">
+        <li>
+          <div class="audit-check-icon" aria-hidden="true">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <span>Search your email inbox for "receipt", "invoice", "payment confirmation", and "your subscription" -- set the date range to the last 24 months.</span>
+        </li>
+        <li>
+          <div class="audit-check-icon" aria-hidden="true">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <span>Review 3 months of bank and credit card statements line by line. Flag every recurring charge, including small ones under $5.</span>
+        </li>
+        <li>
+          <div class="audit-check-icon" aria-hidden="true">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <span>Check your App Store or Google Play subscriptions directly. On iPhone: Settings &gt; your name &gt; Subscriptions. On Android: Play Store &gt; Payments &amp; subscriptions.</span>
+        </li>
+        <li>
+          <div class="audit-check-icon" aria-hidden="true">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <span>Review apps connected via "Sign in with Google" or "Sign in with Apple" -- many have paid tiers. Google: myaccount.google.com/permissions. Apple: Settings &gt; Apple ID &gt; Password &amp; Security &gt; Sign in with Apple.</span>
+        </li>
+      </ul>
+
+      <div class="audit-savings-callout">
+        <strong>A 30-minute subscription audit saves the average person $50-$100/month.</strong> That is $600 to $1,200 per year recovered from charges you were barely aware of. The hardest part is starting.
       </div>
     </div>
   </section>
@@ -1645,7 +1912,7 @@
         <div class="step-card">
           <div class="step-num">3</div>
           <div class="step-title">The perception gap reveals the real number</div>
-          <div class="step-body">Consumer surveys show that people underestimate their subscription spending by approximately 61%. The "what you think you spend" figure uses that gap: your estimated total multiplied by 0.39. The actual spend is the full calculated total.</div>
+          <div class="step-body">The average American thinks they spend $111/month on subscriptions but actually spends $273/month. That 62% underestimate is your blind spot. The "what you think you spend" figure uses that gap: your estimated total multiplied by 0.41. The actual spend is the full calculated total from the subscription audit tool.</div>
         </div>
         <div class="step-card">
           <div class="step-num">4</div>
@@ -1756,7 +2023,7 @@
           </button>
           <div class="faq-answer" role="region">
             <div class="faq-answer-inner">
-              Studies consistently show that people underestimate their subscription spending by 40-60%. The average American household spends between $200 and $400 per month on subscriptions, yet most people guess less than half that. This subscription graveyard calculator uses industry averages per category to surface a realistic total based on how many services you actually have.
+              The average American spends $273/month on subscriptions but thinks they spend only $111/month. That is a 62% underestimate -- a blind spot that adds up to nearly $2,000 per year in charges people have mentally written off. This subscription spending calculator uses industry averages per category to surface a realistic total based on how many services you actually have.
             </div>
           </div>
         </div>
@@ -1853,9 +2120,13 @@
   <footer>
     <div class="footer-inner">
       <p class="footer-disclaimer">
-        Educational estimates only. Not financial advice. This calculator uses simplified industry averages and research-based assumptions to help you think about subscription spending. Category averages and zombie subscription rates are derived from publicly available consumer spending research. Your actual spending may vary. Review your own bank and credit card statements for exact figures.
+        Educational estimates only. Not financial advice. This subscription spending calculator uses simplified industry averages and research-based assumptions to help you think about subscription spending. Category averages and zombie subscription rates are derived from publicly available consumer spending research. Your actual spending may vary. Review your own bank and credit card statements for exact figures.
       </p>
-      <p class="footer-copy">&#169; 2026 Skip the Surprise. All rights reserved.</p>
+      <div class="data-sources">
+        <div class="data-sources-title">Data sources</div>
+        <p>Generational spending averages and national subscription totals: RecurStop 2026 Subscription Spending Report. Perception gap data ($111 perceived vs $273 actual, 62% underestimate): Nasdaq subscription creep analysis and C+R Research consumer spending study. Zombie subscription rate (42%): industry average across multiple consumer subscription studies. Audit savings estimate ($50-$100/month): RecurStop 2026 report.</p>
+      </div>
+      <p class="footer-copy" style="margin-top:1rem;">&#169; 2026 Skip the Surprise. All rights reserved.</p>
     </div>
   </footer>
 
@@ -1873,8 +2144,15 @@
     };
 
     const ZOMBIE_RATE       = 0.42;
-    const PERCEPTION_RATE   = 0.39; // people think they spend ~39% of actual
+    const PERCEPTION_RATE   = 0.41; // people think they spend ~41% of actual ($111 vs $273 national avg)
     const UNCERTAIN_BUMP    = 0.15;
+    const GEN_BENCHMARKS = [
+      { label: 'Gen Z',         avg: 292 },
+      { label: 'Millennials',   avg: 248 },
+      { label: 'Gen X',         avg: 187 },
+      { label: 'Boomers',       avg: 143 },
+      { label: 'National avg',  avg: 273 }
+    ];
 
     /* =============================================
        COUNT CONTROLS
@@ -1963,6 +2241,49 @@
     /* =============================================
        RENDER RESULTS
     ============================================= */
+    function renderGenBenchmarks(total) {
+      const maxAvg = Math.max(...GEN_BENCHMARKS.map(g => g.avg), total);
+      const rowsEl = document.getElementById('genRows');
+      const msgEl  = document.getElementById('genBracketMsg');
+
+      // Find user bracket
+      let bracket = null;
+      if (total >= 292) bracket = 'Gen Z';
+      else if (total >= 248) bracket = 'Millennials';
+      else if (total >= 187) bracket = 'Gen X';
+      else if (total >= 143) bracket = 'Boomers';
+      else bracket = 'below Boomers';
+
+      // Build rows
+      const userRow = {
+        label: 'You',
+        avg: Math.round(total),
+        isUser: true
+      };
+      const allRows = [...GEN_BENCHMARKS, userRow].sort((a, b) => b.avg - a.avg);
+
+      rowsEl.innerHTML = allRows.map(g => {
+        const barWidth = Math.round((g.avg / maxAvg) * 100);
+        const isActive = g.isUser;
+        return `<div class="gen-row">
+          <span class="gen-label">${g.label}</span>
+          <div class="gen-bar-wrap">
+            <div class="gen-bar${isActive ? ' active-gen' : ''}" style="width:${barWidth}%"></div>
+          </div>
+          <span class="gen-amount">${g.isUser ? formatCurrency(g.avg) : '$' + g.avg}</span>
+          ${isActive ? '<span class="gen-you-badge">You</span>' : ''}
+        </div>`;
+      }).join('');
+
+      let bracketMsg = '';
+      if (bracket === 'below Boomers') {
+        bracketMsg = 'Your spending is below the Boomer average ($143/mo). You are already tracking well -- a quick audit could still uncover a few forgotten charges.';
+      } else {
+        bracketMsg = 'Your spending puts you in the ' + bracket + ' range. The national average is $273/mo. A 30-minute subscription audit tool review of your statements is the fastest way to close the gap.';
+      }
+      msgEl.textContent = bracketMsg;
+    }
+
     function showResults({ total, zombie, annual, perceived }) {
       document.getElementById('res-monthly').textContent  = formatCurrency(total);
       document.getElementById('res-zombie').textContent   = formatCurrency(zombie);
@@ -1984,6 +2305,14 @@
       titleEl.innerHTML = status.icon + ' ' + status.title;
       msgEl.textContent = status.msg;
 
+      // Generational benchmarks
+      renderGenBenchmarks(total);
+
+      // Share text
+      const wasteAmt = formatCurrency(zombie);
+      const shareStr = 'I was wasting ' + wasteAmt + '/month on forgotten subscriptions. Find your number at skipthesurprise.com/calculators/subscription-graveyard/';
+      document.getElementById('shareText').textContent = shareStr;
+
       document.getElementById('resultsPlaceholder').style.display = 'none';
       const content = document.getElementById('resultsContent');
       content.classList.add('visible');
@@ -1999,6 +2328,39 @@
     document.getElementById('calcBtn').addEventListener('click', () => {
       const results = calculate();
       showResults(results);
+    });
+
+    /* =============================================
+       SHARE BUTTON
+    ============================================= */
+    document.getElementById('shareBtn').addEventListener('click', () => {
+      const text = document.getElementById('shareText').textContent;
+      const btn  = document.getElementById('shareBtn');
+      if (!text) return;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy to share';
+          btn.classList.remove('copied');
+        }, 2000);
+      }).catch(() => {
+        // Fallback for older browsers
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        btn.textContent = 'Copied!';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy to share';
+          btn.classList.remove('copied');
+        }, 2000);
+      });
     });
 
     /* =============================================
