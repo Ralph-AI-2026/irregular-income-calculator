@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pet Cost Calculator 2026 - The True Lifetime Cost of Owning a Dog or Cat</title>
-  <meta name="description" content="78% of pet owners underestimate their lifetime care costs. Use this pet cost calculator to find the true lifetime cost of owning a dog or cat. Dogs: $22,125-$60,602. Based on Synchrony 2025 data." />
+  <title>Pet Cost Calculator 2026 - The True Lifetime Cost of Owning a Dog or Cat (US & Canada)</title>
+  <meta name="description" content="78% of pet owners underestimate their lifetime care costs. Use this pet cost calculator to find the true lifetime cost of owning a dog or cat. US and Canadian data included. Dogs: $22,125-$60,602 USD / $25,000-$70,000 CAD. Based on Synchrony 2025 and CVMA data." />
   <meta name="robots" content="index, follow" />
-  <meta name="keywords" content="pet lifetime cost calculator, true cost of owning a dog, pet emergency fund calculator, hidden costs pet ownership, how much does a dog cost, cat lifetime cost" />
-  <meta property="og:title" content="Pet Cost Calculator 2026 - The True Lifetime Cost of Owning a Dog or Cat" />
-  <meta property="og:description" content="78% of pet owners underestimate their lifetime care costs. Dogs: $22,125-$60,602. Cats: $20,073-$47,106. Based on Synchrony 2025 Lifetime of Care Study." />
+  <meta name="keywords" content="pet lifetime cost calculator, true cost of owning a dog, pet emergency fund calculator, hidden costs pet ownership, how much does a dog cost, cat lifetime cost, pet cost Canada, Canadian pet insurance, CVMA, Trupanion, Petsecure" />
+  <meta property="og:title" content="Pet Cost Calculator 2026 - The True Lifetime Cost of Owning a Dog or Cat (US & Canada)" />
+  <meta property="og:description" content="78% of pet owners underestimate their lifetime care costs. US: Dogs $22,125-$60,602, Cats $20,073-$47,106 (Synchrony 2025). Canada: Dogs $25,000-$70,000 CAD, Cats $22,000-$52,000 CAD (CVMA data)." />
   <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -1516,6 +1516,77 @@
       .hero-stats { gap: 1.25rem; }
       .radio-group { flex-direction: column; }
     }
+
+    /* ========================
+       COUNTRY TOGGLE
+    ======================== */
+    .country-toggle-bar {
+      background: var(--blue-50);
+      border-bottom: 1px solid var(--blue-100);
+      padding: 0.7rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--gray-700);
+      flex-wrap: wrap;
+    }
+
+    .country-toggle-label {
+      font-weight: 600;
+      color: var(--gray-700);
+    }
+
+    .country-toggle {
+      display: flex;
+      border: 1.5px solid var(--blue-500);
+      border-radius: 100px;
+      overflow: hidden;
+    }
+
+    .country-toggle-btn {
+      padding: 0.35rem 1.1rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border: none;
+      background: transparent;
+      color: var(--blue-600);
+      cursor: pointer;
+      font-family: inherit;
+      transition: background 0.15s, color 0.15s;
+      white-space: nowrap;
+    }
+
+    .country-toggle-btn.active {
+      background: var(--blue-600);
+      color: var(--white);
+    }
+
+    .country-toggle-btn:not(.active):hover {
+      background: var(--blue-50);
+    }
+
+    .canada-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      background: #dc2626;
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.15rem 0.55rem;
+      border-radius: 100px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .ca-note {
+      font-size: 0.78rem;
+      color: var(--gray-500);
+      font-style: italic;
+    }
   </style>
 </head>
 <body>
@@ -1548,6 +1619,16 @@
       <a href="/blog/" class="nav-link" role="menuitem">Blog</a>
     </div>
   </nav>
+
+  <!-- COUNTRY TOGGLE -->
+  <div class="country-toggle-bar" id="countryToggleBar">
+    <span class="country-toggle-label">I'm in</span>
+    <div class="country-toggle" role="group" aria-label="Select your country">
+      <button class="country-toggle-btn active" id="btnUS" type="button" aria-pressed="true">United States</button>
+      <button class="country-toggle-btn" id="btnCA" type="button" aria-pressed="false">Canada</button>
+    </div>
+    <span class="ca-note" id="caCurrencyNote" style="display:none;">All costs shown in CAD</span>
+  </div>
 
   <!-- HERO -->
   <section class="hero" aria-labelledby="hero-heading">
@@ -2021,8 +2102,61 @@
             </svg>
           </div>
           <div class="cost-title">Emergency Vet Visits</div>
-          <div class="cost-range">$800 - $1,500 per visit / $2,000 - $5,000 for surgery</div>
-          <p class="cost-body">The average emergency visit runs $800-$1,500. Emergency surgery (foreign body obstruction, ACL, bloat) runs $2,000-$5,000. Breed-specific risks add more: brachycephalic surgery for French Bulldogs costs $2,000-$5,000 alone.</p>
+          <div class="cost-range us-content">$800 - $1,500 per visit / $2,000 - $5,000 for surgery</div>
+          <div class="cost-range ca-content" style="display:none;">$1,000 - $2,000 CAD per visit / $3,000 - $6,000 CAD for surgery</div>
+          <p class="cost-body us-content">The average emergency visit runs $800-$1,500. Emergency surgery (foreign body obstruction, ACL, bloat) runs $2,000-$5,000. Breed-specific risks add more: brachycephalic surgery for French Bulldogs costs $2,000-$5,000 alone.</p>
+          <p class="cost-body ca-content" style="display:none;">Canadian emergency vet costs have risen ~10% per year. The average emergency visit runs $1,000-$2,000 CAD. Emergency surgery runs $3,000-$6,000 CAD. Vet specialists are concentrated in major cities, meaning rural Canadians may face additional travel costs.</p>
+        </div>
+      </div>
+
+      <!-- Canada-specific hidden costs -->
+      <div class="costs-grid ca-content" id="caHiddenCosts" style="display:none;margin-top:1.5rem;">
+        <div class="cost-card">
+          <div class="cost-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+              <polyline points="9 22 9 12 15 12 15 22"/>
+            </svg>
+          </div>
+          <div class="cost-title">Pet-Friendly Housing Premium</div>
+          <div class="cost-range">$100 - $300 CAD/month extra rent</div>
+          <p class="cost-body">Many Canadian landlords enforce strict no-pet policies. Finding a pet-friendly rental often means paying a premium or limiting your housing options. Over a dog's lifetime, the housing premium can add $12,000-$40,000 CAD.</p>
+        </div>
+
+        <div class="cost-card">
+          <div class="cost-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+              <path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <div class="cost-title">Winter Gear (Dogs)</div>
+          <div class="cost-range">$60 - $200 CAD/year</div>
+          <p class="cost-body">Short-haired breeds need winter coats for Canadian winters. Most dogs require paw protection (boots or wax) to handle road salt, which causes chemical burns and cracking. Factor in annual replacement as gear wears out.</p>
+        </div>
+
+        <div class="cost-card">
+          <div class="cost-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="3" width="20" height="14" rx="2"/>
+              <path d="M8 21h8M12 17v4"/>
+            </svg>
+          </div>
+          <div class="cost-title">Provincial Sales Tax on Pet Supplies</div>
+          <div class="cost-range">5% GST to 15% HST depending on province</div>
+          <p class="cost-body">Pet food, supplies, and accessories are subject to GST/HST. Ontario pet owners pay 13% HST on most supplies. Atlantic Canada pays 15% HST. This adds $70-$300 CAD per year to routine supply costs that US cost estimates don't reflect.</p>
+        </div>
+
+        <div class="cost-card">
+          <div class="cost-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 6v6l4 2"/>
+            </svg>
+          </div>
+          <div class="cost-title">Pet License Fees</div>
+          <div class="cost-range">$15 - $50 CAD/year (most municipalities)</div>
+          <p class="cost-body">Most Canadian cities require annual pet licensing. Toronto charges $16.50/year for spayed/neutered dogs, $50+ for unaltered. Vancouver, Calgary, and Ottawa have similar bylaws. Unlicensed pets face fines of $200-$500 CAD.</p>
         </div>
       </div>
     </div>
@@ -2037,8 +2171,9 @@
         <p class="section-sub">Annual routine costs, typical emergency costs, expected lifespan, and estimated lifetime totals. Emergency costs shown without insurance.</p>
       </div>
 
-      <div style="overflow-x:auto;">
-        <table class="cost-table" aria-label="Pet cost comparison by type and size">
+      <!-- US Table -->
+      <div style="overflow-x:auto;" class="us-content">
+        <table class="cost-table" aria-label="Pet cost comparison by type and size (USD)">
           <thead>
             <tr>
               <th scope="col">Pet Type / Size</th>
@@ -2115,7 +2250,88 @@
           </tbody>
         </table>
       </div>
-      <p style="margin-top:1.25rem;font-size:0.8rem;color:rgba(255,255,255,0.45);">Dog lifetime range ($22,125-$60,602) and cat lifetime range ($20,073-$47,106) from Synchrony 2025 Lifetime of Care Study. Shelter/mixed breed rows reflect lower adoption costs ($50-$300 vs $500-$3,000 purebred) and generally fewer breed-specific health issues. Emergency costs represent per-incident averages, not recurring annual costs. Insurance reduces emergency out-of-pocket by approximately 70%.</p>
+      <p class="us-content" style="margin-top:1.25rem;font-size:0.8rem;color:rgba(255,255,255,0.45);">Dog lifetime range ($22,125-$60,602) and cat lifetime range ($20,073-$47,106) from Synchrony 2025 Lifetime of Care Study. Shelter/mixed breed rows reflect lower adoption costs ($50-$300 vs $500-$3,000 purebred) and generally fewer breed-specific health issues. Emergency costs represent per-incident averages, not recurring annual costs. Insurance reduces emergency out-of-pocket by approximately 70%.</p>
+
+      <!-- Canada Table -->
+      <div style="overflow-x:auto;display:none;" class="ca-content">
+        <table class="cost-table" aria-label="Pet cost comparison by type and size (CAD)">
+          <thead>
+            <tr>
+              <th scope="col">Pet Type / Size</th>
+              <th scope="col">Annual Routine (CAD)</th>
+              <th scope="col">Emergency avg (CAD)</th>
+              <th scope="col">Lifespan</th>
+              <th scope="col">Lifetime Range (CAD)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Dog - Any size (all-in)</td>
+              <td>$1,400 - $2,100 CAD</td>
+              <td>$3,000 - $5,000 CAD</td>
+              <td>10-15 years</td>
+              <td><strong>$25,000 - $70,000 CAD</strong></td>
+            </tr>
+            <tr>
+              <td>Dog - Small (under 20 lbs)</td>
+              <td>$1,400 CAD</td>
+              <td>$3,000 CAD avg</td>
+              <td>14 years</td>
+              <td><strong>$27,000 - $40,000 CAD+</strong></td>
+            </tr>
+            <tr>
+              <td>Dog - Medium (20-60 lbs)</td>
+              <td>$1,750 CAD</td>
+              <td>$4,000 CAD avg</td>
+              <td>12 years</td>
+              <td><strong>$30,000 - $50,000 CAD+</strong></td>
+            </tr>
+            <tr>
+              <td>Dog - Large (60+ lbs)</td>
+              <td>$2,100 CAD</td>
+              <td>$5,000 CAD avg</td>
+              <td>10 years</td>
+              <td><strong>$28,000 - $55,000 CAD+</strong></td>
+            </tr>
+            <tr>
+              <td>Dog - Shelter / Mixed Breed</td>
+              <td>$1,300 - $1,900 CAD</td>
+              <td>$2,500 - $4,000 CAD avg</td>
+              <td>12-15 years</td>
+              <td><strong>$22,000 - $45,000 CAD</strong></td>
+            </tr>
+            <tr>
+              <td>Cat - Any (all-in)</td>
+              <td>$1,050 - $1,300 CAD</td>
+              <td>$2,200 - $3,000 CAD</td>
+              <td>12-18 years</td>
+              <td><strong>$22,000 - $52,000 CAD</strong></td>
+            </tr>
+            <tr>
+              <td>Cat - Indoor</td>
+              <td>$1,050 CAD</td>
+              <td>$2,200 CAD avg</td>
+              <td>16 years</td>
+              <td><strong>$24,000 - $38,000 CAD+</strong></td>
+            </tr>
+            <tr>
+              <td>Cat - Outdoor</td>
+              <td>$1,300 CAD</td>
+              <td>$3,000 CAD avg</td>
+              <td>14 years</td>
+              <td><strong>$22,000 - $35,000 CAD+</strong></td>
+            </tr>
+            <tr>
+              <td>Cat - Shelter / Mixed Breed</td>
+              <td>$950 - $1,200 CAD</td>
+              <td>$1,800 - $2,800 CAD avg</td>
+              <td>14-18 years</td>
+              <td><strong>$20,000 - $34,000 CAD</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="ca-content" style="margin-top:1.25rem;font-size:0.8rem;color:rgba(255,255,255,0.45);display:none;">All costs in CAD. Dog lifetime range ($25,000-$70,000 CAD) and cat lifetime range ($22,000-$52,000 CAD) based on CVMA data, Trupanion claims data, and Statistics Canada household spending surveys. Higher than US figures reflect food import costs (~20-30% premium), rising vet fees (~10%/year), and provincial sales tax on supplies. Vet visit average: $250-$600 CAD. Emergency costs represent per-incident averages without insurance. Insurance reduces emergency out-of-pocket by approximately 70-90%.</p>
     </div>
   </section>
 
@@ -2125,10 +2341,12 @@
       <div class="section-header">
         <div class="section-label">Pet Insurance</div>
         <h2 class="section-title" id="insurance-heading">Insurance vs. No Insurance: Real Numbers</h2>
-        <p class="section-sub">Average pet insurance costs $50-$80/month. Here is what that actually means when an emergency hits.</p>
+        <p class="section-sub us-content">Average pet insurance costs $50-$80/month. Here is what that actually means when an emergency hits.</p>
+        <p class="section-sub ca-content" style="display:none;">Average pet insurance in Canada costs $40-$70 CAD/month. Major providers: Trupanion (Canadian-founded), Petsecure, Fetch, and Desjardins. Here is what coverage actually means when an emergency hits.</p>
       </div>
 
-      <div class="insurance-grid">
+      <!-- US Insurance panels -->
+      <div class="insurance-grid us-content">
         <div class="insurance-panel panel-no">
           <div class="insurance-panel-title">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg>
@@ -2190,7 +2408,71 @@
         </div>
       </div>
 
-      <p style="margin-top:1.5rem;font-size:0.82rem;color:var(--gray-500);max-width:700px;">Insurance assumes 70% reimbursement after deductible, which is typical for mid-tier plans. Actual coverage varies. Premiums increase with pet age. Breed-specific conditions (e.g. French Bulldog brachycephalic issues, German Shepherd hip dysplasia) make insurance more cost-effective for those breeds.</p>
+      <!-- Canada Insurance panels -->
+      <div class="insurance-grid ca-content" style="display:none;">
+        <div class="insurance-panel panel-no">
+          <div class="insurance-panel-title">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg>
+            No Pet Insurance
+          </div>
+          <div class="insurance-line">
+            <span class="insurance-line-label">Monthly cost</span>
+            <span class="insurance-line-val">$0</span>
+          </div>
+          <div class="insurance-line">
+            <span class="insurance-line-label">Emergency visit out-of-pocket</span>
+            <span class="insurance-line-val red-val">$1,000 - $2,000 CAD</span>
+          </div>
+          <div class="insurance-line">
+            <span class="insurance-line-label">Emergency surgery out-of-pocket</span>
+            <span class="insurance-line-val red-val">$3,000 - $6,000 CAD</span>
+          </div>
+          <div class="insurance-line">
+            <span class="insurance-line-label">Average claim scenario payout</span>
+            <span class="insurance-line-val red-val">$0 (you pay it all)</span>
+          </div>
+          <div class="insurance-line">
+            <span class="insurance-line-label">12-year savings vs insured</span>
+            <span class="insurance-line-val">$5,760 - $10,080 CAD</span>
+          </div>
+          <div class="insurance-verdict">
+            Canadian vet costs rising ~10%/year means that $4,000 emergency today is $6,400 in seven years. Without an emergency fund of $3,000-$5,000 CAD, cost forces the decision when the bill arrives.
+          </div>
+        </div>
+
+        <div class="insurance-panel panel-yes">
+          <div class="insurance-panel-title">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
+            With Pet Insurance (Canada)
+          </div>
+          <div class="insurance-line">
+            <span class="insurance-line-label">Monthly cost (Trupanion / Petsecure / Fetch)</span>
+            <span class="insurance-line-val">$40 - $70 CAD/month ($480 - $840/year CAD)</span>
+          </div>
+          <div class="insurance-line">
+            <span class="insurance-line-label">Trupanion: coverage after deductible</span>
+            <span class="insurance-line-val green-val">90% (Canadian-founded)</span>
+          </div>
+          <div class="insurance-line">
+            <span class="insurance-line-label">Emergency visit out-of-pocket (after 90% coverage)</span>
+            <span class="insurance-line-val green-val">$100 - $200 CAD</span>
+          </div>
+          <div class="insurance-line">
+            <span class="insurance-line-label">Emergency surgery out-of-pocket</span>
+            <span class="insurance-line-val green-val">$300 - $600 CAD</span>
+          </div>
+          <div class="insurance-line">
+            <span class="insurance-line-label">12-year total premium cost</span>
+            <span class="insurance-line-val">$5,760 - $10,080 CAD</span>
+          </div>
+          <div class="insurance-verdict">
+            Trupanion's 90% coverage (no payout caps) is especially strong for catastrophic events. Petsecure and Fetch offer tiered plans. Get a quote before your pet turns 2 - premiums increase significantly with age.
+          </div>
+        </div>
+      </div>
+
+      <p class="us-content" style="margin-top:1.5rem;font-size:0.82rem;color:var(--gray-500);max-width:700px;">Insurance assumes 70% reimbursement after deductible, which is typical for mid-tier plans. Actual coverage varies. Premiums increase with pet age. Breed-specific conditions (e.g. French Bulldog brachycephalic issues, German Shepherd hip dysplasia) make insurance more cost-effective for those breeds.</p>
+      <p class="ca-content" style="margin-top:1.5rem;font-size:0.82rem;color:var(--gray-500);max-width:700px;display:none;">Canadian insurance data based on Trupanion public rate information and Petsecure/Fetch published plan tiers. Trupanion covers 90% of eligible costs after a per-condition deductible - no payout limits. Desjardins offers bundled home/pet options for Quebec residents. Premiums increase with pet age. All figures in CAD.</p>
     </div>
   </section>
 
@@ -2315,7 +2597,10 @@
         ASPCA Pet Care Cost Guides &bull;
         American Veterinary Medical Association (AVMA) &bull;
         American Pet Products Association (APPA) National Pet Owners Survey &bull;
-        Veterinary Pet Insurance (VPI) / Nationwide claims data
+        Veterinary Pet Insurance (VPI) / Nationwide claims data &bull;
+        Canadian Veterinary Medical Association (CVMA) &bull;
+        Trupanion claims data (Canada) &bull;
+        Statistics Canada Household Spending Survey (pet expenditure categories)
       </p>
     </div>
   </div>
@@ -2332,9 +2617,14 @@
 
   <script>
     /* =============================================
-       DATA
+       COUNTRY STATE
     ============================================= */
-    const PET_DATA = {
+    let currentCountry = 'US'; // 'US' or 'CA'
+
+    /* =============================================
+       DATA - US (USD)
+    ============================================= */
+    const PET_DATA_US = {
       dog: {
         small:  { annualRoutine: 1200, emergencyAvg: 1500, lifespan: 14 },
         medium: { annualRoutine: 1500, emergencyAvg: 2500, lifespan: 12 },
@@ -2355,13 +2645,53 @@
       }
     };
 
-    // Synchrony 2025 lifetime ranges for display
+    /* =============================================
+       DATA - CANADA (CAD)
+    ============================================= */
+    const PET_DATA_CA = {
+      dog: {
+        small:  { annualRoutine: 1400, emergencyAvg: 3000, lifespan: 14 },
+        medium: { annualRoutine: 1750, emergencyAvg: 4000, lifespan: 12 },
+        large:  { annualRoutine: 2100, emergencyAvg: 5000, lifespan: 10 }
+      },
+      cat: {
+        indoor:  { annualRoutine: 1050, emergencyAvg: 2200, lifespan: 16 },
+        outdoor: { annualRoutine: 1300, emergencyAvg: 3000, lifespan: 14 }
+      },
+      shelter_dog: {
+        small:  { annualRoutine: 1300, emergencyAvg: 2500, lifespan: 14, shelterNote: 'Shelter adoption in Canada: $100-$400 CAD vs $800-$3,000 CAD purebred. Often already spayed/neutered and vaccinated.' },
+        medium: { annualRoutine: 1600, emergencyAvg: 3200, lifespan: 13, shelterNote: 'Shelter adoption in Canada: $100-$400 CAD vs $800-$3,000 CAD purebred. Often already spayed/neutered and vaccinated.' },
+        large:  { annualRoutine: 1950, emergencyAvg: 4000, lifespan: 11, shelterNote: 'Shelter adoption in Canada: $100-$400 CAD vs $800-$3,000 CAD purebred. Often already spayed/neutered and vaccinated.' }
+      },
+      shelter_cat: {
+        indoor:  { annualRoutine: 950,  emergencyAvg: 1800, lifespan: 16, shelterNote: 'Shelter adoption in Canada: $75-$200 CAD vs $500-$2,000 CAD purebred. Often already spayed/neutered and vaccinated.' },
+        outdoor: { annualRoutine: 1175, emergencyAvg: 2400, lifespan: 14, shelterNote: 'Shelter adoption in Canada: $75-$200 CAD vs $500-$2,000 CAD purebred. Often already spayed/neutered and vaccinated.' }
+      }
+    };
+
+    // Active data set (switches with country toggle)
+    let PET_DATA = PET_DATA_US;
+
+    // Synchrony 2025 lifetime ranges for US display
     const SYNCHRONY_RANGES = {
       dog: { low: 22125, high: 60602 },
       shelter_dog: { low: 18000, high: 35000 },
       cat: { low: 20073, high: 47106 },
       shelter_cat: { low: 16000, high: 28000 }
     };
+
+    // CVMA / Trupanion lifetime ranges for Canada display (CAD)
+    const CANADA_RANGES = {
+      dog: { low: 25000, high: 70000 },
+      shelter_dog: { low: 22000, high: 45000 },
+      cat: { low: 22000, high: 52000 },
+      shelter_cat: { low: 20000, high: 34000 }
+    };
+
+    // Insurance: US - 70% coverage, $65/mo avg
+    // Canada - 90% coverage (Trupanion), $55/mo avg CAD
+    const INSURANCE_US   = { monthly: 65,  coverage: 0.70 };
+    const INSURANCE_CA   = { monthly: 55,  coverage: 0.90 };
 
     // Insurance: reduces emergency out-of-pocket by 70%, adds $65/mo average
     const INSURANCE_MONTHLY = 65;
@@ -2383,6 +2713,9 @@
     ============================================= */
     function fmt(n) {
       if (isNaN(n) || n === null) return '--';
+      if (currentCountry === 'CA') {
+        return '$' + Math.round(n).toLocaleString('en-CA') + ' CAD';
+      }
       return '$' + Math.round(n).toLocaleString('en-US');
     }
 
@@ -2409,15 +2742,18 @@
       const currentAge = AGE_MAP[ageBracket];
       const remainingYears = Math.max(data.lifespan - currentAge, 1);
 
+      // Pick insurance config based on country
+      const insuranceCfg = currentCountry === 'CA' ? INSURANCE_CA : INSURANCE_US;
+
       // Annual costs
       const annualRoutine = data.annualRoutine;
-      const insuranceAnnual = hasInsurance ? INSURANCE_MONTHLY * 12 : 0;
+      const insuranceAnnual = hasInsurance ? insuranceCfg.monthly * 12 : 0;
       const annualTotal = annualRoutine + insuranceAnnual;
 
       // Emergency costs
       const emergencyRaw = data.emergencyAvg;
       const emergencyOutOfPocket = hasInsurance
-        ? emergencyRaw * (1 - INSURANCE_COVERAGE)
+        ? emergencyRaw * (1 - insuranceCfg.coverage)
         : emergencyRaw;
 
       // Year 1 spike estimate (2.5x annual for puppy/kitten, otherwise normal)
@@ -2439,12 +2775,13 @@
       const gap = emergencyRaw;
 
       const lifetimeInsuranceSavings = hasInsurance
-        ? (emergencyRaw * INSURANCE_COVERAGE)
+        ? (emergencyRaw * insuranceCfg.coverage)
         : 0;
 
-      // Synchrony 2025 ranges
+      // Lifetime ranges: Synchrony 2025 (US) or CVMA/Trupanion (CA)
       const baseType = isShelter ? petType : (isDog ? 'dog' : 'cat');
-      const syncRange = SYNCHRONY_RANGES[baseType];
+      const rangeSource = currentCountry === 'CA' ? CANADA_RANGES : SYNCHRONY_RANGES;
+      const syncRange = rangeSource[baseType];
 
       return {
         annualRoutine,
@@ -2479,8 +2816,10 @@
         (r.hasInsurance ? ', including insurance premiums' : ', excluding insurance') + '.';
 
       if (r.syncRange) {
-        lifetimeSub += ' Synchrony 2025 full lifetime range: ' +
-          fmt(r.syncRange.low) + ' - ' + fmt(r.syncRange.high) + '.';
+        const rangeLabel = currentCountry === 'CA'
+          ? ' CVMA/Trupanion Canadian full lifetime range: '
+          : ' Synchrony 2025 full lifetime range: ';
+        lifetimeSub += rangeLabel + fmt(r.syncRange.low) + ' - ' + fmt(r.syncRange.high) + '.';
       }
 
       if (r.year1Cost) {
@@ -2503,9 +2842,15 @@
       document.getElementById('res-gap').textContent = fmt(r.gap) + ' single emergency';
 
       // Emergency sub
-      document.getElementById('res-emergency-sub').textContent = r.hasInsurance
-        ? 'Your out-of-pocket after a typical emergency (70% covered by insurance). Avg emergency visit: $800-$1,500. Surgery: $2,000-$5,000.'
-        : 'Full out-of-pocket with no insurance. Avg emergency visit: $800-$1,500. Surgery: $2,000-$5,000.';
+      if (currentCountry === 'CA') {
+        document.getElementById('res-emergency-sub').textContent = r.hasInsurance
+          ? 'Your out-of-pocket after a typical emergency (90% covered by Trupanion-style insurance). Avg emergency visit: $1,000-$2,000 CAD. Surgery: $3,000-$6,000 CAD.'
+          : 'Full out-of-pocket with no insurance. Avg emergency visit: $1,000-$2,000 CAD. Surgery: $3,000-$6,000 CAD. Vet costs rising ~10%/year in Canada.';
+      } else {
+        document.getElementById('res-emergency-sub').textContent = r.hasInsurance
+          ? 'Your out-of-pocket after a typical emergency (70% covered by insurance). Avg emergency visit: $800-$1,500. Surgery: $2,000-$5,000.'
+          : 'Full out-of-pocket with no insurance. Avg emergency visit: $800-$1,500. Surgery: $2,000-$5,000.';
+      }
 
       // Status banner
       const banner = document.getElementById('statusBanner');
@@ -2513,18 +2858,29 @@
       const msg    = document.getElementById('statusMsg');
       const icon   = document.getElementById('statusIcon');
 
+      const insuranceCoverage = currentCountry === 'CA' ? INSURANCE_CA.coverage : INSURANCE_US.coverage;
       if (r.hasInsurance) {
         banner.className = 'status-banner good';
         icon.innerHTML = '<circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
         title.textContent = 'Good call on insurance';
-        msg.textContent = 'Insurance could save you ' + fmt(r.emergencyRaw * INSURANCE_COVERAGE) +
-          ' if a major emergency hits. That is the difference between a manageable bill and a financial crisis. 78% of pet owners wish they had planned better (Synchrony 2025).';
+        if (currentCountry === 'CA') {
+          msg.textContent = 'Insurance (e.g. Trupanion at 90% coverage) could save you ' + fmt(r.emergencyRaw * insuranceCoverage) +
+            ' CAD if a major emergency hits. Canadian vet costs are rising ~10%/year, making coverage increasingly valuable. 78% of pet owners wish they had planned better.';
+        } else {
+          msg.textContent = 'Insurance could save you ' + fmt(r.emergencyRaw * insuranceCoverage) +
+            ' if a major emergency hits. That is the difference between a manageable bill and a financial crisis. 78% of pet owners wish they had planned better (Synchrony 2025).';
+        }
       } else {
         banner.className = 'status-banner warning';
         icon.innerHTML = '<circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
         title.textContent = 'No insurance: one emergency could cost ' + fmt(r.emergencyRaw);
-        msg.textContent = '78% of pet owners underestimate lifetime costs (Synchrony 2025). Without coverage or a dedicated emergency fund of ' + fmt(r.emergencyFund) +
-          ', a single accident or illness forces a financial decision at the worst possible moment. Build the fund or get an insurance quote.';
+        if (currentCountry === 'CA') {
+          msg.textContent = 'Canadian vet costs are rising ~10%/year (CVMA data). Without coverage or an emergency fund of ' + fmt(r.emergencyFund) +
+            ', a single accident forces a financial decision at the worst possible moment. Trupanion, Petsecure, and Fetch all offer Canadian plans. Get a quote before your pet turns 2.';
+        } else {
+          msg.textContent = '78% of pet owners underestimate lifetime costs (Synchrony 2025). Without coverage or a dedicated emergency fund of ' + fmt(r.emergencyFund) +
+            ', a single accident or illness forces a financial decision at the worst possible moment. Build the fund or get an insurance quote.';
+        }
       }
 
       // Show results
@@ -2596,8 +2952,13 @@
       const monthly   = document.getElementById('res-monthly').textContent;
       const petType   = document.getElementById('petType').options[document.getElementById('petType').selectedIndex].text;
 
+      const countryLabel = currentCountry === 'CA' ? ' (Canada - CAD)' : ' (United States)';
+      const sourceLabel = currentCountry === 'CA'
+        ? 'Sources: CVMA, Trupanion claims data, Statistics Canada | skipthesurprise.com'
+        : 'Source: Synchrony 2025 Lifetime of Care Study | skipthesurprise.com';
+
       const text = [
-        'My Pet Lifetime Cost Estimate (Skip the Surprise)',
+        'My Pet Lifetime Cost Estimate (Skip the Surprise)' + countryLabel,
         '---',
         'Pet: ' + petType,
         'Estimated Lifetime Cost: ' + lifetime,
@@ -2605,7 +2966,7 @@
         'Emergency Fund Target: ' + emergency,
         'Monthly Savings Target: ' + monthly,
         '---',
-        'Source: Synchrony 2025 Lifetime of Care Study | skipthesurprise.com'
+        sourceLabel
       ].join('\n');
 
       navigator.clipboard.writeText(text).then(function() {
@@ -2627,6 +2988,40 @@
         setTimeout(function() { toast.classList.remove('visible'); }, 3000);
       });
     });
+
+    /* =============================================
+       COUNTRY TOGGLE
+    ============================================= */
+    function switchCountry(country) {
+      currentCountry = country;
+      PET_DATA = country === 'CA' ? PET_DATA_CA : PET_DATA_US;
+
+      // Update toggle button states
+      document.getElementById('btnUS').classList.toggle('active', country === 'US');
+      document.getElementById('btnUS').setAttribute('aria-pressed', String(country === 'US'));
+      document.getElementById('btnCA').classList.toggle('active', country === 'CA');
+      document.getElementById('btnCA').setAttribute('aria-pressed', String(country === 'CA'));
+
+      // Show/hide currency note
+      document.getElementById('caCurrencyNote').style.display = country === 'CA' ? '' : 'none';
+
+      // Toggle all .us-content and .ca-content elements
+      document.querySelectorAll('.us-content').forEach(function(el) {
+        el.style.display = country === 'US' ? '' : 'none';
+      });
+      document.querySelectorAll('.ca-content').forEach(function(el) {
+        el.style.display = country === 'CA' ? '' : 'none';
+      });
+
+      // Recalculate if results are visible
+      if (document.getElementById('resultsContent').classList.contains('visible')) {
+        var results = calculate();
+        renderResults(results);
+      }
+    }
+
+    document.getElementById('btnUS').addEventListener('click', function() { switchCountry('US'); });
+    document.getElementById('btnCA').addEventListener('click', function() { switchCountry('CA'); });
 
     /* =============================================
        FAQ ACCORDION
