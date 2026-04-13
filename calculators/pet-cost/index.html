@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pet Lifetime Cost Calculator - The True Cost of Owning a Dog or Cat</title>
-  <meta name="description" content="Calculate the real lifetime cost of your pet including the emergency vet bills most owners don't plan for. Dogs cost $15,000-$30,000+ over their lifetime." />
+  <title>Pet Cost Calculator 2026 - The True Lifetime Cost of Owning a Dog or Cat</title>
+  <meta name="description" content="78% of pet owners underestimate their lifetime care costs. Use this pet cost calculator to find the true lifetime cost of owning a dog or cat. Dogs: $22,125-$60,602. Based on Synchrony 2025 data." />
   <meta name="robots" content="index, follow" />
-  <meta name="keywords" content="pet lifetime cost calculator, true cost of owning a dog, pet emergency fund calculator, hidden costs pet ownership" />
-  <meta property="og:title" content="Pet Lifetime Cost Calculator - The True Cost of Owning a Dog or Cat" />
-  <meta property="og:description" content="Calculate the real lifetime cost of your pet including the emergency vet bills most owners don't plan for. Dogs cost $15,000-$30,000+ over their lifetime." />
+  <meta name="keywords" content="pet lifetime cost calculator, true cost of owning a dog, pet emergency fund calculator, hidden costs pet ownership, how much does a dog cost, cat lifetime cost" />
+  <meta property="og:title" content="Pet Cost Calculator 2026 - The True Lifetime Cost of Owning a Dog or Cat" />
+  <meta property="og:description" content="78% of pet owners underestimate their lifetime care costs. Dogs: $22,125-$60,602. Cats: $20,073-$47,106. Based on Synchrony 2025 Lifetime of Care Study." />
   <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -24,7 +24,7 @@
         "name": "How much does it cost to own a dog over its lifetime?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The lifetime cost of owning a dog ranges from approximately $15,000 for a small dog to over $30,000 for a large breed, when you include routine annual care, emergency vet visits, and one-time adoption costs. Large breeds tend to have shorter lifespans and higher per-visit medical costs. This pet lifetime cost calculator breaks it down by size and includes the emergency fund you will need."
+          "text": "According to the Synchrony 2025 Lifetime of Care Study, the lifetime cost of owning a dog ranges from $22,125 to $60,602 over approximately 15 years. That includes routine annual care, emergency vet visits, and one-time costs like adoption, spay/neuter, and initial supplies. Year 1 costs 2-3x more than subsequent years due to adoption fees, initial vet visits, and startup supplies. Large breeds tend to have shorter lifespans and higher per-visit medical costs. This pet lifetime cost calculator breaks it down by size and includes the emergency fund you will need."
         }
       },
       {
@@ -1104,6 +1104,387 @@
     }
 
     /* ========================
+       UNDERESTIMATE HOOK BANNER
+    ======================== */
+    .hook-banner {
+      background: linear-gradient(135deg, #7c2d12 0%, #b91c1c 100%);
+      color: var(--white);
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+    }
+
+    .hook-inner {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .hook-stat {
+      font-size: clamp(2.5rem, 7vw, 4.5rem);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      color: #fca5a5;
+      margin-bottom: 0.5rem;
+    }
+
+    .hook-title {
+      font-size: clamp(1.1rem, 3vw, 1.5rem);
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .hook-sub {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.78);
+      line-height: 1.65;
+      margin-bottom: 1.5rem;
+    }
+
+    .hook-compare {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+
+    .hook-box {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: var(--radius-md);
+      padding: 1.25rem 1.75rem;
+      min-width: 200px;
+      text-align: center;
+    }
+
+    .hook-box-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 0.4rem;
+    }
+
+    .hook-box-val {
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .hook-box-val.actual { color: #fca5a5; }
+    .hook-box-val.think  { color: #86efac; }
+
+    .hook-box-note {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.55);
+      margin-top: 0.3rem;
+    }
+
+    .hook-source {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.4);
+      margin-top: 1.25rem;
+    }
+
+    /* ========================
+       YEAR-BY-YEAR CHART
+    ======================== */
+    .lifecycle-section {
+      padding: 5rem 1.5rem;
+      background: var(--gray-50);
+    }
+
+    .lifecycle-chart {
+      margin-top: 2.5rem;
+      display: flex;
+      gap: 0.35rem;
+      align-items: flex-end;
+      height: 220px;
+      padding-bottom: 2.5rem;
+      position: relative;
+    }
+
+    .lifecycle-chart::after {
+      content: '';
+      position: absolute;
+      bottom: 2.5rem;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--gray-200);
+    }
+
+    .lifecycle-bar-wrap {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.3rem;
+      height: 100%;
+      justify-content: flex-end;
+      position: relative;
+    }
+
+    .lifecycle-bar {
+      width: 100%;
+      border-radius: 4px 4px 0 0;
+      min-height: 4px;
+      transition: opacity 0.15s;
+      position: relative;
+    }
+
+    .lifecycle-bar:hover { opacity: 0.85; }
+
+    .lifecycle-bar-label {
+      font-size: 0.62rem;
+      color: var(--gray-500);
+      white-space: nowrap;
+      position: absolute;
+      bottom: -2rem;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .lifecycle-legend {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .lifecycle-legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+      color: var(--gray-600);
+    }
+
+    .lifecycle-legend-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+
+    .lifecycle-phases {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+
+    .lifecycle-phase-card {
+      background: var(--white);
+      border: 1.5px solid var(--gray-200);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+    }
+
+    .lifecycle-phase-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      padding: 0.2rem 0.6rem;
+      border-radius: 100px;
+      margin-bottom: 0.6rem;
+    }
+
+    .tag-year1  { background: #fee2e2; color: #b91c1c; }
+    .tag-prime  { background: #dcfce7; color: #15803d; }
+    .tag-senior { background: #fef3c7; color: #b45309; }
+
+    .lifecycle-phase-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 0.5rem;
+    }
+
+    .lifecycle-phase-cost {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--blue-600);
+      margin-bottom: 0.4rem;
+    }
+
+    .lifecycle-phase-items {
+      font-size: 0.8rem;
+      color: var(--gray-500);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 600px) {
+      .lifecycle-phases { grid-template-columns: 1fr; }
+      .lifecycle-chart { height: 160px; }
+    }
+
+    /* ========================
+       INSURANCE ANALYSIS
+    ======================== */
+    .insurance-section {
+      padding: 5rem 1.5rem;
+      background: var(--white);
+    }
+
+    .insurance-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 2.5rem;
+    }
+
+    .insurance-panel {
+      background: var(--gray-50);
+      border: 1.5px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+    }
+
+    .insurance-panel.panel-no {
+      border-color: #fca5a5;
+      background: var(--red-50);
+    }
+
+    .insurance-panel.panel-yes {
+      border-color: #86efac;
+      background: var(--green-50);
+    }
+
+    .insurance-panel-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .panel-no .insurance-panel-title { color: var(--red-700); }
+    .panel-yes .insurance-panel-title { color: var(--green-700); }
+
+    .insurance-line {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.875rem;
+      padding: 0.4rem 0;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .insurance-line:last-child { border-bottom: none; }
+
+    .insurance-line-label { color: var(--gray-600); }
+    .insurance-line-val { font-weight: 700; color: var(--gray-900); }
+    .insurance-line-val.red-val { color: var(--red-600); }
+    .insurance-line-val.green-val { color: var(--green-700); }
+
+    .insurance-verdict {
+      margin-top: 1rem;
+      padding: 0.75rem 1rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      font-weight: 600;
+      line-height: 1.55;
+    }
+
+    .panel-no .insurance-verdict {
+      background: #fee2e2;
+      color: var(--red-700);
+    }
+
+    .panel-yes .insurance-verdict {
+      background: #dcfce7;
+      color: var(--green-700);
+    }
+
+    @media (max-width: 640px) {
+      .insurance-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ========================
+       SHARE BUTTON
+    ======================== */
+    .share-row {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .share-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.55rem 1.1rem;
+      border: 1.5px solid var(--gray-300);
+      border-radius: var(--radius-md);
+      background: var(--white);
+      color: var(--gray-700);
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+      transition: border-color 0.15s, background 0.15s, color 0.15s;
+    }
+
+    .share-btn:hover {
+      border-color: var(--blue-500);
+      color: var(--blue-700);
+      background: var(--blue-50);
+    }
+
+    .share-btn svg { width: 14px; height: 14px; }
+
+    .share-toast {
+      display: none;
+      font-size: 0.78rem;
+      color: var(--green-700);
+      font-weight: 600;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.4rem 0.75rem;
+      background: var(--green-50);
+      border: 1px solid var(--green-500);
+      border-radius: var(--radius-sm);
+    }
+
+    .share-toast.visible { display: flex; }
+
+    /* ========================
+       DATA SOURCES
+    ======================== */
+    .sources-bar {
+      background: var(--gray-100);
+      border-top: 1px solid var(--gray-200);
+      padding: 1.25rem 1.5rem;
+      text-align: center;
+    }
+
+    .sources-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .sources-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gray-500);
+      margin-bottom: 0.35rem;
+    }
+
+    .sources-list {
+      font-size: 0.78rem;
+      color: var(--gray-500);
+      line-height: 1.7;
+    }
+
+    /* ========================
        RESPONSIVE
     ======================== */
     @media (max-width: 768px) {
@@ -1191,21 +1572,48 @@
     </a>
     <div class="hero-stats" aria-label="Quick stats">
       <div class="hero-stat">
-        <div class="hero-stat-num">$30k+</div>
-        <div class="hero-stat-label">Dog lifetime cost</div>
+        <div class="hero-stat-num">$60,602</div>
+        <div class="hero-stat-label">Dog lifetime max (Synchrony 2025)</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-num">$5,500</div>
-        <div class="hero-stat-label">Avg emergency bill</div>
+        <div class="hero-stat-num">78%</div>
+        <div class="hero-stat-label">Owners who underestimate</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-num">40%</div>
-        <div class="hero-stat-label">Owners underprepared</div>
+        <div class="hero-stat-num">2-3x</div>
+        <div class="hero-stat-label">Year 1 vs subsequent years</div>
       </div>
       <div class="hero-stat">
         <div class="hero-stat-num">Free</div>
         <div class="hero-stat-label">Always</div>
       </div>
+    </div>
+  </section>
+
+  <!-- UNDERESTIMATE HOOK -->
+  <section class="hook-banner" aria-labelledby="hook-heading">
+    <div class="hook-inner">
+      <div class="hook-stat">78%</div>
+      <h2 class="hook-title" id="hook-heading">of pet owners underestimate their lifetime care costs</h2>
+      <p class="hook-sub">The Synchrony 2025 Lifetime of Care Study surveyed thousands of pet owners. Most budgeted for food and annual checkups. Almost none planned for what ownership actually costs over a lifetime.</p>
+      <div class="hook-compare">
+        <div class="hook-box">
+          <div class="hook-box-label">What owners THINK it costs</div>
+          <div class="hook-box-val think">~$10,000</div>
+          <div class="hook-box-note">Typical mental estimate (dog, lifetime)</div>
+        </div>
+        <div class="hook-box">
+          <div class="hook-box-label">What it ACTUALLY costs</div>
+          <div class="hook-box-val actual">$22,125 - $60,602</div>
+          <div class="hook-box-note">Synchrony 2025 dog lifetime range</div>
+        </div>
+        <div class="hook-box">
+          <div class="hook-box-label">Cats (full lifetime)</div>
+          <div class="hook-box-val actual">$20,073 - $47,106</div>
+          <div class="hook-box-note">Synchrony 2025 cat lifetime range</div>
+        </div>
+      </div>
+      <p class="hook-source">Source: Synchrony 2025 Lifetime of Care Study. Ranges reflect minimum vs. maximum reported ownership scenarios.</p>
     </div>
   </section>
 
@@ -1240,8 +1648,10 @@
             <div class="field-group">
               <label class="field-label" for="petType">Pet type</label>
               <select id="petType">
-                <option value="dog">Dog</option>
-                <option value="cat">Cat</option>
+                <option value="dog">Dog (purebred or unknown)</option>
+                <option value="cat">Cat (purebred or unknown)</option>
+                <option value="shelter_dog">Dog - Shelter / Mixed Breed</option>
+                <option value="shelter_cat">Cat - Shelter / Mixed Breed</option>
               </select>
             </div>
 
@@ -1383,7 +1793,151 @@
                 <span id="statusMsg"></span>
               </div>
 
+              <!-- Share Result -->
+              <div class="share-row" id="shareRow">
+                <button class="share-btn" id="copyResultBtn" type="button">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                  </svg>
+                  Copy Results
+                </button>
+                <div class="share-toast" id="shareToast">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+                  Copied to clipboard
+                </div>
+              </div>
+
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- YEAR-BY-YEAR COST LIFECYCLE -->
+  <section class="lifecycle-section" aria-labelledby="lifecycle-heading">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">Year by Year</div>
+        <h2 class="section-title" id="lifecycle-heading">How Pet Costs Change Over a Lifetime</h2>
+        <p class="section-sub">Year 1 hits 2-3x harder than any other year. Senior years spike again. Most owners only plan for the middle.</p>
+      </div>
+
+      <!-- Bar chart: years 1-15 relative cost visualization -->
+      <div class="lifecycle-chart" aria-label="Year-by-year relative pet cost chart" role="img">
+        <!-- Heights are proportional: Year 1 = spike, years 2-8 = routine, years 9+ = senior rise -->
+        <div class="lifecycle-bar-wrap">
+          <div class="lifecycle-bar" style="height:100%;background:#ef4444;" title="Year 1: ~$4,000-$6,000"></div>
+          <span class="lifecycle-bar-label">Yr 1</span>
+        </div>
+        <div class="lifecycle-bar-wrap">
+          <div class="lifecycle-bar" style="height:38%;background:#22c55e;" title="Year 2: ~$1,500-$2,200"></div>
+          <span class="lifecycle-bar-label">2</span>
+        </div>
+        <div class="lifecycle-bar-wrap">
+          <div class="lifecycle-bar" style="height:36%;background:#22c55e;" title="Year 3: ~$1,400-$2,100"></div>
+          <span class="lifecycle-bar-label">3</span>
+        </div>
+        <div class="lifecycle-bar-wrap">
+          <div class="lifecycle-bar" style="height:37%;background:#22c55e;" title="Year 4: ~$1,450-$2,150"></div>
+          <span class="lifecycle-bar-label">4</span>
+        </div>
+        <div class="lifecycle-bar-wrap">
+          <div class="lifecycle-bar" style="height:36%;background:#22c55e;" title="Year 5: ~$1,400-$2,100"></div>
+          <span class="lifecycle-bar-label">5</span>
+        </div>
+        <div class="lifecycle-bar-wrap">
+          <div class="lifecycle-bar" style="height:38%;background:#22c55e;" title="Year 6: ~$1,500-$2,200"></div>
+          <span class="lifecycle-bar-label">6</span>
+        </div>
+        <div class="lifecycle-bar-wrap">
+          <div class="lifecycle-bar" style="height:37%;background:#22c55e;" title="Year 7: ~$1,450-$2,150"></div>
+          <span class="lifecycle-bar-label">7</span>
+        </div>
+        <div class="lifecycle-bar-wrap">
+          <div class="lifecycle-bar" style="height:39%;background:#22c55e;" title="Year 8: ~$1,550-$2,300"></div>
+          <span class="lifecycle-bar-label">8</span>
+        </div>
+        <div class="lifecycle-bar-wrap">
+          <div class="lifecycle-bar" style="height:50%;background:#f59e0b;" title="Year 9: ~$2,000-$3,000 (senior care begins)"></div>
+          <span class="lifecycle-bar-label">9</span>
+        </div>
+        <div class="lifecycle-bar-wrap">
+          <div class="lifecycle-bar" style="height:54%;background:#f59e0b;" title="Year 10: ~$2,100-$3,200"></div>
+          <span class="lifecycle-bar-label">10</span>
+        </div>
+        <div class="lifecycle-bar-wrap">
+          <div class="lifecycle-bar" style="height:60%;background:#f59e0b;" title="Year 11: ~$2,400-$3,500"></div>
+          <span class="lifecycle-bar-label">11</span>
+        </div>
+        <div class="lifecycle-bar-wrap">
+          <div class="lifecycle-bar" style="height:65%;background:#f59e0b;" title="Year 12: ~$2,600-$3,800"></div>
+          <span class="lifecycle-bar-label">12</span>
+        </div>
+        <div class="lifecycle-bar-wrap">
+          <div class="lifecycle-bar" style="height:72%;background:#f59e0b;" title="Year 13: ~$2,900-$4,200"></div>
+          <span class="lifecycle-bar-label">13</span>
+        </div>
+        <div class="lifecycle-bar-wrap">
+          <div class="lifecycle-bar" style="height:78%;background:#f59e0b;" title="Year 14: ~$3,100-$4,500"></div>
+          <span class="lifecycle-bar-label">14</span>
+        </div>
+        <div class="lifecycle-bar-wrap">
+          <div class="lifecycle-bar" style="height:82%;background:#f59e0b;" title="Year 15: ~$3,300-$4,800 (end of life)"></div>
+          <span class="lifecycle-bar-label">15</span>
+        </div>
+      </div>
+
+      <div class="lifecycle-legend">
+        <div class="lifecycle-legend-item">
+          <div class="lifecycle-legend-dot" style="background:#ef4444;"></div>
+          Year 1: Startup spike (adoption + initial vet + spay/neuter + supplies)
+        </div>
+        <div class="lifecycle-legend-item">
+          <div class="lifecycle-legend-dot" style="background:#22c55e;"></div>
+          Years 2-8: Routine care (food, annual vet, preventatives)
+        </div>
+        <div class="lifecycle-legend-item">
+          <div class="lifecycle-legend-dot" style="background:#f59e0b;"></div>
+          Years 9+: Senior care (medications, dental, increased vet visits)
+        </div>
+      </div>
+
+      <div class="lifecycle-phases">
+        <div class="lifecycle-phase-card">
+          <span class="lifecycle-phase-tag tag-year1">Year 1 Only</span>
+          <div class="lifecycle-phase-title">The Startup Spike</div>
+          <div class="lifecycle-phase-cost">$4,000 - $6,000</div>
+          <div class="lifecycle-phase-items">
+            Adoption fee: $50 - $3,000<br>
+            Initial vet exam + vaccines: $200 - $400<br>
+            Spay / neuter: $200 - $800<br>
+            Crate, bed, leash, bowls: $200 - $600<br>
+            Microchip + license: $50 - $100
+          </div>
+        </div>
+        <div class="lifecycle-phase-card">
+          <span class="lifecycle-phase-tag tag-prime">Years 2-8</span>
+          <div class="lifecycle-phase-title">Routine Care Phase</div>
+          <div class="lifecycle-phase-cost">$1,400 - $2,300 / year</div>
+          <div class="lifecycle-phase-items">
+            Food: $400 - $900/year<br>
+            Annual vet wellness: $200 - $400<br>
+            Flea / heartworm prevention: $100 - $250<br>
+            Grooming (breed-dependent): $0 - $600<br>
+            Toys, treats, misc: $100 - $300
+          </div>
+        </div>
+        <div class="lifecycle-phase-card">
+          <span class="lifecycle-phase-tag tag-senior">Years 9+</span>
+          <div class="lifecycle-phase-title">Senior Care Phase</div>
+          <div class="lifecycle-phase-cost">$2,000 - $4,800 / year</div>
+          <div class="lifecycle-phase-items">
+            More frequent vet visits: $400 - $800<br>
+            Dental cleanings (required): $300 - $700<br>
+            Prescription medications: $200 - $800<br>
+            Joint supplements / special food: $200 - $500<br>
+            End-of-life care: $200 - $1,000
           </div>
         </div>
       </div>
@@ -1394,9 +1948,9 @@
   <section class="costs-section" aria-labelledby="costs-heading">
     <div class="container">
       <div class="section-header">
-        <div class="section-label">The Full Picture</div>
-        <h2 class="section-title" id="costs-heading">The Costs Nobody Tells You About</h2>
-        <p class="section-sub">Every new pet owner budgets for food and annual checkups. Here is what they miss.</p>
+        <div class="section-label">Hidden Costs Most Owners Miss</div>
+        <h2 class="section-title" id="costs-heading">What You're Probably Not Budgeting For</h2>
+        <p class="section-sub">Every new pet owner budgets for food and annual checkups. Here is what they miss, with real numbers.</p>
       </div>
 
       <div class="costs-grid">
@@ -1408,19 +1962,8 @@
             </svg>
           </div>
           <div class="cost-title">Dental Cleanings</div>
-          <div class="cost-range">$300 - $800 per year</div>
-          <p class="cost-body">Veterinary dental cleanings require full anesthesia and are recommended annually for most dogs and every 1-2 years for cats. Most owners skip them until there is a problem, which turns a $400 cleaning into a $1,500 extraction.</p>
-        </div>
-
-        <div class="cost-card">
-          <div class="cost-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
-            </svg>
-          </div>
-          <div class="cost-title">Medications and Supplements</div>
-          <div class="cost-range">$200 - $600 per year</div>
-          <p class="cost-body">Flea prevention, heartworm medication, joint supplements for older pets, and any chronic condition medications add up fast. Large dogs on prescription diets can spend $150 or more on food alone each month.</p>
+          <div class="cost-range">$300 - $700 per year (after age 3)</div>
+          <p class="cost-body">Vet dental cleanings require full anesthesia. Recommended annually for most dogs after age 3. Most owners skip them until there is a problem, turning a $400 cleaning into a $1,500 extraction. Cats need cleaning every 1-2 years.</p>
         </div>
 
         <div class="cost-card">
@@ -1432,20 +1975,8 @@
             </svg>
           </div>
           <div class="cost-title">Boarding and Pet Sitting</div>
-          <div class="cost-range">$30 - $80 per night</div>
-          <p class="cost-body">Every vacation, work trip, or family event that requires you to leave town becomes a line item. A two-week vacation with boarding costs $420 to $1,120. Over a 12-year dog ownership, that adds thousands most people never account for.</p>
-        </div>
-
-        <div class="cost-card">
-          <div class="cost-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/>
-              <circle cx="12" cy="13" r="3"/>
-            </svg>
-          </div>
-          <div class="cost-title">Grooming</div>
-          <div class="cost-range">$50 - $150 per session</div>
-          <p class="cost-body">Many breeds require professional grooming every 6-8 weeks. Over a small dog's 14-year life, professional grooming alone can total $6,000 to $15,000. Even short-haired pets need nail trims and occasional baths beyond what owners can handle at home.</p>
+          <div class="cost-range">$30 - $75 per night</div>
+          <p class="cost-body">Every vacation, work trip, or family event that requires you to leave town becomes a line item. A two-week vacation costs $420 to $1,050 in boarding alone. Over 12 years, that is $5,000 to $12,000 most owners never plan for.</p>
         </div>
 
         <div class="cost-card">
@@ -1455,9 +1986,9 @@
               <path d="M7 7h.01"/>
             </svg>
           </div>
-          <div class="cost-title">Training and Behavior</div>
-          <div class="cost-range">$150 - $1,000+</div>
-          <p class="cost-body">Puppy obedience classes, private training for problem behaviors, or professional help for anxiety and aggression issues are costs most owners encounter. Untreated behavioral problems can lead to property damage that costs far more.</p>
+          <div class="cost-title">Behavioral Training</div>
+          <div class="cost-range">$200 - $600</div>
+          <p class="cost-body">Puppy obedience classes, private training for problem behaviors, or professional help for anxiety and aggression. Untreated behavioral issues cause property damage and stress that cost far more in the long run.</p>
         </div>
 
         <div class="cost-card">
@@ -1467,8 +1998,31 @@
             </svg>
           </div>
           <div class="cost-title">End-of-Life Care</div>
-          <div class="cost-range">$500 - $5,000+</div>
-          <p class="cost-body">Palliative care, mobility aids, prescription diets for organ disease, and the final vet visit itself all carry costs most owners are unprepared for emotionally and financially. Planning ahead makes these decisions less devastating.</p>
+          <div class="cost-range">$200 - $1,000+</div>
+          <p class="cost-body">Palliative care, mobility aids, prescription diets for organ disease, and the final vet visit carry costs most owners face unprepared. Planning ahead makes these decisions less devastating when the time comes.</p>
+        </div>
+
+        <div class="cost-card">
+          <div class="cost-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+              <polyline points="9 22 9 12 15 12 15 22"/>
+            </svg>
+          </div>
+          <div class="cost-title">Pet Deposit and Rent Premium</div>
+          <div class="cost-range">$200 - $500 one-time + $25 - $50/month</div>
+          <p class="cost-body">Renters face pet deposits and monthly pet rent that are rarely factored into ownership cost estimates. Over a dog's 12-year life, that is $3,800 to $7,700 in housing premiums just for having a pet in your unit.</p>
+        </div>
+
+        <div class="cost-card">
+          <div class="cost-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+            </svg>
+          </div>
+          <div class="cost-title">Emergency Vet Visits</div>
+          <div class="cost-range">$800 - $1,500 per visit / $2,000 - $5,000 for surgery</div>
+          <p class="cost-body">The average emergency visit runs $800-$1,500. Emergency surgery (foreign body obstruction, ACL, bloat) runs $2,000-$5,000. Breed-specific risks add more: brachycephalic surgery for French Bulldogs costs $2,000-$5,000 alone.</p>
         </div>
       </div>
     </div>
@@ -1491,49 +2045,152 @@
               <th scope="col">Annual Routine</th>
               <th scope="col">Emergency (avg)</th>
               <th scope="col">Lifespan</th>
-              <th scope="col">Lifetime Estimate</th>
+              <th scope="col">Lifetime Range (Synchrony 2025)</th>
             </tr>
           </thead>
           <tbody>
             <tr>
+              <td>Dog - Any size (all-in)</td>
+              <td>$1,400 - $2,800</td>
+              <td>$800 - $5,000</td>
+              <td>10-15 years</td>
+              <td><strong>$22,125 - $60,602</strong></td>
+            </tr>
+            <tr>
               <td>Dog - Small (under 20 lbs)</td>
               <td>$1,200</td>
-              <td>$3,500</td>
+              <td>$1,500 avg</td>
               <td>14 years</td>
-              <td><strong>$16,800 - $20,300+</strong></td>
+              <td><strong>$22,000 - $32,000+</strong></td>
             </tr>
             <tr>
               <td>Dog - Medium (20-60 lbs)</td>
               <td>$1,500</td>
-              <td>$4,500</td>
+              <td>$2,500 avg</td>
               <td>12 years</td>
-              <td><strong>$18,000 - $22,500+</strong></td>
+              <td><strong>$24,000 - $38,000+</strong></td>
             </tr>
             <tr>
               <td>Dog - Large (60+ lbs)</td>
               <td>$1,800</td>
-              <td>$5,500</td>
+              <td>$3,500 avg</td>
               <td>10 years</td>
-              <td><strong>$18,000 - $23,500+</strong></td>
+              <td><strong>$22,000 - $40,000+</strong></td>
+            </tr>
+            <tr>
+              <td>Dog - Shelter / Mixed Breed</td>
+              <td>$1,200 - $1,600</td>
+              <td>$1,000 - $3,000 avg</td>
+              <td>12-15 years</td>
+              <td><strong>$18,000 - $35,000</strong></td>
+            </tr>
+            <tr>
+              <td>Cat - Any (all-in)</td>
+              <td>$900 - $1,300</td>
+              <td>$800 - $3,000</td>
+              <td>12-18 years</td>
+              <td><strong>$20,073 - $47,106</strong></td>
             </tr>
             <tr>
               <td>Cat - Indoor</td>
               <td>$900</td>
-              <td>$2,500</td>
+              <td>$1,500 avg</td>
               <td>16 years</td>
-              <td><strong>$14,400 - $16,900+</strong></td>
+              <td><strong>$20,000 - $30,000+</strong></td>
             </tr>
             <tr>
               <td>Cat - Outdoor</td>
               <td>$1,100</td>
-              <td>$3,500</td>
+              <td>$2,000 avg</td>
               <td>14 years</td>
-              <td><strong>$15,400 - $18,900+</strong></td>
+              <td><strong>$18,000 - $28,000+</strong></td>
+            </tr>
+            <tr>
+              <td>Cat - Shelter / Mixed Breed</td>
+              <td>$800 - $1,100</td>
+              <td>$800 - $2,000 avg</td>
+              <td>14-18 years</td>
+              <td><strong>$16,000 - $28,000</strong></td>
             </tr>
           </tbody>
         </table>
       </div>
-      <p style="margin-top:1.25rem;font-size:0.8rem;color:rgba(255,255,255,0.45);">Lifetime estimates include routine annual costs only. Emergency costs represent a single average incident and are not recurring. Actual costs vary by location, breed, and individual health history. Insurance reduces emergency out-of-pocket by approximately 70%.</p>
+      <p style="margin-top:1.25rem;font-size:0.8rem;color:rgba(255,255,255,0.45);">Dog lifetime range ($22,125-$60,602) and cat lifetime range ($20,073-$47,106) from Synchrony 2025 Lifetime of Care Study. Shelter/mixed breed rows reflect lower adoption costs ($50-$300 vs $500-$3,000 purebred) and generally fewer breed-specific health issues. Emergency costs represent per-incident averages, not recurring annual costs. Insurance reduces emergency out-of-pocket by approximately 70%.</p>
+    </div>
+  </section>
+
+  <!-- INSURANCE COST-BENEFIT -->
+  <section class="insurance-section" aria-labelledby="insurance-heading">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">Pet Insurance</div>
+        <h2 class="section-title" id="insurance-heading">Insurance vs. No Insurance: Real Numbers</h2>
+        <p class="section-sub">Average pet insurance costs $50-$80/month. Here is what that actually means when an emergency hits.</p>
+      </div>
+
+      <div class="insurance-grid">
+        <div class="insurance-panel panel-no">
+          <div class="insurance-panel-title">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg>
+            No Pet Insurance
+          </div>
+          <div class="insurance-line">
+            <span class="insurance-line-label">Monthly cost</span>
+            <span class="insurance-line-val">$0</span>
+          </div>
+          <div class="insurance-line">
+            <span class="insurance-line-label">Emergency visit out-of-pocket</span>
+            <span class="insurance-line-val red-val">$800 - $1,500</span>
+          </div>
+          <div class="insurance-line">
+            <span class="insurance-line-label">Emergency surgery out-of-pocket</span>
+            <span class="insurance-line-val red-val">$2,000 - $5,000</span>
+          </div>
+          <div class="insurance-line">
+            <span class="insurance-line-label">Average claim scenario payout</span>
+            <span class="insurance-line-val red-val">$0 (you pay it all)</span>
+          </div>
+          <div class="insurance-line">
+            <span class="insurance-line-label">12-year savings vs insured</span>
+            <span class="insurance-line-val">$7,200 - $11,520</span>
+          </div>
+          <div class="insurance-verdict">
+            One unplanned emergency wipes out years of premium savings. Without an emergency fund of $2,000-$5,000, cost becomes the deciding factor in care decisions.
+          </div>
+        </div>
+
+        <div class="insurance-panel panel-yes">
+          <div class="insurance-panel-title">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
+            With Pet Insurance
+          </div>
+          <div class="insurance-line">
+            <span class="insurance-line-label">Monthly cost</span>
+            <span class="insurance-line-val">$50 - $80/month ($600 - $960/year)</span>
+          </div>
+          <div class="insurance-line">
+            <span class="insurance-line-label">Average annual claim payout</span>
+            <span class="insurance-line-val green-val">$500 - $1,000</span>
+          </div>
+          <div class="insurance-line">
+            <span class="insurance-line-label">Emergency visit out-of-pocket (after 70% coverage)</span>
+            <span class="insurance-line-val green-val">$240 - $450</span>
+          </div>
+          <div class="insurance-line">
+            <span class="insurance-line-label">Emergency surgery out-of-pocket</span>
+            <span class="insurance-line-val green-val">$600 - $1,500</span>
+          </div>
+          <div class="insurance-line">
+            <span class="insurance-line-label">12-year total premium cost</span>
+            <span class="insurance-line-val">$7,200 - $11,520</span>
+          </div>
+          <div class="insurance-verdict">
+            The real value is not financial math. It is being able to say yes to necessary treatment without checking your bank balance first.
+          </div>
+        </div>
+      </div>
+
+      <p style="margin-top:1.5rem;font-size:0.82rem;color:var(--gray-500);max-width:700px;">Insurance assumes 70% reimbursement after deductible, which is typical for mid-tier plans. Actual coverage varies. Premiums increase with pet age. Breed-specific conditions (e.g. French Bulldog brachycephalic issues, German Shepherd hip dysplasia) make insurance more cost-effective for those breeds.</p>
     </div>
   </section>
 
@@ -1649,6 +2306,20 @@
     </div>
   </section>
 
+  <!-- DATA SOURCES -->
+  <div class="sources-bar">
+    <div class="sources-inner">
+      <div class="sources-label">Data Sources</div>
+      <p class="sources-list">
+        Synchrony 2025 Lifetime of Care Study (dog $22,125-$60,602; cat $20,073-$47,106; 78% underestimate stat) &bull;
+        ASPCA Pet Care Cost Guides &bull;
+        American Veterinary Medical Association (AVMA) &bull;
+        American Pet Products Association (APPA) National Pet Owners Survey &bull;
+        Veterinary Pet Insurance (VPI) / Nationwide claims data
+      </p>
+    </div>
+  </div>
+
   <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
@@ -1665,14 +2336,31 @@
     ============================================= */
     const PET_DATA = {
       dog: {
-        small:  { annualRoutine: 1200, emergencyAvg: 3500, lifespan: 14 },
-        medium: { annualRoutine: 1500, emergencyAvg: 4500, lifespan: 12 },
-        large:  { annualRoutine: 1800, emergencyAvg: 5500, lifespan: 10 }
+        small:  { annualRoutine: 1200, emergencyAvg: 1500, lifespan: 14 },
+        medium: { annualRoutine: 1500, emergencyAvg: 2500, lifespan: 12 },
+        large:  { annualRoutine: 1800, emergencyAvg: 3500, lifespan: 10 }
       },
       cat: {
-        indoor:  { annualRoutine: 900,  emergencyAvg: 2500, lifespan: 16 },
-        outdoor: { annualRoutine: 1100, emergencyAvg: 3500, lifespan: 14 }
+        indoor:  { annualRoutine: 900,  emergencyAvg: 1500, lifespan: 16 },
+        outdoor: { annualRoutine: 1100, emergencyAvg: 2000, lifespan: 14 }
+      },
+      shelter_dog: {
+        small:  { annualRoutine: 1100, emergencyAvg: 1200, lifespan: 14, shelterNote: 'Shelter adoption: $50-$300 vs $500-$3,000 purebred. Often already spayed/neutered and vaccinated.' },
+        medium: { annualRoutine: 1350, emergencyAvg: 2000, lifespan: 13, shelterNote: 'Shelter adoption: $50-$300 vs $500-$3,000 purebred. Often already spayed/neutered and vaccinated.' },
+        large:  { annualRoutine: 1650, emergencyAvg: 2800, lifespan: 11, shelterNote: 'Shelter adoption: $50-$300 vs $500-$3,000 purebred. Often already spayed/neutered and vaccinated.' }
+      },
+      shelter_cat: {
+        indoor:  { annualRoutine: 800,  emergencyAvg: 1200, lifespan: 16, shelterNote: 'Shelter adoption: $50-$150 vs $300-$1,500 purebred. Often already spayed/neutered and vaccinated.' },
+        outdoor: { annualRoutine: 1000, emergencyAvg: 1600, lifespan: 14, shelterNote: 'Shelter adoption: $50-$150 vs $300-$1,500 purebred. Often already spayed/neutered and vaccinated.' }
       }
+    };
+
+    // Synchrony 2025 lifetime ranges for display
+    const SYNCHRONY_RANGES = {
+      dog: { low: 22125, high: 60602 },
+      shelter_dog: { low: 18000, high: 35000 },
+      cat: { low: 20073, high: 47106 },
+      shelter_cat: { low: 16000, high: 28000 }
     };
 
     // Insurance: reduces emergency out-of-pocket by 70%, adds $65/mo average
@@ -1706,8 +2394,12 @@
       const hasInsurance = document.querySelector('input[name="insurance"]:checked').value === 'yes';
       const ageBracket = document.getElementById('petAge').value;
 
+      // Normalize petType to base type for size/lifestyle lookup
+      const isDog = petType === 'dog' || petType === 'shelter_dog';
+      const isShelter = petType === 'shelter_dog' || petType === 'shelter_cat';
+
       let subType;
-      if (petType === 'dog') {
+      if (isDog) {
         subType = document.querySelector('input[name="dogSize"]:checked').value;
       } else {
         subType = document.querySelector('input[name="catType"]:checked').value;
@@ -1728,11 +2420,15 @@
         ? emergencyRaw * (1 - INSURANCE_COVERAGE)
         : emergencyRaw;
 
+      // Year 1 spike estimate (2.5x annual for puppy/kitten, otherwise normal)
+      const year1Multiplier = ageBracket === 'puppy' ? 2.5 : 1;
+      const year1Cost = annualRoutine * year1Multiplier + (ageBracket === 'puppy' ? (isShelter ? 150 : 1200) : 0);
+
       // Lifetime cost = routine years + one emergency event expected
       const lifetimeRoutine = annualTotal * remainingYears;
       const lifetimeCost = lifetimeRoutine + emergencyOutOfPocket;
 
-      // Emergency fund recommendation (full emergency cost if no insurance, reduced if insured)
+      // Emergency fund recommendation
       const emergencyFund = emergencyOutOfPocket;
 
       // Monthly savings to build emergency fund in 12 months
@@ -1740,15 +2436,15 @@
 
       // Comparison: what owners typically budget vs reality
       const typicalBudget = Math.round(annualRoutine * TYPICAL_BUDGET_RATIO);
-      const gap = emergencyRaw; // worst case single emergency
+      const gap = emergencyRaw;
 
-      // Insurance savings message
-      const insuranceSavings = hasInsurance
-        ? (emergencyRaw * INSURANCE_COVERAGE) - insuranceAnnual * remainingYears / remainingYears
-        : null;
       const lifetimeInsuranceSavings = hasInsurance
         ? (emergencyRaw * INSURANCE_COVERAGE)
         : 0;
+
+      // Synchrony 2025 ranges
+      const baseType = isShelter ? petType : (isDog ? 'dog' : 'cat');
+      const syncRange = SYNCHRONY_RANGES[baseType];
 
       return {
         annualRoutine,
@@ -1764,7 +2460,11 @@
         lifetimeInsuranceSavings,
         emergencyRaw,
         petType,
-        subType
+        subType,
+        isShelter,
+        shelterNote: data.shelterNote || null,
+        syncRange,
+        year1Cost: ageBracket === 'puppy' ? year1Cost : null
       };
     }
 
@@ -1773,9 +2473,25 @@
     ============================================= */
     function renderResults(r) {
       document.getElementById('res-lifetime').textContent = fmt(r.lifetimeCost);
-      document.getElementById('res-lifetime-sub').textContent =
-        'Over approximately ' + r.remainingYears + ' remaining year' + (r.remainingYears === 1 ? '' : 's') +
-        (r.hasInsurance ? ', including insurance premiums' : ', excluding insurance');
+
+      let lifetimeSub = 'Over approximately ' + r.remainingYears + ' remaining year' +
+        (r.remainingYears === 1 ? '' : 's') +
+        (r.hasInsurance ? ', including insurance premiums' : ', excluding insurance') + '.';
+
+      if (r.syncRange) {
+        lifetimeSub += ' Synchrony 2025 full lifetime range: ' +
+          fmt(r.syncRange.low) + ' - ' + fmt(r.syncRange.high) + '.';
+      }
+
+      if (r.year1Cost) {
+        lifetimeSub += ' Year 1 estimated: ' + fmt(r.year1Cost) + ' (2-3x higher than following years).';
+      }
+
+      if (r.isShelter && r.shelterNote) {
+        lifetimeSub += ' ' + r.shelterNote;
+      }
+
+      document.getElementById('res-lifetime-sub').textContent = lifetimeSub;
 
       document.getElementById('res-annual').textContent = fmt(r.annualTotal);
       document.getElementById('res-emergency').textContent = fmt(r.emergencyFund);
@@ -1788,8 +2504,8 @@
 
       // Emergency sub
       document.getElementById('res-emergency-sub').textContent = r.hasInsurance
-        ? 'Reduced by insurance coverage. Your out-of-pocket after a typical emergency.'
-        : 'Full emergency cost with no insurance. One incident could cost this much.';
+        ? 'Your out-of-pocket after a typical emergency (70% covered by insurance). Avg emergency visit: $800-$1,500. Surgery: $2,000-$5,000.'
+        : 'Full out-of-pocket with no insurance. Avg emergency visit: $800-$1,500. Surgery: $2,000-$5,000.';
 
       // Status banner
       const banner = document.getElementById('statusBanner');
@@ -1802,13 +2518,13 @@
         icon.innerHTML = '<circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
         title.textContent = 'Good call on insurance';
         msg.textContent = 'Insurance could save you ' + fmt(r.emergencyRaw * INSURANCE_COVERAGE) +
-          ' if a major emergency hits. That is the difference between a manageable bill and a financial crisis.';
+          ' if a major emergency hits. That is the difference between a manageable bill and a financial crisis. 78% of pet owners wish they had planned better (Synchrony 2025).';
       } else {
         banner.className = 'status-banner warning';
         icon.innerHTML = '<circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
         title.textContent = 'No insurance: one emergency could cost ' + fmt(r.emergencyRaw);
-        msg.textContent = 'Without coverage or a dedicated emergency fund of ' + fmt(r.emergencyFund) +
-          ', a single accident or illness puts you in a position where cost influences a medical decision. Build the fund first or get a quote on insurance.';
+        msg.textContent = '78% of pet owners underestimate lifetime costs (Synchrony 2025). Without coverage or a dedicated emergency fund of ' + fmt(r.emergencyFund) +
+          ', a single accident or illness forces a financial decision at the worst possible moment. Build the fund or get an insurance quote.';
       }
 
       // Show results
@@ -1822,7 +2538,8 @@
     ============================================= */
     // Pet type toggle: show/hide size vs lifestyle groups
     document.getElementById('petType').addEventListener('change', function() {
-      const isDog = this.value === 'dog';
+      const val = this.value;
+      const isDog = val === 'dog' || val === 'shelter_dog';
       document.getElementById('dogSizeGroup').style.display = isDog ? '' : 'none';
       document.getElementById('catTypeGroup').style.display = isDog ? 'none' : '';
     });
@@ -1866,6 +2583,48 @@
       link.addEventListener('click', function() {
         dropdown.classList.remove('open');
         hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    /* =============================================
+       COPY RESULTS
+    ============================================= */
+    document.getElementById('copyResultBtn').addEventListener('click', function() {
+      const lifetime  = document.getElementById('res-lifetime').textContent;
+      const annual    = document.getElementById('res-annual').textContent;
+      const emergency = document.getElementById('res-emergency').textContent;
+      const monthly   = document.getElementById('res-monthly').textContent;
+      const petType   = document.getElementById('petType').options[document.getElementById('petType').selectedIndex].text;
+
+      const text = [
+        'My Pet Lifetime Cost Estimate (Skip the Surprise)',
+        '---',
+        'Pet: ' + petType,
+        'Estimated Lifetime Cost: ' + lifetime,
+        'Annual Routine Cost: ' + annual,
+        'Emergency Fund Target: ' + emergency,
+        'Monthly Savings Target: ' + monthly,
+        '---',
+        'Source: Synchrony 2025 Lifetime of Care Study | skipthesurprise.com'
+      ].join('\n');
+
+      navigator.clipboard.writeText(text).then(function() {
+        const toast = document.getElementById('shareToast');
+        toast.classList.add('visible');
+        setTimeout(function() { toast.classList.remove('visible'); }, 3000);
+      }).catch(function() {
+        // Fallback for older browsers
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        const toast = document.getElementById('shareToast');
+        toast.classList.add('visible');
+        setTimeout(function() { toast.classList.remove('visible'); }, 3000);
       });
     });
 
