@@ -1,4 +1,4 @@
-const RESEND_API_KEY = process.env.RESEND_API_KEY || 're_bKJtkB4K_MSzkeaNFQcut98b4vfvB49V5';
+const RESEND_API_KEY = process.env.RESEND_API_KEY;
 const FROM_ADDRESS = 'Skip the Surprise <hello@skipthesurprise.com>';
 const RATE_LIMIT_MAP = new Map();
 const RATE_LIMIT_WINDOW_MS = 60 * 1000; // 1 minute
