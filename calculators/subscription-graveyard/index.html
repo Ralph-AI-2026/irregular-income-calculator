@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Subscription Calculator 2026 - How Much Are You Wasting on Forgotten Subscriptions?</title>
-  <meta name="description" content="Find out how much money you're throwing away on forgotten subscriptions. The average American wastes over $1,100/year on subscriptions they don't use." />
+  <meta name="description" content="Find out how much money you're wasting on forgotten subscriptions. Works for US and Canadian households." />
   <meta name="robots" content="index, follow" />
   <meta property="og:title" content="Subscription Calculator 2026 - How Much Are You Wasting on Forgotten Subscriptions?" />
   <meta property="og:description" content="Find out how much money you're throwing away on forgotten subscriptions. The average American wastes over $1,100/year on subscriptions they don't use." />
@@ -1524,6 +1524,66 @@
       color: rgba(255,255,255,0.5);
       margin-bottom: 0.35rem;
     }
+
+    /* ========================
+       COUNTRY TOGGLE
+    ======================== */
+    .country-toggle-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.7rem 1.25rem;
+      background: var(--blue-50);
+      border-bottom: 1px solid var(--blue-100);
+      flex-wrap: wrap;
+    }
+
+    .country-toggle-label {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--gray-700);
+      flex-shrink: 0;
+    }
+
+    .country-radio-group {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .country-radio-option {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      cursor: pointer;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--gray-600);
+      padding: 0.3rem 0.75rem;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid var(--gray-300);
+      background: var(--white);
+      transition: border-color 0.15s, color 0.15s, background 0.15s;
+      user-select: none;
+    }
+
+    .country-radio-option input[type="radio"] {
+      accent-color: var(--blue-600);
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+    }
+
+    .country-radio-option:has(input:checked) {
+      border-color: var(--blue-600);
+      background: var(--blue-50);
+      color: var(--blue-700);
+    }
+
+    .canada-note {
+      font-size: 0.75rem;
+      color: var(--gray-500);
+      font-style: italic;
+    }
   </style>
 </head>
 <body>
@@ -1618,6 +1678,22 @@
           <h2>Subscription Categories</h2>
         </div>
 
+        <!-- COUNTRY TOGGLE -->
+        <div class="country-toggle-bar">
+          <span class="country-toggle-label">I'm in</span>
+          <div class="country-radio-group" role="radiogroup" aria-label="Select country">
+            <label class="country-radio-option">
+              <input type="radio" name="country" value="us" id="countryUS" checked />
+              United States
+            </label>
+            <label class="country-radio-option">
+              <input type="radio" name="country" value="ca" id="countryCA" />
+              Canada
+            </label>
+          </div>
+          <span class="canada-note" id="canadaNote" style="display:none;">Canadian pricing (CAD) -- typically 15-25% higher than US equivalents</span>
+        </div>
+
         <div class="calc-body">
           <!-- INPUTS -->
           <div class="calc-inputs">
@@ -1629,7 +1705,7 @@
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
                   Streaming services
                 </div>
-                <div class="category-avg">Netflix, Disney+, Max, Hulu, Apple TV+ &mdash; avg $14/each</div>
+                <div class="category-avg" id="avg-streaming">Netflix, Disney+, Max, Hulu, Apple TV+ &mdash; avg $14/each</div>
               </div>
               <div class="count-control" role="group" aria-label="Streaming services count">
                 <button class="count-btn" aria-label="Decrease streaming count" data-action="decrease" data-target="count-streaming">
@@ -1649,7 +1725,7 @@
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-1H1a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2z"/></svg>
                   AI tool subscriptions
                 </div>
-                <div class="category-avg">ChatGPT Plus, Claude Pro, Midjourney, Perplexity &mdash; avg $20/each</div>
+                <div class="category-avg" id="avg-ai">ChatGPT Plus, Claude Pro, Midjourney, Perplexity &mdash; avg $20/each</div>
               </div>
               <div class="count-control" role="group" aria-label="AI tools count">
                 <button class="count-btn" aria-label="Decrease AI tools count" data-action="decrease" data-target="count-ai">
@@ -1669,7 +1745,7 @@
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
                   Fitness and wellness apps
                 </div>
-                <div class="category-avg">Peloton, Calm, Noom, MyFitnessPal Premium &mdash; avg $15/each</div>
+                <div class="category-avg" id="avg-fitness">Peloton, Calm, Noom, MyFitnessPal Premium &mdash; avg $15/each</div>
               </div>
               <div class="count-control" role="group" aria-label="Fitness apps count">
                 <button class="count-btn" aria-label="Decrease fitness count" data-action="decrease" data-target="count-fitness">
@@ -1689,7 +1765,7 @@
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
                   Software and productivity apps
                 </div>
-                <div class="category-avg">Notion, Grammarly, Adobe, Spotify, Dropbox &mdash; avg $12/each</div>
+                <div class="category-avg" id="avg-software">Notion, Grammarly, Adobe, Spotify, Dropbox &mdash; avg $12/each</div>
               </div>
               <div class="count-control" role="group" aria-label="Software apps count">
                 <button class="count-btn" aria-label="Decrease software count" data-action="decrease" data-target="count-software">
@@ -1709,7 +1785,7 @@
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
                   Food and product subscription boxes
                 </div>
-                <div class="category-avg">HelloFresh, BirchBox, FabFitFun, Ipsy &mdash; avg $35/each</div>
+                <div class="category-avg" id="avg-boxes">HelloFresh, BirchBox, FabFitFun, Ipsy &mdash; avg $35/each</div>
               </div>
               <div class="count-control" role="group" aria-label="Subscription boxes count">
                 <button class="count-btn" aria-label="Decrease boxes count" data-action="decrease" data-target="count-boxes">
@@ -1729,7 +1805,7 @@
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12V22H4V12"/><path d="M22 7H2v5h20V7z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
                   Memberships
                 </div>
-                <div class="category-avg">Gym, Costco, Sam's Club, Amazon Prime &mdash; avg $45/each</div>
+                <div class="category-avg" id="avg-memberships">Gym, Costco, Sam's Club, Amazon Prime &mdash; avg $45/each</div>
               </div>
               <div class="count-control" role="group" aria-label="Memberships count">
                 <button class="count-btn" aria-label="Decrease memberships count" data-action="decrease" data-target="count-memberships">
@@ -2000,6 +2076,51 @@
           </div>
         </div>
 
+        <!-- Canadian-specific categories -->
+        <div class="cat-card canada-only" style="display:none;">
+          <div class="cat-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+          </div>
+          <div>
+            <div class="cat-title">Crave (HBO content in Canada)</div>
+            <div class="cat-examples">Canada's home for HBO and Showtime content. Easy to sign up during a good show, easy to forget after.</div>
+            <div class="cat-avg">$19.99 CAD/mo</div>
+          </div>
+        </div>
+
+        <div class="cat-card canada-only" style="display:none;">
+          <div class="cat-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2z"/><path d="M8 12h8M12 8l4 4-4 4"/></svg>
+          </div>
+          <div>
+            <div class="cat-title">TSN Direct / Sportsnet+</div>
+            <div class="cat-examples">Signed up for playoffs, still paying in August. Canadian sports streaming adds up fast when you double up.</div>
+            <div class="cat-avg">$19.99-$29.99 CAD/mo</div>
+          </div>
+        </div>
+
+        <div class="cat-card canada-only" style="display:none;">
+          <div class="cat-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <div>
+            <div class="cat-title">CBC Gem Premium</div>
+            <div class="cat-examples">The ad-free tier of CBC's streaming service. Often forgotten because the free version still works.</div>
+            <div class="cat-avg">$5.99 CAD/mo</div>
+          </div>
+        </div>
+
+        <div class="cat-card canada-only" style="display:none;">
+          <div class="cat-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+          </div>
+          <div>
+            <div class="cat-title">Credit card annual fees</div>
+            <div class="cat-examples">Your Aeroplan Visa, Cobalt, or Scotia card charges a fee you may have mentally written off. Treat it like a subscription -- is it earning its keep?</div>
+            <div class="cat-avg">$0-$170 CAD/year billed annually</div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -2134,7 +2255,7 @@
     /* =============================================
        CATEGORY CONFIGURATION
     ============================================= */
-    const CATEGORIES = {
+    const CATEGORIES_US = {
       streaming:    { id: 'count-streaming',    avg: 14 },
       ai:           { id: 'count-ai',           avg: 20 },
       fitness:      { id: 'count-fitness',      avg: 15 },
@@ -2143,16 +2264,61 @@
       memberships:  { id: 'count-memberships',  avg: 45 }
     };
 
+    const CATEGORIES_CA = {
+      streaming:    { id: 'count-streaming',    avg: 17 },
+      ai:           { id: 'count-ai',           avg: 27 },
+      fitness:      { id: 'count-fitness',      avg: 18 },
+      software:     { id: 'count-software',     avg: 16 },
+      boxes:        { id: 'count-boxes',        avg: 45 },
+      memberships:  { id: 'count-memberships',  avg: 55 }
+    };
+
+    const CATEGORY_LABELS_US = {
+      streaming:   'Netflix, Disney+, Max, Hulu, Apple TV+ \u2014 avg $14/each',
+      ai:          'ChatGPT Plus, Claude Pro, Midjourney, Perplexity \u2014 avg $20/each',
+      fitness:     'Peloton, Calm, Noom, MyFitnessPal Premium \u2014 avg $15/each',
+      software:    'Notion, Grammarly, Adobe, Spotify, Dropbox \u2014 avg $12/each',
+      boxes:       'HelloFresh, BirchBox, FabFitFun, Ipsy \u2014 avg $35/each',
+      memberships: 'Gym, Costco, Sam\u2019s Club, Amazon Prime \u2014 avg $45/each'
+    };
+
+    const CATEGORY_LABELS_CA = {
+      streaming:   'Netflix, Crave, Disney+, Prime Video \u2014 avg $17 CAD/each',
+      ai:          'ChatGPT Plus, Claude Pro, Midjourney, Perplexity \u2014 avg $27 CAD/each',
+      fitness:     'GoodLife, Calm, Noom, MyFitnessPal Premium \u2014 avg $18 CAD/each',
+      software:    'Microsoft 365, Notion, Adobe, Spotify, Dropbox \u2014 avg $16 CAD/each',
+      boxes:       'HelloFresh Canada, Ipsy, GoodFood, Barkbox \u2014 avg $45 CAD/each',
+      memberships: 'GoodLife Fitness, Costco, Amazon Prime \u2014 avg $55 CAD/each'
+    };
+
+    const CATEGORY_IDS = ['streaming', 'ai', 'fitness', 'software', 'boxes', 'memberships'];
+    const CATEGORY_AVG_EL_IDS = ['avg-streaming', 'avg-ai', 'avg-fitness', 'avg-software', 'avg-boxes', 'avg-memberships'];
+
+    let CATEGORIES = CATEGORIES_US;
+
     const ZOMBIE_RATE       = 0.42;
     const PERCEPTION_RATE   = 0.41; // people think they spend ~41% of actual ($111 vs $273 national avg)
     const UNCERTAIN_BUMP    = 0.15;
-    const GEN_BENCHMARKS = [
+
+    const GEN_BENCHMARKS_US = [
       { label: 'Gen Z',         avg: 292 },
       { label: 'Millennials',   avg: 248 },
       { label: 'Gen X',         avg: 187 },
       { label: 'Boomers',       avg: 143 },
       { label: 'National avg',  avg: 273 }
     ];
+
+    const GEN_BENCHMARKS_CA = [
+      { label: 'Gen Z',         avg: 336 },
+      { label: 'Millennials',   avg: 285 },
+      { label: 'Gen X',         avg: 215 },
+      { label: 'Boomers',       avg: 165 },
+      { label: 'Canadian avg',  avg: 340 }
+    ];
+
+    let GEN_BENCHMARKS = GEN_BENCHMARKS_US;
+
+    let currentCountry = 'us';
 
     /* =============================================
        COUNT CONTROLS
@@ -2183,13 +2349,56 @@
     });
 
     /* =============================================
+       COUNTRY TOGGLE HANDLER
+    ============================================= */
+    function updateCountryMode(country) {
+      currentCountry = country;
+      CATEGORIES = country === 'ca' ? CATEGORIES_CA : CATEGORIES_US;
+      GEN_BENCHMARKS = country === 'ca' ? GEN_BENCHMARKS_CA : GEN_BENCHMARKS_US;
+
+      const labels = country === 'ca' ? CATEGORY_LABELS_CA : CATEGORY_LABELS_US;
+      const canadaNote = document.getElementById('canadaNote');
+      if (canadaNote) canadaNote.style.display = country === 'ca' ? 'inline' : 'none';
+
+      // Update avg label text for each category
+      const avgEls = {
+        streaming:   document.getElementById('avg-streaming'),
+        ai:          document.getElementById('avg-ai'),
+        fitness:     document.getElementById('avg-fitness'),
+        software:    document.getElementById('avg-software'),
+        boxes:       document.getElementById('avg-boxes'),
+        memberships: document.getElementById('avg-memberships')
+      };
+      Object.keys(avgEls).forEach(key => {
+        if (avgEls[key]) avgEls[key].textContent = labels[key];
+      });
+
+      // Show/hide Canadian-specific category cards
+      document.querySelectorAll('.canada-only').forEach(el => {
+        el.style.display = country === 'ca' ? '' : 'none';
+      });
+
+      // Hide results so stale numbers don't show for the wrong country
+      document.getElementById('resultsContent').classList.remove('visible');
+      document.getElementById('resultsPlaceholder').style.display = '';
+    }
+
+    document.querySelectorAll('input[name="country"]').forEach(radio => {
+      radio.addEventListener('change', () => {
+        updateCountryMode(radio.value);
+      });
+    });
+
+    /* =============================================
        UTILITY
     ============================================= */
     function formatCurrency(val) {
       if (isNaN(val) || val === null) return '--';
       const abs = Math.abs(val);
       const formatted = abs.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
-      return (val < 0 ? '-$' : '$') + formatted;
+      const prefix = val < 0 ? '-$' : '$';
+      const suffix = currentCountry === 'ca' ? ' CAD' : '';
+      return prefix + formatted + suffix;
     }
 
     /* =============================================
@@ -2246,13 +2455,27 @@
       const rowsEl = document.getElementById('genRows');
       const msgEl  = document.getElementById('genBracketMsg');
 
+      const isCA = currentCountry === 'ca';
+      const boomerAvg = isCA ? 165 : 143;
+      const nationalAvg = isCA ? 340 : 273;
+      const nationalLabel = isCA ? 'Canadian avg' : 'national average';
+      const currencySuffix = isCA ? ' CAD' : '';
+
       // Find user bracket
       let bracket = null;
-      if (total >= 292) bracket = 'Gen Z';
-      else if (total >= 248) bracket = 'Millennials';
-      else if (total >= 187) bracket = 'Gen X';
-      else if (total >= 143) bracket = 'Boomers';
-      else bracket = 'below Boomers';
+      if (isCA) {
+        if (total >= 336) bracket = 'Gen Z';
+        else if (total >= 285) bracket = 'Millennials';
+        else if (total >= 215) bracket = 'Gen X';
+        else if (total >= 165) bracket = 'Boomers';
+        else bracket = 'below Boomers';
+      } else {
+        if (total >= 292) bracket = 'Gen Z';
+        else if (total >= 248) bracket = 'Millennials';
+        else if (total >= 187) bracket = 'Gen X';
+        else if (total >= 143) bracket = 'Boomers';
+        else bracket = 'below Boomers';
+      }
 
       // Build rows
       const userRow = {
@@ -2270,16 +2493,16 @@
           <div class="gen-bar-wrap">
             <div class="gen-bar${isActive ? ' active-gen' : ''}" style="width:${barWidth}%"></div>
           </div>
-          <span class="gen-amount">${g.isUser ? formatCurrency(g.avg) : '$' + g.avg}</span>
+          <span class="gen-amount">${g.isUser ? formatCurrency(g.avg) : '$' + g.avg + currencySuffix}</span>
           ${isActive ? '<span class="gen-you-badge">You</span>' : ''}
         </div>`;
       }).join('');
 
       let bracketMsg = '';
       if (bracket === 'below Boomers') {
-        bracketMsg = 'Your spending is below the Boomer average ($143/mo). You are already tracking well -- a quick audit could still uncover a few forgotten charges.';
+        bracketMsg = 'Your spending is below the Boomer average ($' + boomerAvg + currencySuffix + '/mo). You are already tracking well -- a quick audit could still uncover a few forgotten charges.';
       } else {
-        bracketMsg = 'Your spending puts you in the ' + bracket + ' range. The national average is $273/mo. A 30-minute subscription audit tool review of your statements is the fastest way to close the gap.';
+        bracketMsg = 'Your spending puts you in the ' + bracket + ' range. The ' + nationalLabel + ' is $' + nationalAvg + currencySuffix + '/mo. A 30-minute subscription audit tool review of your statements is the fastest way to close the gap.';
       }
       msgEl.textContent = bracketMsg;
     }
