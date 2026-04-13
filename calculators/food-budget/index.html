@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Grocery Budget Calculator 2026 - How Much Should You Spend on Food by Household Size?</title>
-  <meta name="description" content="Calculate your recommended monthly grocery budget based on household size, region, and all four USDA food plan tiers. See USDA benchmarks, tariff impact, cost per meal, and income percentage. Data updated for 2026." />
+  <meta name="description" content="Calculate your recommended monthly grocery budget for US and Canadian households based on household size, region, and food plan tiers. See USDA and Statistics Canada benchmarks, tariff impact, cost per meal, and income percentage. Data updated for 2026." />
   <meta name="robots" content="index, follow" />
   <meta property="og:title" content="Grocery Budget Calculator 2026 - How Much Should You Spend on Food by Household Size?" />
-  <meta property="og:description" content="Calculate your recommended monthly grocery budget based on household size, region, and all four USDA food plan tiers. See USDA benchmarks, tariff impact, cost per meal, and income percentage. Data updated for 2026." />
+  <meta property="og:description" content="Calculate your recommended monthly grocery budget for US and Canadian households based on household size, region, and food plan tiers. See USDA and Statistics Canada benchmarks, tariff impact, cost per meal, and income percentage. Data updated for 2026." />
   <meta property="og:type" content="website" />
   <meta name="keywords" content="grocery budget calculator, food budget by household size, USDA food plan calculator, how much should I spend on groceries, monthly food budget planner, cost per meal calculator, 2026 grocery budget" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -65,6 +65,14 @@
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Yes. This calculator adds any monthly food assistance you receive, including SNAP benefits, WIC, food bank support, or employer food stipends, to your current budget before comparing it to the recommended amount. This gives you an accurate picture of your total available food dollars and a realistic gap or surplus figure."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this calculator work for Canadian households?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. When you select a Canadian province from the location dropdown, the calculator switches from USDA data to Statistics Canada food cost benchmarks. Statistics Canada estimates a single person needs approximately $350 CAD/month at the thrifty level, $425 CAD at moderate, and $550 CAD at the liberal level. A family of four runs approximately $1,050, $1,275, and $1,650 CAD respectively. These figures are scaled linearly for other household sizes and adjusted by a provincial cost-of-living multiplier. Amounts are shown in Canadian dollars. Canadian grocery costs are also affected by retaliatory tariffs and supply chain disruptions in 2026, estimated at an additional 3-5% above baseline."
         }
       },
       {
@@ -1445,11 +1453,11 @@
               </select>
             </div>
 
-            <!-- State -->
+            <!-- State / Province -->
             <div class="field-row">
-              <label class="field-label" for="stateSelect">Your state</label>
+              <label class="field-label" for="stateSelect">Your state or province</label>
               <select class="field-select" id="stateSelect">
-                <option value="medium">-- Select state --</option>
+                <option value="medium">-- Select state or province --</option>
                 <optgroup label="Northeast (1.08x)">
                   <option value="northeast">Connecticut</option>
                   <option value="northeast">Maine</option>
@@ -1512,7 +1520,27 @@
                   <option value="south">West Virginia</option>
                 </optgroup>
                 <option value="medium">Other / Not listed</option>
+                <optgroup label="Canada">
+                  <option value="ca_on">Ontario</option>
+                  <option value="ca_bc">British Columbia</option>
+                  <option value="ca_ab">Alberta</option>
+                  <option value="ca_qc">Quebec</option>
+                  <option value="ca_mb">Manitoba</option>
+                  <option value="ca_sk">Saskatchewan</option>
+                  <option value="ca_nb">New Brunswick</option>
+                  <option value="ca_ns">Nova Scotia</option>
+                  <option value="ca_pe">Prince Edward Island</option>
+                  <option value="ca_nl">Newfoundland and Labrador</option>
+                  <option value="ca_yt">Yukon</option>
+                  <option value="ca_nt">Northwest Territories</option>
+                  <option value="ca_nu">Nunavut</option>
+                </optgroup>
               </select>
+            </div>
+
+            <!-- Canadian currency note -->
+            <div id="cadNote" style="display:none;font-size:0.8rem;color:var(--blue-700);background:var(--blue-50);border:1px solid var(--blue-100);border-radius:var(--radius-sm);padding:0.45rem 0.75rem;margin-top:-0.25rem;">
+              Amounts shown in Canadian dollars (CAD). Statistics Canada food cost data applied.
             </div>
 
             <!-- Current budget -->
@@ -1568,9 +1596,9 @@
 
             <div class="results-content" id="resultsContent" aria-live="polite" aria-atomic="true">
 
-              <!-- USDA 4-tier comparison -->
+              <!-- Food plan 4-tier comparison -->
               <div class="usda-tiers" id="usdaTiersBlock">
-                <div class="usda-tiers-header">USDA Food Plan Tiers - Your Household</div>
+                <div class="usda-tiers-header" id="tiers-header">USDA Food Plan Tiers - Your Household</div>
                 <div class="usda-tier-row" id="tier-thrifty">
                   <span class="usda-tier-name">Thrifty</span>
                   <span class="usda-tier-range" id="tier-thrifty-range">--</span>
@@ -1620,19 +1648,20 @@
 
               <!-- Tariff overlay -->
               <div class="tariff-card" id="tariffBlock">
-                <div class="tariff-label">2026 Tariff Impact on Your Budget</div>
+                <div class="tariff-label" id="tariff-block-label">2026 Tariff Impact on Your Budget</div>
                 <div class="tariff-row">
                   <span class="tariff-row-label">Without 2026 tariffs</span>
                   <span class="tariff-row-value" id="tariff-without">--</span>
                 </div>
                 <div class="tariff-row">
-                  <span class="tariff-row-label">With tariffs (+4.5%)</span>
+                  <span class="tariff-row-label" id="tariff-with-label">With tariffs (+4.5%)</span>
                   <span class="tariff-row-value" id="tariff-with">--</span>
                 </div>
                 <div class="tariff-row" style="padding-top:0.3rem;border-top:1px solid rgba(234,88,12,0.2);margin-top:0.3rem;">
                   <span class="tariff-row-label" style="font-weight:600;">Tariff cost added</span>
                   <span class="tariff-row-value" style="color:var(--orange-600);" id="tariff-added">--</span>
                 </div>
+                <div id="tariff-ca-note" style="display:none;font-size:0.75rem;color:var(--orange-600);margin-top:0.5rem;line-height:1.5;">Canadian grocery costs are affected by retaliatory tariffs and supply chain impacts, estimated at +3-5% in 2026.</div>
                 <a href="../tariff-cost/index.html" class="tariff-link">
                   Full tariff cost breakdown
                   <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M2 10L10 2M5 2h5v5"/></svg>
@@ -1996,6 +2025,20 @@
 
         <div class="faq-item" role="listitem">
           <button class="faq-question" aria-expanded="false">
+            Does this calculator work for Canadian households?
+            <svg class="faq-icon" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+              <path d="M11 5v12M5 11h12"/>
+            </svg>
+          </button>
+          <div class="faq-answer" role="region">
+            <div class="faq-answer-inner">
+              Yes. Select your province from the location dropdown and the calculator switches from USDA data to Statistics Canada food cost benchmarks. Statistics Canada estimates a single person needs approximately $350 CAD/month at the thrifty level, $425 CAD at moderate, and $550 CAD at the liberal level. A family of four runs $1,050, $1,275, and $1,650 CAD respectively. All amounts scale linearly for other household sizes and are adjusted by a provincial cost-of-living multiplier. Results are shown in Canadian dollars. Canadian grocery costs are also affected by retaliatory tariffs and supply chain disruptions in 2026, estimated at an additional 3-5% above baseline.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-question" aria-expanded="false">
             My budget is short. What actually helps?
             <svg class="faq-icon" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
               <path d="M11 5v12M5 11h12"/>
@@ -2139,20 +2182,49 @@
       medium:    1.00
     };
 
+    /* Statistics Canada food cost baselines (CAD/month) */
+    const STATCAN_BASE = {
+      thrifty:  { 1: 350,  2: 644,  3: 816,  4: 1050, 5: 1234, 6: 1418, 7: 1602, 8: 1785 },
+      lowcost:  { 1: 388,  2: 713,  3: 903,  4: 1163, 5: 1367, 6: 1571, 7: 1775, 8: 1979 },
+      moderate: { 1: 425,  2: 781,  3: 990,  4: 1275, 5: 1499, 6: 1723, 7: 1947, 8: 2171 },
+      liberal:  { 1: 550,  2: 1011, 3: 1281, 4: 1650, 5: 1940, 6: 2229, 7: 2519, 8: 2808 }
+    };
+
+    /* Provincial cost-of-living multipliers (Statistics Canada regional data) */
+    const PROVINCE_MULTIPLIER = {
+      ca_on: 1.05,
+      ca_bc: 1.12,
+      ca_ab: 1.00,
+      ca_qc: 0.98,
+      ca_mb: 0.95,
+      ca_sk: 0.93,
+      ca_nb: 0.97,
+      ca_ns: 0.99,
+      ca_pe: 0.96,
+      ca_nl: 1.03,
+      ca_yt: 1.15,
+      ca_nt: 1.20,
+      ca_nu: 1.35
+    };
+
+    const CANADIAN_PROVINCES = new Set(Object.keys(PROVINCE_MULTIPLIER));
+
     const TARIFF_RATE = 0.045;
+    const CA_TARIFF_RATE = 0.04; // midpoint of 3-5% for Canada
     const WEEKS_PER_MONTH = 4.33;
 
     /* =============================================
        UTILITY
     ============================================= */
-    function fmt(val, decimals = 0) {
+    function fmt(val, decimals = 0, cad = false) {
       if (val === null || val === undefined || isNaN(val)) return '--';
       const abs = Math.abs(val);
       const formatted = abs.toLocaleString('en-US', {
         minimumFractionDigits: decimals,
         maximumFractionDigits: decimals
       });
-      return (val < 0 ? '-$' : '$') + formatted;
+      const prefix = val < 0 ? '-$' : '$';
+      return cad ? prefix + formatted + ' CAD' : prefix + formatted;
     }
 
     function parseNum(id) {
@@ -2170,23 +2242,36 @@
       const foodAssistance = parseNum('foodAssistance');
       const monthlyIncome  = parseNum('monthlyIncome');
 
-      const colMult        = REGION_MULTIPLIER[regionKey] || 1.00;
+      const isCanada = CANADIAN_PROVINCES.has(regionKey);
 
-      // Compute all four tiers adjusted for region
-      const tiers = {};
-      for (const key of ['thrifty', 'lowcost', 'moderate', 'liberal']) {
-        const base     = USDA_TIERS[key][householdSize] || USDA_TIERS[key][8];
-        tiers[key]     = base * colMult;
+      let colMult, tiers, tariffRate;
+
+      if (isCanada) {
+        colMult    = PROVINCE_MULTIPLIER[regionKey] || 1.00;
+        tariffRate = CA_TARIFF_RATE;
+        tiers      = {};
+        for (const key of ['thrifty', 'lowcost', 'moderate', 'liberal']) {
+          const base  = STATCAN_BASE[key][householdSize] || STATCAN_BASE[key][8];
+          tiers[key]  = base * colMult;
+        }
+      } else {
+        colMult    = REGION_MULTIPLIER[regionKey] || 1.00;
+        tariffRate = TARIFF_RATE;
+        tiers      = {};
+        for (const key of ['thrifty', 'lowcost', 'moderate', 'liberal']) {
+          const base  = USDA_TIERS[key][householdSize] || USDA_TIERS[key][8];
+          tiers[key]  = base * colMult;
+        }
       }
 
       const available    = currentBudget + foodAssistance;
-      const recommended  = tiers.thrifty; // gap is vs. Thrifty as baseline
+      const recommended  = tiers.thrifty;
       const gap          = recommended - available;
       const weekly       = available / WEEKS_PER_MONTH;
       const mealCost     = available > 0 ? available / (householdSize * 90) : 0;
 
       // Tariff overlay based on Thrifty tier
-      const tariffWithout = tiers.thrifty / (1 + TARIFF_RATE);
+      const tariffWithout = tiers.thrifty / (1 + tariffRate);
       const tariffWith    = tiers.thrifty;
       const tariffAdded   = tariffWith - tariffWithout;
 
@@ -2212,14 +2297,14 @@
       return {
         householdSize, tiers, available, gap, weekly, mealCost,
         tariffWithout, tariffWith, tariffAdded,
-        incomePct, monthlyIncome, activeTier, colMult
+        incomePct, monthlyIncome, activeTier, colMult, isCanada, tariffRate
       };
     }
 
     /* =============================================
        RENDER TIERS
     ============================================= */
-    function renderTiers({ tiers, activeTier, householdSize }) {
+    function renderTiers({ tiers, activeTier, householdSize }, isCanada) {
       const tierKeys = ['thrifty', 'lowcost', 'moderate', 'liberal'];
       const elIds    = ['thrifty', 'lowcost', 'moderate', 'liberal'];
 
@@ -2228,7 +2313,7 @@
         const rangeEl = document.getElementById('tier-' + elIds[i] + '-range');
         const badgeEl = document.getElementById('tier-' + elIds[i] + '-badge');
 
-        rangeEl.textContent = fmt(tiers[key]) + '/mo';
+        rangeEl.textContent = fmt(tiers[key], 0, isCanada) + '/mo';
 
         const isActive = (activeTier === key);
         rowEl.classList.toggle('active-tier', isActive);
@@ -2284,16 +2369,30 @@
     function showResults(data) {
       const { householdSize, tiers, available, gap, weekly, mealCost,
               tariffWithout, tariffWith, tariffAdded,
-              incomePct, activeTier } = data;
+              incomePct, activeTier, isCanada, tariffRate } = data;
+
+      // Update currency indicator and tier header based on region
+      const cadNote = document.getElementById('cadNote');
+      cadNote.style.display = isCanada ? 'block' : 'none';
+
+      document.getElementById('tiers-header').textContent = isCanada
+        ? 'Statistics Canada Food Cost Tiers - Your Household'
+        : 'USDA Food Plan Tiers - Your Household';
+
+      const tariffPct = isCanada ? '4%' : '4.5%';
+      document.getElementById('tariff-with-label').textContent = 'With tariffs (+' + tariffPct + ')';
+      document.getElementById('tariff-block-label').textContent = '2026 Tariff Impact on Your Budget';
+      document.getElementById('tariff-ca-note').style.display = isCanada ? 'block' : 'none';
 
       // Tiers
-      renderTiers(data);
+      renderTiers(data, isCanada);
 
       // Gap / surplus
-      const isSurplus = gap <= 0;
+      const isSurplus  = gap <= 0;
+      const planLabel  = isCanada ? 'Statistics Canada Thrifty baseline' : 'USDA Thrifty minimum';
       document.getElementById('heroCardBadgeText').textContent = isSurplus ? 'Monthly surplus' : 'Monthly gap';
       document.getElementById('res-gap-label').textContent     = isSurplus ? 'Monthly surplus vs. Thrifty Plan' : 'Monthly gap vs. Thrifty Plan';
-      document.getElementById('res-gap').textContent           = fmt(Math.abs(gap));
+      document.getElementById('res-gap').textContent           = fmt(Math.abs(gap), 0, isCanada);
 
       const heroCard = document.querySelector('.result-card.hero-card');
       if (isSurplus) {
@@ -2301,30 +2400,30 @@
         heroCard.style.background  = 'linear-gradient(135deg, var(--green-50), var(--white))';
         document.querySelector('.result-card.hero-card .result-card-value').style.color = 'var(--green-700)';
         document.querySelector('.hero-card-badge').style.background = 'var(--green-600)';
-        document.getElementById('res-gap-sub').textContent = 'You have ' + fmt(Math.abs(gap)) + ' more than the USDA Thrifty minimum';
+        document.getElementById('res-gap-sub').textContent = 'You have ' + fmt(Math.abs(gap), 0, isCanada) + ' more than the ' + planLabel;
       } else {
         heroCard.style.borderColor = 'var(--red-600)';
         heroCard.style.background  = 'linear-gradient(135deg, var(--red-50), var(--white))';
         document.querySelector('.result-card.hero-card .result-card-value').style.color = 'var(--red-700)';
         document.querySelector('.hero-card-badge').style.background = 'var(--red-600)';
-        document.getElementById('res-gap-sub').textContent = fmt(gap) + ' below the USDA Thrifty minimum';
+        document.getElementById('res-gap-sub').textContent = fmt(gap, 0, isCanada) + ' below the ' + planLabel;
       }
 
       // Weekly
-      document.getElementById('res-weekly').textContent = fmt(weekly);
+      document.getElementById('res-weekly').textContent = fmt(weekly, 0, isCanada);
 
       // Meal cost + benchmark
-      document.getElementById('res-meal').textContent = available > 0 ? fmt(mealCost, 2) : '--';
+      document.getElementById('res-meal').textContent = available > 0 ? fmt(mealCost, 2, isCanada) : '--';
       const thriftyMeal = available > 0 ? tiers.thrifty / (householdSize * 90) : null;
       const mealSub = thriftyMeal
-        ? 'Thrifty benchmark: ' + fmt(thriftyMeal, 2) + '/meal'
+        ? 'Thrifty benchmark: ' + fmt(thriftyMeal, 2, isCanada) + '/meal'
         : 'per person, 90 meals/mo';
       document.getElementById('res-meal-sub').textContent = mealSub;
 
       // Tariff overlay
-      document.getElementById('tariff-without').textContent = fmt(tariffWithout);
-      document.getElementById('tariff-with').textContent    = fmt(tariffWith);
-      document.getElementById('tariff-added').textContent   = '+' + fmt(tariffAdded) + '/mo';
+      document.getElementById('tariff-without').textContent = fmt(tariffWithout, 0, isCanada);
+      document.getElementById('tariff-with').textContent    = fmt(tariffWith, 0, isCanada);
+      document.getElementById('tariff-added').textContent   = '+' + fmt(tariffAdded, 0, isCanada) + '/mo';
 
       // Income percentage
       const incomePctBlock = document.getElementById('incomePctBlock');
@@ -2357,11 +2456,11 @@
 
       // Budget category breakdown (based on available budget)
       if (available > 0) {
-        document.getElementById('cat-protein').textContent  = fmt(available * 0.275);
-        document.getElementById('cat-produce').textContent  = fmt(available * 0.225);
-        document.getElementById('cat-dairy').textContent    = fmt(available * 0.125);
-        document.getElementById('cat-grains').textContent   = fmt(available * 0.175);
-        document.getElementById('cat-other').textContent    = fmt(available * 0.20);
+        document.getElementById('cat-protein').textContent  = fmt(available * 0.275, 0, isCanada);
+        document.getElementById('cat-produce').textContent  = fmt(available * 0.225, 0, isCanada);
+        document.getElementById('cat-dairy').textContent    = fmt(available * 0.125, 0, isCanada);
+        document.getElementById('cat-grains').textContent   = fmt(available * 0.175, 0, isCanada);
+        document.getElementById('cat-other').textContent    = fmt(available * 0.20, 0, isCanada);
       }
 
       // Status banner
@@ -2372,13 +2471,14 @@
       document.getElementById('statusMsg').textContent = status.msg;
 
       // Share text
-      const tierName = activeTier === 'below' ? 'below Thrifty' : TIER_LABELS[activeTier];
+      const tierName    = activeTier === 'below' ? 'below Thrifty' : TIER_LABELS[activeTier];
+      const tierSource  = isCanada ? 'StatCan tier' : 'USDA tier';
       const shareStr = [
-        'My grocery budget: ' + fmt(available) + '/mo for ' + householdSize + ' person' + (householdSize > 1 ? 's' : ''),
-        'USDA tier: ' + tierName,
-        'Cost per meal: ' + (available > 0 ? fmt(mealCost, 2) : '--') + '/person',
-        'Weekly target: ' + fmt(weekly),
-        'Tariff impact: +' + fmt(tariffAdded) + '/mo',
+        'My grocery budget: ' + fmt(available, 0, isCanada) + '/mo for ' + householdSize + ' person' + (householdSize > 1 ? 's' : ''),
+        tierSource + ': ' + tierName,
+        'Cost per meal: ' + (available > 0 ? fmt(mealCost, 2, isCanada) : '--') + '/person',
+        'Weekly target: ' + fmt(weekly, 0, isCanada),
+        'Tariff impact: +' + fmt(tariffAdded, 0, isCanada) + '/mo',
         'via skipthesurprise.com'
       ].join(' | ');
       document.getElementById('shareText').value = shareStr;
@@ -2392,6 +2492,15 @@
         document.getElementById('resultsArea').scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     }
+
+    /* =============================================
+       PROVINCE/STATE CHANGE - TOGGLE CAD NOTE
+    ============================================= */
+    document.getElementById('stateSelect').addEventListener('change', () => {
+      const val = document.getElementById('stateSelect').value;
+      const isCA = CANADIAN_PROVINCES.has(val);
+      document.getElementById('cadNote').style.display = isCA ? 'block' : 'none';
+    });
 
     /* =============================================
        CALCULATE BUTTON
