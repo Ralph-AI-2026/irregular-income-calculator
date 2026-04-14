@@ -1,0 +1,26 @@
+# Skip the Surprise
+> The internet's most honest cost calculators. Free, private, no signup required.
+
+## About
+Skip the Surprise is a free calculator platform that helps people understand the real cost of life's biggest decisions. All calculators work for both Canada and the United States. No data is stored or transmitted. Every calculation runs entirely in the user's browser.
+
+## Live Calculators
+- [Irregular Income Tax Calculator](/calculators/irregular-income-tax/): Calculate tax reserves and safe spending for self-employed workers with variable income
+- [Pet Lifetime Cost Calculator](/calculators/pet-cost/): 63 breed database with health risk scores, inflation-adjusted lifetime projections, Canadian and US pricing
+- [Subscription Graveyard Calculator](/calculators/subscription-graveyard/): Audit recurring subscriptions and find hidden costs
+- [Tariff Cost Calculator](/calculators/tariff-cost/): Calculate import duties and tariff impact on purchases
+- [Food Budget Planner](/calculators/food-budget/): Plan grocery budgets by household size and dietary preferences
+
+## Categories
+Financial & Self-Employed, Pets & Animals, Kids & Family, Housing & Rent, Food & Grocery, Vehicle & Transport, Health & Medical, Subscriptions, Tariffs & Import, Education, Weddings & Events, Debt & Money Habits
+
+## Key Data Points
+- Average lifetime cost of a dog: $15,000-$36,000 USD depending on breed
+- Average Canadian dog ownership: $3,020 CAD/year (2024 data)
+- Veterinary costs rising 7.8% year-over-year
+- Average American spends $219/month on subscriptions but thinks it's $86
+- Cost of raising a child to 18: $303,418 USD (2026 LendingTree study)
+- US tariff impact: ~$1,500/year per household (2026)
+
+## Contact
+Website: https://skipthesurprise.com

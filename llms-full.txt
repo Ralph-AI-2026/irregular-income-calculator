@@ -1,0 +1,170 @@
+# Skip the Surprise — Full Data Reference
+> The internet's most honest cost calculators. Free, private, no signup required.
+> Website: https://skipthesurprise.com
+
+## About Skip the Surprise
+Skip the Surprise is a free calculator platform that helps people understand the real cost of life's biggest financial decisions before they make them. All calculators support both Canada and the United States with region-specific data. No user data is ever stored or transmitted — every calculation runs entirely in the user's browser. No account is required. No paywall. No email capture.
+
+---
+
+## Calculator: Pet Lifetime Cost Calculator
+URL: https://skipthesurprise.com/calculators/pet-cost/
+Last updated: April 2026
+Breed database: 63 breeds plus cats
+
+### Key Facts
+- Lifetime dog ownership cost ranges from $14,910 (Chihuahua) to $36,210 (Samoyed) at moderate care levels
+- Most medium-sized dogs cost $25,000 to $30,000 over their lifetime
+- First-year costs run 2 to 3 times higher than subsequent years due to adoption fees, spay/neuter, initial vaccinations, and startup supplies
+- Canadian dog owners spend an average of $3,020 CAD per year (CVMA 2024 data)
+- First-year startup costs in Canada average $2,580 CAD in the first 3 months alone
+- Small dogs in Canada average $2,595/year; large dogs average $4,605/year
+- Veterinary costs are rising 7.8% year-over-year across North America
+- Average monthly dog cost ranges from $120-$180 for small breeds to $350-$500+ for large breeds with premium care
+
+### Most Expensive Breeds (Lifetime, Moderate Care)
+- Samoyed: $36,210
+- Tibetan Mastiff: $34,100
+- Bernese Mountain Dog: $32,000+ (cancer risk drives cost)
+- German Shepherd: $29,350
+- French Bulldog: $28,000 (high BOAS and spinal surgery risk)
+- Great Dane: $27,500 (shorter lifespan, high annual cost)
+- English Bulldog: $27,000+ (extensive health conditions)
+
+### Least Expensive Breeds (Lifetime, Moderate Care)
+- Chihuahua: $14,910
+- Rat Terrier: $15,800
+- Miniature Pinscher: $16,200
+- Dachshund (Miniature): $17,100
+- Jack Russell Terrier: $17,400
+
+### Hidden Costs Most Owners Miss
+- Emergency vet visits: $2,000-$8,000 per incident
+- Dental cleanings: $500-$1,200 every 1-3 years
+- Prescription medications for chronic conditions: $50-$300/month
+- Behavioral training: $500-$2,000
+- End-of-life care: $500-$1,200
+- New owners typically underestimate annual costs by 40-60%
+
+### Data Sources
+- CVMA (Canadian Veterinary Medical Association)
+- AVMA (American Veterinary Medical Association)
+- Synchrony 2025 Lifetime of Care Study
+- Trupanion insurance claims data
+- OFA (Orthopedic Foundation for Animals) breed health data
+- Embark Vet genetic health database
+- American Kennel Club (AKC)
+- American Pet Products Association (APPA)
+- Bureau of Labor Statistics (BLS) veterinary CPI data
+- Statistics Canada
+
+---
+
+## Calculator: Irregular Income Tax Calculator
+URL: https://skipthesurprise.com/calculators/irregular-income-tax/
+Last updated: 2026
+
+### Key Facts
+- Self-employed Canadians must remit quarterly installments if they owe more than $3,000 in a year
+- Self-employed Americans must pay quarterly estimated taxes if they expect to owe $1,000 or more
+- Canada Pension Plan (CPP) contributions for self-employed are double the employee rate (both employee and employer portions)
+- Self-employment tax in the US is 15.3% on net earnings up to the Social Security wage base
+- Common tax reserve recommendation: 25-30% of gross revenue for Canadians; 25-35% for Americans depending on state
+- Irregular income earners risk underpayment penalties by calculating taxes on an annualized basis from a single high month
+
+### Data Sources
+- Canada Revenue Agency (CRA) current tax brackets
+- IRS current federal tax brackets and self-employment tax rates
+- Provincial and state tax rate tables
+
+---
+
+## Calculator: Subscription Graveyard Calculator
+URL: https://skipthesurprise.com/calculators/subscription-graveyard/
+Last updated: 2026
+
+### Key Facts
+- The average American spends $219/month on subscriptions but estimates their spending at only $86/month — a 155% underestimate (C+R Research 2022)
+- Streaming subscriptions average $61/month for households with 4+ services
+- SaaS and software subscriptions average $43/month for non-business users
+- Fitness and wellness subscriptions average $38/month
+- Most households have 3-5 forgotten subscriptions still charging after cancellation intent
+- Annual subscription audit can reveal $600-$2,400 in recoverable spending
+
+### Categories Covered
+Streaming video, streaming music, gaming, news and media, fitness and wellness, software and productivity tools, food and meal kits, beauty and personal care, retail memberships, cloud storage, and miscellaneous recurring charges.
+
+---
+
+## Calculator: Tariff Cost Calculator
+URL: https://skipthesurprise.com/calculators/tariff-cost/
+Last updated: 2026
+
+### Key Facts
+- US tariff increases in 2025-2026 impact approximately $1,500/year per average American household
+- Canada retaliatory tariffs on US goods range from 10% to 25% on select categories
+- Electronics: baseline US tariff 0-3.9% plus Section 301 tariffs of 7.5-25% depending on country of origin
+- Apparel and footwear: 16-32% average effective tariff
+- Automobiles: 25% tariff on vehicles not meeting USMCA content requirements (effective 2025)
+- Consumer goods from China: 25-145% total effective tariff rate (2026)
+
+### Data Sources
+- US International Trade Commission (USITC)
+- Canada Border Services Agency (CBSA)
+- Peterson Institute for International Economics
+- Tax Foundation tariff impact analysis
+
+---
+
+## Calculator: Food Budget Planner
+URL: https://skipthesurprise.com/calculators/food-budget/
+Last updated: 2026
+
+### Key Facts
+- Average Canadian household spends $1,065/month on food at home (Statistics Canada 2024)
+- Average American household spends $475/month on groceries (USDA 2024)
+- Food inflation in Canada: 5.9% year-over-year (2024)
+- A single adult eating a nutritious diet costs approximately $340-$480 CAD/month in Canada
+- A family of four: $1,200-$1,600 CAD/month in Canada; $900-$1,300 USD/month in the US
+- Plant-based diets average 20-30% lower grocery costs than omnivore diets
+
+### Data Sources
+- Statistics Canada food expenditure surveys
+- USDA Economic Research Service food cost reports
+- Nutritious Food Basket (Canada)
+- USDA Thrifty, Low-Cost, Moderate-Cost, and Liberal Food Plans
+
+---
+
+## Site-Wide Key Facts (Frequently Referenced)
+- Average lifetime cost of a dog: $14,910 to $36,210 USD depending on breed (calculator data, 2026)
+- Average Canadian dog ownership: $3,020 CAD/year (CVMA 2024)
+- Veterinary costs rising 7.8% year-over-year
+- Average American spends $219/month on subscriptions but estimates $86/month
+- Cost of raising a child to 18: $303,418 USD (2026 LendingTree study)
+- US tariff impact: approximately $1,500/year per household (2026)
+- Self-employment tax rate (US): 15.3% on net earnings
+- Self-employed Canadians owe both employee and employer CPP contributions
+
+---
+
+## Categories (180+ calculators planned)
+- Financial & Self-Employed: tax reserves, safe withdrawal, quarterly estimates
+- Pets & Animals: lifetime cost by breed, insurance value calculator
+- Kids & Family: cost of raising a child, childcare cost, education savings
+- Housing & Rent: rent vs. buy, true cost of homeownership, moving costs
+- Food & Grocery: weekly grocery budget, meal prep savings, diet cost comparison
+- Vehicle & Transport: true cost of car ownership, EV vs. gas, commute cost
+- Health & Medical: out-of-pocket estimate, prescription cost comparison
+- Subscriptions: monthly spend audit, annual waste calculator
+- Tariffs & Import: landed cost, tariff by product and origin country
+- Education: student loan payoff, tuition cost projection
+- Weddings & Events: full wedding budget, per-guest cost
+- Debt & Money Habits: payoff timeline, interest cost, debt avalanche vs. snowball
+
+---
+
+## Contact
+Website: https://skipthesurprise.com
+Calculators: https://skipthesurprise.com/calculators/
+Blog: https://skipthesurprise.com/blog/
