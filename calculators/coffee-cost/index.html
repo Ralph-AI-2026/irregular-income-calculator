@@ -1,0 +1,1557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coffee Shop Calculator 2026 - How Much Is Your Daily Coffee Really Costing You?</title>
+  <meta name="description" content="Calculate your real coffee shop spending including tips, tax, and food. Compare shop vs home-brew costs, see espresso machine break-even, and discover what your coffee savings could grow to if invested. Starbucks, Tim Hortons, and Dunkin presets for US and Canada." />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Coffee Shop Calculator 2026 - How Much Is Your Daily Coffee Really Costing You?" />
+  <meta property="og:description" content="The average American spends $1,100-$2,200/year on coffee shop visits. Canadians spend $1,400-$2,600 CAD/year. Find your real number." />
+  <meta property="og:type" content="website" />
+  <meta name="keywords" content="coffee cost calculator, how much do I spend on coffee, daily coffee cost, starbucks spending calculator, coffee shop vs home brew, espresso machine break even, coffee savings calculator 2026, tim hortons cost calculator" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9661407658009326" crossorigin="anonymous"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How much does the average person spend on coffee per year?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The average American spends $1,100 to $2,200 per year on coffee shop visits, depending on frequency and drink choice. Canadians spend $1,400 to $2,600 CAD per year. These figures include only the drink itself. When you add food items, tips, tax, and extras like oat milk upcharges, the real number is typically 40-60% higher than most people estimate."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much cheaper is home-brewed coffee compared to coffee shops?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A cup of drip coffee brewed at home costs $0.25 to $0.75, while an espresso-based drink costs $0.75 to $1.50 with a home machine. A typical Starbucks latte costs $5.75. Switching entirely to home brew can save $1,000 to $2,000 per year for a daily coffee drinker. Even a partial switch of 3 days at home and 2 days at the shop saves $600 to $1,200 annually."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does it take for an espresso machine to pay for itself?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A $400 home espresso machine typically pays for itself in 8 to 16 weeks for someone who buys a daily latte from a coffee shop. The break-even point depends on how much you currently spend per visit and how many days per week you switch to home brewing. After the machine is paid off, you save the full difference between shop and home costs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What would my coffee savings be worth if I invested them?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "If you save $1,500 per year by switching from coffee shops to home brewing and invest that at a 7% annual return, it would grow to approximately $21,000 in 10 years and $75,000 in 20 years. Even investing half your savings creates meaningful long-term wealth thanks to compound growth."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it worth it to completely give up coffee shops?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not necessarily. The biggest savings come from reducing frequency, not eliminating coffee shops entirely. Switching from 5 days a week to 2 days captures most of the financial benefit while still enjoying the coffee shop experience. This calculator includes a swap plan slider so you can model the exact balance that works for your budget and lifestyle."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue-900: #0f2744;
+      --blue-800: #1a3a5c;
+      --blue-700: #1e4976;
+      --blue-600: #2563eb;
+      --blue-500: #3b82f6;
+      --blue-100: #dbeafe;
+      --blue-50: #eff6ff;
+      --green-700: #15803d;
+      --green-600: #16a34a;
+      --green-500: #22c55e;
+      --green-100: #dcfce7;
+      --green-50: #f0fdf4;
+      --amber-700: #b45309;
+      --amber-600: #d97706;
+      --amber-100: #fef3c7;
+      --amber-50: #fffbeb;
+      --red-700: #b91c1c;
+      --red-600: #dc2626;
+      --red-100: #fee2e2;
+      --red-50: #fef2f2;
+      --coffee-900: #3e2723;
+      --coffee-700: #5d4037;
+      --coffee-600: #6d4c41;
+      --coffee-500: #795548;
+      --coffee-400: #8d6e63;
+      --coffee-300: #a1887f;
+      --coffee-200: #bcaaa4;
+      --coffee-100: #d7ccc8;
+      --coffee-50: #efebe9;
+      --gray-900: #111827;
+      --gray-800: #1f2937;
+      --gray-700: #374151;
+      --gray-600: #4b5563;
+      --gray-500: #6b7280;
+      --gray-400: #9ca3af;
+      --gray-300: #d1d5db;
+      --gray-200: #e5e7eb;
+      --gray-100: #f3f4f6;
+      --gray-50: #f9fafb;
+      --white: #ffffff;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.05);
+      --shadow-lg: 0 10px 30px rgba(0,0,0,0.10), 0 4px 10px rgba(0,0,0,0.06);
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--gray-800);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    .nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--gray-200); padding: 0 1.5rem; }
+    .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    .nav-brand { font-weight: 700; font-size: 1rem; color: var(--blue-700); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+    .nav-links { display: flex; align-items: center; gap: 0.25rem; }
+    .nav-link { font-size: 0.875rem; font-weight: 500; color: var(--gray-600); text-decoration: none; padding: 0.4rem 0.75rem; border-radius: var(--radius-sm); transition: color 0.15s, background 0.15s; }
+    .nav-link:hover { color: var(--blue-700); background: var(--blue-50); }
+    .nav-cta { background: var(--blue-600); color: var(--white); border: none; border-radius: var(--radius-sm); padding: 0.5rem 1.1rem; font-size: 0.875rem; font-weight: 600; cursor: pointer; text-decoration: none; transition: background 0.15s; }
+    .nav-cta:hover { background: var(--blue-700); }
+    .nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 0.4rem; border-radius: var(--radius-sm); color: var(--blue-700); }
+    .nav-hamburger .bar { display: block; width: 22px; height: 2px; background: currentColor; border-radius: 2px; transition: transform 0.2s ease, opacity 0.2s ease; transform-origin: center; }
+    .nav-hamburger .bar + .bar { margin-top: 5px; }
+    .nav-hamburger[aria-expanded="true"] .bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger[aria-expanded="true"] .bar:nth-child(2) { opacity: 0; }
+    .nav-hamburger[aria-expanded="true"] .bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav-dropdown { display: none; position: absolute; top: 60px; left: 0; right: 0; background: rgba(255,255,255,0.98); border-bottom: 1px solid var(--gray-200); backdrop-filter: blur(10px); z-index: 99; padding: 0.75rem 1.5rem; }
+    .nav-dropdown.open { display: block; }
+    .nav-dropdown a { display: block; font-size: 0.95rem; font-weight: 500; color: var(--gray-600); text-decoration: none; padding: 0.6rem 0; border-bottom: 1px solid var(--gray-200); }
+    .nav-dropdown a:last-child { border-bottom: none; }
+    .nav-dropdown a:hover { color: var(--blue-700); }
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; flex-direction: column; align-items: center; justify-content: center; }
+    }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(145deg, var(--coffee-900) 0%, var(--coffee-700) 40%, var(--blue-800) 100%);
+      color: var(--white);
+      padding: 4rem 1.5rem 5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      right: 10%;
+      width: 120px;
+      height: 120px;
+      background: radial-gradient(ellipse, rgba(255,255,255,0.06) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: steam 3s ease-in-out infinite;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: -20px;
+      right: 14%;
+      width: 80px;
+      height: 80px;
+      background: radial-gradient(ellipse, rgba(255,255,255,0.04) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: steam 3s ease-in-out infinite 1s;
+    }
+    @keyframes steam {
+      0%, 100% { transform: translateY(0) scale(1); opacity: 0.6; }
+      50% { transform: translateY(-30px) scale(1.2); opacity: 0.2; }
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 100px;
+      padding: 0.35rem 0.9rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 1.25rem;
+    }
+    .hero h1 {
+      font-size: clamp(1.6rem, 4vw, 2.6rem);
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      max-width: 750px;
+      margin: 0 auto 1rem;
+    }
+    .hero p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.8);
+      max-width: 600px;
+      margin: 0 auto 1.5rem;
+    }
+    .hero-quick-answer {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.5rem;
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.6;
+    }
+    .hero-quick-answer strong { color: var(--white); }
+
+    /* MAIN LAYOUT */
+    .main { max-width: 1100px; margin: 0 auto; padding: 2.5rem 1.5rem; }
+
+    /* SECTION CARD */
+    .calc-section {
+      background: var(--white);
+      border: 1.5px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .calc-section-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 0.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .calc-section-title .icon { font-size: 1.3rem; }
+    .calc-section-sub { font-size: 0.875rem; color: var(--gray-500); margin-bottom: 1.5rem; }
+
+    /* FORM ELEMENTS */
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+    .form-row.triple { grid-template-columns: 1fr 1fr 1fr; }
+    .form-group { display: flex; flex-direction: column; gap: 0.35rem; }
+    .form-group label { font-size: 0.8rem; font-weight: 600; color: var(--gray-700); }
+    .form-group select, .form-group input[type="number"], .form-group input[type="text"] {
+      padding: 0.6rem 0.75rem;
+      border: 1.5px solid var(--gray-300);
+      border-radius: var(--radius-sm);
+      font-size: 0.9rem;
+      font-family: inherit;
+      color: var(--gray-800);
+      background: var(--white);
+      transition: border-color 0.15s;
+    }
+    .form-group select:focus, .form-group input:focus { outline: none; border-color: var(--blue-500); box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }
+
+    /* SLIDER */
+    .slider-group { margin-bottom: 1rem; }
+    .slider-label { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.4rem; }
+    .slider-label span:first-child { font-size: 0.8rem; font-weight: 600; color: var(--gray-700); }
+    .slider-label .slider-value { font-size: 0.9rem; font-weight: 700; color: var(--blue-600); }
+    input[type="range"] {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 6px;
+      border-radius: 3px;
+      background: var(--gray-200);
+      outline: none;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--blue-600);
+      cursor: pointer;
+      border: 2px solid var(--white);
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* ORDER BUILDER */
+    .order-list { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1rem; }
+    .order-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-sm);
+      padding: 0.6rem 0.75rem;
+      font-size: 0.875rem;
+    }
+    .order-item .item-name { flex: 1; font-weight: 500; color: var(--gray-800); }
+    .order-item .item-price { font-weight: 700; color: var(--coffee-700); }
+    .order-item .remove-btn {
+      background: none;
+      border: none;
+      color: var(--gray-400);
+      cursor: pointer;
+      font-size: 1.1rem;
+      padding: 0 0.25rem;
+      transition: color 0.15s;
+    }
+    .order-item .remove-btn:hover { color: var(--red-600); }
+
+    .preset-grid { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.75rem; }
+    .preset-btn {
+      background: var(--coffee-50);
+      border: 1px solid var(--coffee-200);
+      border-radius: 100px;
+      padding: 0.35rem 0.85rem;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--coffee-700);
+      cursor: pointer;
+      transition: all 0.15s;
+      font-family: inherit;
+    }
+    .preset-btn:hover { background: var(--coffee-100); border-color: var(--coffee-300); }
+    .preset-chain-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gray-500); margin-top: 0.5rem; margin-bottom: 0.3rem; }
+
+    .custom-add { display: flex; gap: 0.5rem; align-items: end; margin-top: 0.5rem; }
+    .custom-add input { flex: 1; }
+    .add-btn {
+      background: var(--blue-600);
+      color: var(--white);
+      border: none;
+      border-radius: var(--radius-sm);
+      padding: 0.6rem 1rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+      white-space: nowrap;
+      transition: background 0.15s;
+    }
+    .add-btn:hover { background: var(--blue-700); }
+
+    /* RESULTS */
+    .results-hidden { display: none; }
+    .result-hero-card {
+      background: linear-gradient(145deg, var(--coffee-900), var(--coffee-700));
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      color: var(--white);
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .result-hero-card .subtitle { font-size: 0.85rem; color: rgba(255,255,255,0.7); margin-bottom: 0.25rem; }
+    .result-hero-card .think-line { font-size: 0.95rem; color: rgba(255,255,255,0.8); margin-bottom: 0.75rem; }
+    .result-hero-card .big-number {
+      font-size: clamp(2.5rem, 6vw, 3.5rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.25rem;
+    }
+    .result-hero-card .big-label { font-size: 0.9rem; color: rgba(255,255,255,0.7); }
+
+    .breakdown-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; margin-bottom: 1.5rem; }
+    .breakdown-card {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      text-align: center;
+    }
+    .breakdown-card .period { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--gray-500); margin-bottom: 0.25rem; }
+    .breakdown-card .amount { font-size: 1.25rem; font-weight: 800; color: var(--gray-900); }
+
+    .comparison-bar-container { margin-bottom: 1.5rem; }
+    .comparison-row { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem; }
+    .comparison-label { width: 100px; font-size: 0.8rem; font-weight: 600; color: var(--gray-700); text-align: right; flex-shrink: 0; }
+    .comparison-bar-track { flex: 1; height: 32px; background: var(--gray-100); border-radius: var(--radius-sm); overflow: hidden; position: relative; }
+    .comparison-bar-fill { height: 100%; border-radius: var(--radius-sm); display: flex; align-items: center; padding-left: 0.75rem; font-size: 0.8rem; font-weight: 700; color: var(--white); transition: width 0.6s ease; min-width: fit-content; }
+    .comparison-bar-fill.shop { background: var(--coffee-600); }
+    .comparison-bar-fill.home { background: var(--green-600); }
+    .comparison-savings {
+      background: var(--green-50);
+      border: 1px solid var(--green-100);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.95rem;
+      color: var(--green-700);
+      font-weight: 600;
+    }
+
+    /* SWAP PLAN */
+    .swap-result {
+      background: var(--blue-50);
+      border: 1px solid var(--blue-100);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      text-align: center;
+      font-size: 0.95rem;
+      color: var(--blue-700);
+      margin-top: 1rem;
+      line-height: 1.7;
+    }
+    .swap-result .savings-amount { font-size: 1.5rem; font-weight: 800; display: block; margin: 0.25rem 0; }
+
+    /* BREAK-EVEN */
+    .breakeven-result {
+      background: var(--amber-50);
+      border: 1px solid var(--amber-100);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      text-align: center;
+      margin-top: 1rem;
+    }
+    .breakeven-result .weeks { font-size: 1.75rem; font-weight: 800; color: var(--amber-700); }
+    .breakeven-result .detail { font-size: 0.875rem; color: var(--gray-600); margin-top: 0.25rem; }
+
+    /* FUN COMPARISONS */
+    .fun-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.75rem; margin-bottom: 1.5rem; }
+    .fun-card {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      text-align: center;
+    }
+    .fun-card .fun-emoji { font-size: 1.5rem; margin-bottom: 0.35rem; }
+    .fun-card .fun-count { font-size: 1.4rem; font-weight: 800; color: var(--gray-900); }
+    .fun-card .fun-label { font-size: 0.78rem; color: var(--gray-500); margin-top: 0.1rem; }
+
+    /* SHARE CARD */
+    .share-card {
+      background: linear-gradient(135deg, var(--blue-900), var(--coffee-900));
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      color: var(--white);
+      text-align: center;
+      position: relative;
+    }
+    .share-card .share-text { font-size: 1rem; line-height: 1.6; margin-bottom: 1rem; }
+    .share-card .share-text strong { font-size: 1.2rem; }
+    .share-card .share-brand { font-size: 0.75rem; color: rgba(255,255,255,0.5); margin-bottom: 1rem; }
+    .copy-btn {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.25);
+      color: var(--white);
+      border-radius: var(--radius-sm);
+      padding: 0.6rem 1.5rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background 0.15s;
+    }
+    .copy-btn:hover { background: rgba(255,255,255,0.25); }
+
+    /* CHART CONTAINERS */
+    .chart-container { position: relative; height: 320px; margin: 1rem 0; }
+    .chart-container canvas { max-height: 320px; }
+
+    /* YEAR TABLE */
+    .year-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; margin-top: 1rem; }
+    .year-table th { background: var(--gray-50); padding: 0.6rem 0.75rem; text-align: left; font-weight: 600; color: var(--gray-600); border-bottom: 2px solid var(--gray-200); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; }
+    .year-table td { padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--gray-100); color: var(--gray-700); }
+    .year-table tr:hover td { background: var(--blue-50); }
+    .year-table .savings-col { color: var(--green-700); font-weight: 600; }
+
+    /* AD */
+    .ad-container { text-align: center; margin: 1.5rem auto; max-width: 728px; min-height: 90px; }
+
+    /* FOOTER */
+    footer { border-top: 1px solid var(--gray-200); padding: 2rem 1.5rem; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; text-align: center; }
+    .footer-disclaimer { font-size: 0.8rem; color: var(--gray-500); max-width: 680px; margin: 0 auto 0.75rem; line-height: 1.7; }
+    .footer-copy { font-size: 0.8rem; color: var(--gray-400); }
+
+    /* RESPONSIVE */
+    @media (max-width: 700px) {
+      .form-row { grid-template-columns: 1fr; }
+      .form-row.triple { grid-template-columns: 1fr; }
+      .breakdown-grid { grid-template-columns: 1fr 1fr; }
+      .fun-grid { grid-template-columns: 1fr 1fr; }
+      .comparison-label { width: 70px; font-size: 0.72rem; }
+      .year-table { font-size: 0.72rem; }
+    }
+    @media (max-width: 480px) {
+      .calc-section { padding: 1.25rem; }
+      .hero { padding: 3rem 1.25rem 4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" aria-label="Site navigation" style="position:relative;">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand"><img src="/logo-header.png" alt="Skip the Surprise" style="height:75px;"></a>
+      <div class="nav-links">
+        <a href="/" class="nav-link">Calculator</a>
+        <a href="/calculators/" class="nav-link">Calculators</a>
+        <a href="/blog/" class="nav-link">Blog</a>
+      </div>
+      <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <a href="/calculators/" class="nav-cta">All Calculators</a>
+    </div>
+    <div class="nav-dropdown" id="nav-mobile-menu" role="menu">
+      <a href="/" role="menuitem">Calculator</a>
+      <a href="/calculators/" role="menuitem">Calculators</a>
+      <a href="/blog/" role="menuitem">Blog</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-eyebrow">Free Calculator</div>
+    <h1>Coffee Shop Calculator &mdash; How Much Is Your Daily Coffee Really Costing You?</h1>
+    <p>It is not just $5 a day. Add the muffin, the tip, the tax, and the second trip. Then see what that money could become.</p>
+    <div class="hero-quick-answer">
+      <strong>Quick answer:</strong> The average American spends $1,100&ndash;$2,200/year on coffee shop visits. Canadians spend $1,400&ndash;$2,600 CAD/year. Most people underestimate their real number by 40&ndash;60%.
+    </div>
+  </section>
+
+  <!-- AD SLOT 1 -->
+  <div class="ad-container"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9661407658009326" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+
+  <div class="main">
+
+    <!-- STEP 1: COUNTRY -->
+    <div class="calc-section">
+      <div class="calc-section-title"><span class="icon">1</span> Where Are You?</div>
+      <p class="calc-section-sub">This sets your currency and chain presets.</p>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="country">Country</label>
+          <select id="country">
+            <option value="US">United States (USD)</option>
+            <option value="CA">Canada (CAD)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="taxRate">Sales Tax Rate (%)</label>
+          <input type="number" id="taxRate" value="8" min="0" max="25" step="0.1" />
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 2: ORDER BUILDER -->
+    <div class="calc-section">
+      <div class="calc-section-title"><span class="icon">2</span> Build Your Daily Order</div>
+      <p class="calc-section-sub">Pick from popular items or add your own. Include everything you buy per visit.</p>
+
+      <div id="chainPresets"></div>
+
+      <div class="custom-add">
+        <div class="form-group" style="flex:2">
+          <label for="customName">Custom Item Name</label>
+          <input type="text" id="customName" placeholder="Oat milk latte" />
+        </div>
+        <div class="form-group" style="flex:1">
+          <label for="customPrice">Price</label>
+          <input type="number" id="customPrice" placeholder="5.50" min="0" step="0.01" />
+        </div>
+        <button class="add-btn" onclick="addCustomItem()">Add</button>
+      </div>
+
+      <div class="order-list" id="orderList"></div>
+      <div id="orderTotal" style="font-size:0.9rem;font-weight:600;color:var(--gray-600);"></div>
+    </div>
+
+    <!-- STEP 3: ADD-ONS -->
+    <div class="calc-section">
+      <div class="calc-section-title"><span class="icon">3</span> Per-Visit Extras</div>
+      <p class="calc-section-sub">Tips, food, and extras that add up fast.</p>
+      <div class="form-row triple">
+        <div class="form-group">
+          <label for="foodItem">Food Add-on</label>
+          <select id="foodItem">
+            <option value="0">None</option>
+            <option value="3.50">Muffin ($3.50)</option>
+            <option value="4.00">Croissant ($4.00)</option>
+            <option value="5.50">Breakfast Sandwich ($5.50)</option>
+            <option value="3.00">Cookie ($3.00)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="tipType">Tip</label>
+          <select id="tipType">
+            <option value="none">None</option>
+            <option value="1">$1</option>
+            <option value="2" selected>$2</option>
+            <option value="15%">15%</option>
+            <option value="20%">20%</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="visitsPerDay">Visits Per Day</label>
+          <select id="visitsPerDay">
+            <option value="1" selected>1</option>
+            <option value="2">2</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 4: FREQUENCY -->
+    <div class="calc-section">
+      <div class="calc-section-title"><span class="icon">4</span> How Often?</div>
+      <div class="slider-group">
+        <div class="slider-label">
+          <span>Days per week you visit a coffee shop</span>
+          <span class="slider-value" id="daysVal">5</span>
+        </div>
+        <input type="range" id="daysPerWeek" min="1" max="7" value="5" />
+      </div>
+    </div>
+
+    <!-- STEP 5: HOME ALTERNATIVE -->
+    <div class="calc-section">
+      <div class="calc-section-title"><span class="icon">5</span> Home Brew Alternative</div>
+      <p class="calc-section-sub">What does it cost you to make coffee at home?</p>
+      <div class="slider-group">
+        <div class="slider-label">
+          <span>Home coffee cost per cup</span>
+          <span class="slider-value" id="homeCostVal">$0.50</span>
+        </div>
+        <input type="range" id="homeCostPerCup" min="0.25" max="1.50" value="0.50" step="0.05" />
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="ownMachine">Do you own an espresso machine?</label>
+          <select id="ownMachine">
+            <option value="no">No</option>
+            <option value="yes">Yes</option>
+          </select>
+        </div>
+        <div class="form-group" id="machinePriceGroup">
+          <label for="machinePrice">Machine price you are considering ($)</label>
+          <input type="number" id="machinePrice" value="400" min="50" max="5000" step="10" />
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 6: INVESTMENT -->
+    <div class="calc-section">
+      <div class="calc-section-title"><span class="icon">6</span> Investment Assumptions</div>
+      <p class="calc-section-sub">What could your savings grow to over time?</p>
+      <div class="slider-group">
+        <div class="slider-label">
+          <span>Expected annual return</span>
+          <span class="slider-value" id="returnVal">7%</span>
+        </div>
+        <input type="range" id="returnRate" min="4" max="12" value="7" step="0.5" />
+      </div>
+      <div class="slider-group">
+        <div class="slider-label">
+          <span>Inflation rate</span>
+          <span class="slider-value" id="inflationVal">3%</span>
+        </div>
+        <input type="range" id="inflationRate" min="0" max="8" value="3" step="0.5" />
+      </div>
+      <div class="slider-group">
+        <div class="slider-label">
+          <span>Time horizon (years)</span>
+          <span class="slider-value" id="horizonVal">10</span>
+        </div>
+        <input type="range" id="timeHorizon" min="1" max="30" value="10" />
+      </div>
+    </div>
+
+    <!-- CALCULATE BUTTON -->
+    <div style="text-align:center;margin-bottom:2rem;">
+      <button class="add-btn" style="padding:0.85rem 2.5rem;font-size:1rem;border-radius:var(--radius-md);" onclick="calculate()">Calculate My Real Coffee Bill</button>
+    </div>
+
+    <!-- RESULTS -->
+    <div id="results" class="results-hidden">
+
+      <!-- RESULT 1: REAL DAILY BILL -->
+      <div class="result-hero-card" id="heroBillCard">
+        <div class="subtitle">Your Real Daily Coffee Bill</div>
+        <div class="think-line" id="thinkLine"></div>
+        <div class="big-number" id="annualSpend"></div>
+        <div class="big-label">per year at the coffee shop</div>
+      </div>
+
+      <!-- RESULT 2: BREAKDOWN -->
+      <div class="calc-section">
+        <div class="calc-section-title">Time Period Breakdown</div>
+        <div class="breakdown-grid" id="breakdownGrid"></div>
+      </div>
+
+      <!-- RESULT 3: SHOP VS HOME -->
+      <div class="calc-section">
+        <div class="calc-section-title">Shop vs Home Brew</div>
+        <p class="calc-section-sub">Annual cost comparison if you brewed every day at home instead.</p>
+        <div class="comparison-bar-container" id="comparisonBars"></div>
+        <div class="comparison-savings" id="comparisonSavings"></div>
+      </div>
+
+      <!-- AD SLOT 2 -->
+      <div class="ad-container"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9661407658009326" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+
+      <!-- RESULT 4: SWAP PLAN -->
+      <div class="calc-section">
+        <div class="calc-section-title">The Swap Plan</div>
+        <p class="calc-section-sub">You do not have to quit cold turkey. Slide to find your sweet spot.</p>
+        <div class="slider-group">
+          <div class="slider-label">
+            <span>Days per week you switch to home brew</span>
+            <span class="slider-value" id="swapDaysVal">3</span>
+          </div>
+          <input type="range" id="swapDays" min="0" max="7" value="3" oninput="updateSwapPlan()" />
+        </div>
+        <div class="swap-result" id="swapResult"></div>
+      </div>
+
+      <!-- RESULT 5: ESPRESSO BREAK-EVEN -->
+      <div class="calc-section" id="breakevenSection">
+        <div class="calc-section-title">Espresso Machine Break-Even</div>
+        <p class="calc-section-sub">How fast does the machine pay for itself?</p>
+        <div class="breakeven-result" id="breakevenResult"></div>
+        <div class="chart-container"><canvas id="breakevenChart"></canvas></div>
+      </div>
+
+      <!-- RESULT 6: INVESTMENT GROWTH -->
+      <div class="calc-section">
+        <div class="calc-section-title">If You Invested Your Coffee Savings</div>
+        <p class="calc-section-sub">Compound growth on the money you would save switching to home brew.</p>
+        <div class="chart-container"><canvas id="investmentChart"></canvas></div>
+        <div id="investmentSummary" style="text-align:center;font-size:0.95rem;color:var(--gray-700);font-weight:600;margin-top:0.5rem;"></div>
+      </div>
+
+      <!-- RESULT 7: YEAR-BY-YEAR TABLE -->
+      <div class="calc-section">
+        <div class="calc-section-title">Year-by-Year Breakdown</div>
+        <div style="overflow-x:auto;">
+          <table class="year-table" id="yearTable">
+            <thead>
+              <tr>
+                <th>Year</th>
+                <th>Shop Cost</th>
+                <th>Home Cost</th>
+                <th>Annual Savings</th>
+                <th>Invested Value</th>
+              </tr>
+            </thead>
+            <tbody id="yearTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- RESULT 8: FUN COMPARISONS -->
+      <div class="calc-section">
+        <div class="calc-section-title">What Else Could You Buy?</div>
+        <p class="calc-section-sub">Your annual coffee shop spending could also get you:</p>
+        <div class="fun-grid" id="funGrid"></div>
+      </div>
+
+      <!-- RESULT 9: SHARE CARD -->
+      <div class="calc-section">
+        <div class="calc-section-title">Share Your Results</div>
+        <div class="share-card" id="shareCard">
+          <div class="share-text" id="shareText"></div>
+          <div class="share-brand">skipthesurprise.com</div>
+          <button class="copy-btn" onclick="copyResults()">Copy to Clipboard</button>
+        </div>
+        <div id="copyConfirm" style="text-align:center;font-size:0.8rem;color:var(--green-600);font-weight:600;margin-top:0.5rem;display:none;">Copied!</div>
+      </div>
+
+      <!-- AD SLOT 3 -->
+      <div class="ad-container"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9661407658009326" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+
+    </div><!-- /results -->
+
+  </div><!-- /main -->
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <p class="footer-disclaimer">
+        Educational content only. Prices shown are approximate and may vary by location. Not financial advice. Always do your own research before making investment decisions.
+      </p>
+      <p class="footer-copy">&copy; 2026 Skip the Surprise. All rights reserved.</p>
+    </div>
+  </footer>
+
+<script>
+(function() {
+  // --- MOBILE NAV ---
+  var btn = document.querySelector('.nav-hamburger');
+  var dropdown = document.getElementById('nav-mobile-menu');
+  if (btn && dropdown) {
+    btn.addEventListener('click', function() {
+      var open = dropdown.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    dropdown.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        dropdown.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  // --- DATA ---
+  var PRESETS = {
+    US: {
+      'Starbucks': [
+        { name: 'Grande Latte', price: 5.75 },
+        { name: 'Venti Iced Coffee', price: 4.45 },
+        { name: 'Caramel Macchiato', price: 6.25 },
+        { name: 'Pike Place Drip', price: 2.95 },
+        { name: 'Frappuccino', price: 6.45 }
+      ],
+      "Dunkin'": [
+        { name: 'Medium Iced Latte', price: 5.49 },
+        { name: 'Hot Coffee', price: 2.69 },
+        { name: 'Cold Brew', price: 4.29 },
+        { name: 'Frozen Coffee', price: 4.99 }
+      ],
+      "Scooter's Coffee": [
+        { name: 'Caramelicious', price: 5.39 },
+        { name: 'Medium Latte', price: 4.99 },
+        { name: 'Iced Infusion', price: 4.49 },
+        { name: 'Brewed Coffee', price: 2.49 }
+      ],
+      'Dutch Bros': [
+        { name: 'Medium Golden Eagle', price: 5.50 },
+        { name: 'Medium Annihilator', price: 5.50 },
+        { name: 'Rebel Energy (Med)', price: 4.75 },
+        { name: 'Medium Iced Latte', price: 5.25 },
+        { name: 'Brewed Coffee', price: 2.50 }
+      ],
+      '7 Brew Coffee': [
+        { name: 'Medium Latte', price: 5.25 },
+        { name: 'Iced Cookie Butter', price: 5.75 },
+        { name: 'Cold Brew', price: 4.25 },
+        { name: 'Brewed Coffee', price: 2.25 }
+      ],
+      "Peet's Coffee": [
+        { name: 'Medium Caffe Latte', price: 5.85 },
+        { name: 'Iced Mocha', price: 6.25 },
+        { name: 'Drip Coffee (Med)', price: 3.15 },
+        { name: 'Cold Brew (Med)', price: 4.75 }
+      ],
+      'Coffee Bean & Tea Leaf': [
+        { name: 'Ice Blended Mocha', price: 6.45 },
+        { name: 'Medium Latte', price: 5.65 },
+        { name: 'Chai Tea Latte', price: 5.45 },
+        { name: 'Brewed Coffee', price: 2.95 }
+      ],
+      'Caribou Coffee': [
+        { name: 'Medium Crafted Press', price: 5.29 },
+        { name: 'Caramel Cooler', price: 5.79 },
+        { name: 'Medium Latte', price: 5.19 },
+        { name: 'Brewed Coffee', price: 2.69 }
+      ],
+      'Biggby Coffee': [
+        { name: 'Caramel Marvel', price: 5.49 },
+        { name: 'Teddy Bear Latte', price: 5.99 },
+        { name: 'Medium Latte', price: 4.99 },
+        { name: 'Brewed Coffee', price: 2.39 }
+      ],
+      'Blue Bottle Coffee': [
+        { name: 'Latte', price: 6.50 },
+        { name: 'Cappuccino', price: 5.75 },
+        { name: 'New Orleans Iced', price: 6.00 },
+        { name: 'Drip Coffee', price: 4.50 }
+      ]
+    },
+    CA: {
+      'Tim Hortons': [
+        { name: 'Medium Double Double', price: 2.10 },
+        { name: 'Large Iced Capp', price: 4.59 },
+        { name: 'Medium Latte', price: 4.29 },
+        { name: 'Steeped Tea', price: 1.90 },
+        { name: 'French Vanilla', price: 2.99 }
+      ],
+      'Starbucks': [
+        { name: 'Grande Latte', price: 6.75 },
+        { name: 'Venti Iced Coffee', price: 5.25 },
+        { name: 'Caramel Macchiato', price: 7.25 },
+        { name: 'Pike Place Drip', price: 3.45 },
+        { name: 'Frappuccino', price: 7.45 }
+      ],
+      "McDonald's McCafe": [
+        { name: 'Medium Latte', price: 3.99 },
+        { name: 'Medium Iced Coffee', price: 2.99 },
+        { name: 'Large Coffee', price: 1.89 },
+        { name: 'Mocha', price: 4.49 }
+      ],
+      'Second Cup': [
+        { name: 'Medium Latte', price: 5.29 },
+        { name: 'Vanilla Bean Latte', price: 5.79 },
+        { name: 'Iced Mocha', price: 5.99 },
+        { name: 'Brewed Coffee', price: 2.69 }
+      ],
+      'Bridgehead Coffee': [
+        { name: 'Latte', price: 5.50 },
+        { name: 'Cappuccino', price: 5.00 },
+        { name: 'Cold Brew', price: 4.75 },
+        { name: 'Drip Coffee', price: 3.00 }
+      ],
+      '49th Parallel': [
+        { name: 'Latte', price: 6.25 },
+        { name: 'Cortado', price: 5.00 },
+        { name: 'Drip Coffee', price: 3.75 },
+        { name: 'Lucky Doughnut + Coffee', price: 8.50 }
+      ],
+      'Pilot Coffee Roasters': [
+        { name: 'Latte', price: 6.00 },
+        { name: 'Flat White', price: 5.50 },
+        { name: 'Pour Over', price: 5.75 },
+        { name: 'Drip Coffee', price: 3.50 }
+      ],
+      'Phil & Sebastian': [
+        { name: 'Latte', price: 5.75 },
+        { name: 'Cappuccino', price: 5.25 },
+        { name: 'Drip Coffee', price: 3.50 },
+        { name: 'Cold Brew', price: 5.25 }
+      ],
+      "Balzac's Coffee": [
+        { name: 'Latte', price: 5.50 },
+        { name: 'Mocha', price: 5.95 },
+        { name: 'Iced Latte', price: 5.75 },
+        { name: 'Brewed Coffee', price: 2.85 }
+      ],
+      'Blenz Coffee': [
+        { name: 'Medium Latte', price: 5.25 },
+        { name: 'Frozen Blenz', price: 5.99 },
+        { name: 'Chai Latte', price: 5.49 },
+        { name: 'Brewed Coffee', price: 2.59 }
+      ]
+    }
+  };
+
+  var FOOD_PRICES_CAD = { '3.50': '4.25', '4.00': '4.75', '5.50': '6.50', '3.00': '3.50' };
+
+  var orderItems = [];
+  var currentCurrency = '$';
+  var lastCalcData = null;
+
+  // --- INIT ---
+  window.orderItems = orderItems;
+
+  function getCurrency() {
+    return document.getElementById('country').value === 'CA' ? 'CA$' : '$';
+  }
+
+  function fmt(n) {
+    return getCurrency() + n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
+
+  function fmtBig(n) {
+    return getCurrency() + Math.round(n).toLocaleString();
+  }
+
+  // --- PRESETS RENDERING ---
+  function renderPresets() {
+    var country = document.getElementById('country').value;
+    var presets = PRESETS[country];
+    var container = document.getElementById('chainPresets');
+    var html = '';
+    for (var chain in presets) {
+      html += '<div class="preset-chain-label">' + chain + '</div><div class="preset-grid">';
+      presets[chain].forEach(function(item) {
+        var cur = country === 'CA' ? 'CA$' : '$';
+        html += '<button class="preset-btn" onclick="addPresetItem(\'' +
+          item.name.replace(/'/g, "\\'") + '\',' + item.price + ')">' +
+          item.name + ' (' + cur + item.price.toFixed(2) + ')</button>';
+      });
+      html += '</div>';
+    }
+    html += '<div class="preset-chain-label">Local / Other</div>';
+    html += '<p style="font-size:0.78rem;color:var(--gray-500);margin-bottom:0.5rem;">Use the custom fields below to add any drink or item at any price.</p>';
+    container.innerHTML = html;
+  }
+
+  function renderOrderList() {
+    var list = document.getElementById('orderList');
+    var total = document.getElementById('orderTotal');
+    if (orderItems.length === 0) {
+      list.innerHTML = '<div style="font-size:0.85rem;color:var(--gray-400);padding:0.5rem 0;">No items added yet. Pick from the presets above or add a custom item.</div>';
+      total.textContent = '';
+      return;
+    }
+    var html = '';
+    var sum = 0;
+    orderItems.forEach(function(item, i) {
+      sum += item.price;
+      html += '<div class="order-item"><span class="item-name">' + item.name +
+        '</span><span class="item-price">' + fmt(item.price) +
+        '</span><button class="remove-btn" onclick="removeOrderItem(' + i + ')" title="Remove">&times;</button></div>';
+    });
+    list.innerHTML = html;
+    total.textContent = 'Order subtotal: ' + fmt(sum);
+  }
+
+  window.addPresetItem = function(name, price) {
+    orderItems.push({ name: name, price: price });
+    renderOrderList();
+  };
+
+  window.addCustomItem = function() {
+    var nameEl = document.getElementById('customName');
+    var priceEl = document.getElementById('customPrice');
+    var name = nameEl.value.trim();
+    var price = parseFloat(priceEl.value);
+    if (!name || isNaN(price) || price <= 0) return;
+    orderItems.push({ name: name, price: price });
+    nameEl.value = '';
+    priceEl.value = '';
+    renderOrderList();
+  };
+
+  window.removeOrderItem = function(i) {
+    orderItems.splice(i, 1);
+    renderOrderList();
+  };
+
+  // --- UPDATE FOOD PRICES FOR CAD ---
+  function updateFoodPrices() {
+    var country = document.getElementById('country').value;
+    var foodSelect = document.getElementById('foodItem');
+    var options = [
+      { value: '0', label: 'None' }
+    ];
+    if (country === 'CA') {
+      options.push({ value: '4.25', label: 'Muffin (CA$4.25)' });
+      options.push({ value: '4.75', label: 'Croissant (CA$4.75)' });
+      options.push({ value: '6.50', label: 'Breakfast Sandwich (CA$6.50)' });
+      options.push({ value: '3.50', label: 'Cookie (CA$3.50)' });
+    } else {
+      options.push({ value: '3.50', label: 'Muffin ($3.50)' });
+      options.push({ value: '4.00', label: 'Croissant ($4.00)' });
+      options.push({ value: '5.50', label: 'Breakfast Sandwich ($5.50)' });
+      options.push({ value: '3.00', label: 'Cookie ($3.00)' });
+    }
+    foodSelect.innerHTML = '';
+    options.forEach(function(opt) {
+      var o = document.createElement('option');
+      o.value = opt.value;
+      o.textContent = opt.label;
+      foodSelect.appendChild(o);
+    });
+  }
+
+  function updateTipOptions() {
+    var country = document.getElementById('country').value;
+    var cur = country === 'CA' ? 'CA$' : '$';
+    var tipSelect = document.getElementById('tipType');
+    var val = tipSelect.value;
+    tipSelect.innerHTML = '';
+    [
+      { value: 'none', label: 'None' },
+      { value: '1', label: cur + '1' },
+      { value: '2', label: cur + '2' },
+      { value: '15%', label: '15%' },
+      { value: '20%', label: '20%' }
+    ].forEach(function(opt) {
+      var o = document.createElement('option');
+      o.value = opt.value;
+      o.textContent = opt.label;
+      if (opt.value === val) o.selected = true;
+      tipSelect.appendChild(o);
+    });
+  }
+
+  // --- COUNTRY CHANGE ---
+  document.getElementById('country').addEventListener('change', function() {
+    orderItems.length = 0;
+    renderPresets();
+    renderOrderList();
+    updateFoodPrices();
+    updateTipOptions();
+    // Reset tax
+    document.getElementById('taxRate').value = this.value === 'CA' ? '13' : '8';
+  });
+
+  // --- SLIDERS ---
+  document.getElementById('daysPerWeek').addEventListener('input', function() {
+    document.getElementById('daysVal').textContent = this.value;
+  });
+  document.getElementById('homeCostPerCup').addEventListener('input', function() {
+    document.getElementById('homeCostVal').textContent = getCurrency() + parseFloat(this.value).toFixed(2);
+  });
+  document.getElementById('returnRate').addEventListener('input', function() {
+    document.getElementById('returnVal').textContent = this.value + '%';
+  });
+  document.getElementById('inflationRate').addEventListener('input', function() {
+    document.getElementById('inflationVal').textContent = this.value + '%';
+  });
+  document.getElementById('timeHorizon').addEventListener('input', function() {
+    document.getElementById('horizonVal').textContent = this.value;
+  });
+  document.getElementById('ownMachine').addEventListener('change', function() {
+    document.getElementById('machinePriceGroup').style.display = this.value === 'no' ? '' : 'none';
+  });
+
+  // --- CALCULATE ---
+  var investmentChartInstance = null;
+  var breakevenChartInstance = null;
+
+  window.calculate = function() {
+    if (orderItems.length === 0) {
+      alert('Add at least one drink or food item to your order.');
+      return;
+    }
+
+    var country = document.getElementById('country').value;
+    var taxRate = parseFloat(document.getElementById('taxRate').value) / 100;
+    var foodCost = parseFloat(document.getElementById('foodItem').value);
+    var tipType = document.getElementById('tipType').value;
+    var visitsPerDay = parseInt(document.getElementById('visitsPerDay').value);
+    var daysPerWeek = parseInt(document.getElementById('daysPerWeek').value);
+    var homeCostPerCup = parseFloat(document.getElementById('homeCostPerCup').value);
+    var ownMachine = document.getElementById('ownMachine').value === 'yes';
+    var machinePrice = ownMachine ? 0 : parseFloat(document.getElementById('machinePrice').value);
+    var returnRate = parseFloat(document.getElementById('returnRate').value) / 100;
+    var inflationRate = parseFloat(document.getElementById('inflationRate').value) / 100;
+    var timeHorizon = parseInt(document.getElementById('timeHorizon').value);
+
+    // Order subtotal
+    var orderSubtotal = 0;
+    orderItems.forEach(function(item) { orderSubtotal += item.price; });
+
+    // Per-visit cost
+    var preTaxTotal = (orderSubtotal + foodCost) * visitsPerDay;
+    var tax = preTaxTotal * taxRate;
+    var tip = 0;
+    if (tipType === '15%') tip = preTaxTotal * 0.15;
+    else if (tipType === '20%') tip = preTaxTotal * 0.20;
+    else if (tipType !== 'none') tip = parseFloat(tipType) * visitsPerDay;
+
+    var dailyCost = preTaxTotal + tax + tip;
+    var drinkOnlyCost = orderSubtotal * visitsPerDay;
+
+    var weeklyCost = dailyCost * daysPerWeek;
+    var monthlyCost = weeklyCost * (52 / 12);
+    var yearlyCost = weeklyCost * 52;
+
+    // Home cost
+    var cupsPerDay = orderItems.length * visitsPerDay;
+    var homeDaily = cupsPerDay * homeCostPerCup;
+    var homeYearly = homeDaily * 365;
+
+    var annualSavings = yearlyCost - homeYearly;
+    if (annualSavings < 0) annualSavings = 0;
+
+    lastCalcData = {
+      dailyCost: dailyCost,
+      drinkOnlyCost: drinkOnlyCost,
+      weeklyCost: weeklyCost,
+      monthlyCost: monthlyCost,
+      yearlyCost: yearlyCost,
+      homeDaily: homeDaily,
+      homeYearly: homeYearly,
+      annualSavings: annualSavings,
+      machinePrice: machinePrice,
+      ownMachine: ownMachine,
+      returnRate: returnRate,
+      inflationRate: inflationRate,
+      timeHorizon: timeHorizon,
+      daysPerWeek: daysPerWeek,
+      homeCostPerCup: homeCostPerCup,
+      cupsPerDay: cupsPerDay
+    };
+
+    // Show results
+    document.getElementById('results').classList.remove('results-hidden');
+
+    // Hero card
+    document.getElementById('thinkLine').textContent =
+      'You think you spend ' + fmt(drinkOnlyCost) + '/day. You actually spend ' + fmt(dailyCost) + '/day.';
+    document.getElementById('annualSpend').textContent = fmtBig(yearlyCost);
+
+    // Breakdown
+    document.getElementById('breakdownGrid').innerHTML =
+      '<div class="breakdown-card"><div class="period">Daily</div><div class="amount">' + fmt(dailyCost) + '</div></div>' +
+      '<div class="breakdown-card"><div class="period">Weekly</div><div class="amount">' + fmt(weeklyCost) + '</div></div>' +
+      '<div class="breakdown-card"><div class="period">Monthly</div><div class="amount">' + fmt(monthlyCost) + '</div></div>' +
+      '<div class="breakdown-card"><div class="period">Yearly</div><div class="amount">' + fmtBig(yearlyCost) + '</div></div>';
+
+    // Comparison bars
+    var maxCost = Math.max(yearlyCost, homeYearly);
+    var shopPct = (yearlyCost / maxCost) * 100;
+    var homePct = (homeYearly / maxCost) * 100;
+    document.getElementById('comparisonBars').innerHTML =
+      '<div class="comparison-row"><div class="comparison-label">Coffee Shop</div><div class="comparison-bar-track"><div class="comparison-bar-fill shop" style="width:' + shopPct + '%">' + fmtBig(yearlyCost) + '</div></div></div>' +
+      '<div class="comparison-row"><div class="comparison-label">Home Brew</div><div class="comparison-bar-track"><div class="comparison-bar-fill home" style="width:' + homePct + '%">' + fmtBig(homeYearly) + '</div></div></div>';
+    document.getElementById('comparisonSavings').innerHTML =
+      'Switching entirely to home brew saves you <strong>' + fmtBig(annualSavings) + '/year</strong>';
+
+    // Swap plan
+    document.getElementById('swapDays').max = daysPerWeek;
+    var currentSwap = parseInt(document.getElementById('swapDays').value);
+    if (currentSwap > daysPerWeek) {
+      document.getElementById('swapDays').value = Math.floor(daysPerWeek / 2);
+    }
+    updateSwapPlan();
+
+    // Espresso break-even
+    if (!ownMachine && machinePrice > 0) {
+      document.getElementById('breakevenSection').style.display = '';
+      var dailySavingPerCup = (dailyCost / daysPerWeek * 7 / 7) - homeDaily;
+      // savings per week if fully switched
+      var weeklySavingFull = (dailyCost - homeDaily) * daysPerWeek;
+      var breakevenWeeks = weeklySavingFull > 0 ? Math.ceil(machinePrice / weeklySavingFull) : 999;
+      document.getElementById('breakevenResult').innerHTML =
+        '<div class="weeks">' + breakevenWeeks + ' weeks</div>' +
+        '<div class="detail">A ' + fmtBig(machinePrice) + ' machine pays for itself in ' + breakevenWeeks + ' weeks based on your current spending.</div>';
+      renderBreakevenChart(machinePrice, dailyCost, homeDaily, daysPerWeek, breakevenWeeks);
+    } else {
+      document.getElementById('breakevenSection').style.display = 'none';
+    }
+
+    // Investment chart
+    renderInvestmentChart(annualSavings, returnRate, inflationRate, timeHorizon);
+
+    // Year table
+    renderYearTable(yearlyCost, homeYearly, annualSavings, returnRate, inflationRate, timeHorizon);
+
+    // Fun comparisons
+    renderFunComparisons(yearlyCost, country);
+
+    // Share card
+    var horizonGrowth = calcFV(annualSavings, returnRate, timeHorizon);
+    document.getElementById('shareText').innerHTML =
+      'I spend <strong>' + fmtBig(yearlyCost) + '/year</strong> on coffee.<br>' +
+      'That is <strong>' + fmtBig(yearlyCost * timeHorizon) + '</strong> over ' + timeHorizon + ' years.<br>' +
+      'If invested, my savings could grow to <strong>' + fmtBig(horizonGrowth) + '</strong>.';
+
+    // Scroll to results
+    document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
+  // --- SWAP PLAN ---
+  window.updateSwapPlan = function() {
+    if (!lastCalcData) return;
+    var d = lastCalcData;
+    var swapDays = parseInt(document.getElementById('swapDays').value);
+    document.getElementById('swapDaysVal').textContent = swapDays;
+
+    var shopDays = d.daysPerWeek - swapDays;
+    var weeklyShop = d.dailyCost * shopDays;
+    var weeklyHome = d.homeDaily * swapDays;
+    var weeklyTotal = weeklyShop + weeklyHome;
+    var yearlySwap = weeklyTotal * 52;
+    var swapSavings = d.yearlyCost - yearlySwap;
+
+    var text = '';
+    if (swapDays === 0) {
+      text = 'No change. You visit the shop all ' + d.daysPerWeek + ' days.';
+    } else if (shopDays === 0) {
+      text = 'Full switch to home brew.<span class="savings-amount">' + fmtBig(swapSavings) + '/year saved</span>';
+    } else {
+      text = 'Brew at home ' + swapDays + ' day' + (swapDays > 1 ? 's' : '') +
+        ', visit the shop ' + shopDays + ' day' + (shopDays > 1 ? 's' : '') + ' per week.' +
+        '<span class="savings-amount">' + fmtBig(swapSavings) + '/year saved</span>' +
+        'That is ' + fmtBig(swapSavings / 12) + '/month back in your pocket.';
+    }
+    document.getElementById('swapResult').innerHTML = text;
+  };
+
+  // --- FUTURE VALUE ---
+  function calcFV(annualContribution, rate, years) {
+    var total = 0;
+    for (var i = 0; i < years; i++) {
+      total = (total + annualContribution) * (1 + rate);
+    }
+    return total;
+  }
+
+  function calcFVInflationAdj(annualContribution, nominalRate, inflationRate, years) {
+    var realRate = (1 + nominalRate) / (1 + inflationRate) - 1;
+    return calcFV(annualContribution, realRate, years);
+  }
+
+  // --- CHARTS ---
+  function renderInvestmentChart(annualSavings, returnRate, inflationRate, timeHorizon) {
+    var labels = [];
+    var nominal = [];
+    var real = [];
+    var nomTotal = 0;
+    var realRate = (1 + returnRate) / (1 + inflationRate) - 1;
+    var realTotal = 0;
+
+    for (var y = 0; y <= timeHorizon; y++) {
+      labels.push('Year ' + y);
+      if (y === 0) {
+        nominal.push(0);
+        real.push(0);
+      } else {
+        nomTotal = (nomTotal + annualSavings) * (1 + returnRate);
+        realTotal = (realTotal + annualSavings) * (1 + realRate);
+        nominal.push(Math.round(nomTotal));
+        real.push(Math.round(realTotal));
+      }
+    }
+
+    if (investmentChartInstance) investmentChartInstance.destroy();
+    var ctx = document.getElementById('investmentChart').getContext('2d');
+    investmentChartInstance = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [
+          {
+            label: 'Nominal Growth (' + (returnRate * 100) + '%)',
+            data: nominal,
+            borderColor: '#2563eb',
+            backgroundColor: 'rgba(37,99,235,0.08)',
+            fill: true,
+            tension: 0.3,
+            pointRadius: 3
+          },
+          {
+            label: 'Inflation-Adjusted (' + ((realRate * 100).toFixed(1)) + '% real)',
+            data: real,
+            borderColor: '#6d4c41',
+            backgroundColor: 'rgba(109,76,65,0.08)',
+            fill: true,
+            tension: 0.3,
+            pointRadius: 3,
+            borderDash: [5, 5]
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { position: 'bottom', labels: { font: { family: 'Inter', size: 12 } } },
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                return context.dataset.label + ': ' + fmtBig(context.parsed.y);
+              }
+            }
+          }
+        },
+        scales: {
+          y: {
+            ticks: {
+              callback: function(v) { return fmtBig(v); },
+              font: { family: 'Inter', size: 11 }
+            },
+            grid: { color: 'rgba(0,0,0,0.05)' }
+          },
+          x: {
+            ticks: { font: { family: 'Inter', size: 11 } },
+            grid: { display: false }
+          }
+        }
+      }
+    });
+
+    document.getElementById('investmentSummary').textContent =
+      'Your coffee savings could be worth ' + fmtBig(nomTotal) + ' in ' + timeHorizon + ' years (' + fmtBig(realTotal) + ' in today\'s dollars).';
+  }
+
+  function renderBreakevenChart(machinePrice, dailyCostShop, dailyCostHome, daysPerWeek, breakevenWeeks) {
+    var weeks = Math.min(Math.max(breakevenWeeks * 2, 12), 104);
+    var labels = [];
+    var shopLine = [];
+    var homeLine = [];
+
+    for (var w = 0; w <= weeks; w++) {
+      labels.push('Wk ' + w);
+      shopLine.push(Math.round(dailyCostShop * daysPerWeek * w));
+      homeLine.push(Math.round(machinePrice + (dailyCostHome * daysPerWeek * w)));
+    }
+
+    if (breakevenChartInstance) breakevenChartInstance.destroy();
+    var ctx = document.getElementById('breakevenChart').getContext('2d');
+    breakevenChartInstance = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [
+          {
+            label: 'Coffee Shop Cumulative',
+            data: shopLine,
+            borderColor: '#6d4c41',
+            backgroundColor: 'rgba(109,76,65,0.08)',
+            fill: false,
+            tension: 0.1,
+            pointRadius: 0
+          },
+          {
+            label: 'Machine + Home Brew',
+            data: homeLine,
+            borderColor: '#16a34a',
+            backgroundColor: 'rgba(22,163,74,0.08)',
+            fill: false,
+            tension: 0.1,
+            pointRadius: 0
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { position: 'bottom', labels: { font: { family: 'Inter', size: 12 } } },
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                return context.dataset.label + ': ' + fmtBig(context.parsed.y);
+              }
+            }
+          },
+          annotation: breakevenWeeks <= weeks ? {
+            annotations: {
+              point1: {
+                type: 'line',
+                xMin: breakevenWeeks,
+                xMax: breakevenWeeks,
+                borderColor: '#d97706',
+                borderWidth: 2,
+                borderDash: [6, 4],
+                label: { display: true, content: 'Break-even', position: 'start', font: { size: 11 } }
+              }
+            }
+          } : {}
+        },
+        scales: {
+          y: {
+            ticks: {
+              callback: function(v) { return fmtBig(v); },
+              font: { family: 'Inter', size: 11 }
+            },
+            grid: { color: 'rgba(0,0,0,0.05)' }
+          },
+          x: {
+            ticks: {
+              maxTicksLimit: 12,
+              font: { family: 'Inter', size: 11 }
+            },
+            grid: { display: false }
+          }
+        }
+      }
+    });
+  }
+
+  // --- YEAR TABLE ---
+  function renderYearTable(yearlyCost, homeYearly, annualSavings, returnRate, inflationRate, timeHorizon) {
+    var tbody = document.getElementById('yearTableBody');
+    var html = '';
+    var investedTotal = 0;
+
+    for (var y = 1; y <= timeHorizon; y++) {
+      var inflatedShop = yearlyCost * Math.pow(1 + inflationRate, y - 1);
+      var inflatedHome = homeYearly * Math.pow(1 + inflationRate, y - 1);
+      var savingsY = inflatedShop - inflatedHome;
+      investedTotal = (investedTotal + savingsY) * (1 + returnRate);
+
+      html += '<tr><td>' + y + '</td><td>' + fmtBig(inflatedShop) + '</td><td>' + fmtBig(inflatedHome) +
+        '</td><td class="savings-col">' + fmtBig(savingsY) + '</td><td class="savings-col">' + fmtBig(investedTotal) + '</td></tr>';
+    }
+    tbody.innerHTML = html;
+  }
+
+  // --- FUN COMPARISONS ---
+  function renderFunComparisons(yearlyCost, country) {
+    var items = [];
+    if (country === 'CA') {
+      items = [
+        { emoji: '&#9992;&#65039;', count: Math.floor(yearlyCost / 550), label: 'flights to Mexico' },
+        { emoji: '&#128241;', count: Math.floor(yearlyCost / 1649), label: 'iPhones' },
+        { emoji: '&#127968;', count: (yearlyCost / 1800).toFixed(1), label: 'months of rent (avg)' },
+        { emoji: '&#127860;', count: Math.floor(yearlyCost / 75), label: 'nice dinners out' },
+        { emoji: '&#128218;', count: Math.floor(yearlyCost / 25), label: 'books' },
+        { emoji: '&#127909;', count: Math.floor(yearlyCost / 17), label: 'movie tickets' }
+      ];
+    } else {
+      items = [
+        { emoji: '&#9992;&#65039;', count: Math.floor(yearlyCost / 450), label: 'flights to Cancun' },
+        { emoji: '&#128241;', count: Math.floor(yearlyCost / 1199), label: 'iPhones' },
+        { emoji: '&#127968;', count: (yearlyCost / 1500).toFixed(1), label: 'months of rent (avg)' },
+        { emoji: '&#127860;', count: Math.floor(yearlyCost / 65), label: 'nice dinners out' },
+        { emoji: '&#128218;', count: Math.floor(yearlyCost / 20), label: 'books' },
+        { emoji: '&#127909;', count: Math.floor(yearlyCost / 14), label: 'movie tickets' }
+      ];
+    }
+    var html = '';
+    items.forEach(function(item) {
+      if (parseFloat(item.count) > 0) {
+        html += '<div class="fun-card"><div class="fun-emoji">' + item.emoji + '</div><div class="fun-count">' +
+          item.count + '</div><div class="fun-label">' + item.label + '</div></div>';
+      }
+    });
+    document.getElementById('funGrid').innerHTML = html;
+  }
+
+  // --- SHARE ---
+  window.copyResults = function() {
+    if (!lastCalcData) return;
+    var d = lastCalcData;
+    var horizonGrowth = calcFV(d.annualSavings, d.returnRate, d.timeHorizon);
+    var text = 'I spend ' + fmtBig(d.yearlyCost) + '/year on coffee. ' +
+      'That is ' + fmtBig(d.yearlyCost * d.timeHorizon) + ' over ' + d.timeHorizon + ' years. ' +
+      'If invested, my savings could grow to ' + fmtBig(horizonGrowth) + '. ' +
+      'Calculate yours: skipthesurprise.com/calculators/coffee-cost/';
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function() {
+        var confirm = document.getElementById('copyConfirm');
+        confirm.style.display = '';
+        setTimeout(function() { confirm.style.display = 'none'; }, 2000);
+      });
+    } else {
+      // Fallback
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      var confirm = document.getElementById('copyConfirm');
+      confirm.style.display = '';
+      setTimeout(function() { confirm.style.display = 'none'; }, 2000);
+    }
+  };
+
+  // --- INIT ---
+  renderPresets();
+  renderOrderList();
+  updateFoodPrices();
+})();
+</script>
+
+</body>
+</html>
