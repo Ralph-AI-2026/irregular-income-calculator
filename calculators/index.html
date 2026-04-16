@@ -1,23 +1,22 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Calculators &mdash; Skip the Surprise</title>
-  <meta name="description" content="Free financial calculators for freelancers, self-employed workers, and households. Plan your taxes, find subscription waste, estimate pet costs, and budget smarter." />
-  <meta name="robots" content="index, follow" />
-  <meta property="og:title" content="Calculators &mdash; Skip the Surprise" />
-  <meta property="og:description" content="Free financial calculators for freelancers, self-employed workers, and households." />
-  <meta property="og:type" content="website" />
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Free Calculators — Skip the Surprise</title>
+<meta content="Free calculators to estimate food costs, subscriptions, pet care, child-raising, tariffs, and more." name="description"/>
+<meta content="index, follow" name="robots"/>
+<meta content="Free Calculators — Skip the Surprise" property="og:title"/>
+<meta content="Free calculators to estimate food costs, subscriptions, pet care, child-raising, tariffs, and more." property="og:description"/>
+<meta content="website" property="og:type"/>
+<link href="/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
+<style>
     *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
@@ -442,158 +441,267 @@
       .nav-hamburger { display: flex; flex-direction: column; align-items: center; justify-content: center; }
       .blog-grid { grid-template-columns: 1fr; }
     }
-  </style>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9661407658009326" crossorigin="anonymous"></script>
-</head>
+  
+    .breadcrumb {
+      font-size: 0.8rem;
+      color: #888;
+      margin-bottom: 0.75rem;
+    }
+    .breadcrumb a {
+      color: #888;
+      text-decoration: none;
+    }
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+    .breadcrumb span.sep {
+      margin: 0 0.35em;
+    }
+    .related-calculators, .blog-cta, .calculator-cta, .hub-crosslink {
+      max-width: 1100px;
+      margin: 2rem auto 0;
+      padding: 1.25rem 1.5rem;
+      border: 1px solid var(--gray-200, #e5e7eb);
+      border-radius: 16px;
+      background: var(--gray-50, #f9fafb);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .related-calculators h2, .calculator-cta h2 {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+    .related-calculators ul {
+      margin: 0.75rem 0 0;
+      padding-left: 1.25rem;
+    }
+    .related-calculators li + li {
+      margin-top: 0.5rem;
+    }
+    .blog-cta p, .calculator-cta p, .hub-crosslink p {
+      margin: 0;
+    }
+    .cta-button {
+      display: inline-block;
+      margin-top: 0.9rem;
+      padding: 0.75rem 1.1rem;
+      border-radius: 10px;
+      background: var(--blue-600, #2563eb);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+
+    .nav-brand {
+      display: inline-flex;
+      align-items: center;
+      flex: 0 1 auto;
+      min-width: 0;
+      max-width: 100%;
+    }
+
+    .nav-brand img,
+    .nav-logo img {
+      display: block;
+      width: auto;
+      height: auto;
+      max-height: 44px;
+      max-width: min(100%, 44px);
+      object-fit: contain;
+    }
+
+    .nav-inner {
+      min-height: 88px;
+      height: auto;
+      padding: 8px 0;
+    }
+
+    .ad-container {
+      min-height: 0 !important;
+      overflow: hidden;
+    }
+
+    @media (max-width: 720px) {
+      .nav {
+        padding: 0 1rem;
+      }
+
+      .nav-inner {
+        min-height: 96px;
+        height: auto;
+        gap: 0.75rem;
+        align-items: center;
+      }
+
+      .nav-brand img,
+      .nav-logo img {
+        max-height: 40px;
+        max-width: min(100%, 40px);
+      }
+
+      .nav-brand {
+        flex: 0 0 auto;
+      }
+
+      .nav-hamburger {
+        flex-shrink: 0;
+      }
+
+      .nav-cta {
+        flex-shrink: 0;
+      }
+
+      .nav-mobile-toggle {
+        flex: 0 0 auto;
+        margin-left: auto;
+      }
+
+      .ad-container,
+      .adsbygoogle,
+      .adsbygoogle-noablate {
+        display: none !important;
+        min-height: 0 !important;
+        height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+    }
+</style>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9661407658009326"></script>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/></noscript><link href="https://skipthesurprise.com/calculators" rel="canonical"><meta content="https://skipthesurprise.com/logo-small.png" property="og:image"/><meta content="https://skipthesurprise.com/calculators" property="og:url"/></link></head>
 <body>
-
-  <!-- NAV -->
-  <nav class="nav" aria-label="Site navigation" style="position:relative;">
-    <div class="nav-inner">
-      <a href="/" class="nav-brand"><img src="/logo-header.png" alt="Skip the Surprise" style="height:75px;"></a>
-      <div class="nav-links">
-        <a href="/" class="nav-link">Calculator</a>
-        <a href="/calculators/" class="nav-link active">Calculators</a>
-        <a href="/blog/" class="nav-link">Blog</a>
-      </div>
-      <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile-menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </button>
-      <a href="/" class="nav-cta">Try the Calculator</a>
-    </div>
-    <div class="nav-dropdown" id="nav-mobile-menu" role="menu">
-      <a href="/" class="nav-link" role="menuitem">Calculator</a>
-      <a href="/calculators/" class="nav-link" role="menuitem">Calculators</a>
-      <a href="/blog/" class="nav-link" role="menuitem">Blog</a>
-    </div>
-  </nav>
-
-  <!-- HERO -->
-  <section class="blog-hero">
-    <div class="blog-hero-eyebrow">Free Tools</div>
-    <h1>Financial Calculators for Real Life</h1>
-    <p>No sign-up. No fluff. Just calculators that help you see where your money is going and what to do about it.</p>
-  </section>
-
-  <!-- CALCULATORS GRID -->
-  <section class="blog-section">
-    <div class="container">
-      <div class="section-label">All Calculators</div>
-      <h2 class="section-title">Pick a Calculator</h2>
-      <p class="section-sub">Seven free tools covering taxes, subscriptions, pets, food, tariffs, the true cost of raising a child, and your daily coffee habit.</p>
-
-      <div class="blog-grid">
-
-        <div class="blog-card">
-          <div class="blog-card-meta">
-            <span class="blog-card-tag">Daily Spending</span>
-          </div>
-          <h2>Coffee Shop Calculator</h2>
-          <p class="blog-card-excerpt">It is not just $5 a day. Build your real order with chain presets for Starbucks, Tim Hortons, Dunkin, and 15+ more. See your true daily bill with tip, tax, and food. Compare shop vs home-brew, find your espresso machine break-even, and watch your savings compound.</p>
-          <a href="/calculators/coffee-cost/" class="blog-card-link">
+<!-- NAV -->
+<nav aria-label="Site navigation" class="nav" style="position:relative;">
+<div class="nav-inner">
+<a class="nav-brand" href="/"><img alt="Skip the Surprise - Free Cost Calculators" src="/logo-small.png" class="site-logo"/></a>
+<div class="nav-links">
+<a class="nav-link" href="/">Calculator</a>
+<a class="nav-link active" href="/calculators/">Calculators</a>
+<a class="nav-link" href="/blog/">Blog</a>
+</div>
+<button aria-controls="nav-mobile-menu" aria-expanded="false" aria-label="Open menu" class="nav-hamburger">
+<span class="bar"></span>
+<span class="bar"></span>
+<span class="bar"></span>
+</button>
+<a class="nav-cta" href="/">Try the Calculator</a>
+</div>
+<div class="nav-dropdown" id="nav-mobile-menu" role="menu">
+<a class="nav-link" href="/" role="menuitem">Calculator</a>
+<a class="nav-link" href="/calculators/" role="menuitem">Calculators</a>
+<a class="nav-link" href="/blog/" role="menuitem">Blog</a>
+</div>
+</nav>
+<!-- HERO -->
+<section class="blog-hero">
+<div class="blog-hero-eyebrow">Free Tools</div>
+<h1>Financial Calculators for Real Life</h1>
+<p>No sign-up. No fluff. Just calculators that help you see where your money is going and what to do about it.</p>
+</section>
+<!-- CALCULATORS GRID -->
+<section class="blog-section">
+<div class="container">
+<div class="section-label">All Calculators</div>
+<h2 class="section-title">Pick a Calculator</h2>
+<p class="section-sub">Seven free tools covering taxes, subscriptions, pets, food, tariffs, the true cost of raising a child, and your daily coffee habit.</p>
+<div class="blog-grid">
+<div class="blog-card">
+<div class="blog-card-meta">
+<span class="blog-card-tag">Daily Spending</span>
+</div>
+<h2>Coffee Shop Calculator</h2>
+<p class="blog-card-excerpt">It is not just $5 a day. Build your real order with chain presets for Starbucks, Tim Hortons, Dunkin, and 15+ more. See your true daily bill with tip, tax, and food. Compare shop vs home-brew, find your espresso machine break-even, and watch your savings compound.</p>
+<a class="blog-card-link" href="/calculators/coffee-cost/">
             Open calculator
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </a>
-        </div>
-
-        <div class="blog-card">
-          <div class="blog-card-meta">
-            <span class="blog-card-tag">Family Planning</span>
-          </div>
-          <h2>Cost of Raising a Child Calculator</h2>
-          <p class="blog-card-excerpt">$303,418. That is the 2026 average. Calculate your real number with state-by-state data, 12 cost categories, opportunity cost analysis, and a personalized "Can I Afford It?" verdict for both US and Canada.</p>
-          <a href="/calculators/child-cost/" class="blog-card-link">
+            <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"></path></svg>
+</a>
+</div>
+<div class="blog-card">
+<div class="blog-card-meta">
+<span class="blog-card-tag">Family Planning</span>
+</div>
+<h2>Cost of Raising a Child Calculator</h2>
+<p class="blog-card-excerpt">$303,418. That is the 2026 average. Calculate your real number with state-by-state data, 12 cost categories, opportunity cost analysis, and a personalized "Can I Afford It?" verdict for both US and Canada.</p>
+<a class="blog-card-link" href="/calculators/child-cost/">
             Open calculator
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </a>
-        </div>
-
-        <div class="blog-card">
-          <div class="blog-card-meta">
-            <span class="blog-card-tag">Tax Planning</span>
-          </div>
-          <h2>Irregular Income Tax Calculator</h2>
-          <p class="blog-card-excerpt">Freelancer or contractor with variable income? This calculator figures out what to set aside for taxes each month, what you can actually spend, and how much runway you have in a slow month.</p>
-          <a href="/" class="blog-card-link">
+            <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"></path></svg>
+</a>
+</div>
+<div class="blog-card">
+<div class="blog-card-meta">
+<span class="blog-card-tag">Tax Planning</span>
+</div>
+<h2>Irregular Income Tax Calculator</h2>
+<p class="blog-card-excerpt">Freelancer or contractor with variable income? This calculator figures out what to set aside for taxes each month, what you can actually spend, and how much runway you have in a slow month.</p>
+<a class="blog-card-link" href="/">
             Open calculator
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </a>
-        </div>
-
-        <div class="blog-card">
-          <div class="blog-card-meta">
-            <span class="blog-card-tag">Budgeting</span>
-          </div>
-          <h2>Subscription Graveyard Calculator</h2>
-          <p class="blog-card-excerpt">Find out how much you are throwing away on forgotten subscriptions. The average household wastes over $1,100 a year on services they no longer use.</p>
-          <a href="/calculators/subscription-graveyard/" class="blog-card-link">
+            <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"></path></svg>
+</a>
+</div>
+<div class="blog-card">
+<div class="blog-card-meta">
+<span class="blog-card-tag">Budgeting</span>
+</div>
+<h2>Subscription Graveyard Calculator</h2>
+<p class="blog-card-excerpt">Find out how much you are throwing away on forgotten subscriptions. The average household wastes over $1,100 a year on services they no longer use.</p>
+<a class="blog-card-link" href="/calculators/subscription-graveyard/">
             Open calculator
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </a>
-        </div>
-
-        <div class="blog-card">
-          <div class="blog-card-meta">
-            <span class="blog-card-tag">Trade &amp; Policy</span>
-          </div>
-          <h2>Tariff Cost Calculator</h2>
-          <p class="blog-card-excerpt">Enter your monthly spending by category and see the real dollar cost that tariffs are adding to your groceries, clothing, electronics, and car payments.</p>
-          <a href="/calculators/tariff-cost/" class="blog-card-link">
+            <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"></path></svg>
+</a>
+</div>
+<div class="blog-card">
+<div class="blog-card-meta">
+<span class="blog-card-tag">Trade &amp; Policy</span>
+</div>
+<h2>Tariff Cost Calculator</h2>
+<p class="blog-card-excerpt">Enter your monthly spending by category and see the real dollar cost that tariffs are adding to your groceries, clothing, electronics, and car payments.</p>
+<a class="blog-card-link" href="/calculators/tariff-cost/">
             Open calculator
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </a>
-        </div>
-
-        <div class="blog-card">
-          <div class="blog-card-meta">
-            <span class="blog-card-tag">Household Planning</span>
-          </div>
-          <h2>True Cost of a Pet Calculator</h2>
-          <p class="blog-card-excerpt">Dogs and cats cost far more than most people budget for. This calculator breaks down first-year and ongoing annual costs so there are no surprises after you bring one home.</p>
-          <a href="/calculators/pet-cost/" class="blog-card-link">
+            <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"></path></svg>
+</a>
+</div>
+<div class="blog-card">
+<div class="blog-card-meta">
+<span class="blog-card-tag">Household Planning</span>
+</div>
+<h2>True Cost of a Pet Calculator</h2>
+<p class="blog-card-excerpt">Dogs and cats cost far more than most people budget for. This calculator breaks down first-year and ongoing annual costs so there are no surprises after you bring one home.</p>
+<a class="blog-card-link" href="/calculators/pet-cost/">
             Open calculator
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </a>
-        </div>
-
-        <div class="blog-card">
-          <div class="blog-card-meta">
-            <span class="blog-card-tag">Household Planning</span>
-          </div>
-          <h2>Food Budget Calculator</h2>
-          <p class="blog-card-excerpt">Plan your grocery and food spending by household size. Get a realistic monthly budget based on USDA cost data, broken down by meal type so you know exactly where to cut if needed.</p>
-          <a href="/calculators/food-budget/" class="blog-card-link">
+            <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"></path></svg>
+</a>
+</div>
+<div class="blog-card">
+<div class="blog-card-meta">
+<span class="blog-card-tag">Household Planning</span>
+</div>
+<h2>Food Budget Calculator</h2>
+<p class="blog-card-excerpt">Plan your grocery and food spending by household size. Get a realistic monthly budget based on USDA cost data, broken down by meal type so you know exactly where to cut if needed.</p>
+<a class="blog-card-link" href="/calculators/food-budget/">
             Open calculator
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA STRIP -->
-  <section class="cta-strip">
-    <h2>Start with the tax calculator.</h2>
-    <p>If you earn variable income, the Irregular Income Tax Calculator is the most important tool on this site. It tells you exactly what to set aside so you are never caught short at filing time.</p>
-    <a href="/" class="btn-primary">Try the Free Calculator</a>
-  </section>
-
-  <!-- FOOTER -->
-    <div class="ad-container" style="text-align:center;margin:24px auto;max-width:728px;min-height:90px;"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9661407658009326" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
-
-  <footer>
-    <div class="footer-inner">
-      <p class="footer-disclaimer">
+            <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA STRIP -->
+<section class="cta-strip">
+<h2>Start with the tax calculator.</h2>
+<p>If you earn variable income, the Irregular Income Tax Calculator is the most important tool on this site. It tells you exactly what to set aside so you are never caught short at filing time.</p>
+<a class="btn-primary" href="/">Try the Free Calculator</a>
+</section>
+<!-- FOOTER -->
+<div class="ad-container" style="text-align:center;margin:24px auto;max-width:728px;min-height:90px;"><ins class="adsbygoogle" data-ad-client="ca-pub-9661407658009326" data-ad-format="auto" data-ad-slot="auto" data-full-width-responsive="true" style="display:block"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+<section class="hub-crosslink"><p>Looking for tips instead? <a href="/blog/">Read the Skip the Surprise blog</a> — guides on tax, budgeting, and freelance finances.</p></section><footer>
+<div class="footer-inner">
+<p class="footer-disclaimer">
         Educational content only. Not tax or legal advice. Always consult a qualified accountant or tax professional for advice specific to your situation.
       </p>
-      <p class="footer-copy">&#169; 2026 Skip the Surprise. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <script>
+<p class="footer-copy">© 2026 Skip the Surprise. All rights reserved.</p>
+</div>
+</footer>
+<script>
     (function() {
       var btn = document.querySelector('.nav-hamburger');
       var dropdown = document.getElementById('nav-mobile-menu');
@@ -612,6 +720,5 @@
       });
     })();
   </script>
-
 </body>
 </html>

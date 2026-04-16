@@ -1,24 +1,23 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Grocery Budget Calculator 2026 - How Much Should You Spend on Food by Household Size?</title>
-  <meta name="description" content="Calculate your recommended monthly grocery budget for US and Canadian households based on household size, region, and food plan tiers. See USDA and Statistics Canada benchmarks, tariff impact, cost per meal, and income percentage. Data updated for 2026." />
-  <meta name="robots" content="index, follow" />
-  <meta property="og:title" content="Grocery Budget Calculator 2026 - How Much Should You Spend on Food by Household Size?" />
-  <meta property="og:description" content="Calculate your recommended monthly grocery budget for US and Canadian households based on household size, region, and food plan tiers. See USDA and Statistics Canada benchmarks, tariff impact, cost per meal, and income percentage. Data updated for 2026." />
-  <meta property="og:type" content="website" />
-  <meta name="keywords" content="grocery budget calculator, food budget by household size, USDA food plan calculator, how much should I spend on groceries, monthly food budget planner, cost per meal calculator, 2026 grocery budget" />
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-
-  <script type="application/ld+json">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Food Budget Calculator — Monthly Estimate</title>
+<meta content="Calculate your monthly food budget based on household size, diet type, and grocery habits. Free tool." name="description"/>
+<meta content="index, follow" name="robots"/>
+<meta content="Food Budget Calculator — Monthly Estimate" property="og:title"/>
+<meta content="Calculate your monthly food budget based on household size, diet type, and grocery habits. Free tool." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="grocery budget calculator, food budget by household size, USDA food plan calculator, how much should I spend on groceries, monthly food budget planner, cost per meal calculator, 2026 grocery budget" name="keywords"/>
+<link href="/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
+<script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -90,8 +89,7 @@
     ]
   }
   </script>
-
-  <style>
+<style>
     *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
@@ -1328,828 +1326,926 @@
       .hero-stats { gap: 1.25rem; }
       .budget-cat-name { width: 80px; font-size: 0.78rem; }
     }
-  </style>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9661407658009326" crossorigin="anonymous"></script>
-</head>
+  
+    .breadcrumb {
+      font-size: 0.8rem;
+      color: #888;
+      margin-bottom: 0.75rem;
+    }
+    .breadcrumb a {
+      color: #888;
+      text-decoration: none;
+    }
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+    .breadcrumb span.sep {
+      margin: 0 0.35em;
+    }
+    .related-calculators, .blog-cta, .calculator-cta, .hub-crosslink {
+      max-width: 1100px;
+      margin: 2rem auto 0;
+      padding: 1.25rem 1.5rem;
+      border: 1px solid var(--gray-200, #e5e7eb);
+      border-radius: 16px;
+      background: var(--gray-50, #f9fafb);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .related-calculators h2, .calculator-cta h2 {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+    .related-calculators ul {
+      margin: 0.75rem 0 0;
+      padding-left: 1.25rem;
+    }
+    .related-calculators li + li {
+      margin-top: 0.5rem;
+    }
+    .blog-cta p, .calculator-cta p, .hub-crosslink p {
+      margin: 0;
+    }
+    .cta-button {
+      display: inline-block;
+      margin-top: 0.9rem;
+      padding: 0.75rem 1.1rem;
+      border-radius: 10px;
+      background: var(--blue-600, #2563eb);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+
+    .nav-brand {
+      display: inline-flex;
+      align-items: center;
+      flex: 0 1 auto;
+      min-width: 0;
+      max-width: 100%;
+    }
+
+    .nav-brand img,
+    .nav-logo img {
+      display: block;
+      width: auto;
+      height: auto;
+      max-height: 44px;
+      max-width: min(100%, 44px);
+      object-fit: contain;
+    }
+
+    .nav-inner {
+      min-height: 88px;
+      height: auto;
+      padding: 8px 0;
+    }
+
+    .ad-container {
+      min-height: 0 !important;
+      overflow: hidden;
+    }
+
+    @media (max-width: 720px) {
+      .nav {
+        padding: 0 1rem;
+      }
+
+      .nav-inner {
+        min-height: 96px;
+        height: auto;
+        gap: 0.75rem;
+        align-items: center;
+      }
+
+      .nav-brand img,
+      .nav-logo img {
+        max-height: 40px;
+        max-width: min(100%, 40px);
+      }
+
+      .nav-brand {
+        flex: 0 0 auto;
+      }
+
+      .nav-hamburger {
+        flex-shrink: 0;
+      }
+
+      .nav-cta {
+        flex-shrink: 0;
+      }
+
+      .nav-mobile-toggle {
+        flex: 0 0 auto;
+        margin-left: auto;
+      }
+
+      .ad-container,
+      .adsbygoogle,
+      .adsbygoogle-noablate {
+        display: none !important;
+        min-height: 0 !important;
+        height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+    }
+</style>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9661407658009326"></script>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/></noscript><link href="https://skipthesurprise.com/calculators/food-budget/" rel="canonical"><meta content="https://skipthesurprise.com/logo-small.png" property="og:image"/><meta content="https://skipthesurprise.com/calculators/food-budget/" property="og:url"/><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://skipthesurprise.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Calculators",
+      "item": "https://skipthesurprise.com/calculators"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Food Budget Calculator — Monthly Estimate",
+      "item": "https://skipthesurprise.com/calculators/food-budget/"
+    }
+  ]
+}</script><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Food Budget Calculator — Monthly Estimate",
+  "url": "https://skipthesurprise.com/calculators/food-budget/",
+  "description": "Calculate your monthly food budget based on household size, diet type, and grocery habits. Free tool.",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}</script></link></head>
 <body>
-
-  <!-- NAV -->
-  <nav class="nav" aria-label="Site navigation" style="position:relative;">
-    <div class="nav-inner">
-      <a href="/" class="nav-brand"><img src="/logo-header.png" alt="Skip the Surprise" style="height:75px;"></a>
-      <div class="nav-links">
-        <a href="#calculator" class="nav-link">Calculator</a>
-        <a href="/blog/" class="nav-link">Blog</a>
-      </div>
-      <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile-menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </button>
-      <a href="#calculator" class="nav-cta">Calculate Now</a>
-    </div>
-    <div class="nav-dropdown" id="nav-mobile-menu" role="menu">
-      <a href="#calculator" class="nav-link" role="menuitem">Calculator</a>
-      <a href="/blog/" class="nav-link" role="menuitem">Blog</a>
-    </div>
-  </nav>
-
-  <!-- HERO -->
-  <section class="hero" aria-labelledby="hero-heading">
-    <div class="hero-badge">
-      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-        <circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.5"/>
-        <path d="M6 3.5V6.5L7.5 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-      </svg>
+<!-- NAV -->
+<nav aria-label="Site navigation" class="nav" style="position:relative;">
+<div class="nav-inner">
+<a class="nav-brand" href="/"><img alt="Skip the Surprise - Free Cost Calculators" src="/logo-small.png" class="site-logo"/></a>
+<div class="nav-links">
+<a class="nav-link" href="#calculator">Calculator</a>
+<a class="nav-link" href="/blog/">Blog</a>
+</div>
+<button aria-controls="nav-mobile-menu" aria-expanded="false" aria-label="Open menu" class="nav-hamburger">
+<span class="bar"></span>
+<span class="bar"></span>
+<span class="bar"></span>
+</button>
+<a class="nav-cta" href="#calculator">Calculate Now</a>
+</div>
+<div class="nav-dropdown" id="nav-mobile-menu" role="menu">
+<a class="nav-link" href="#calculator" role="menuitem">Calculator</a>
+<a class="nav-link" href="/blog/" role="menuitem">Blog</a>
+</div>
+</nav>
+<!-- HERO -->
+<section aria-labelledby="hero-heading" class="hero">
+<div class="hero-badge">
+<svg aria-hidden="true" fill="none" height="12" viewbox="0 0 12 12" width="12">
+<circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.5"></circle>
+<path d="M6 3.5V6.5L7.5 8" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path>
+</svg>
       Free Grocery Budget Tool - 2026
     </div>
-    <h1 id="hero-heading">
-      <span>Grocery Budget</span> Calculator 2026
+<nav aria-label="Breadcrumb" class="breadcrumb"><a href="/">Home</a><span class="sep">&gt;</span><a href="/calculators/">Calculators</a><span class="sep">&gt;</span><span aria-current="page">Food Budget Calculator — Monthly Estimate</span></nav><h1 id="hero-heading">
+<span>Grocery Budget</span> Calculator 2026
     </h1>
-    <p class="hero-sub">
+<p class="hero-sub">
       How much should you spend on food by household size? See all four USDA food plan tiers, regional adjustments, 2026 tariff impact, and your cost per meal.
     </p>
-    <a href="#calculator" class="hero-cta">
+<a class="hero-cta" href="#calculator">
       Calculate My Budget
-      <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M9 3l6 6-6 6M3 9h12"/>
-      </svg>
-    </a>
-    <div class="hero-stats" aria-label="Key statistics">
-      <div class="hero-stat">
-        <div class="hero-stat-num">$247</div>
-        <div class="hero-stat-label">USDA Thrifty plan, 1 person/mo</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-num">4.5%</div>
-        <div class="hero-stat-label">2026 tariff impact on groceries</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-num">4 tiers</div>
-        <div class="hero-stat-label">USDA food plans compared</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-num">Free</div>
-        <div class="hero-stat-label">No data stored</div>
-      </div>
-    </div>
-  </section>
-
-  <div class="ad-container" style="text-align:center;margin:24px auto;max-width:728px;min-height:90px;"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9661407658009326" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
-
-  <!-- CALCULATOR -->
-  <div class="ad-container" style="text-align:center;margin:24px auto;max-width:728px;min-height:90px;"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9661407658009326" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
-  <section class="calculator-section" id="calculator" aria-labelledby="calc-heading">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-label">The Calculator</div>
-        <h2 class="section-title" id="calc-heading">Enter your household details</h2>
-        <p class="section-sub">Runs entirely in your browser. Nothing is sent anywhere. Data updated for 2026 using USDA monthly food plan reports.</p>
-      </div>
-
-      <div class="calc-card">
-        <div class="calc-header-bar">
-          <div class="calc-header-icon" aria-hidden="true">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M3 11l19-9-9 19-2-8-8-2z"/>
-            </svg>
-          </div>
-          <h2>Grocery Budget Calculator 2026</h2>
-        </div>
-
-        <div class="calc-body">
-          <!-- INPUTS -->
-          <div class="calc-inputs">
-
-            <!-- Household size -->
-            <div class="field-row">
-              <label class="field-label" for="householdSize">Household size</label>
-              <select class="field-select" id="householdSize">
-                <option value="1">1 person</option>
-                <option value="2">2 people</option>
-                <option value="3">3 people</option>
-                <option value="4" selected>4 people</option>
-                <option value="5">5 people</option>
-                <option value="6">6 people</option>
-                <option value="7">7 people</option>
-                <option value="8">8 or more people</option>
-              </select>
-            </div>
-
-            <!-- Children under 18 -->
-            <div class="field-row">
-              <label class="field-label" for="numChildren">
+      <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 18 18">
+<path d="M9 3l6 6-6 6M3 9h12"></path>
+</svg>
+</a>
+<div aria-label="Key statistics" class="hero-stats">
+<div class="hero-stat">
+<div class="hero-stat-num">$247</div>
+<div class="hero-stat-label">USDA Thrifty plan, 1 person/mo</div>
+</div>
+<div class="hero-stat">
+<div class="hero-stat-num">4.5%</div>
+<div class="hero-stat-label">2026 tariff impact on groceries</div>
+</div>
+<div class="hero-stat">
+<div class="hero-stat-num">4 tiers</div>
+<div class="hero-stat-label">USDA food plans compared</div>
+</div>
+<div class="hero-stat">
+<div class="hero-stat-num">Free</div>
+<div class="hero-stat-label">No data stored</div>
+</div>
+</div>
+</section>
+<div class="ad-container" style="text-align:center;margin:24px auto;max-width:728px;min-height:90px;"><ins class="adsbygoogle" data-ad-client="ca-pub-9661407658009326" data-ad-format="auto" data-ad-slot="auto" data-full-width-responsive="true" style="display:block"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+<!-- CALCULATOR -->
+<div class="ad-container" style="text-align:center;margin:24px auto;max-width:728px;min-height:90px;"><ins class="adsbygoogle" data-ad-client="ca-pub-9661407658009326" data-ad-format="auto" data-ad-slot="auto" data-full-width-responsive="true" style="display:block"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+<section aria-labelledby="calc-heading" class="calculator-section" id="calculator">
+<div class="container">
+<div class="section-header">
+<div class="section-label">The Calculator</div>
+<h2 class="section-title" id="calc-heading">Enter your household details</h2>
+<p class="section-sub">Runs entirely in your browser. Nothing is sent anywhere. Data updated for 2026 using USDA monthly food plan reports.</p>
+</div>
+<div class="calc-card">
+<div class="calc-header-bar">
+<div aria-hidden="true" class="calc-header-icon">
+<svg fill="none" height="16" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24" width="16">
+<path d="M3 11l19-9-9 19-2-8-8-2z"></path>
+</svg>
+</div>
+<h2>Grocery Budget Calculator 2026</h2>
+</div>
+<div class="calc-body">
+<!-- INPUTS -->
+<div class="calc-inputs">
+<!-- Household size -->
+<div class="field-row">
+<label class="field-label" for="householdSize">Household size</label>
+<select class="field-select" id="householdSize">
+<option value="1">1 person</option>
+<option value="2">2 people</option>
+<option value="3">3 people</option>
+<option selected="" value="4">4 people</option>
+<option value="5">5 people</option>
+<option value="6">6 people</option>
+<option value="7">7 people</option>
+<option value="8">8 or more people</option>
+</select>
+</div>
+<!-- Children under 18 -->
+<div class="field-row">
+<label class="field-label" for="numChildren">
                 Children under 18
                 <span class="field-label-sub">(included in household size)</span>
-              </label>
-              <select class="field-select" id="numChildren">
-                <option value="0" selected>0 children</option>
-                <option value="1">1 child</option>
-                <option value="2">2 children</option>
-                <option value="3">3 children</option>
-                <option value="4">4 children</option>
-                <option value="5">5 children</option>
-                <option value="6">6 children</option>
-              </select>
-            </div>
-
-            <!-- State / Province -->
-            <div class="field-row">
-              <label class="field-label" for="stateSelect">Your state or province</label>
-              <select class="field-select" id="stateSelect">
-                <option value="medium">-- Select state or province --</option>
-                <optgroup label="Northeast (1.08x)">
-                  <option value="northeast">Connecticut</option>
-                  <option value="northeast">Maine</option>
-                  <option value="northeast">Massachusetts</option>
-                  <option value="northeast">New Hampshire</option>
-                  <option value="northeast">New Jersey</option>
-                  <option value="northeast">New York</option>
-                  <option value="northeast">Pennsylvania</option>
-                  <option value="northeast">Rhode Island</option>
-                  <option value="northeast">Vermont</option>
-                  <option value="northeast">Washington DC</option>
-                  <option value="northeast">Maryland</option>
-                  <option value="northeast">Delaware</option>
-                </optgroup>
-                <optgroup label="West Coast (1.12x)">
-                  <option value="westcoast">California</option>
-                  <option value="westcoast">Oregon</option>
-                  <option value="westcoast">Washington</option>
-                  <option value="westcoast">Hawaii</option>
-                  <option value="westcoast">Alaska</option>
-                </optgroup>
-                <optgroup label="Mountain (0.97x)">
-                  <option value="mountain">Colorado</option>
-                  <option value="mountain">Idaho</option>
-                  <option value="mountain">Montana</option>
-                  <option value="mountain">Nevada</option>
-                  <option value="mountain">New Mexico</option>
-                  <option value="mountain">Utah</option>
-                  <option value="mountain">Wyoming</option>
-                  <option value="mountain">Arizona</option>
-                </optgroup>
-                <optgroup label="Midwest (0.92x)">
-                  <option value="midwest">Illinois</option>
-                  <option value="midwest">Indiana</option>
-                  <option value="midwest">Iowa</option>
-                  <option value="midwest">Kansas</option>
-                  <option value="midwest">Michigan</option>
-                  <option value="midwest">Minnesota</option>
-                  <option value="midwest">Missouri</option>
-                  <option value="midwest">Nebraska</option>
-                  <option value="midwest">North Dakota</option>
-                  <option value="midwest">Ohio</option>
-                  <option value="midwest">South Dakota</option>
-                  <option value="midwest">Wisconsin</option>
-                </optgroup>
-                <optgroup label="South (0.94x)">
-                  <option value="south">Alabama</option>
-                  <option value="south">Arkansas</option>
-                  <option value="south">Florida</option>
-                  <option value="south">Georgia</option>
-                  <option value="south">Kentucky</option>
-                  <option value="south">Louisiana</option>
-                  <option value="south">Mississippi</option>
-                  <option value="south">North Carolina</option>
-                  <option value="south">Oklahoma</option>
-                  <option value="south">South Carolina</option>
-                  <option value="south">Tennessee</option>
-                  <option value="south">Texas</option>
-                  <option value="south">Virginia</option>
-                  <option value="south">West Virginia</option>
-                </optgroup>
-                <option value="medium">Other / Not listed</option>
-                <optgroup label="Canada">
-                  <option value="ca_on">Ontario</option>
-                  <option value="ca_bc">British Columbia</option>
-                  <option value="ca_ab">Alberta</option>
-                  <option value="ca_qc">Quebec</option>
-                  <option value="ca_mb">Manitoba</option>
-                  <option value="ca_sk">Saskatchewan</option>
-                  <option value="ca_nb">New Brunswick</option>
-                  <option value="ca_ns">Nova Scotia</option>
-                  <option value="ca_pe">Prince Edward Island</option>
-                  <option value="ca_nl">Newfoundland and Labrador</option>
-                  <option value="ca_yt">Yukon</option>
-                  <option value="ca_nt">Northwest Territories</option>
-                  <option value="ca_nu">Nunavut</option>
-                </optgroup>
-              </select>
-            </div>
-
-            <!-- Canadian currency note -->
-            <div id="cadNote" style="display:none;font-size:0.8rem;color:var(--blue-700);background:var(--blue-50);border:1px solid var(--blue-100);border-radius:var(--radius-sm);padding:0.45rem 0.75rem;margin-top:-0.25rem;">
+</label>
+<select class="field-select" id="numChildren">
+<option selected="" value="0">0 children</option>
+<option value="1">1 child</option>
+<option value="2">2 children</option>
+<option value="3">3 children</option>
+<option value="4">4 children</option>
+<option value="5">5 children</option>
+<option value="6">6 children</option>
+</select>
+</div>
+<!-- State / Province -->
+<div class="field-row">
+<label class="field-label" for="stateSelect">Your state or province</label>
+<select class="field-select" id="stateSelect">
+<option value="medium">-- Select state or province --</option>
+<optgroup label="Northeast (1.08x)">
+<option value="northeast">Connecticut</option>
+<option value="northeast">Maine</option>
+<option value="northeast">Massachusetts</option>
+<option value="northeast">New Hampshire</option>
+<option value="northeast">New Jersey</option>
+<option value="northeast">New York</option>
+<option value="northeast">Pennsylvania</option>
+<option value="northeast">Rhode Island</option>
+<option value="northeast">Vermont</option>
+<option value="northeast">Washington DC</option>
+<option value="northeast">Maryland</option>
+<option value="northeast">Delaware</option>
+</optgroup>
+<optgroup label="West Coast (1.12x)">
+<option value="westcoast">California</option>
+<option value="westcoast">Oregon</option>
+<option value="westcoast">Washington</option>
+<option value="westcoast">Hawaii</option>
+<option value="westcoast">Alaska</option>
+</optgroup>
+<optgroup label="Mountain (0.97x)">
+<option value="mountain">Colorado</option>
+<option value="mountain">Idaho</option>
+<option value="mountain">Montana</option>
+<option value="mountain">Nevada</option>
+<option value="mountain">New Mexico</option>
+<option value="mountain">Utah</option>
+<option value="mountain">Wyoming</option>
+<option value="mountain">Arizona</option>
+</optgroup>
+<optgroup label="Midwest (0.92x)">
+<option value="midwest">Illinois</option>
+<option value="midwest">Indiana</option>
+<option value="midwest">Iowa</option>
+<option value="midwest">Kansas</option>
+<option value="midwest">Michigan</option>
+<option value="midwest">Minnesota</option>
+<option value="midwest">Missouri</option>
+<option value="midwest">Nebraska</option>
+<option value="midwest">North Dakota</option>
+<option value="midwest">Ohio</option>
+<option value="midwest">South Dakota</option>
+<option value="midwest">Wisconsin</option>
+</optgroup>
+<optgroup label="South (0.94x)">
+<option value="south">Alabama</option>
+<option value="south">Arkansas</option>
+<option value="south">Florida</option>
+<option value="south">Georgia</option>
+<option value="south">Kentucky</option>
+<option value="south">Louisiana</option>
+<option value="south">Mississippi</option>
+<option value="south">North Carolina</option>
+<option value="south">Oklahoma</option>
+<option value="south">South Carolina</option>
+<option value="south">Tennessee</option>
+<option value="south">Texas</option>
+<option value="south">Virginia</option>
+<option value="south">West Virginia</option>
+</optgroup>
+<option value="medium">Other / Not listed</option>
+<optgroup label="Canada">
+<option value="ca_on">Ontario</option>
+<option value="ca_bc">British Columbia</option>
+<option value="ca_ab">Alberta</option>
+<option value="ca_qc">Quebec</option>
+<option value="ca_mb">Manitoba</option>
+<option value="ca_sk">Saskatchewan</option>
+<option value="ca_nb">New Brunswick</option>
+<option value="ca_ns">Nova Scotia</option>
+<option value="ca_pe">Prince Edward Island</option>
+<option value="ca_nl">Newfoundland and Labrador</option>
+<option value="ca_yt">Yukon</option>
+<option value="ca_nt">Northwest Territories</option>
+<option value="ca_nu">Nunavut</option>
+</optgroup>
+</select>
+</div>
+<!-- Canadian currency note -->
+<div id="cadNote" style="display:none;font-size:0.8rem;color:var(--blue-700);background:var(--blue-50);border:1px solid var(--blue-100);border-radius:var(--radius-sm);padding:0.45rem 0.75rem;margin-top:-0.25rem;">
               Amounts shown in Canadian dollars (CAD). Statistics Canada food cost data applied.
             </div>
-
-            <!-- Current budget -->
-            <div class="field-row">
-              <label class="field-label" for="currentBudget">Current monthly food budget</label>
-              <div class="field-input-wrap">
-                <span class="field-prefix">$</span>
-                <input type="number" class="field-input has-prefix" id="currentBudget" placeholder="600" min="0" max="9999" inputmode="numeric" />
-              </div>
-            </div>
-
-            <!-- Monthly income (optional) -->
-            <div class="field-row">
-              <label class="field-label" for="monthlyIncome">
+<!-- Current budget -->
+<div class="field-row">
+<label class="field-label" for="currentBudget">Current monthly food budget</label>
+<div class="field-input-wrap">
+<span class="field-prefix">$</span>
+<input class="field-input has-prefix" id="currentBudget" inputmode="numeric" max="9999" min="0" placeholder="600" type="number"/>
+</div>
+</div>
+<!-- Monthly income (optional) -->
+<div class="field-row">
+<label class="field-label" for="monthlyIncome">
                 Monthly household income
                 <span class="field-label-sub">(optional, for % of income)</span>
-              </label>
-              <div class="field-input-wrap">
-                <span class="field-prefix">$</span>
-                <input type="number" class="field-input has-prefix" id="monthlyIncome" placeholder="5000" min="0" max="99999" inputmode="numeric" />
-              </div>
-            </div>
-
-            <!-- Food assistance -->
-            <div class="field-row">
-              <label class="field-label" for="foodAssistance">
+</label>
+<div class="field-input-wrap">
+<span class="field-prefix">$</span>
+<input class="field-input has-prefix" id="monthlyIncome" inputmode="numeric" max="99999" min="0" placeholder="5000" type="number"/>
+</div>
+</div>
+<!-- Food assistance -->
+<div class="field-row">
+<label class="field-label" for="foodAssistance">
                 Monthly food assistance
                 <span class="field-label-sub">(optional, default $0)</span>
-              </label>
-              <div class="field-input-wrap">
-                <span class="field-prefix">$</span>
-                <input type="number" class="field-input has-prefix" id="foodAssistance" placeholder="0" min="0" max="9999" inputmode="numeric" value="0" />
-              </div>
-            </div>
-
-            <button class="calc-btn" id="calcBtn" type="button">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+</label>
+<div class="field-input-wrap">
+<span class="field-prefix">$</span>
+<input class="field-input has-prefix" id="foodAssistance" inputmode="numeric" max="9999" min="0" placeholder="0" type="number" value="0"/>
+</div>
+</div>
+<button class="calc-btn" id="calcBtn" type="button">
+<svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"><rect height="14" rx="2" width="20" x="2" y="3"></rect><line x1="8" x2="16" y1="21" y2="21"></line><line x1="12" x2="12" y1="17" y2="21"></line></svg>
               Calculate My Grocery Budget
             </button>
-
-          </div>
-
-          <!-- RESULTS -->
-          <div class="calc-results" id="resultsArea">
-
-            <div class="results-placeholder" id="resultsPlaceholder" aria-hidden="false">
-              <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
-                <rect x="10" y="8" width="36" height="40" rx="4"/>
-                <path d="M18 20h20M18 28h14M18 36h8"/>
-              </svg>
-              <p>Fill in your household details and hit Calculate to see your budget breakdown.</p>
-            </div>
-
-            <div class="results-content" id="resultsContent" aria-live="polite" aria-atomic="true">
-
-              <!-- Food plan 4-tier comparison -->
-              <div class="usda-tiers" id="usdaTiersBlock">
-                <div class="usda-tiers-header" id="tiers-header">USDA Food Plan Tiers - Your Household</div>
-                <div class="usda-tier-row" id="tier-thrifty">
-                  <span class="usda-tier-name">Thrifty</span>
-                  <span class="usda-tier-range" id="tier-thrifty-range">--</span>
-                  <span class="usda-tier-badge" id="tier-thrifty-badge"></span>
-                </div>
-                <div class="usda-tier-row" id="tier-lowcost">
-                  <span class="usda-tier-name">Low-Cost</span>
-                  <span class="usda-tier-range" id="tier-lowcost-range">--</span>
-                  <span class="usda-tier-badge" id="tier-lowcost-badge"></span>
-                </div>
-                <div class="usda-tier-row" id="tier-moderate">
-                  <span class="usda-tier-name">Moderate</span>
-                  <span class="usda-tier-range" id="tier-moderate-range">--</span>
-                  <span class="usda-tier-badge" id="tier-moderate-badge"></span>
-                </div>
-                <div class="usda-tier-row" id="tier-liberal">
-                  <span class="usda-tier-name">Liberal</span>
-                  <span class="usda-tier-range" id="tier-liberal-range">--</span>
-                  <span class="usda-tier-badge" id="tier-liberal-badge"></span>
-                </div>
-              </div>
-
-              <!-- Gap / surplus (hero) -->
-              <div class="result-card hero-card">
-                <div class="hero-card-badge" id="heroCardBadge">
-                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 1v4l2 2"/><circle cx="5" cy="5" r="4"/></svg>
-                  <span id="heroCardBadgeText">vs. Thrifty Plan</span>
-                </div>
-                <div class="result-card-label" id="res-gap-label">Monthly gap or surplus</div>
-                <div class="result-card-value" id="res-gap">--</div>
-                <div class="result-card-sub" id="res-gap-sub"></div>
-              </div>
-
-              <!-- Weekly + meal cost row -->
-              <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;">
-                <div class="result-card card-weekly">
-                  <div class="result-card-label">Weekly target</div>
-                  <div class="result-card-value" id="res-weekly" style="font-size:1.4rem;">--</div>
-                  <div class="result-card-sub">Budget / 4.33 weeks</div>
-                </div>
-                <div class="result-card card-meal">
-                  <div class="result-card-label">Cost per meal</div>
-                  <div class="result-card-value" id="res-meal" style="font-size:1.4rem;">--</div>
-                  <div class="result-card-sub" id="res-meal-sub">per person, 90 meals/mo</div>
-                </div>
-              </div>
-
-              <!-- Tariff overlay -->
-              <div class="tariff-card" id="tariffBlock">
-                <div class="tariff-label" id="tariff-block-label">2026 Tariff Impact on Your Budget</div>
-                <div class="tariff-row">
-                  <span class="tariff-row-label">Without 2026 tariffs</span>
-                  <span class="tariff-row-value" id="tariff-without">--</span>
-                </div>
-                <div class="tariff-row">
-                  <span class="tariff-row-label" id="tariff-with-label">With tariffs (+4.5%)</span>
-                  <span class="tariff-row-value" id="tariff-with">--</span>
-                </div>
-                <div class="tariff-row" style="padding-top:0.3rem;border-top:1px solid rgba(234,88,12,0.2);margin-top:0.3rem;">
-                  <span class="tariff-row-label" style="font-weight:600;">Tariff cost added</span>
-                  <span class="tariff-row-value" style="color:var(--orange-600);" id="tariff-added">--</span>
-                </div>
-                <div id="tariff-ca-note" style="display:none;font-size:0.75rem;color:var(--orange-600);margin-top:0.5rem;line-height:1.5;">Canadian grocery costs are affected by retaliatory tariffs and supply chain impacts, estimated at +3-5% in 2026.</div>
-                <a href="../tariff-cost/index.html" class="tariff-link">
+</div>
+<!-- RESULTS -->
+<div class="calc-results" id="resultsArea">
+<div aria-hidden="false" class="results-placeholder" id="resultsPlaceholder">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5" viewbox="0 0 56 56">
+<rect height="40" rx="4" width="36" x="10" y="8"></rect>
+<path d="M18 20h20M18 28h14M18 36h8"></path>
+</svg>
+<p>Fill in your household details and hit Calculate to see your budget breakdown.</p>
+</div>
+<div aria-atomic="true" aria-live="polite" class="results-content" id="resultsContent">
+<!-- Food plan 4-tier comparison -->
+<div class="usda-tiers" id="usdaTiersBlock">
+<div class="usda-tiers-header" id="tiers-header">USDA Food Plan Tiers - Your Household</div>
+<div class="usda-tier-row" id="tier-thrifty">
+<span class="usda-tier-name">Thrifty</span>
+<span class="usda-tier-range" id="tier-thrifty-range">--</span>
+<span class="usda-tier-badge" id="tier-thrifty-badge"></span>
+</div>
+<div class="usda-tier-row" id="tier-lowcost">
+<span class="usda-tier-name">Low-Cost</span>
+<span class="usda-tier-range" id="tier-lowcost-range">--</span>
+<span class="usda-tier-badge" id="tier-lowcost-badge"></span>
+</div>
+<div class="usda-tier-row" id="tier-moderate">
+<span class="usda-tier-name">Moderate</span>
+<span class="usda-tier-range" id="tier-moderate-range">--</span>
+<span class="usda-tier-badge" id="tier-moderate-badge"></span>
+</div>
+<div class="usda-tier-row" id="tier-liberal">
+<span class="usda-tier-name">Liberal</span>
+<span class="usda-tier-range" id="tier-liberal-range">--</span>
+<span class="usda-tier-badge" id="tier-liberal-badge"></span>
+</div>
+</div>
+<!-- Gap / surplus (hero) -->
+<div class="result-card hero-card">
+<div class="hero-card-badge" id="heroCardBadge">
+<svg aria-hidden="true" fill="none" height="10" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 10 10" width="10"><path d="M5 1v4l2 2"></path><circle cx="5" cy="5" r="4"></circle></svg>
+<span id="heroCardBadgeText">vs. Thrifty Plan</span>
+</div>
+<div class="result-card-label" id="res-gap-label">Monthly gap or surplus</div>
+<div class="result-card-value" id="res-gap">--</div>
+<div class="result-card-sub" id="res-gap-sub"></div>
+</div>
+<!-- Weekly + meal cost row -->
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;">
+<div class="result-card card-weekly">
+<div class="result-card-label">Weekly target</div>
+<div class="result-card-value" id="res-weekly" style="font-size:1.4rem;">--</div>
+<div class="result-card-sub">Budget / 4.33 weeks</div>
+</div>
+<div class="result-card card-meal">
+<div class="result-card-label">Cost per meal</div>
+<div class="result-card-value" id="res-meal" style="font-size:1.4rem;">--</div>
+<div class="result-card-sub" id="res-meal-sub">per person, 90 meals/mo</div>
+</div>
+</div>
+<!-- Tariff overlay -->
+<div class="tariff-card" id="tariffBlock">
+<div class="tariff-label" id="tariff-block-label">2026 Tariff Impact on Your Budget</div>
+<div class="tariff-row">
+<span class="tariff-row-label">Without 2026 tariffs</span>
+<span class="tariff-row-value" id="tariff-without">--</span>
+</div>
+<div class="tariff-row">
+<span class="tariff-row-label" id="tariff-with-label">With tariffs (+4.5%)</span>
+<span class="tariff-row-value" id="tariff-with">--</span>
+</div>
+<div class="tariff-row" style="padding-top:0.3rem;border-top:1px solid rgba(234,88,12,0.2);margin-top:0.3rem;">
+<span class="tariff-row-label" style="font-weight:600;">Tariff cost added</span>
+<span class="tariff-row-value" id="tariff-added" style="color:var(--orange-600);">--</span>
+</div>
+<div id="tariff-ca-note" style="display:none;font-size:0.75rem;color:var(--orange-600);margin-top:0.5rem;line-height:1.5;">Canadian grocery costs are affected by retaliatory tariffs and supply chain impacts, estimated at +3-5% in 2026.</div>
+<a class="tariff-link" href="/calculators/tariff-cost/">
                   Full tariff cost breakdown
-                  <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M2 10L10 2M5 2h5v5"/></svg>
-                </a>
-              </div>
-
-              <!-- Income percentage (only shown when income entered) -->
-              <div class="income-pct-card" id="incomePctBlock" style="display:none;">
-                <div class="result-card-label">Grocery spending as % of income</div>
-                <div style="font-size:1.5rem;font-weight:800;letter-spacing:-0.02em;" id="income-pct-value">--</div>
-                <div class="income-pct-bar-wrap">
-                  <div class="income-pct-bar" id="income-pct-bar" style="width:0%"></div>
-                </div>
-                <div class="income-pct-meta">
-                  <span>0%</span>
-                  <span id="income-pct-note" style="font-style:italic;"></span>
-                  <span>25%+</span>
-                </div>
-                <div style="font-size:0.78rem;color:var(--gray-500);margin-top:0.4rem;">USDA recommends 10-15% of household income on food.</div>
-              </div>
-
-              <!-- Budget category breakdown -->
-              <div class="budget-breakdown">
-                <div class="budget-breakdown-header">Budget Breakdown by Category</div>
-                <div class="budget-cat-row">
-                  <span class="budget-cat-name">Protein</span>
-                  <div class="budget-cat-bar-wrap"><div class="budget-cat-bar" style="width:27%;background:#3b82f6;"></div></div>
-                  <span class="budget-cat-pct">25-30%</span>
-                  <span class="budget-cat-amt" id="cat-protein">--</span>
-                </div>
-                <div class="budget-cat-row">
-                  <span class="budget-cat-name">Produce</span>
-                  <div class="budget-cat-bar-wrap"><div class="budget-cat-bar" style="width:22%;background:#22c55e;"></div></div>
-                  <span class="budget-cat-pct">20-25%</span>
-                  <span class="budget-cat-amt" id="cat-produce">--</span>
-                </div>
-                <div class="budget-cat-row">
-                  <span class="budget-cat-name">Dairy</span>
-                  <div class="budget-cat-bar-wrap"><div class="budget-cat-bar" style="width:12%;background:#a78bfa;"></div></div>
-                  <span class="budget-cat-pct">10-15%</span>
-                  <span class="budget-cat-amt" id="cat-dairy">--</span>
-                </div>
-                <div class="budget-cat-row">
-                  <span class="budget-cat-name">Grains/Pantry</span>
-                  <div class="budget-cat-bar-wrap"><div class="budget-cat-bar" style="width:17%;background:#f59e0b;"></div></div>
-                  <span class="budget-cat-pct">15-20%</span>
-                  <span class="budget-cat-amt" id="cat-grains">--</span>
-                </div>
-                <div class="budget-cat-row">
-                  <span class="budget-cat-name">Snacks/Other</span>
-                  <div class="budget-cat-bar-wrap"><div class="budget-cat-bar" style="width:12%;background:#94a3b8;"></div></div>
-                  <span class="budget-cat-pct">10-15%</span>
-                  <span class="budget-cat-amt" id="cat-other">--</span>
-                </div>
-              </div>
-
-              <!-- Status banner -->
-              <div class="status-banner" id="statusBanner">
-                <div class="status-banner-title" id="statusTitle"></div>
-                <div id="statusMsg"></div>
-              </div>
-
-              <!-- Share result -->
-              <div>
-                <div style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:var(--gray-500);margin-bottom:0.4rem;">Share Your Result</div>
-                <div class="share-row">
-                  <input type="text" class="share-text-input" id="shareText" readonly placeholder="Calculate to generate a shareable summary..." />
-                  <button class="share-copy-btn" id="copyBtn" type="button">
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                  <svg aria-hidden="true" fill="none" height="11" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 12 12" width="11"><path d="M2 10L10 2M5 2h5v5"></path></svg>
+</a>
+</div>
+<!-- Income percentage (only shown when income entered) -->
+<div class="income-pct-card" id="incomePctBlock" style="display:none;">
+<div class="result-card-label">Grocery spending as % of income</div>
+<div id="income-pct-value" style="font-size:1.5rem;font-weight:800;letter-spacing:-0.02em;">--</div>
+<div class="income-pct-bar-wrap">
+<div class="income-pct-bar" id="income-pct-bar" style="width:0%"></div>
+</div>
+<div class="income-pct-meta">
+<span>0%</span>
+<span id="income-pct-note" style="font-style:italic;"></span>
+<span>25%+</span>
+</div>
+<div style="font-size:0.78rem;color:var(--gray-500);margin-top:0.4rem;">USDA recommends 10-15% of household income on food.</div>
+</div>
+<!-- Budget category breakdown -->
+<div class="budget-breakdown">
+<div class="budget-breakdown-header">Budget Breakdown by Category</div>
+<div class="budget-cat-row">
+<span class="budget-cat-name">Protein</span>
+<div class="budget-cat-bar-wrap"><div class="budget-cat-bar" style="width:27%;background:#3b82f6;"></div></div>
+<span class="budget-cat-pct">25-30%</span>
+<span class="budget-cat-amt" id="cat-protein">--</span>
+</div>
+<div class="budget-cat-row">
+<span class="budget-cat-name">Produce</span>
+<div class="budget-cat-bar-wrap"><div class="budget-cat-bar" style="width:22%;background:#22c55e;"></div></div>
+<span class="budget-cat-pct">20-25%</span>
+<span class="budget-cat-amt" id="cat-produce">--</span>
+</div>
+<div class="budget-cat-row">
+<span class="budget-cat-name">Dairy</span>
+<div class="budget-cat-bar-wrap"><div class="budget-cat-bar" style="width:12%;background:#a78bfa;"></div></div>
+<span class="budget-cat-pct">10-15%</span>
+<span class="budget-cat-amt" id="cat-dairy">--</span>
+</div>
+<div class="budget-cat-row">
+<span class="budget-cat-name">Grains/Pantry</span>
+<div class="budget-cat-bar-wrap"><div class="budget-cat-bar" style="width:17%;background:#f59e0b;"></div></div>
+<span class="budget-cat-pct">15-20%</span>
+<span class="budget-cat-amt" id="cat-grains">--</span>
+</div>
+<div class="budget-cat-row">
+<span class="budget-cat-name">Snacks/Other</span>
+<div class="budget-cat-bar-wrap"><div class="budget-cat-bar" style="width:12%;background:#94a3b8;"></div></div>
+<span class="budget-cat-pct">10-15%</span>
+<span class="budget-cat-amt" id="cat-other">--</span>
+</div>
+</div>
+<!-- Status banner -->
+<div class="status-banner" id="statusBanner">
+<div class="status-banner-title" id="statusTitle"></div>
+<div id="statusMsg"></div>
+</div>
+<!-- Share result -->
+<div>
+<div style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:var(--gray-500);margin-bottom:0.4rem;">Share Your Result</div>
+<div class="share-row">
+<input class="share-text-input" id="shareText" placeholder="Calculate to generate a shareable summary..." readonly="" type="text"/>
+<button class="share-copy-btn" id="copyBtn" type="button">
+<svg aria-hidden="true" fill="none" height="13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="13"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
                     Copy
                   </button>
-                </div>
-                <div class="data-source-note">Data updated for 2026 using USDA monthly food plan reports.</div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SAVINGS TIPS BY BUDGET LEVEL -->
-  <section class="savings-tips-section" aria-labelledby="savings-heading">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-label">Savings Strategies</div>
-        <h2 class="section-title" id="savings-heading">Grocery Savings Tips by Budget Level</h2>
-        <p class="section-sub">Different budget tiers call for different strategies. Find yours below.</p>
-      </div>
-
-      <div class="savings-tier-block">
-        <div class="savings-tier-title">
-          <span class="savings-tier-tag tag-thrifty">Thrifty Plan</span>
+</div>
+<div class="data-source-note">Data updated for 2026 using USDA monthly food plan reports.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SAVINGS TIPS BY BUDGET LEVEL -->
+<section aria-labelledby="savings-heading" class="savings-tips-section">
+<div class="container">
+<div class="section-header">
+<div class="section-label">Savings Strategies</div>
+<h2 class="section-title" id="savings-heading">Grocery Savings Tips by Budget Level</h2>
+<p class="section-sub">Different budget tiers call for different strategies. Find yours below.</p>
+</div>
+<div class="savings-tier-block">
+<div class="savings-tier-title">
+<span class="savings-tier-tag tag-thrifty">Thrifty Plan</span>
           Maximum stretch mode
         </div>
-        <ul class="savings-tips-list">
-          <li>Buy staples in bulk: dried beans, lentils, rice, oats, pasta. Per-serving cost drops 40-60% vs. packaged.</li>
-          <li>Build your weekly menu around what is on sale, not fixed recipes. Flexibility is your biggest savings lever.</li>
-          <li>Prioritize seasonal produce and frozen vegetables over fresh out-of-season. Nutritionally equivalent, significantly cheaper.</li>
-          <li>Use store brands across the board. Blind taste tests consistently show no perceptible difference in pantry staples.</li>
-          <li>Meal prep one day per week. Reduces food waste and eliminates the most expensive habit: ordering takeout on tired nights.</li>
-          <li>Check SNAP eligibility at benefits.gov and find local food banks at feedingamerica.org. These programs exist for exactly this situation.</li>
-        </ul>
-      </div>
-
-      <div class="savings-tier-block">
-        <div class="savings-tier-title">
-          <span class="savings-tier-tag tag-low-cost">Low-Cost Plan</span>
+<ul class="savings-tips-list">
+<li>Buy staples in bulk: dried beans, lentils, rice, oats, pasta. Per-serving cost drops 40-60% vs. packaged.</li>
+<li>Build your weekly menu around what is on sale, not fixed recipes. Flexibility is your biggest savings lever.</li>
+<li>Prioritize seasonal produce and frozen vegetables over fresh out-of-season. Nutritionally equivalent, significantly cheaper.</li>
+<li>Use store brands across the board. Blind taste tests consistently show no perceptible difference in pantry staples.</li>
+<li>Meal prep one day per week. Reduces food waste and eliminates the most expensive habit: ordering takeout on tired nights.</li>
+<li>Check SNAP eligibility at benefits.gov and find local food banks at feedingamerica.org. These programs exist for exactly this situation.</li>
+</ul>
+</div>
+<div class="savings-tier-block">
+<div class="savings-tier-title">
+<span class="savings-tier-tag tag-low-cost">Low-Cost Plan</span>
           Mix of discipline and flexibility
         </div>
-        <ul class="savings-tips-list">
-          <li>Mix store brands with name brands strategically. Store brand for pantry staples, name brand where quality matters to your household.</li>
-          <li>Write a grocery list before every shop and stick to it. Impulse purchases at this tier add up to $40-80 per month.</li>
-          <li>Use a warehouse club for high-volume items your household reliably consumes. Break-even on membership happens fast for families.</li>
-          <li>Apps like Flashfood, Too Good To Go, and Ibotta add genuine savings without changing what you eat.</li>
-          <li>Track what you throw away for two weeks. Food waste is a silent budget leak at this tier.</li>
-        </ul>
-      </div>
-
-      <div class="savings-tier-block">
-        <div class="savings-tier-title">
-          <span class="savings-tier-tag tag-moderate">Moderate and Liberal Plans</span>
+<ul class="savings-tips-list">
+<li>Mix store brands with name brands strategically. Store brand for pantry staples, name brand where quality matters to your household.</li>
+<li>Write a grocery list before every shop and stick to it. Impulse purchases at this tier add up to $40-80 per month.</li>
+<li>Use a warehouse club for high-volume items your household reliably consumes. Break-even on membership happens fast for families.</li>
+<li>Apps like Flashfood, Too Good To Go, and Ibotta add genuine savings without changing what you eat.</li>
+<li>Track what you throw away for two weeks. Food waste is a silent budget leak at this tier.</li>
+</ul>
+</div>
+<div class="savings-tier-block">
+<div class="savings-tier-title">
+<span class="savings-tier-tag tag-moderate">Moderate and Liberal Plans</span>
           You have room to optimize
         </div>
-        <ul class="savings-tips-list">
-          <li>Your budget covers a nutritious diet with variety. Optimization is about preference, not survival.</li>
-          <li>Audit your restaurant and takeout spending separately. Most households at this tier can reduce total food spend 10-15% by cooking one more meal per week at home.</li>
-          <li>Consider a two-week rotating meal plan to reduce decision fatigue and lower per-meal cost without feeling restricted.</li>
-          <li>If you have a budget surplus, a small emergency food fund (one extra month of staples) is a practical hedge against tariff spikes or income disruption.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- SMART GROCERY PLANNING TIPS -->
-  <section class="tips-section" aria-labelledby="tips-heading">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-label">Practical Strategies</div>
-        <h2 class="section-title" id="tips-heading">Stretching Your Food Dollar</h2>
-        <p class="section-sub">Six habits that consistently move the needle on grocery spending.</p>
-      </div>
-
-      <div class="tip-grid">
-
-        <div class="tip-card">
-          <div class="tip-icon" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-            </svg>
-          </div>
-          <div>
-            <div class="tip-title">Buy in bulk for staples</div>
-            <div class="tip-body">Rice, oats, dried beans, lentils, and pasta bought in bulk can cut per-serving cost by 40-60% compared to smaller packages. Warehouse clubs and bulk sections pay back quickly for families of three or more.</div>
-          </div>
-        </div>
-
-        <div class="tip-card">
-          <div class="tip-icon" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"/>
-              <path d="M12 6v6l4 2"/>
-            </svg>
-          </div>
-          <div>
-            <div class="tip-title">Shop seasonal produce</div>
-            <div class="tip-body">In-season fruit and vegetables cost 30-50% less and taste better. Frozen vegetables are nutritionally equivalent to fresh and significantly cheaper year-round. Build your meal plan around what is on sale, not recipes that require specific items.</div>
-          </div>
-        </div>
-
-        <div class="tip-card">
-          <div class="tip-icon" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M17 8h1a4 4 0 0 1 0 8h-1"/>
-              <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
-              <line x1="6" y1="1" x2="6" y2="4"/>
-              <line x1="10" y1="1" x2="10" y2="4"/>
-              <line x1="14" y1="1" x2="14" y2="4"/>
-            </svg>
-          </div>
-          <div>
-            <div class="tip-title">Meal prep one day a week</div>
-            <div class="tip-body">Cooking in large batches reduces the cost per serving and cuts the likelihood of expensive takeout on tired nights. Even prepping proteins and chopping vegetables on Sunday creates enough friction to resist ordering in on Wednesday.</div>
-          </div>
-        </div>
-
-        <div class="tip-card">
-          <div class="tip-icon" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="1" y="4" width="22" height="16" rx="2"/>
-              <line x1="1" y1="10" x2="23" y2="10"/>
-            </svg>
-          </div>
-          <div>
-            <div class="tip-title">Choose store brands</div>
-            <div class="tip-body">Store-brand products are manufactured by the same companies in many categories and regularly pass blind taste tests. Switching from name brands to store labels on pantry staples typically saves 20-30% without any change in quality or nutrition.</div>
-          </div>
-        </div>
-
-        <div class="tip-card">
-          <div class="tip-icon" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-            </svg>
-          </div>
-          <div>
-            <div class="tip-title">Use discount grocery apps</div>
-            <div class="tip-body">Flashfood, Too Good To Go, and Imperfect Foods sell near-expiry or cosmetically imperfect groceries at 30-80% discounts. Ibotta and store loyalty apps stack with sale prices. These are not couponing tricks -- they are genuine price floors.</div>
-          </div>
-        </div>
-
-        <div class="tip-card">
-          <div class="tip-icon" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-8 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/>
-            </svg>
-          </div>
-          <div>
-            <div class="tip-title">Build a two-week rotating menu</div>
-            <div class="tip-body">A fixed rotation of 14 meals eliminates daily decision fatigue, reduces food waste to near zero, and lets you buy ingredients at scale. It takes one afternoon to build and pays back for years. Variety comes from rotating the proteins and produce seasonally.</div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- HOW IT WORKS -->
-  <section class="how-section" aria-labelledby="how-heading">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-label">Methodology</div>
-        <h2 class="section-title" id="how-heading">How the calculation works</h2>
-        <p class="section-sub">Five data points drive the numbers. No black box.</p>
-      </div>
-
-      <div class="steps-grid">
-        <div class="step-card">
-          <div class="step-num">1</div>
-          <div class="step-title">All four USDA food plans set the tiers</div>
-          <div class="step-body">The USDA publishes four monthly food plans. For 2026, Thrifty runs $247-$309/mo per adult, Low-Cost $323-$371, Moderate $392-$465, and Liberal $499-$566. This calculator scales each tier to your household size and shows where your budget lands across all four.</div>
-        </div>
-        <div class="step-card">
-          <div class="step-num">2</div>
-          <div class="step-title">BLS Regional Price Parities adjust for your location</div>
-          <div class="step-body">The Bureau of Labor Statistics Regional Price Parities show systematic food cost differences by region. West Coast runs 1.12x the national average. Northeast 1.08x. Mountain 0.97x. Midwest 0.92x. South 0.94x. States are mapped to their BLS region for the adjustment.</div>
-        </div>
-        <div class="step-card">
-          <div class="step-num">3</div>
-          <div class="step-title">2026 tariff overlay shows real-world impact</div>
-          <div class="step-body">Yale Budget Lab research estimates 2026 tariffs are adding approximately 4.5% to grocery costs. The tariff overlay shows your Thrifty-tier budget before and after that adjustment so you can see exactly what tariffs are costing your household monthly.</div>
-        </div>
-        <div class="step-card">
-          <div class="step-num">4</div>
-          <div class="step-title">Available budget includes food assistance</div>
-          <div class="step-body">Your current budget plus any monthly food assistance (SNAP, WIC, employer stipends, food bank support) gives your total available food dollars. That full number is used to calculate weekly targets and per-meal cost.</div>
-        </div>
-        <div class="step-card">
-          <div class="step-num">5</div>
-          <div class="step-title">Income percentage shows spending health</div>
-          <div class="step-body">If you enter your monthly income, the calculator shows what percentage goes to groceries and benchmarks it against the USDA recommendation of 10-15% of income. Green is within range, amber is elevated, red is over 20%.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="faq-section" aria-labelledby="faq-heading">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-label">Common Questions</div>
-        <h2 class="section-title" id="faq-heading">Frequently asked questions</h2>
-      </div>
-
-      <div class="faq-list" role="list">
-
-        <div class="faq-item" role="listitem">
-          <button class="faq-question" aria-expanded="false">
+<ul class="savings-tips-list">
+<li>Your budget covers a nutritious diet with variety. Optimization is about preference, not survival.</li>
+<li>Audit your restaurant and takeout spending separately. Most households at this tier can reduce total food spend 10-15% by cooking one more meal per week at home.</li>
+<li>Consider a two-week rotating meal plan to reduce decision fatigue and lower per-meal cost without feeling restricted.</li>
+<li>If you have a budget surplus, a small emergency food fund (one extra month of staples) is a practical hedge against tariff spikes or income disruption.</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- SMART GROCERY PLANNING TIPS -->
+<section aria-labelledby="tips-heading" class="tips-section">
+<div class="container">
+<div class="section-header">
+<div class="section-label">Practical Strategies</div>
+<h2 class="section-title" id="tips-heading">Stretching Your Food Dollar</h2>
+<p class="section-sub">Six habits that consistently move the needle on grocery spending.</p>
+</div>
+<div class="tip-grid">
+<div class="tip-card">
+<div aria-hidden="true" class="tip-icon">
+<svg fill="none" height="18" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18">
+<path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+</svg>
+</div>
+<div>
+<div class="tip-title">Buy in bulk for staples</div>
+<div class="tip-body">Rice, oats, dried beans, lentils, and pasta bought in bulk can cut per-serving cost by 40-60% compared to smaller packages. Warehouse clubs and bulk sections pay back quickly for families of three or more.</div>
+</div>
+</div>
+<div class="tip-card">
+<div aria-hidden="true" class="tip-icon">
+<svg fill="none" height="18" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18">
+<circle cx="12" cy="12" r="10"></circle>
+<path d="M12 6v6l4 2"></path>
+</svg>
+</div>
+<div>
+<div class="tip-title">Shop seasonal produce</div>
+<div class="tip-body">In-season fruit and vegetables cost 30-50% less and taste better. Frozen vegetables are nutritionally equivalent to fresh and significantly cheaper year-round. Build your meal plan around what is on sale, not recipes that require specific items.</div>
+</div>
+</div>
+<div class="tip-card">
+<div aria-hidden="true" class="tip-icon">
+<svg fill="none" height="18" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18">
+<path d="M17 8h1a4 4 0 0 1 0 8h-1"></path>
+<path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+<line x1="6" x2="6" y1="1" y2="4"></line>
+<line x1="10" x2="10" y1="1" y2="4"></line>
+<line x1="14" x2="14" y1="1" y2="4"></line>
+</svg>
+</div>
+<div>
+<div class="tip-title">Meal prep one day a week</div>
+<div class="tip-body">Cooking in large batches reduces the cost per serving and cuts the likelihood of expensive takeout on tired nights. Even prepping proteins and chopping vegetables on Sunday creates enough friction to resist ordering in on Wednesday.</div>
+</div>
+</div>
+<div class="tip-card">
+<div aria-hidden="true" class="tip-icon">
+<svg fill="none" height="18" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18">
+<rect height="16" rx="2" width="22" x="1" y="4"></rect>
+<line x1="1" x2="23" y1="10" y2="10"></line>
+</svg>
+</div>
+<div>
+<div class="tip-title">Choose store brands</div>
+<div class="tip-body">Store-brand products are manufactured by the same companies in many categories and regularly pass blind taste tests. Switching from name brands to store labels on pantry staples typically saves 20-30% without any change in quality or nutrition.</div>
+</div>
+</div>
+<div class="tip-card">
+<div aria-hidden="true" class="tip-icon">
+<svg fill="none" height="18" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18">
+<path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg>
+</div>
+<div>
+<div class="tip-title">Use discount grocery apps</div>
+<div class="tip-body">Flashfood, Too Good To Go, and Imperfect Foods sell near-expiry or cosmetically imperfect groceries at 30-80% discounts. Ibotta and store loyalty apps stack with sale prices. These are not couponing tricks -- they are genuine price floors.</div>
+</div>
+</div>
+<div class="tip-card">
+<div aria-hidden="true" class="tip-icon">
+<svg fill="none" height="18" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18">
+<path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-8 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"></path>
+</svg>
+</div>
+<div>
+<div class="tip-title">Build a two-week rotating menu</div>
+<div class="tip-body">A fixed rotation of 14 meals eliminates daily decision fatigue, reduces food waste to near zero, and lets you buy ingredients at scale. It takes one afternoon to build and pays back for years. Variety comes from rotating the proteins and produce seasonally.</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- HOW IT WORKS -->
+<section aria-labelledby="how-heading" class="how-section">
+<div class="container">
+<div class="section-header">
+<div class="section-label">Methodology</div>
+<h2 class="section-title" id="how-heading">How the calculation works</h2>
+<p class="section-sub">Five data points drive the numbers. No black box.</p>
+</div>
+<div class="steps-grid">
+<div class="step-card">
+<div class="step-num">1</div>
+<div class="step-title">All four USDA food plans set the tiers</div>
+<div class="step-body">The USDA publishes four monthly food plans. For 2026, Thrifty runs $247-$309/mo per adult, Low-Cost $323-$371, Moderate $392-$465, and Liberal $499-$566. This calculator scales each tier to your household size and shows where your budget lands across all four.</div>
+</div>
+<div class="step-card">
+<div class="step-num">2</div>
+<div class="step-title">BLS Regional Price Parities adjust for your location</div>
+<div class="step-body">The Bureau of Labor Statistics Regional Price Parities show systematic food cost differences by region. West Coast runs 1.12x the national average. Northeast 1.08x. Mountain 0.97x. Midwest 0.92x. South 0.94x. States are mapped to their BLS region for the adjustment.</div>
+</div>
+<div class="step-card">
+<div class="step-num">3</div>
+<div class="step-title">2026 tariff overlay shows real-world impact</div>
+<div class="step-body">Yale Budget Lab research estimates 2026 tariffs are adding approximately 4.5% to grocery costs. The tariff overlay shows your Thrifty-tier budget before and after that adjustment so you can see exactly what tariffs are costing your household monthly.</div>
+</div>
+<div class="step-card">
+<div class="step-num">4</div>
+<div class="step-title">Available budget includes food assistance</div>
+<div class="step-body">Your current budget plus any monthly food assistance (SNAP, WIC, employer stipends, food bank support) gives your total available food dollars. That full number is used to calculate weekly targets and per-meal cost.</div>
+</div>
+<div class="step-card">
+<div class="step-num">5</div>
+<div class="step-title">Income percentage shows spending health</div>
+<div class="step-body">If you enter your monthly income, the calculator shows what percentage goes to groceries and benchmarks it against the USDA recommendation of 10-15% of income. Green is within range, amber is elevated, red is over 20%.</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ -->
+<section aria-labelledby="faq-heading" class="faq-section">
+<div class="container">
+<div class="section-header">
+<div class="section-label">Common Questions</div>
+<h2 class="section-title" id="faq-heading">Frequently asked questions</h2>
+</div>
+<div class="faq-list" role="list">
+<div class="faq-item" role="listitem">
+<button aria-expanded="false" class="faq-question">
             What is the USDA Thrifty Food Plan?
-            <svg class="faq-icon" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-              <path d="M11 5v12M5 11h12"/>
-            </svg>
-          </button>
-          <div class="faq-answer" role="region">
-            <div class="faq-answer-inner">
+            <svg aria-hidden="true" class="faq-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 22 22">
+<path d="M11 5v12M5 11h12"></path>
+</svg>
+</button>
+<div class="faq-answer" role="region">
+<div class="faq-answer-inner">
               The USDA Thrifty Food Plan is the federal government's estimate of the minimum cost to feed a household a nutritionally adequate diet. It is updated annually and serves as the basis for SNAP benefit calculations. For 2026, the plan runs $247-$309 per adult per month and scales up with household size. It assumes careful shopping, meal planning, and minimal food waste. Many families find it tight but achievable with consistent effort.
             </div>
-          </div>
-        </div>
-
-        <div class="faq-item" role="listitem">
-          <button class="faq-question" aria-expanded="false">
+</div>
+</div>
+<div class="faq-item" role="listitem">
+<button aria-expanded="false" class="faq-question">
             What are the four USDA food plan tiers?
-            <svg class="faq-icon" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-              <path d="M11 5v12M5 11h12"/>
-            </svg>
-          </button>
-          <div class="faq-answer" role="region">
-            <div class="faq-answer-inner">
+            <svg aria-hidden="true" class="faq-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 22 22">
+<path d="M11 5v12M5 11h12"></path>
+</svg>
+</button>
+<div class="faq-answer" role="region">
+<div class="faq-answer-inner">
               The USDA Center for Nutrition Policy and Promotion publishes four monthly food plans: Thrifty ($247-$309/mo per adult), Low-Cost ($323-$371), Moderate ($392-$465), and Liberal ($499-$566). All four meet USDA nutritional guidelines. The difference is the level of meal planning required, variety available, and how much convenience food is included. Most working families fall between Low-Cost and Moderate.
             </div>
-          </div>
-        </div>
-
-        <div class="faq-item" role="listitem">
-          <button class="faq-question" aria-expanded="false">
+</div>
+</div>
+<div class="faq-item" role="listitem">
+<button aria-expanded="false" class="faq-question">
             Why does location affect my grocery budget?
-            <svg class="faq-icon" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-              <path d="M11 5v12M5 11h12"/>
-            </svg>
-          </button>
-          <div class="faq-answer" role="region">
-            <div class="faq-answer-inner">
+            <svg aria-hidden="true" class="faq-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 22 22">
+<path d="M11 5v12M5 11h12"></path>
+</svg>
+</button>
+<div class="faq-answer" role="region">
+<div class="faq-answer-inner">
               Food costs vary significantly by region due to differences in transportation costs, local wages, retail competition, and regional agricultural output. Bureau of Labor Statistics Regional Price Parities show the West Coast runs 12% above the national average, the Northeast 8% above, while the Midwest is 8% below and the South 6% below. This calculator applies those multipliers by region rather than individual state to give you a BLS-grounded local estimate.
             </div>
-          </div>
-        </div>
-
-        <div class="faq-item" role="listitem">
-          <button class="faq-question" aria-expanded="false">
+</div>
+</div>
+<div class="faq-item" role="listitem">
+<button aria-expanded="false" class="faq-question">
             What should I target for cost per meal?
-            <svg class="faq-icon" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-              <path d="M11 5v12M5 11h12"/>
-            </svg>
-          </button>
-          <div class="faq-answer" role="region">
-            <div class="faq-answer-inner">
+            <svg aria-hidden="true" class="faq-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 22 22">
+<path d="M11 5v12M5 11h12"></path>
+</svg>
+</button>
+<div class="faq-answer" role="region">
+<div class="faq-answer-inner">
               At the USDA Thrifty Food Plan level, the benchmark is approximately $2.75 per meal per person. At the Moderate level, that rises to about $4.50 per meal. These benchmarks are calculated using 90 meals per month per person (three meals per day). If your cost per meal is above $6, there is likely room to reduce spending through meal planning and store brand substitutions.
             </div>
-          </div>
-        </div>
-
-        <div class="faq-item" role="listitem">
-          <button class="faq-question" aria-expanded="false">
+</div>
+</div>
+<div class="faq-item" role="listitem">
+<button aria-expanded="false" class="faq-question">
             How are 2026 tariffs affecting grocery costs?
-            <svg class="faq-icon" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-              <path d="M11 5v12M5 11h12"/>
-            </svg>
-          </button>
-          <div class="faq-answer" role="region">
-            <div class="faq-answer-inner">
+            <svg aria-hidden="true" class="faq-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 22 22">
+<path d="M11 5v12M5 11h12"></path>
+</svg>
+</button>
+<div class="faq-answer" role="region">
+<div class="faq-answer-inner">
               According to Yale Budget Lab research, tariffs implemented in 2026 are adding approximately 4.5% to grocery costs for the average US household. Imported goods including fresh produce, canned goods, and certain proteins have been most affected. The tariff overlay in this calculator shows what your recommended Thrifty-plan budget would be without tariffs versus with the current tariff environment so you can see the dollar impact on your specific household.
             </div>
-          </div>
-        </div>
-
-        <div class="faq-item" role="listitem">
-          <button class="faq-question" aria-expanded="false">
+</div>
+</div>
+<div class="faq-item" role="listitem">
+<button aria-expanded="false" class="faq-question">
             Does food assistance count toward my budget?
-            <svg class="faq-icon" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-              <path d="M11 5v12M5 11h12"/>
-            </svg>
-          </button>
-          <div class="faq-answer" role="region">
-            <div class="faq-answer-inner">
+            <svg aria-hidden="true" class="faq-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 22 22">
+<path d="M11 5v12M5 11h12"></path>
+</svg>
+</button>
+<div class="faq-answer" role="region">
+<div class="faq-answer-inner">
               Yes. This calculator adds any monthly food assistance you receive, including SNAP benefits, WIC, food bank support, or employer food stipends, to your current budget before comparing it to the recommended amount. This gives you an accurate picture of your total available food dollars and a realistic gap or surplus figure.
             </div>
-          </div>
-        </div>
-
-        <div class="faq-item" role="listitem">
-          <button class="faq-question" aria-expanded="false">
+</div>
+</div>
+<div class="faq-item" role="listitem">
+<button aria-expanded="false" class="faq-question">
             Does this calculator work for Canadian households?
-            <svg class="faq-icon" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-              <path d="M11 5v12M5 11h12"/>
-            </svg>
-          </button>
-          <div class="faq-answer" role="region">
-            <div class="faq-answer-inner">
+            <svg aria-hidden="true" class="faq-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 22 22">
+<path d="M11 5v12M5 11h12"></path>
+</svg>
+</button>
+<div class="faq-answer" role="region">
+<div class="faq-answer-inner">
               Yes. Select your province from the location dropdown and the calculator switches from USDA data to Statistics Canada food cost benchmarks. Statistics Canada estimates a single person needs approximately $350 CAD/month at the thrifty level, $425 CAD at moderate, and $550 CAD at the liberal level. A family of four runs $1,050, $1,275, and $1,650 CAD respectively. All amounts scale linearly for other household sizes and are adjusted by a provincial cost-of-living multiplier. Results are shown in Canadian dollars. Canadian grocery costs are also affected by retaliatory tariffs and supply chain disruptions in 2026, estimated at an additional 3-5% above baseline.
             </div>
-          </div>
-        </div>
-
-        <div class="faq-item" role="listitem">
-          <button class="faq-question" aria-expanded="false">
+</div>
+</div>
+<div class="faq-item" role="listitem">
+<button aria-expanded="false" class="faq-question">
             My budget is short. What actually helps?
-            <svg class="faq-icon" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-              <path d="M11 5v12M5 11h12"/>
-            </svg>
-          </button>
-          <div class="faq-answer" role="region">
-            <div class="faq-answer-inner">
+            <svg aria-hidden="true" class="faq-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 22 22">
+<path d="M11 5v12M5 11h12"></path>
+</svg>
+</button>
+<div class="faq-answer" role="region">
+<div class="faq-answer-inner">
               The most effective strategies are: buying dried beans and lentils instead of canned or pre-cooked protein, shopping at discount grocers like Aldi or Lidl, building meals around what is on sale each week rather than a fixed recipe plan, buying produce that is in season, and cooking larger batches and freezing portions. Apps like Flashfood and Too Good To Go sell near-expiry groceries at steep discounts. Feeding America's food bank network can also supplement your budget in tight months.
             </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- RESOURCES -->
-  <section class="resources-section" aria-labelledby="resources-heading">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-label">Helpful Resources</div>
-        <h2 class="section-title" id="resources-heading">Where to get more help</h2>
-        <p class="section-sub">Whether you need emergency food support or just want to spend less at the register, these are the most useful places to start.</p>
-      </div>
-
-      <div class="resources-grid">
-
-        <a href="https://www.feedingamerica.org" target="_blank" rel="noopener noreferrer" class="resource-card">
-          <div class="resource-icon-wrap" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M3 11l19-9-9 19-2-8-8-2z"/>
-            </svg>
-          </div>
-          <div class="resource-title">Feeding America</div>
-          <div class="resource-desc">The largest hunger-relief organization in the US. Find your nearest food bank, pantry, or meal program by zip code. These resources exist for exactly this.</div>
-          <div class="resource-link-label">
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- RESOURCES -->
+<section aria-labelledby="resources-heading" class="resources-section">
+<div class="container">
+<div class="section-header">
+<div class="section-label">Helpful Resources</div>
+<h2 class="section-title" id="resources-heading">Where to get more help</h2>
+<p class="section-sub">Whether you need emergency food support or just want to spend less at the register, these are the most useful places to start.</p>
+</div>
+<div class="resources-grid">
+<a class="resource-card" href="https://www.feedingamerica.org" rel="noopener noreferrer" target="_blank">
+<div aria-hidden="true" class="resource-icon-wrap">
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20">
+<path d="M3 11l19-9-9 19-2-8-8-2z"></path>
+</svg>
+</div>
+<div class="resource-title">Feeding America</div>
+<div class="resource-desc">The largest hunger-relief organization in the US. Find your nearest food bank, pantry, or meal program by zip code. These resources exist for exactly this.</div>
+<div class="resource-link-label">
             feedingamerica.org
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M2 10L10 2M5 2h5v5"/></svg>
-          </div>
-        </a>
-
-        <a href="https://www.211.org" target="_blank" rel="noopener noreferrer" class="resource-card">
-          <div class="resource-icon-wrap" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.56 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.09 6.09l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
-            </svg>
-          </div>
-          <div class="resource-title">211.org</div>
-          <div class="resource-desc">Call 2-1-1 or visit the website to connect with local food assistance, SNAP application help, utility support, and other community resources. Available in all 50 states.</div>
-          <div class="resource-link-label">
+            <svg aria-hidden="true" fill="none" height="12" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 12 12" width="12"><path d="M2 10L10 2M5 2h5v5"></path></svg>
+</div>
+</a>
+<a class="resource-card" href="https://www.211.org" rel="noopener noreferrer" target="_blank">
+<div aria-hidden="true" class="resource-icon-wrap">
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20">
+<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.56 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.09 6.09l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path>
+</svg>
+</div>
+<div class="resource-title">211.org</div>
+<div class="resource-desc">Call 2-1-1 or visit the website to connect with local food assistance, SNAP application help, utility support, and other community resources. Available in all 50 states.</div>
+<div class="resource-link-label">
             211.org
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M2 10L10 2M5 2h5v5"/></svg>
-          </div>
-        </a>
-
-        <a href="https://www.savedolly.com" target="_blank" rel="noopener noreferrer" class="resource-card">
-          <div class="resource-icon-wrap" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M20 12V22H4V12"/>
-              <path d="M22 7H2v5h20V7z"/>
-              <path d="M12 22V7"/>
-              <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/>
-              <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
-            </svg>
-          </div>
-          <div class="resource-title">SaveDolly</div>
-          <div class="resource-desc">Find deals and discounts on groceries and everyday purchases. Useful for households tracking spending closely and looking to close the gap between budget and recommended spending.</div>
-          <div class="resource-link-label">
+            <svg aria-hidden="true" fill="none" height="12" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 12 12" width="12"><path d="M2 10L10 2M5 2h5v5"></path></svg>
+</div>
+</a>
+<a class="resource-card" href="https://www.savedolly.com" rel="noopener noreferrer" target="_blank">
+<div aria-hidden="true" class="resource-icon-wrap">
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20">
+<path d="M20 12V22H4V12"></path>
+<path d="M22 7H2v5h20V7z"></path>
+<path d="M12 22V7"></path>
+<path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path>
+<path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
+</svg>
+</div>
+<div class="resource-title">SaveDolly</div>
+<div class="resource-desc">Find deals and discounts on groceries and everyday purchases. Useful for households tracking spending closely and looking to close the gap between budget and recommended spending.</div>
+<div class="resource-link-label">
             savedolly.com
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M2 10L10 2M5 2h5v5"/></svg>
-          </div>
-        </a>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- DATA SOURCES -->
-  <section class="sources-section" aria-labelledby="sources-heading">
-    <div class="sources-inner">
-      <div class="sources-label" id="sources-heading">Data Sources</div>
-      <ul class="sources-list">
-        <li>
-          <a href="https://www.fns.usda.gov/cnpp/usda-food-plans-cost-food-reports-monthly-reports" target="_blank" rel="noopener noreferrer">USDA Center for Nutrition Policy and Promotion</a>
+            <svg aria-hidden="true" fill="none" height="12" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 12 12" width="12"><path d="M2 10L10 2M5 2h5v5"></path></svg>
+</div>
+</a>
+</div>
+</div>
+</section>
+<!-- DATA SOURCES -->
+<section aria-labelledby="sources-heading" class="sources-section">
+<div class="sources-inner">
+<div class="sources-label" id="sources-heading">Data Sources</div>
+<ul class="sources-list">
+<li>
+<a href="https://www.fns.usda.gov/cnpp/usda-food-plans-cost-food-reports-monthly-reports" rel="noopener noreferrer" target="_blank">USDA Center for Nutrition Policy and Promotion</a>
           - Monthly Food Plan Reports 2026
         </li>
-        <li>
-          <a href="https://www.bls.gov/regions/mid-atlantic/data/regionalpriceindexes_us_table.htm" target="_blank" rel="noopener noreferrer">BLS Regional Price Parities</a>
+<li>
+<a href="https://www.bls.gov/regions/mid-atlantic/data/regionalpriceindexes_us_table.htm" rel="noopener noreferrer" target="_blank">BLS Regional Price Parities</a>
           - Regional cost adjustment multipliers
         </li>
-        <li>
-          <a href="https://budgetlab.yale.edu" target="_blank" rel="noopener noreferrer">Yale Budget Lab</a>
+<li>
+<a href="https://budgetlab.yale.edu" rel="noopener noreferrer" target="_blank">Yale Budget Lab</a>
           - 2026 tariff impact on grocery costs (4.5% estimate)
         </li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-    <div class="ad-container" style="text-align:center;margin:24px auto;max-width:728px;min-height:90px;"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9661407658009326" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
-
-  <footer>
-    <div class="footer-inner">
-      <p class="footer-disclaimer">
+</ul>
+</div>
+</section>
+<!-- FOOTER -->
+<div class="ad-container" style="text-align:center;margin:24px auto;max-width:728px;min-height:90px;"><ins class="adsbygoogle" data-ad-client="ca-pub-9661407658009326" data-ad-format="auto" data-ad-slot="auto" data-full-width-responsive="true" style="display:block"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+<section aria-label="Related Calculators" class="related-calculators"><h2>Related Calculators</h2><ul><li><a href="/calculators/child-cost/">Cost of Raising a Child Calculator</a></li><li><a href="/calculators/pet-cost/">Pet Cost Calculator — Annual &amp; Monthly</a></li><li><a href="/calculators/subscription-graveyard/">Subscription Graveyard Calculator</a></li></ul></section><section class="blog-cta"><p>Want to learn more? <a href="/blog/">Read our blog</a> for budgeting tips, tax guides, and financial strategies for freelancers and self-employed workers.</p></section><footer>
+<div class="footer-inner">
+<p class="footer-disclaimer">
         Educational estimates only. Not financial or dietary advice. This calculator uses USDA monthly food plan 2026 figures, BLS Regional Price Parities, and Yale Budget Lab tariff research to help you plan your grocery budget. Actual grocery costs vary by store, household habits, and local market conditions. USDA plan figures are updated annually. For official SNAP eligibility, visit benefits.gov.
       </p>
-      <p class="footer-copy">&#169; 2026 Skip the Surprise. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <script>
+<p class="footer-copy">© 2026 Skip the Surprise. All rights reserved.</p>
+</div>
+</footer>
+<script>
     /* =============================================
        USDA MONTHLY FOOD PLANS 2026
        All four tiers, scaled by household size.
@@ -2578,6 +2674,5 @@
       });
     });
   </script>
-
 </body>
 </html>

@@ -1,27 +1,25 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Coffee Shop Calculator 2026 - How Much Is Your Daily Coffee Really Costing You?</title>
-  <meta name="description" content="Calculate your real coffee shop spending including tips, tax, and food. Compare shop vs home-brew costs, see espresso machine break-even, and discover what your coffee savings could grow to if invested. Starbucks, Tim Hortons, and Dunkin presets for US and Canada." />
-  <meta name="robots" content="index, follow" />
-  <meta property="og:title" content="Coffee Shop Calculator 2026 - How Much Is Your Daily Coffee Really Costing You?" />
-  <meta property="og:description" content="The average American spends $1,100-$2,200/year on coffee shop visits. Canadians spend $1,400-$2,600 CAD/year. Find your real number." />
-  <meta property="og:type" content="website" />
-  <meta name="keywords" content="coffee cost calculator, how much do I spend on coffee, daily coffee cost, starbucks spending calculator, coffee shop vs home brew, espresso machine break even, coffee savings calculator 2026, tim hortons cost calculator" />
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
-
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9661407658009326" crossorigin="anonymous"></script>
-
-  <script type="application/ld+json">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Coffee Cost Calculator — Daily vs. Monthly</title>
+<meta content="See exactly how much your daily coffee habit is costing you per month and per year. Free calculator." name="description"/>
+<meta content="index, follow" name="robots"/>
+<meta content="Coffee Cost Calculator — Daily vs. Monthly" property="og:title"/>
+<meta content="See exactly how much your daily coffee habit is costing you per month and per year. Free calculator." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="coffee cost calculator, how much do I spend on coffee, daily coffee cost, starbucks spending calculator, coffee shop vs home brew, espresso machine break even, coffee savings calculator 2026, tim hortons cost calculator" name="keywords"/>
+<link href="/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9661407658009326"></script>
+<script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -69,8 +67,7 @@
     ]
   }
   </script>
-
-  <style>
+<style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
@@ -505,307 +502,438 @@
       .calc-section { padding: 1.25rem; }
       .hero { padding: 3rem 1.25rem 4rem; }
     }
-  </style>
-</head>
+  
+    .breadcrumb {
+      font-size: 0.8rem;
+      color: #888;
+      margin-bottom: 0.75rem;
+    }
+    .breadcrumb a {
+      color: #888;
+      text-decoration: none;
+    }
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+    .breadcrumb span.sep {
+      margin: 0 0.35em;
+    }
+    .related-calculators, .blog-cta, .calculator-cta, .hub-crosslink {
+      max-width: 1100px;
+      margin: 2rem auto 0;
+      padding: 1.25rem 1.5rem;
+      border: 1px solid var(--gray-200, #e5e7eb);
+      border-radius: 16px;
+      background: var(--gray-50, #f9fafb);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .related-calculators h2, .calculator-cta h2 {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+    .related-calculators ul {
+      margin: 0.75rem 0 0;
+      padding-left: 1.25rem;
+    }
+    .related-calculators li + li {
+      margin-top: 0.5rem;
+    }
+    .blog-cta p, .calculator-cta p, .hub-crosslink p {
+      margin: 0;
+    }
+    .cta-button {
+      display: inline-block;
+      margin-top: 0.9rem;
+      padding: 0.75rem 1.1rem;
+      border-radius: 10px;
+      background: var(--blue-600, #2563eb);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+
+    .nav-brand {
+      display: inline-flex;
+      align-items: center;
+      flex: 0 1 auto;
+      min-width: 0;
+      max-width: 100%;
+    }
+
+    .nav-brand img,
+    .nav-logo img {
+      display: block;
+      width: auto;
+      height: auto;
+      max-height: 44px;
+      max-width: min(100%, 44px);
+      object-fit: contain;
+    }
+
+    .nav-inner {
+      min-height: 88px;
+      height: auto;
+      padding: 8px 0;
+    }
+
+    .ad-container {
+      min-height: 0 !important;
+      overflow: hidden;
+    }
+
+    @media (max-width: 720px) {
+      .nav {
+        padding: 0 1rem;
+      }
+
+      .nav-inner {
+        min-height: 96px;
+        height: auto;
+        gap: 0.75rem;
+        align-items: center;
+      }
+
+      .nav-brand img,
+      .nav-logo img {
+        max-height: 40px;
+        max-width: min(100%, 40px);
+      }
+
+      .nav-brand {
+        flex: 0 0 auto;
+      }
+
+      .nav-hamburger {
+        flex-shrink: 0;
+      }
+
+      .nav-cta {
+        flex-shrink: 0;
+      }
+
+      .nav-mobile-toggle {
+        flex: 0 0 auto;
+        margin-left: auto;
+      }
+
+      .ad-container,
+      .adsbygoogle,
+      .adsbygoogle-noablate {
+        display: none !important;
+        min-height: 0 !important;
+        height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+    }
+</style>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/></noscript><link href="https://skipthesurprise.com/calculators/coffee-cost/" rel="canonical"><meta content="https://skipthesurprise.com/logo-small.png" property="og:image"/><meta content="https://skipthesurprise.com/calculators/coffee-cost/" property="og:url"/><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://skipthesurprise.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Calculators",
+      "item": "https://skipthesurprise.com/calculators"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Coffee Cost Calculator — Daily vs. Monthly",
+      "item": "https://skipthesurprise.com/calculators/coffee-cost/"
+    }
+  ]
+}</script><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Coffee Cost Calculator — Daily vs. Monthly",
+  "url": "https://skipthesurprise.com/calculators/coffee-cost/",
+  "description": "See exactly how much your daily coffee habit is costing you per month and per year. Free calculator.",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}</script></link></head>
 <body>
-
-  <!-- NAV -->
-  <nav class="nav" aria-label="Site navigation" style="position:relative;">
-    <div class="nav-inner">
-      <a href="/" class="nav-brand"><img src="/logo-header.png" alt="Skip the Surprise" style="height:75px;"></a>
-      <div class="nav-links">
-        <a href="/" class="nav-link">Calculator</a>
-        <a href="/calculators/" class="nav-link">Calculators</a>
-        <a href="/blog/" class="nav-link">Blog</a>
-      </div>
-      <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile-menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </button>
-      <a href="/calculators/" class="nav-cta">All Calculators</a>
+<!-- NAV -->
+<nav aria-label="Site navigation" class="nav" style="position:relative;">
+<div class="nav-inner">
+<a class="nav-brand" href="/"><img alt="Skip the Surprise - Free Cost Calculators" src="/logo-small.png" class="site-logo"/></a>
+<div class="nav-links">
+<a class="nav-link" href="/">Calculator</a>
+<a class="nav-link" href="/calculators/">Calculators</a>
+<a class="nav-link" href="/blog/">Blog</a>
+</div>
+<button aria-controls="nav-mobile-menu" aria-expanded="false" aria-label="Open menu" class="nav-hamburger">
+<span class="bar"></span>
+<span class="bar"></span>
+<span class="bar"></span>
+</button>
+<a class="nav-cta" href="/calculators/">All Calculators</a>
+</div>
+<div class="nav-dropdown" id="nav-mobile-menu" role="menu">
+<a href="/" role="menuitem">Calculator</a>
+<a href="/calculators/" role="menuitem">Calculators</a>
+<a href="/blog/" role="menuitem">Blog</a>
+</div>
+</nav>
+<!-- HERO -->
+<section class="hero">
+<div class="hero-eyebrow">Free Calculator</div>
+<nav aria-label="Breadcrumb" class="breadcrumb"><a href="/">Home</a><span class="sep">&gt;</span><a href="/calculators/">Calculators</a><span class="sep">&gt;</span><span aria-current="page">Coffee Cost Calculator — Daily vs. Monthly</span></nav><h1>Coffee Shop Calculator — How Much Is Your Daily Coffee Really Costing You?</h1>
+<p>It is not just $5 a day. Add the muffin, the tip, the tax, and the second trip. Then see what that money could become.</p>
+<div class="hero-quick-answer">
+<strong>Quick answer:</strong> The average American spends $1,100–$2,200/year on coffee shop visits. Canadians spend $1,400–$2,600 CAD/year. Most people underestimate their real number by 40–60%.
     </div>
-    <div class="nav-dropdown" id="nav-mobile-menu" role="menu">
-      <a href="/" role="menuitem">Calculator</a>
-      <a href="/calculators/" role="menuitem">Calculators</a>
-      <a href="/blog/" role="menuitem">Blog</a>
-    </div>
-  </nav>
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-eyebrow">Free Calculator</div>
-    <h1>Coffee Shop Calculator &mdash; How Much Is Your Daily Coffee Really Costing You?</h1>
-    <p>It is not just $5 a day. Add the muffin, the tip, the tax, and the second trip. Then see what that money could become.</p>
-    <div class="hero-quick-answer">
-      <strong>Quick answer:</strong> The average American spends $1,100&ndash;$2,200/year on coffee shop visits. Canadians spend $1,400&ndash;$2,600 CAD/year. Most people underestimate their real number by 40&ndash;60%.
-    </div>
-  </section>
-
-  <!-- AD SLOT 1 -->
-  <div class="ad-container"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9661407658009326" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
-
-  <div class="main">
-
-    <!-- STEP 1: COUNTRY -->
-    <div class="calc-section">
-      <div class="calc-section-title"><span class="icon">1</span> Where Are You?</div>
-      <p class="calc-section-sub">This sets your currency and chain presets.</p>
-      <div class="form-row">
-        <div class="form-group">
-          <label for="country">Country</label>
-          <select id="country">
-            <option value="US">United States (USD)</option>
-            <option value="CA">Canada (CAD)</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="taxRate">Sales Tax Rate (%)</label>
-          <input type="number" id="taxRate" value="8" min="0" max="25" step="0.1" />
-        </div>
-      </div>
-    </div>
-
-    <!-- STEP 2: ORDER BUILDER -->
-    <div class="calc-section">
-      <div class="calc-section-title"><span class="icon">2</span> Build Your Daily Order</div>
-      <p class="calc-section-sub">Pick from popular items or add your own. Include everything you buy per visit.</p>
-
-      <div id="chainPresets"></div>
-
-      <div class="custom-add">
-        <div class="form-group" style="flex:2">
-          <label for="customName">Custom Item Name</label>
-          <input type="text" id="customName" placeholder="Oat milk latte" />
-        </div>
-        <div class="form-group" style="flex:1">
-          <label for="customPrice">Price</label>
-          <input type="number" id="customPrice" placeholder="5.50" min="0" step="0.01" />
-        </div>
-        <button class="add-btn" onclick="addCustomItem()">Add</button>
-      </div>
-
-      <div class="order-list" id="orderList"></div>
-      <div id="orderTotal" style="font-size:0.9rem;font-weight:600;color:var(--gray-600);"></div>
-    </div>
-
-    <!-- STEP 3: ADD-ONS -->
-    <div class="calc-section">
-      <div class="calc-section-title"><span class="icon">3</span> Per-Visit Extras</div>
-      <p class="calc-section-sub">Tips, food, and extras that add up fast.</p>
-      <div class="form-row triple">
-        <div class="form-group">
-          <label for="foodItem">Food Add-on</label>
-          <select id="foodItem">
-            <option value="0">None</option>
-            <option value="3.50">Muffin ($3.50)</option>
-            <option value="4.00">Croissant ($4.00)</option>
-            <option value="5.50">Breakfast Sandwich ($5.50)</option>
-            <option value="3.00">Cookie ($3.00)</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="tipType">Tip</label>
-          <select id="tipType">
-            <option value="none">None</option>
-            <option value="1">$1</option>
-            <option value="2" selected>$2</option>
-            <option value="15%">15%</option>
-            <option value="20%">20%</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="visitsPerDay">Visits Per Day</label>
-          <select id="visitsPerDay">
-            <option value="1" selected>1</option>
-            <option value="2">2</option>
-          </select>
-        </div>
-      </div>
-    </div>
-
-    <!-- STEP 4: FREQUENCY -->
-    <div class="calc-section">
-      <div class="calc-section-title"><span class="icon">4</span> How Often?</div>
-      <div class="slider-group">
-        <div class="slider-label">
-          <span>Days per week you visit a coffee shop</span>
-          <span class="slider-value" id="daysVal">5</span>
-        </div>
-        <input type="range" id="daysPerWeek" min="1" max="7" value="5" />
-      </div>
-    </div>
-
-    <!-- STEP 5: HOME ALTERNATIVE -->
-    <div class="calc-section">
-      <div class="calc-section-title"><span class="icon">5</span> Home Brew Alternative</div>
-      <p class="calc-section-sub">What does it cost you to make coffee at home?</p>
-      <div class="slider-group">
-        <div class="slider-label">
-          <span>Home coffee cost per cup</span>
-          <span class="slider-value" id="homeCostVal">$0.50</span>
-        </div>
-        <input type="range" id="homeCostPerCup" min="0.25" max="1.50" value="0.50" step="0.05" />
-      </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label for="ownMachine">Do you own an espresso machine?</label>
-          <select id="ownMachine">
-            <option value="no">No</option>
-            <option value="yes">Yes</option>
-          </select>
-        </div>
-        <div class="form-group" id="machinePriceGroup">
-          <label for="machinePrice">Machine price you are considering ($)</label>
-          <input type="number" id="machinePrice" value="400" min="50" max="5000" step="10" />
-        </div>
-      </div>
-    </div>
-
-    <!-- STEP 6: INVESTMENT -->
-    <div class="calc-section">
-      <div class="calc-section-title"><span class="icon">6</span> Investment Assumptions</div>
-      <p class="calc-section-sub">What could your savings grow to over time?</p>
-      <div class="slider-group">
-        <div class="slider-label">
-          <span>Expected annual return</span>
-          <span class="slider-value" id="returnVal">7%</span>
-        </div>
-        <input type="range" id="returnRate" min="4" max="12" value="7" step="0.5" />
-      </div>
-      <div class="slider-group">
-        <div class="slider-label">
-          <span>Inflation rate</span>
-          <span class="slider-value" id="inflationVal">3%</span>
-        </div>
-        <input type="range" id="inflationRate" min="0" max="8" value="3" step="0.5" />
-      </div>
-      <div class="slider-group">
-        <div class="slider-label">
-          <span>Time horizon (years)</span>
-          <span class="slider-value" id="horizonVal">10</span>
-        </div>
-        <input type="range" id="timeHorizon" min="1" max="30" value="10" />
-      </div>
-    </div>
-
-    <!-- CALCULATE BUTTON -->
-    <div style="text-align:center;margin-bottom:2rem;">
-      <button class="add-btn" style="padding:0.85rem 2.5rem;font-size:1rem;border-radius:var(--radius-md);" onclick="calculate()">Calculate My Real Coffee Bill</button>
-    </div>
-
-    <!-- RESULTS -->
-    <div id="results" class="results-hidden">
-
-      <!-- RESULT 1: REAL DAILY BILL -->
-      <div class="result-hero-card" id="heroBillCard">
-        <div class="subtitle">Your Real Daily Coffee Bill</div>
-        <div class="think-line" id="thinkLine"></div>
-        <div class="big-number" id="annualSpend"></div>
-        <div class="big-label">per year at the coffee shop</div>
-      </div>
-
-      <!-- RESULT 2: BREAKDOWN -->
-      <div class="calc-section">
-        <div class="calc-section-title">Time Period Breakdown</div>
-        <div class="breakdown-grid" id="breakdownGrid"></div>
-      </div>
-
-      <!-- RESULT 3: SHOP VS HOME -->
-      <div class="calc-section">
-        <div class="calc-section-title">Shop vs Home Brew</div>
-        <p class="calc-section-sub">Annual cost comparison if you brewed every day at home instead.</p>
-        <div class="comparison-bar-container" id="comparisonBars"></div>
-        <div class="comparison-savings" id="comparisonSavings"></div>
-      </div>
-
-      <!-- AD SLOT 2 -->
-      <div class="ad-container"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9661407658009326" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
-
-      <!-- RESULT 4: SWAP PLAN -->
-      <div class="calc-section">
-        <div class="calc-section-title">The Swap Plan</div>
-        <p class="calc-section-sub">You do not have to quit cold turkey. Slide to find your sweet spot.</p>
-        <div class="slider-group">
-          <div class="slider-label">
-            <span>Days per week you switch to home brew</span>
-            <span class="slider-value" id="swapDaysVal">3</span>
-          </div>
-          <input type="range" id="swapDays" min="0" max="7" value="3" oninput="updateSwapPlan()" />
-        </div>
-        <div class="swap-result" id="swapResult"></div>
-      </div>
-
-      <!-- RESULT 5: ESPRESSO BREAK-EVEN -->
-      <div class="calc-section" id="breakevenSection">
-        <div class="calc-section-title">Espresso Machine Break-Even</div>
-        <p class="calc-section-sub">How fast does the machine pay for itself?</p>
-        <div class="breakeven-result" id="breakevenResult"></div>
-        <div class="chart-container"><canvas id="breakevenChart"></canvas></div>
-      </div>
-
-      <!-- RESULT 6: INVESTMENT GROWTH -->
-      <div class="calc-section">
-        <div class="calc-section-title">If You Invested Your Coffee Savings</div>
-        <p class="calc-section-sub">Compound growth on the money you would save switching to home brew.</p>
-        <div class="chart-container"><canvas id="investmentChart"></canvas></div>
-        <div id="investmentSummary" style="text-align:center;font-size:0.95rem;color:var(--gray-700);font-weight:600;margin-top:0.5rem;"></div>
-      </div>
-
-      <!-- RESULT 7: YEAR-BY-YEAR TABLE -->
-      <div class="calc-section">
-        <div class="calc-section-title">Year-by-Year Breakdown</div>
-        <div style="overflow-x:auto;">
-          <table class="year-table" id="yearTable">
-            <thead>
-              <tr>
-                <th>Year</th>
-                <th>Shop Cost</th>
-                <th>Home Cost</th>
-                <th>Annual Savings</th>
-                <th>Invested Value</th>
-              </tr>
-            </thead>
-            <tbody id="yearTableBody"></tbody>
-          </table>
-        </div>
-      </div>
-
-      <!-- RESULT 8: FUN COMPARISONS -->
-      <div class="calc-section">
-        <div class="calc-section-title">What Else Could You Buy?</div>
-        <p class="calc-section-sub">Your annual coffee shop spending could also get you:</p>
-        <div class="fun-grid" id="funGrid"></div>
-      </div>
-
-      <!-- RESULT 9: SHARE CARD -->
-      <div class="calc-section">
-        <div class="calc-section-title">Share Your Results</div>
-        <div class="share-card" id="shareCard">
-          <div class="share-text" id="shareText"></div>
-          <div class="share-brand">skipthesurprise.com</div>
-          <button class="copy-btn" onclick="copyResults()">Copy to Clipboard</button>
-        </div>
-        <div id="copyConfirm" style="text-align:center;font-size:0.8rem;color:var(--green-600);font-weight:600;margin-top:0.5rem;display:none;">Copied!</div>
-      </div>
-
-      <!-- AD SLOT 3 -->
-      <div class="ad-container"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9661407658009326" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
-
-    </div><!-- /results -->
-
-  </div><!-- /main -->
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-inner">
-      <p class="footer-disclaimer">
+</section>
+<!-- AD SLOT 1 -->
+<div class="ad-container"><ins class="adsbygoogle" data-ad-client="ca-pub-9661407658009326" data-ad-format="auto" data-ad-slot="auto" data-full-width-responsive="true" style="display:block"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+<div class="main">
+<!-- STEP 1: COUNTRY -->
+<div class="calc-section">
+<div class="calc-section-title"><span class="icon">1</span> Where Are You?</div>
+<p class="calc-section-sub">This sets your currency and chain presets.</p>
+<div class="form-row">
+<div class="form-group">
+<label for="country">Country</label>
+<select id="country">
+<option value="US">United States (USD)</option>
+<option value="CA">Canada (CAD)</option>
+</select>
+</div>
+<div class="form-group">
+<label for="taxRate">Sales Tax Rate (%)</label>
+<input id="taxRate" max="25" min="0" step="0.1" type="number" value="8"/>
+</div>
+</div>
+</div>
+<!-- STEP 2: ORDER BUILDER -->
+<div class="calc-section">
+<div class="calc-section-title"><span class="icon">2</span> Build Your Daily Order</div>
+<p class="calc-section-sub">Pick from popular items or add your own. Include everything you buy per visit.</p>
+<div id="chainPresets"></div>
+<div class="custom-add">
+<div class="form-group" style="flex:2">
+<label for="customName">Custom Item Name</label>
+<input id="customName" placeholder="Oat milk latte" type="text"/>
+</div>
+<div class="form-group" style="flex:1">
+<label for="customPrice">Price</label>
+<input id="customPrice" min="0" placeholder="5.50" step="0.01" type="number"/>
+</div>
+<button class="add-btn" onclick="addCustomItem()">Add</button>
+</div>
+<div class="order-list" id="orderList"></div>
+<div id="orderTotal" style="font-size:0.9rem;font-weight:600;color:var(--gray-600);"></div>
+</div>
+<!-- STEP 3: ADD-ONS -->
+<div class="calc-section">
+<div class="calc-section-title"><span class="icon">3</span> Per-Visit Extras</div>
+<p class="calc-section-sub">Tips, food, and extras that add up fast.</p>
+<div class="form-row triple">
+<div class="form-group">
+<label for="foodItem">Food Add-on</label>
+<select id="foodItem">
+<option value="0">None</option>
+<option value="3.50">Muffin ($3.50)</option>
+<option value="4.00">Croissant ($4.00)</option>
+<option value="5.50">Breakfast Sandwich ($5.50)</option>
+<option value="3.00">Cookie ($3.00)</option>
+</select>
+</div>
+<div class="form-group">
+<label for="tipType">Tip</label>
+<select id="tipType">
+<option value="none">None</option>
+<option value="1">$1</option>
+<option selected="" value="2">$2</option>
+<option value="15%">15%</option>
+<option value="20%">20%</option>
+</select>
+</div>
+<div class="form-group">
+<label for="visitsPerDay">Visits Per Day</label>
+<select id="visitsPerDay">
+<option selected="" value="1">1</option>
+<option value="2">2</option>
+</select>
+</div>
+</div>
+</div>
+<!-- STEP 4: FREQUENCY -->
+<div class="calc-section">
+<div class="calc-section-title"><span class="icon">4</span> How Often?</div>
+<div class="slider-group">
+<div class="slider-label">
+<span>Days per week you visit a coffee shop</span>
+<span class="slider-value" id="daysVal">5</span>
+</div>
+<input id="daysPerWeek" max="7" min="1" type="range" value="5"/>
+</div>
+</div>
+<!-- STEP 5: HOME ALTERNATIVE -->
+<div class="calc-section">
+<div class="calc-section-title"><span class="icon">5</span> Home Brew Alternative</div>
+<p class="calc-section-sub">What does it cost you to make coffee at home?</p>
+<div class="slider-group">
+<div class="slider-label">
+<span>Home coffee cost per cup</span>
+<span class="slider-value" id="homeCostVal">$0.50</span>
+</div>
+<input id="homeCostPerCup" max="1.50" min="0.25" step="0.05" type="range" value="0.50"/>
+</div>
+<div class="form-row">
+<div class="form-group">
+<label for="ownMachine">Do you own an espresso machine?</label>
+<select id="ownMachine">
+<option value="no">No</option>
+<option value="yes">Yes</option>
+</select>
+</div>
+<div class="form-group" id="machinePriceGroup">
+<label for="machinePrice">Machine price you are considering ($)</label>
+<input id="machinePrice" max="5000" min="50" step="10" type="number" value="400"/>
+</div>
+</div>
+</div>
+<!-- STEP 6: INVESTMENT -->
+<div class="calc-section">
+<div class="calc-section-title"><span class="icon">6</span> Investment Assumptions</div>
+<p class="calc-section-sub">What could your savings grow to over time?</p>
+<div class="slider-group">
+<div class="slider-label">
+<span>Expected annual return</span>
+<span class="slider-value" id="returnVal">7%</span>
+</div>
+<input id="returnRate" max="12" min="4" step="0.5" type="range" value="7"/>
+</div>
+<div class="slider-group">
+<div class="slider-label">
+<span>Inflation rate</span>
+<span class="slider-value" id="inflationVal">3%</span>
+</div>
+<input id="inflationRate" max="8" min="0" step="0.5" type="range" value="3"/>
+</div>
+<div class="slider-group">
+<div class="slider-label">
+<span>Time horizon (years)</span>
+<span class="slider-value" id="horizonVal">10</span>
+</div>
+<input id="timeHorizon" max="30" min="1" type="range" value="10"/>
+</div>
+</div>
+<!-- CALCULATE BUTTON -->
+<div style="text-align:center;margin-bottom:2rem;">
+<button class="add-btn" onclick="calculate()" style="padding:0.85rem 2.5rem;font-size:1rem;border-radius:var(--radius-md);">Calculate My Real Coffee Bill</button>
+</div>
+<!-- RESULTS -->
+<div class="results-hidden" id="results">
+<!-- RESULT 1: REAL DAILY BILL -->
+<div class="result-hero-card" id="heroBillCard">
+<div class="subtitle">Your Real Daily Coffee Bill</div>
+<div class="think-line" id="thinkLine"></div>
+<div class="big-number" id="annualSpend"></div>
+<div class="big-label">per year at the coffee shop</div>
+</div>
+<!-- RESULT 2: BREAKDOWN -->
+<div class="calc-section">
+<div class="calc-section-title">Time Period Breakdown</div>
+<div class="breakdown-grid" id="breakdownGrid"></div>
+</div>
+<!-- RESULT 3: SHOP VS HOME -->
+<div class="calc-section">
+<div class="calc-section-title">Shop vs Home Brew</div>
+<p class="calc-section-sub">Annual cost comparison if you brewed every day at home instead.</p>
+<div class="comparison-bar-container" id="comparisonBars"></div>
+<div class="comparison-savings" id="comparisonSavings"></div>
+</div>
+<!-- AD SLOT 2 -->
+<div class="ad-container"><ins class="adsbygoogle" data-ad-client="ca-pub-9661407658009326" data-ad-format="auto" data-ad-slot="auto" data-full-width-responsive="true" style="display:block"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+<!-- RESULT 4: SWAP PLAN -->
+<div class="calc-section">
+<div class="calc-section-title">The Swap Plan</div>
+<p class="calc-section-sub">You do not have to quit cold turkey. Slide to find your sweet spot.</p>
+<div class="slider-group">
+<div class="slider-label">
+<span>Days per week you switch to home brew</span>
+<span class="slider-value" id="swapDaysVal">3</span>
+</div>
+<input id="swapDays" max="7" min="0" oninput="updateSwapPlan()" type="range" value="3"/>
+</div>
+<div class="swap-result" id="swapResult"></div>
+</div>
+<!-- RESULT 5: ESPRESSO BREAK-EVEN -->
+<div class="calc-section" id="breakevenSection">
+<div class="calc-section-title">Espresso Machine Break-Even</div>
+<p class="calc-section-sub">How fast does the machine pay for itself?</p>
+<div class="breakeven-result" id="breakevenResult"></div>
+<div class="chart-container"><canvas id="breakevenChart"></canvas></div>
+</div>
+<!-- RESULT 6: INVESTMENT GROWTH -->
+<div class="calc-section">
+<div class="calc-section-title">If You Invested Your Coffee Savings</div>
+<p class="calc-section-sub">Compound growth on the money you would save switching to home brew.</p>
+<div class="chart-container"><canvas id="investmentChart"></canvas></div>
+<div id="investmentSummary" style="text-align:center;font-size:0.95rem;color:var(--gray-700);font-weight:600;margin-top:0.5rem;"></div>
+</div>
+<!-- RESULT 7: YEAR-BY-YEAR TABLE -->
+<div class="calc-section">
+<div class="calc-section-title">Year-by-Year Breakdown</div>
+<div style="overflow-x:auto;">
+<table class="year-table" id="yearTable">
+<thead>
+<tr>
+<th>Year</th>
+<th>Shop Cost</th>
+<th>Home Cost</th>
+<th>Annual Savings</th>
+<th>Invested Value</th>
+</tr>
+</thead>
+<tbody id="yearTableBody"></tbody>
+</table>
+</div>
+</div>
+<!-- RESULT 8: FUN COMPARISONS -->
+<div class="calc-section">
+<div class="calc-section-title">What Else Could You Buy?</div>
+<p class="calc-section-sub">Your annual coffee shop spending could also get you:</p>
+<div class="fun-grid" id="funGrid"></div>
+</div>
+<!-- RESULT 9: SHARE CARD -->
+<div class="calc-section">
+<div class="calc-section-title">Share Your Results</div>
+<div class="share-card" id="shareCard">
+<div class="share-text" id="shareText"></div>
+<div class="share-brand">skipthesurprise.com</div>
+<button class="copy-btn" onclick="copyResults()">Copy to Clipboard</button>
+</div>
+<div id="copyConfirm" style="text-align:center;font-size:0.8rem;color:var(--green-600);font-weight:600;margin-top:0.5rem;display:none;">Copied!</div>
+</div>
+<!-- AD SLOT 3 -->
+<div class="ad-container"><ins class="adsbygoogle" data-ad-client="ca-pub-9661407658009326" data-ad-format="auto" data-ad-slot="auto" data-full-width-responsive="true" style="display:block"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+</div><!-- /results -->
+</div><!-- /main -->
+<!-- FOOTER -->
+<section aria-label="Related Calculators" class="related-calculators"><h2>Related Calculators</h2><ul><li><a href="/calculators/food-budget/">Food Budget Calculator — Monthly Estimate</a></li><li><a href="/calculators/subscription-graveyard/">Subscription Graveyard Calculator</a></li><li><a href="/calculators/child-cost/">Cost of Raising a Child Calculator</a></li></ul></section><section class="blog-cta"><p>Want to learn more? <a href="/blog/">Read our blog</a> for budgeting tips, tax guides, and financial strategies for freelancers and self-employed workers.</p></section><footer>
+<div class="footer-inner">
+<p class="footer-disclaimer">
         Educational content only. Prices shown are approximate and may vary by location. Not financial advice. Always do your own research before making investment decisions.
       </p>
-      <p class="footer-copy">&copy; 2026 Skip the Surprise. All rights reserved.</p>
-    </div>
-  </footer>
-
+<p class="footer-copy">© 2026 Skip the Surprise. All rights reserved.</p>
+</div>
+</footer>
 <script>
 (function() {
   // --- MOBILE NAV ---
@@ -1552,6 +1680,5 @@
   updateFoodPrices();
 })();
 </script>
-
 </body>
 </html>

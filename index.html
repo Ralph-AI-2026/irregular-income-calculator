@@ -1,60 +1,32 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Skip the Surprise | Free Cost Calculators for Everything</title>
-  <meta name="description" content="Free, private calculators for the real cost of pets, kids, housing, vehicles, subscriptions, tariffs, and more. Works for Canada and the US." />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://skipthesurprise.com/" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Skip the Surprise | Free Cost Calculators for Everything" />
-  <meta property="og:description" content="Free, private calculators for the real cost of pets, kids, housing, vehicles, subscriptions, tariffs, and more. Works for Canada and the US." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://skipthesurprise.com/" />
-  <meta property="og:image" content="https://skipthesurprise.com/logo-highres.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Skip the Surprise | Free Cost Calculators for Everything" />
-  <meta name="twitter:description" content="The real cost of everything, calculated. Free, private, no signup required." />
-
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-
-  <!-- Schema: Organization -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Skip the Surprise",
-    "url": "https://skipthesurprise.com",
-    "description": "The internet's most honest cost calculators. Free, private tools for the real cost of everything — pets, kids, housing, vehicles, food, subscriptions, tariffs, and more."
-  }
-  </script>
-
-  <!-- Schema: WebSite with SearchAction -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Skip the Surprise",
-    "url": "https://skipthesurprise.com",
-    "description": "Free cost calculators for everything. Works for Canada and the US.",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://skipthesurprise.com/calculators/?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  }
-  </script>
-
-  <!-- Schema: FAQ -->
-  <script type="application/ld+json">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Skip the Surprise — Free Cost Calculators</title>
+<meta content="Free calculators for freelancers, budgeters, and self-employed workers. Stop guessing what things cost." name="description"/>
+<meta content="index, follow" name="robots"/>
+<link href="https://skipthesurprise.com" rel="canonical"/>
+<!-- Open Graph -->
+<meta content="Skip the Surprise — Free Cost Calculators" property="og:title"/>
+<meta content="Free calculators for freelancers, budgeters, and self-employed workers. Stop guessing what things cost." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://skipthesurprise.com" property="og:url"/>
+<meta content="https://skipthesurprise.com/logo-small.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Skip the Surprise | Free Cost Calculators for Everything" name="twitter:title"/>
+<meta content="The real cost of everything, calculated. Free, private, no signup required." name="twitter:description"/>
+<link href="/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
+<!-- Schema: Organization -->
+<!-- Schema: WebSite with SearchAction -->
+<!-- Schema: FAQ -->
+<script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -118,8 +90,7 @@
     ]
   }
   </script>
-
-  <style>
+<style>
     *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
@@ -1196,549 +1167,678 @@
       color: var(--gray-500);
       line-height: 1.5;
     }
-  </style>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9661407658009326" crossorigin="anonymous"></script>
-</head>
+  
+    .breadcrumb {
+      font-size: 0.8rem;
+      color: #888;
+      margin-bottom: 0.75rem;
+    }
+    .breadcrumb a {
+      color: #888;
+      text-decoration: none;
+    }
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+    .breadcrumb span.sep {
+      margin: 0 0.35em;
+    }
+    .related-calculators, .blog-cta, .calculator-cta, .hub-crosslink {
+      max-width: 1100px;
+      margin: 2rem auto 0;
+      padding: 1.25rem 1.5rem;
+      border: 1px solid var(--gray-200, #e5e7eb);
+      border-radius: 16px;
+      background: var(--gray-50, #f9fafb);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .related-calculators h2, .calculator-cta h2 {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+    .related-calculators ul {
+      margin: 0.75rem 0 0;
+      padding-left: 1.25rem;
+    }
+    .related-calculators li + li {
+      margin-top: 0.5rem;
+    }
+    .blog-cta p, .calculator-cta p, .hub-crosslink p {
+      margin: 0;
+    }
+    .cta-button {
+      display: inline-block;
+      margin-top: 0.9rem;
+      padding: 0.75rem 1.1rem;
+      border-radius: 10px;
+      background: var(--blue-600, #2563eb);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+
+    .nav-brand {
+      display: inline-flex;
+      align-items: center;
+      flex: 0 1 auto;
+      min-width: 0;
+      max-width: 100%;
+    }
+
+    .nav-brand img,
+    .nav-logo img {
+      display: block;
+      width: auto;
+      height: auto;
+      max-height: 44px;
+      max-width: min(100%, 44px);
+      object-fit: contain;
+    }
+
+    .nav-inner {
+      min-height: 88px;
+      height: auto;
+      padding: 8px 0;
+    }
+
+    .ad-container {
+      min-height: 0 !important;
+      overflow: hidden;
+    }
+
+    @media (max-width: 720px) {
+      .nav {
+        padding: 0 1rem;
+      }
+
+      .nav-inner {
+        min-height: 96px;
+        height: auto;
+        gap: 0.75rem;
+        align-items: center;
+      }
+
+      .nav-brand img,
+      .nav-logo img {
+        max-height: 40px;
+        max-width: min(100%, 40px);
+      }
+
+      .nav-brand {
+        flex: 0 0 auto;
+      }
+
+      .nav-hamburger {
+        flex-shrink: 0;
+      }
+
+      .nav-cta {
+        flex-shrink: 0;
+      }
+
+      .nav-mobile-toggle {
+        flex: 0 0 auto;
+        margin-left: auto;
+      }
+
+      .ad-container,
+      .adsbygoogle,
+      .adsbygoogle-noablate {
+        display: none !important;
+        min-height: 0 !important;
+        height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+    }
+</style>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9661407658009326"></script>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/></noscript><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Skip the Surprise",
+  "url": "https://skipthesurprise.com",
+  "logo": "https://skipthesurprise.com/logo-small.png",
+  "description": "Free cost calculators and financial guides for freelancers, gig workers, and self-employed people."
+}</script><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Skip the Surprise",
+  "url": "https://skipthesurprise.com",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://skipthesurprise.com/?s={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}</script></head>
 <body>
-
-  <!-- NAV -->
-  <nav class="nav" role="navigation" aria-label="Main navigation">
-    <div class="nav-inner">
-      <a href="/" class="nav-brand"><img src="/logo-header.png" alt="Skip the Surprise" style="height:75px;"></a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="/calculators/">Calculators</a></li>
-        <li><a href="/blog/">Blog</a></li>
-        <li><a href="/calculators/" class="nav-cta">Browse All</a></li>
-      </ul>
-      <button class="nav-mobile-toggle" aria-label="Toggle menu" onclick="document.getElementById('navLinks').classList.toggle('open')">
-        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
-        </svg>
-      </button>
-    </div>
-  </nav>
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-badge">
-        <div class="hero-badge-dot"></div>
+<!-- NAV -->
+<nav aria-label="Main navigation" class="nav" role="navigation">
+<div class="nav-inner">
+<a class="nav-brand" href="/"><img alt="Skip the Surprise - Free Cost Calculators" src="/logo-small.png" class="site-logo"/></a>
+<ul class="nav-links" id="navLinks">
+<li><a href="/calculators/">Calculators</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a class="nav-cta" href="/calculators/">Browse All</a></li>
+</ul>
+<button aria-label="Toggle menu" class="nav-mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">
+<svg fill="none" height="22" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="22">
+<line x1="3" x2="21" y1="6" y2="6"></line><line x1="3" x2="21" y1="12" y2="12"></line><line x1="3" x2="21" y1="18" y2="18"></line>
+</svg>
+</button>
+</div>
+</nav>
+<!-- HERO -->
+<section class="hero">
+<div class="hero-inner">
+<div class="hero-badge">
+<div class="hero-badge-dot"></div>
         The internet's most honest cost calculators
       </div>
-      <h1>The real cost of <em>everything</em>,<br>calculated.</h1>
-      <p class="hero-sub">
+<h1>The real cost of <em>everything</em>,<br/>calculated.</h1>
+<p class="hero-sub">
         Free, private calculators with no signup required. Built for Canada and the US.
         Your data never leaves your browser.
       </p>
-      <div class="hero-actions">
-        <a href="#categories" class="btn-primary">
+<div class="hero-actions">
+<a class="btn-primary" href="#categories">
           Browse Calculators
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-        <a href="#live-calculators" class="btn-secondary-hero">
+          <svg fill="none" height="16" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="16"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+</a>
+<a class="btn-secondary-hero" href="#live-calculators">
           Live Now
-          <span style="font-size:0.9em;">&#8599;</span>
-        </a>
-      </div>
-      <div class="hero-stats">
-        <div class="hero-stat">
-          <div class="hero-stat-num">5</div>
-          <div class="hero-stat-label">Live calculators</div>
-        </div>
-        <div class="hero-stat-divider"></div>
-        <div class="hero-stat">
-          <div class="hero-stat-num">180+</div>
-          <div class="hero-stat-label">Coming soon</div>
-        </div>
-        <div class="hero-stat-divider"></div>
-        <div class="hero-stat">
-          <div class="hero-stat-num">12</div>
-          <div class="hero-stat-label">Categories</div>
-        </div>
-        <div class="hero-stat-divider"></div>
-        <div class="hero-stat">
-          <div class="hero-stat-num">$0</div>
-          <div class="hero-stat-label">Forever free</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="ad-container" style="text-align:center;margin:24px auto;max-width:728px;min-height:90px;"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9661407658009326" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
-
-  <!-- ABOUT (LLM-FRIENDLY SEMANTIC DESCRIPTION) -->
-  <section class="about-section" aria-label="About Skip the Surprise">
-    <div class="about-inner">
-      <p class="about-text">
-        <strong>Skip the Surprise</strong> is a free calculator platform built for people making real financial decisions in Canada and the United States. Every calculator is completely private — your numbers never leave your browser, no account is required, and there is no paywall. The goal is honest cost information: what things actually cost, not best-case estimates that leave you unprepared.
+          <span style="font-size:0.9em;">↗</span>
+</a>
+</div>
+<div class="hero-stats">
+<div class="hero-stat">
+<div class="hero-stat-num">5</div>
+<div class="hero-stat-label">Live calculators</div>
+</div>
+<div class="hero-stat-divider"></div>
+<div class="hero-stat">
+<div class="hero-stat-num">180+</div>
+<div class="hero-stat-label">Coming soon</div>
+</div>
+<div class="hero-stat-divider"></div>
+<div class="hero-stat">
+<div class="hero-stat-num">12</div>
+<div class="hero-stat-label">Categories</div>
+</div>
+<div class="hero-stat-divider"></div>
+<div class="hero-stat">
+<div class="hero-stat-num">$0</div>
+<div class="hero-stat-label">Forever free</div>
+</div>
+</div>
+</div>
+</section>
+<div class="ad-container" style="text-align:center;margin:24px auto;max-width:728px;min-height:90px;"><ins class="adsbygoogle" data-ad-client="ca-pub-9661407658009326" data-ad-format="auto" data-ad-slot="auto" data-full-width-responsive="true" style="display:block"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+<!-- ABOUT (LLM-FRIENDLY SEMANTIC DESCRIPTION) -->
+<section aria-label="About Skip the Surprise" class="about-section">
+<div class="about-inner">
+<p class="about-text">
+<strong>Skip the Surprise</strong> is a free calculator platform built for people making real financial decisions in Canada and the United States. Every calculator is completely private — your numbers never leave your browser, no account is required, and there is no paywall. The goal is honest cost information: what things actually cost, not best-case estimates that leave you unprepared.
       </p>
-      <div class="about-facts">
-        <div class="about-fact"><span class="about-fact-num">$14,910&ndash;$36,210</span><span class="about-fact-label">Lifetime dog ownership cost (USD)</span></div>
-        <div class="about-fact"><span class="about-fact-num">$219/mo</span><span class="about-fact-label">What Americans actually spend on subscriptions</span></div>
-        <div class="about-fact"><span class="about-fact-num">$303,418</span><span class="about-fact-label">Cost of raising a child to 18 (USD, 2026)</span></div>
-        <div class="about-fact"><span class="about-fact-num">~$1,500/yr</span><span class="about-fact-label">US tariff impact per household (2026)</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TRENDING NOW -->
-  <section class="section">
-    <div class="section-inner">
-      <div class="section-header fade-up">
-        <div class="section-label">Trending Now</div>
-        <h2 class="section-title">What people are calculating right now</h2>
-        <p class="section-sub">Picked from Google Trends and the news cycle. These are the real costs people are suddenly asking about.</p>
-      </div>
-      <div class="trending-grid">
-        <a href="/calculators/tariff-cost/" class="trending-card fade-up stagger-1">
-          <div class="trending-card-top">
-            <div class="trending-icon" style="background:#fff5f5;">&#x1F4E6;</div>
-            <span class="trending-badge badge-fire">&#x1F525; Trending</span>
-          </div>
-          <div class="trending-card-title">Tariff Cost Calculator</div>
-          <div class="trending-card-desc">With US import tariffs hitting 10-145% on products from China, Mexico, and Canada, find out how much more you're actually paying at checkout.</div>
-          <div class="trending-card-link">Calculate now <span>&#8599;</span></div>
-        </a>
-        <div class="trending-card coming-soon fade-up stagger-2">
-          <div class="trending-card-top">
-            <div class="trending-icon" style="background:#fff1f2;">&#x1F476;</div>
-            <span class="trending-badge badge-soon">Coming Soon</span>
-          </div>
-          <div class="trending-card-title">Cost of Raising a Child Calculator</div>
-          <div class="trending-card-desc">Birth to 18. Childcare, food, clothing, activities, education -- broken down year by year for Canada and the US. Costs are up again in 2026.</div>
-          <div class="trending-card-link" style="color:var(--gray-400);">In development</div>
-        </div>
-        <a href="/calculators/pet-cost/" class="trending-card fade-up stagger-3">
-          <div class="trending-card-top">
-            <div class="trending-icon" style="background:#fffbeb;">&#x1F43E;</div>
-            <span class="trending-badge badge-rising">&#x1F4C8; Rising</span>
-          </div>
-          <div class="trending-card-title">Pet Lifetime Cost Calculator</div>
-          <div class="trending-card-desc">Vet costs are up 7.8% in 2025-26. What does a dog or cat really cost over its lifetime? Most people are shocked by the real number.</div>
-          <div class="trending-card-link">Calculate now <span>&#8599;</span></div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- LIVE CALCULATORS -->
-  <section class="section section-alt" id="live-calculators">
-    <div class="section-inner">
-      <div class="section-header fade-up">
-        <div class="section-label">Live Now</div>
-        <h2 class="section-title">Calculators you can use today</h2>
-        <p class="section-sub">These tools are built, tested, and ready. No signup, no paywall, no BS.</p>
-      </div>
-      <div class="live-grid">
-        <a href="/calculators/irregular-income-tax/" class="live-card fade-up stagger-1">
-          <div class="live-card-icon" style="background:var(--blue-50);">&#x1F4B0;</div>
-          <div class="live-card-content">
-            <div class="live-card-title">Irregular Income Tax Calculator</div>
-            <div class="live-card-desc">Self-employed, freelancer, or contractor? Know exactly what to set aside for taxes every month. Supports all Canadian provinces and US states.</div>
-            <span class="live-badge"><span class="live-dot"></span> Live</span>
-          </div>
-        </a>
-        <a href="/calculators/subscription-graveyard/" class="live-card fade-up stagger-2">
-          <div class="live-card-icon" style="background:var(--indigo-50);">&#x1F480;</div>
-          <div class="live-card-content">
-            <div class="live-card-title">Subscription Graveyard</div>
-            <div class="live-card-desc">Add up every subscription you're paying for -- streaming, software, fitness, food boxes. Most people discover $200-$400/month in forgotten charges.</div>
-            <span class="live-badge"><span class="live-dot"></span> Live</span>
-          </div>
-        </a>
-        <a href="/calculators/tariff-cost/" class="live-card fade-up stagger-3">
-          <div class="live-card-icon" style="background:#fff5f5;">&#x1F4E6;</div>
-          <div class="live-card-content">
-            <div class="live-card-title">Tariff Cost Calculator</div>
-            <div class="live-card-desc">See how 2025-26 US import tariffs affect the real price of electronics, clothing, appliances, and more. Updated for the latest tariff schedule.</div>
-            <span class="live-badge"><span class="live-dot"></span> Live</span>
-          </div>
-        </a>
-        <a href="/calculators/pet-cost/" class="live-card fade-up stagger-4">
-          <div class="live-card-icon" style="background:var(--amber-50);">&#x1F43E;</div>
-          <div class="live-card-content">
-            <div class="live-card-title">Pet Lifetime Cost Calculator</div>
-            <div class="live-card-desc">Dog, cat, rabbit, or bird -- get a realistic 10-15 year cost estimate including food, vet bills, grooming, boarding, and supplies.</div>
-            <span class="live-badge"><span class="live-dot"></span> Live</span>
-          </div>
-        </a>
-        <a href="/calculators/food-budget/" class="live-card fade-up stagger-5">
-          <div class="live-card-icon" style="background:var(--orange-50);">&#x1F6D2;</div>
-          <div class="live-card-content">
-            <div class="live-card-title">Food Budget Planner</div>
-            <div class="live-card-desc">Build a realistic grocery budget for your household size. Compare against Canada and US averages, and find where your food spending is leaking.</div>
-            <span class="live-badge"><span class="live-dot"></span> Live</span>
-          </div>
-        </a>
-      </div>
-      <a href="/calculators/" class="view-all-link fade-up">View all calculators <span class="arrow-right">&#8594;</span></a>
-    </div>
-  </section>
-
-  <!-- CATEGORIES -->
-  <div class="ad-container" style="text-align:center;margin:24px auto;max-width:728px;min-height:90px;"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9661407658009326" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
-
-  <section class="section" id="categories">
-    <div class="section-inner">
-      <div class="section-header fade-up">
-        <div class="section-label">All Categories</div>
-        <h2 class="section-title">Every real cost, organized</h2>
-        <p class="section-sub">10+ categories. 180+ calculators coming. Use what exists now, bookmark what's coming.</p>
-      </div>
-      <div class="categories-grid">
-        <a href="/calculators/?category=finance" class="category-card cat-finance fade-up stagger-1">
-          <div class="cat-icon">&#x1F4B8;</div>
-          <div class="cat-name">Financial &amp; Self-Employed</div>
-          <div class="cat-count">25 tools &mdash; 2 live</div>
-        </a>
-        <a href="/calculators/?category=pets" class="category-card cat-pets fade-up stagger-2">
-          <div class="cat-icon">&#x1F43E;</div>
-          <div class="cat-name">Pets &amp; Animals</div>
-          <div class="cat-count">23 tools &mdash; 1 live</div>
-        </a>
-        <a href="/calculators/?category=kids" class="category-card cat-kids fade-up stagger-3">
-          <div class="cat-icon">&#x1F476;</div>
-          <div class="cat-name">Kids &amp; Family</div>
-          <div class="cat-count">19 tools &mdash; coming soon</div>
-        </a>
-        <a href="/calculators/?category=housing" class="category-card cat-housing fade-up stagger-4">
-          <div class="cat-icon">&#x1F3E0;</div>
-          <div class="cat-name">Housing &amp; Rent</div>
-          <div class="cat-count">19 tools &mdash; coming soon</div>
-        </a>
-        <a href="/calculators/food-budget/" class="category-card cat-food fade-up stagger-5">
-          <div class="cat-icon">&#x1F6D2;</div>
-          <div class="cat-name">Food &amp; Grocery</div>
-          <div class="cat-count">19 tools &mdash; 1 live</div>
-        </a>
-        <a href="/calculators/?category=vehicle" class="category-card cat-vehicle fade-up stagger-6">
-          <div class="cat-icon">&#x1F697;</div>
-          <div class="cat-name">Vehicle &amp; Transport</div>
-          <div class="cat-count">18 tools &mdash; coming soon</div>
-        </a>
-        <a href="/calculators/?category=health" class="category-card cat-health fade-up stagger-1">
-          <div class="cat-icon">&#x1FA7A;</div>
-          <div class="cat-name">Health &amp; Medical</div>
-          <div class="cat-count">18 tools &mdash; coming soon</div>
-        </a>
-        <a href="/calculators/subscription-graveyard/" class="category-card cat-subscriptions fade-up stagger-2">
-          <div class="cat-icon">&#x1F4F1;</div>
-          <div class="cat-name">Subscriptions</div>
-          <div class="cat-count">17 tools &mdash; 1 live</div>
-        </a>
-        <a href="/calculators/tariff-cost/" class="category-card cat-tariffs fade-up stagger-3">
-          <div class="cat-icon">&#x1F4E6;</div>
-          <div class="cat-name">Tariffs &amp; Import</div>
-          <div class="cat-count">16 tools &mdash; 1 live</div>
-        </a>
-        <a href="/calculators/?category=education" class="category-card cat-education fade-up stagger-4">
-          <div class="cat-icon">&#x1F393;</div>
-          <div class="cat-name">Education</div>
-          <div class="cat-count">5 tools &mdash; coming soon</div>
-        </a>
-        <a href="/calculators/?category=events" class="category-card cat-events fade-up stagger-5">
-          <div class="cat-icon">&#x1F48D;</div>
-          <div class="cat-name">Weddings &amp; Events</div>
-          <div class="cat-count">4 tools &mdash; coming soon</div>
-        </a>
-        <a href="/calculators/?category=debt" class="category-card cat-debt fade-up stagger-6">
-          <div class="cat-icon">&#x1F4CA;</div>
-          <div class="cat-name">Debt &amp; Money Habits</div>
-          <div class="cat-count">6 tools &mdash; coming soon</div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHY SKIP THE SURPRISE -->
-  <section class="section section-alt">
-    <div class="section-inner">
-      <div class="section-header fade-up">
-        <div class="section-label">Why Us</div>
-        <h2 class="section-title">Why Skip the Surprise</h2>
-        <p class="section-sub">We built the calculators we couldn't find anywhere else.</p>
-      </div>
-      <div class="why-grid">
-        <div class="why-card fade-up stagger-1">
-          <div class="why-icon">&#x1F4CA;</div>
-          <div class="why-title">Real data, not guesswork</div>
-          <div class="why-desc">Every figure comes from government sources, industry research, or actuarial data. We cite our sources so you can check our math.</div>
-        </div>
-        <div class="why-card fade-up stagger-2">
-          <div class="why-icon">&#x1F1E8;&#x1F1E6;&#x1F1FA;&#x1F1F8;</div>
-          <div class="why-title">Works for Canada and the US</div>
-          <div class="why-desc">Tax rates, cost-of-living benchmarks, and local averages for both countries. Select your province or state and get the right numbers.</div>
-        </div>
-        <div class="why-card fade-up stagger-3">
-          <div class="why-icon">&#x1F513;</div>
-          <div class="why-title">Free forever, no signup</div>
-          <div class="why-desc">No freemium wall. No email capture. No "unlock results" BS. Every calculator, every result, completely free.</div>
-        </div>
-        <div class="why-card fade-up stagger-4">
-          <div class="why-icon">&#x1F510;</div>
-          <div class="why-title">Your data never leaves your browser</div>
-          <div class="why-desc">All calculations happen locally in your browser. We don't see your numbers. We can't. There's no server receiving them.</div>
-        </div>
-        <div class="why-card fade-up stagger-5">
-          <div class="why-icon">&#x1F5D3;&#xFE0F;</div>
-          <div class="why-title">Updated for 2026</div>
-          <div class="why-desc">Tax brackets, vet cost benchmarks, tariff schedules, grocery averages -- all reviewed and updated at the start of each year.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SEO CONTENT -->
-  <section class="section">
-    <div class="section-inner">
-      <div class="section-header fade-up">
-        <div class="section-label">Real Cost Answers</div>
-        <h2 class="section-title">What does it really cost?</h2>
-        <p class="section-sub">Honest answers to the questions people actually Google. With calculators to back them up.</p>
-      </div>
-      <div class="seo-grid">
-        <div class="seo-card fade-up stagger-1">
-          <div class="seo-card-q">How much does a dog really cost?</div>
-          <div class="seo-card-a">
+<div class="about-facts">
+<div class="about-fact"><span class="about-fact-num">$14,910–$36,210</span><span class="about-fact-label">Lifetime dog ownership cost (USD)</span></div>
+<div class="about-fact"><span class="about-fact-num">$219/mo</span><span class="about-fact-label">What Americans actually spend on subscriptions</span></div>
+<div class="about-fact"><span class="about-fact-num">$303,418</span><span class="about-fact-label">Cost of raising a child to 18 (USD, 2026)</span></div>
+<div class="about-fact"><span class="about-fact-num">~$1,500/yr</span><span class="about-fact-label">US tariff impact per household (2026)</span></div>
+</div>
+</div>
+</section>
+<!-- TRENDING NOW -->
+<section class="section">
+<div class="section-inner">
+<div class="section-header fade-up">
+<div class="section-label">Trending Now</div>
+<h2 class="section-title">What people are calculating right now</h2>
+<p class="section-sub">Picked from Google Trends and the news cycle. These are the real costs people are suddenly asking about.</p>
+</div>
+<div class="trending-grid">
+<a class="trending-card fade-up stagger-1" href="/calculators/tariff-cost/">
+<div class="trending-card-top">
+<div class="trending-icon" style="background:#fff5f5;">📦</div>
+<span class="trending-badge badge-fire">🔥 Trending</span>
+</div>
+<div class="trending-card-title">Tariff Cost Calculator</div>
+<div class="trending-card-desc">With US import tariffs hitting 10-145% on products from China, Mexico, and Canada, find out how much more you're actually paying at checkout.</div>
+<div class="trending-card-link">Calculate now <span>↗</span></div>
+</a>
+<div class="trending-card coming-soon fade-up stagger-2">
+<div class="trending-card-top">
+<div class="trending-icon" style="background:#fff1f2;">👶</div>
+<span class="trending-badge badge-soon">Coming Soon</span>
+</div>
+<div class="trending-card-title">Cost of Raising a Child Calculator</div>
+<div class="trending-card-desc">Birth to 18. Childcare, food, clothing, activities, education -- broken down year by year for Canada and the US. Costs are up again in 2026.</div>
+<div class="trending-card-link" style="color:var(--gray-400);">In development</div>
+</div>
+<a class="trending-card fade-up stagger-3" href="/calculators/pet-cost/">
+<div class="trending-card-top">
+<div class="trending-icon" style="background:#fffbeb;">🐾</div>
+<span class="trending-badge badge-rising">📈 Rising</span>
+</div>
+<div class="trending-card-title">Pet Lifetime Cost Calculator</div>
+<div class="trending-card-desc">Vet costs are up 7.8% in 2025-26. What does a dog or cat really cost over its lifetime? Most people are shocked by the real number.</div>
+<div class="trending-card-link">Calculate now <span>↗</span></div>
+</a>
+</div>
+</div>
+</section>
+<!-- LIVE CALCULATORS -->
+<section class="section section-alt" id="live-calculators">
+<div class="section-inner">
+<div class="section-header fade-up">
+<div class="section-label">Live Now</div>
+<h2 class="section-title">Calculators you can use today</h2>
+<p class="section-sub">These tools are built, tested, and ready. No signup, no paywall, no BS.</p>
+</div>
+<div class="live-grid">
+<a class="live-card fade-up stagger-1" href="/">
+<div class="live-card-icon" style="background:var(--blue-50);">💰</div>
+<div class="live-card-content">
+<div class="live-card-title">Irregular Income Tax Calculator</div>
+<div class="live-card-desc">Self-employed, freelancer, or contractor? Know exactly what to set aside for taxes every month. Supports all Canadian provinces and US states.</div>
+<span class="live-badge"><span class="live-dot"></span> Live</span>
+</div>
+</a>
+<a class="live-card fade-up stagger-2" href="/calculators/subscription-graveyard/">
+<div class="live-card-icon" style="background:var(--indigo-50);">💀</div>
+<div class="live-card-content">
+<div class="live-card-title">Subscription Graveyard</div>
+<div class="live-card-desc">Add up every subscription you're paying for -- streaming, software, fitness, food boxes. Most people discover $200-$400/month in forgotten charges.</div>
+<span class="live-badge"><span class="live-dot"></span> Live</span>
+</div>
+</a>
+<a class="live-card fade-up stagger-3" href="/calculators/tariff-cost/">
+<div class="live-card-icon" style="background:#fff5f5;">📦</div>
+<div class="live-card-content">
+<div class="live-card-title">Tariff Cost Calculator</div>
+<div class="live-card-desc">See how 2025-26 US import tariffs affect the real price of electronics, clothing, appliances, and more. Updated for the latest tariff schedule.</div>
+<span class="live-badge"><span class="live-dot"></span> Live</span>
+</div>
+</a>
+<a class="live-card fade-up stagger-4" href="/calculators/pet-cost/">
+<div class="live-card-icon" style="background:var(--amber-50);">🐾</div>
+<div class="live-card-content">
+<div class="live-card-title">Pet Lifetime Cost Calculator</div>
+<div class="live-card-desc">Dog, cat, rabbit, or bird -- get a realistic 10-15 year cost estimate including food, vet bills, grooming, boarding, and supplies.</div>
+<span class="live-badge"><span class="live-dot"></span> Live</span>
+</div>
+</a>
+<a class="live-card fade-up stagger-5" href="/calculators/food-budget/">
+<div class="live-card-icon" style="background:var(--orange-50);">🛒</div>
+<div class="live-card-content">
+<div class="live-card-title">Food Budget Planner</div>
+<div class="live-card-desc">Build a realistic grocery budget for your household size. Compare against Canada and US averages, and find where your food spending is leaking.</div>
+<span class="live-badge"><span class="live-dot"></span> Live</span>
+</div>
+</a>
+</div>
+<a class="view-all-link fade-up" href="/calculators/">View all calculators <span class="arrow-right">→</span></a>
+</div>
+</section>
+<!-- CATEGORIES -->
+<div class="ad-container" style="text-align:center;margin:24px auto;max-width:728px;min-height:90px;"><ins class="adsbygoogle" data-ad-client="ca-pub-9661407658009326" data-ad-format="auto" data-ad-slot="auto" data-full-width-responsive="true" style="display:block"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+<section class="section" id="categories">
+<div class="section-inner">
+<div class="section-header fade-up">
+<div class="section-label">All Categories</div>
+<h2 class="section-title">Every real cost, organized</h2>
+<p class="section-sub">10+ categories. 180+ calculators coming. Use what exists now, bookmark what's coming.</p>
+</div>
+<div class="categories-grid">
+<a class="category-card cat-finance fade-up stagger-1" href="/calculators/?category=finance">
+<div class="cat-icon">💸</div>
+<div class="cat-name">Financial &amp; Self-Employed</div>
+<div class="cat-count">25 tools — 2 live</div>
+</a>
+<a class="category-card cat-pets fade-up stagger-2" href="/calculators/?category=pets">
+<div class="cat-icon">🐾</div>
+<div class="cat-name">Pets &amp; Animals</div>
+<div class="cat-count">23 tools — 1 live</div>
+</a>
+<a class="category-card cat-kids fade-up stagger-3" href="/calculators/?category=kids">
+<div class="cat-icon">👶</div>
+<div class="cat-name">Kids &amp; Family</div>
+<div class="cat-count">19 tools — coming soon</div>
+</a>
+<a class="category-card cat-housing fade-up stagger-4" href="/calculators/?category=housing">
+<div class="cat-icon">🏠</div>
+<div class="cat-name">Housing &amp; Rent</div>
+<div class="cat-count">19 tools — coming soon</div>
+</a>
+<a class="category-card cat-food fade-up stagger-5" href="/calculators/food-budget/">
+<div class="cat-icon">🛒</div>
+<div class="cat-name">Food &amp; Grocery</div>
+<div class="cat-count">19 tools — 1 live</div>
+</a>
+<a class="category-card cat-vehicle fade-up stagger-6" href="/calculators/?category=vehicle">
+<div class="cat-icon">🚗</div>
+<div class="cat-name">Vehicle &amp; Transport</div>
+<div class="cat-count">18 tools — coming soon</div>
+</a>
+<a class="category-card cat-health fade-up stagger-1" href="/calculators/?category=health">
+<div class="cat-icon">🩺</div>
+<div class="cat-name">Health &amp; Medical</div>
+<div class="cat-count">18 tools — coming soon</div>
+</a>
+<a class="category-card cat-subscriptions fade-up stagger-2" href="/calculators/subscription-graveyard/">
+<div class="cat-icon">📱</div>
+<div class="cat-name">Subscriptions</div>
+<div class="cat-count">17 tools — 1 live</div>
+</a>
+<a class="category-card cat-tariffs fade-up stagger-3" href="/calculators/tariff-cost/">
+<div class="cat-icon">📦</div>
+<div class="cat-name">Tariffs &amp; Import</div>
+<div class="cat-count">16 tools — 1 live</div>
+</a>
+<a class="category-card cat-education fade-up stagger-4" href="/calculators/?category=education">
+<div class="cat-icon">🎓</div>
+<div class="cat-name">Education</div>
+<div class="cat-count">5 tools — coming soon</div>
+</a>
+<a class="category-card cat-events fade-up stagger-5" href="/calculators/?category=events">
+<div class="cat-icon">💍</div>
+<div class="cat-name">Weddings &amp; Events</div>
+<div class="cat-count">4 tools — coming soon</div>
+</a>
+<a class="category-card cat-debt fade-up stagger-6" href="/calculators/?category=debt">
+<div class="cat-icon">📊</div>
+<div class="cat-name">Debt &amp; Money Habits</div>
+<div class="cat-count">6 tools — coming soon</div>
+</a>
+</div>
+</div>
+</section>
+<!-- WHY SKIP THE SURPRISE -->
+<section class="section section-alt">
+<div class="section-inner">
+<div class="section-header fade-up">
+<div class="section-label">Why Us</div>
+<h2 class="section-title">Why Skip the Surprise</h2>
+<p class="section-sub">We built the calculators we couldn't find anywhere else.</p>
+</div>
+<div class="why-grid">
+<div class="why-card fade-up stagger-1">
+<div class="why-icon">📊</div>
+<div class="why-title">Real data, not guesswork</div>
+<div class="why-desc">Every figure comes from government sources, industry research, or actuarial data. We cite our sources so you can check our math.</div>
+</div>
+<div class="why-card fade-up stagger-2">
+<div class="why-icon">🇨🇦🇺🇸</div>
+<div class="why-title">Works for Canada and the US</div>
+<div class="why-desc">Tax rates, cost-of-living benchmarks, and local averages for both countries. Select your province or state and get the right numbers.</div>
+</div>
+<div class="why-card fade-up stagger-3">
+<div class="why-icon">🔓</div>
+<div class="why-title">Free forever, no signup</div>
+<div class="why-desc">No freemium wall. No email capture. No "unlock results" BS. Every calculator, every result, completely free.</div>
+</div>
+<div class="why-card fade-up stagger-4">
+<div class="why-icon">🔐</div>
+<div class="why-title">Your data never leaves your browser</div>
+<div class="why-desc">All calculations happen locally in your browser. We don't see your numbers. We can't. There's no server receiving them.</div>
+</div>
+<div class="why-card fade-up stagger-5">
+<div class="why-icon">🗓️</div>
+<div class="why-title">Updated for 2026</div>
+<div class="why-desc">Tax brackets, vet cost benchmarks, tariff schedules, grocery averages -- all reviewed and updated at the start of each year.</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SEO CONTENT -->
+<section class="section">
+<div class="section-inner">
+<div class="section-header fade-up">
+<div class="section-label">Real Cost Answers</div>
+<h2 class="section-title">What does it really cost?</h2>
+<p class="section-sub">Honest answers to the questions people actually Google. With calculators to back them up.</p>
+</div>
+<div class="seo-grid">
+<div class="seo-card fade-up stagger-1">
+<div class="seo-card-q">How much does a dog really cost?</div>
+<div class="seo-card-a">
             The real lifetime cost of owning a dog is typically $20,000 to $55,000 -- sometimes more. That's food, vet care including emergencies, grooming, training, boarding, toys, and supplies over 10-15 years. Vet costs alone have risen 7.8% year-over-year. Most people budget for food and forget everything else. Use the Pet Lifetime Cost Calculator to get your real number before you commit.
           </div>
-          <a href="/calculators/pet-cost/" class="seo-card-link">Calculate dog ownership cost <span>&#8594;</span></a>
-        </div>
-        <div class="seo-card fade-up stagger-2">
-          <div class="seo-card-q">How much does it cost to raise a child?</div>
-          <div class="seo-card-a">
+<a class="seo-card-link" href="/calculators/pet-cost/">Calculate dog ownership cost <span>→</span></a>
+</div>
+<div class="seo-card fade-up stagger-2">
+<div class="seo-card-q">How much does it cost to raise a child?</div>
+<div class="seo-card-a">
             Government data puts the cost at $250,000 to $350,000+ from birth to age 18 in Canada and the US. That's childcare ($15,000-$25,000/year in major cities), food, clothing, activities, school supplies, and healthcare -- before post-secondary. The number spikes in the toddler years and again at 14-17. A year-by-year breakdown makes it easier to plan.
           </div>
-          <a href="/calculators/" class="seo-card-link">Child cost calculator coming soon <span>&#8594;</span></a>
-        </div>
-        <div class="seo-card fade-up stagger-3">
-          <div class="seo-card-q">How much are you really paying for subscriptions?</div>
-          <div class="seo-card-a">
+<a class="seo-card-link" href="/calculators/">Child cost calculator coming soon <span>→</span></a>
+</div>
+<div class="seo-card fade-up stagger-3">
+<div class="seo-card-q">How much are you really paying for subscriptions?</div>
+<div class="seo-card-a">
             The average household has 12-15 active subscriptions and underestimates the total by 40%. Netflix, Spotify, iCloud, Adobe, gym, news sites, food boxes, parking apps -- they add up fast. Most people who run the Subscription Graveyard calculator find $200-$400/month they forgot about.
           </div>
-          <a href="/calculators/subscription-graveyard/" class="seo-card-link">Calculate your subscription cost <span>&#8594;</span></a>
-        </div>
-        <div class="seo-card fade-up stagger-4">
-          <div class="seo-card-q">How much do tariffs add to the price of goods?</div>
-          <div class="seo-card-a">
+<a class="seo-card-link" href="/calculators/subscription-graveyard/">Calculate your subscription cost <span>→</span></a>
+</div>
+<div class="seo-card fade-up stagger-4">
+<div class="seo-card-q">How much do tariffs add to the price of goods?</div>
+<div class="seo-card-a">
             With 2025-26 US tariffs ranging from 10% to 145% depending on the product and country of origin, a $500 appliance made in China can land at $600-$900 after tariffs work through the supply chain. The effects hit electronics, clothing, furniture, and appliances hardest. The Tariff Cost Calculator shows you the estimated real price by category.
           </div>
-          <a href="/calculators/tariff-cost/" class="seo-card-link">Calculate tariff impact <span>&#8594;</span></a>
-        </div>
-        <div class="seo-card fade-up stagger-5">
-          <div class="seo-card-q">How much should I save for taxes if I'm self-employed?</div>
-          <div class="seo-card-a">
+<a class="seo-card-link" href="/calculators/tariff-cost/">Calculate tariff impact <span>→</span></a>
+</div>
+<div class="seo-card fade-up stagger-5">
+<div class="seo-card-q">How much should I save for taxes if I'm self-employed?</div>
+<div class="seo-card-a">
             The standard advice is 25-30% of net profit, but that range is too wide to be useful. The right number depends on your income bracket, province or state, business expenses, and whether you have other income. The Irregular Income Tax Calculator calculates your exact monthly tax set-aside based on your real numbers.
           </div>
-          <a href="/calculators/irregular-income-tax/" class="seo-card-link">Calculate your tax set-aside <span>&#8594;</span></a>
-        </div>
-        <div class="seo-card fade-up stagger-6">
-          <div class="seo-card-q">What does a home really cost per year?</div>
-          <div class="seo-card-a">
+<a class="seo-card-link" href="/">Calculate your tax set-aside <span>→</span></a>
+</div>
+<div class="seo-card fade-up stagger-6">
+<div class="seo-card-q">What does a home really cost per year?</div>
+<div class="seo-card-a">
             Beyond the mortgage, homeowners routinely underestimate property taxes (averaging $3,000-$8,000/year in major Canadian and US cities), maintenance (1-3% of home value/year), insurance, and utilities. On a $600,000 home, the true annual cost of ownership beyond the mortgage payment is often $15,000-$25,000. A housing cost calculator is in development.
           </div>
-          <a href="/calculators/" class="seo-card-link">Browse all calculators <span>&#8594;</span></a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="section section-alt">
-    <div class="section-inner">
-      <div class="section-header fade-up">
-        <div class="section-label">FAQ</div>
-        <h2 class="section-title">Common questions</h2>
-      </div>
-      <div class="faq-list fade-up">
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+<a class="seo-card-link" href="/calculators/">Browse all calculators <span>→</span></a>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ -->
+<section class="section section-alt">
+<div class="section-inner">
+<div class="section-header fade-up">
+<div class="section-label">FAQ</div>
+<h2 class="section-title">Common questions</h2>
+</div>
+<div class="faq-list fade-up">
+<div class="faq-item">
+<button aria-expanded="false" class="faq-question" onclick="toggleFaq(this)">
             Are these calculators really free?
-            <svg class="faq-chevron" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
-          </button>
-          <div class="faq-answer">Yes. Every calculator on Skip the Surprise is completely free with no signup required. We don't ask for your email, show a paywall, or limit your usage. The goal is simple: give people honest cost information before they make a decision they can't reverse.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+            <svg class="faq-chevron" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg>
+</button>
+<div class="faq-answer">Yes. Every calculator on Skip the Surprise is completely free with no signup required. We don't ask for your email, show a paywall, or limit your usage. The goal is simple: give people honest cost information before they make a decision they can't reverse.</div>
+</div>
+<div class="faq-item">
+<button aria-expanded="false" class="faq-question" onclick="toggleFaq(this)">
             Do these calculators work for both Canada and the US?
-            <svg class="faq-chevron" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
-          </button>
-          <div class="faq-answer">Yes. All calculators support both Canadian and US figures. Tax calculators use CRA rates for Canada and IRS rates for the US. Cost benchmarks use regional data where available so you're not getting a number from somewhere that doesn't apply to you.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+            <svg class="faq-chevron" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg>
+</button>
+<div class="faq-answer">Yes. All calculators support both Canadian and US figures. Tax calculators use CRA rates for Canada and IRS rates for the US. Cost benchmarks use regional data where available so you're not getting a number from somewhere that doesn't apply to you.</div>
+</div>
+<div class="faq-item">
+<button aria-expanded="false" class="faq-question" onclick="toggleFaq(this)">
             Is my data private? Do you store what I enter?
-            <svg class="faq-chevron" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
-          </button>
-          <div class="faq-answer">Completely private. Every calculator runs entirely in your browser. Nothing you enter is ever sent to a server. No account needed. Your numbers never leave your device -- not because we promise that, but because the architecture makes it impossible.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+            <svg class="faq-chevron" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg>
+</button>
+<div class="faq-answer">Completely private. Every calculator runs entirely in your browser. Nothing you enter is ever sent to a server. No account needed. Your numbers never leave your device -- not because we promise that, but because the architecture makes it impossible.</div>
+</div>
+<div class="faq-item">
+<button aria-expanded="false" class="faq-question" onclick="toggleFaq(this)">
             How often are the numbers updated?
-            <svg class="faq-chevron" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
-          </button>
-          <div class="faq-answer">Tax brackets and government-sourced figures are reviewed annually. The tariff calculator is updated when major policy changes occur. Vet cost and grocery benchmarks use rolling 12-month averages. Every calculator has a "last updated" date so you know when you're looking at fresh data.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+            <svg class="faq-chevron" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg>
+</button>
+<div class="faq-answer">Tax brackets and government-sourced figures are reviewed annually. The tariff calculator is updated when major policy changes occur. Vet cost and grocery benchmarks use rolling 12-month averages. Every calculator has a "last updated" date so you know when you're looking at fresh data.</div>
+</div>
+<div class="faq-item">
+<button aria-expanded="false" class="faq-question" onclick="toggleFaq(this)">
             Can I suggest a calculator?
-            <svg class="faq-chevron" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
-          </button>
-          <div class="faq-answer">Yes. If there's a real cost people are guessing at and getting wrong, that's exactly what belongs here. The pipeline is 180+ tools across 12 categories. If you want to suggest something, send a note to the address in the footer.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+            <svg class="faq-chevron" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg>
+</button>
+<div class="faq-answer">Yes. If there's a real cost people are guessing at and getting wrong, that's exactly what belongs here. The pipeline is 180+ tools across 12 categories. If you want to suggest something, send a note to the address in the footer.</div>
+</div>
+<div class="faq-item">
+<button aria-expanded="false" class="faq-question" onclick="toggleFaq(this)">
             Are these calculators accurate for financial decisions?
-            <svg class="faq-chevron" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
-          </button>
-          <div class="faq-answer">These calculators give you honest estimates based on real data -- not averages that understate the truth. They're designed for planning and awareness, not as professional financial advice. For major decisions, use these as a starting point and verify with a financial professional who knows your full situation.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- BLOG PREVIEW -->
-  <section class="section">
-    <div class="section-inner">
-      <div class="section-header fade-up">
-        <div class="section-label">From the Blog</div>
-        <h2 class="section-title">The math behind the money</h2>
-        <p class="section-sub">Longer reads on the real costs people underestimate -- with the numbers to back it up.</p>
-      </div>
-      <div class="blog-grid">
-        <a href="/blog/how-to-budget-irregular-income/" class="blog-card fade-up stagger-1">
-          <div class="blog-card-tag">Budgeting</div>
-          <div class="blog-card-title">How to Budget When Your Income Changes Every Month</div>
-          <div class="blog-card-desc">The worst-month method. Why most freelancers overbuild their budget in good months and scramble when it slows down -- and how to fix it.</div>
-          <div class="blog-card-meta">8 min read</div>
-        </a>
-        <a href="/blog/freelancer-tax-deductions-guide/" class="blog-card fade-up stagger-2">
-          <div class="blog-card-tag">Taxes</div>
-          <div class="blog-card-title">The Self-Employed Tax Deductions Most People Miss</div>
-          <div class="blog-card-desc">Home office, vehicle mileage, professional development, equipment -- a practical list of what you can legitimately claim in Canada and the US.</div>
-          <div class="blog-card-meta">11 min read</div>
-        </a>
-        <a href="/blog/worst-month-budgeting-method/" class="blog-card fade-up stagger-3">
-          <div class="blog-card-tag">Strategy</div>
-          <div class="blog-card-title">The Worst-Month Budgeting Method Explained</div>
-          <div class="blog-card-desc">Set your fixed cost budget based on your lowest-income month. If it holds up then, it holds up all year. Here's how to find that number.</div>
-          <div class="blog-card-meta">6 min read</div>
-        </a>
-      </div>
-      <a href="/blog/" class="view-all-link fade-up">View all posts <span class="arrow-right">&#8594;</span></a>
-    </div>
-  </section>
-
-  <!-- SOURCES -->
-  <section class="section lp-sources-section" aria-label="Data sources">
-    <div class="section-inner">
-      <div class="section-header fade-up">
-        <div class="section-label">Our Data</div>
-        <h2 class="section-title">Where the numbers come from</h2>
-        <p class="section-sub">Every calculator on Skip the Surprise is built from published, verifiable sources. No made-up averages. No outdated guesses.</p>
-      </div>
-      <div class="lp-sources-grid fade-up">
-        <div class="lp-source-item">
-          <div class="lp-source-name">CVMA &amp; AVMA</div>
-          <div class="lp-source-desc">Canadian and American veterinary associations — annual pet cost surveys, veterinary pricing benchmarks</div>
-        </div>
-        <div class="lp-source-item">
-          <div class="lp-source-name">CRA &amp; IRS</div>
-          <div class="lp-source-desc">Canada Revenue Agency and IRS — current tax brackets, self-employment tax rates, CPP contribution rules</div>
-        </div>
-        <div class="lp-source-item">
-          <div class="lp-source-name">Statistics Canada &amp; BLS</div>
-          <div class="lp-source-desc">Statistics Canada and the US Bureau of Labor Statistics — regional cost of living, food CPI, veterinary services inflation</div>
-        </div>
-        <div class="lp-source-item">
-          <div class="lp-source-name">Trupanion &amp; OFA</div>
-          <div class="lp-source-desc">Breed-specific pet insurance claims data and Orthopedic Foundation for Animals health prevalence rates</div>
-        </div>
-        <div class="lp-source-item">
-          <div class="lp-source-name">APPA &amp; AKC</div>
-          <div class="lp-source-desc">American Pet Products Association annual expenditure report and American Kennel Club breed health standards</div>
-        </div>
-        <div class="lp-source-item">
-          <div class="lp-source-name">USITC &amp; CBSA</div>
-          <div class="lp-source-desc">US International Trade Commission and Canada Border Services Agency — tariff schedules and import duty rates</div>
-        </div>
-        <div class="lp-source-item">
-          <div class="lp-source-name">LendingTree &amp; C+R Research</div>
-          <div class="lp-source-desc">Cost of raising a child studies and subscription spending behavioral research</div>
-        </div>
-        <div class="lp-source-item">
-          <div class="lp-source-name">USDA ERS</div>
-          <div class="lp-source-desc">US Department of Agriculture Economic Research Service — household food expenditure plans and grocery cost benchmarks</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <div class="ad-container" style="text-align:center;margin:24px auto;max-width:728px;min-height:90px;"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9661407658009326" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
-
-  <footer class="footer">
-    <div class="footer-inner">
-      <div class="footer-top">
-        <div>
-          <div class="footer-brand-name">Skip the Surprise</div>
-          <div class="footer-brand-desc">The internet's most honest cost calculators. Free, private, no signup. Built for Canada and the US.</div>
-          <div class="footer-privacy-note">
-            <span class="footer-privacy-icon">&#x1F512;</span>
+            <svg class="faq-chevron" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg>
+</button>
+<div class="faq-answer">These calculators give you honest estimates based on real data -- not averages that understate the truth. They're designed for planning and awareness, not as professional financial advice. For major decisions, use these as a starting point and verify with a financial professional who knows your full situation.</div>
+</div>
+</div>
+</div>
+</section>
+<!-- BLOG PREVIEW -->
+<section class="section">
+<div class="section-inner">
+<div class="section-header fade-up">
+<div class="section-label">From the Blog</div>
+<h2 class="section-title">The math behind the money</h2>
+<p class="section-sub">Longer reads on the real costs people underestimate -- with the numbers to back it up.</p>
+</div>
+<div class="blog-grid">
+<a class="blog-card fade-up stagger-1" href="/blog/how-to-budget-irregular-income/">
+<div class="blog-card-tag">Budgeting</div>
+<div class="blog-card-title">How to Budget When Your Income Changes Every Month</div>
+<div class="blog-card-desc">The worst-month method. Why most freelancers overbuild their budget in good months and scramble when it slows down -- and how to fix it.</div>
+<div class="blog-card-meta">8 min read</div>
+</a>
+<a class="blog-card fade-up stagger-2" href="/blog/freelancer-tax-deductions-guide/">
+<div class="blog-card-tag">Taxes</div>
+<div class="blog-card-title">The Self-Employed Tax Deductions Most People Miss</div>
+<div class="blog-card-desc">Home office, vehicle mileage, professional development, equipment -- a practical list of what you can legitimately claim in Canada and the US.</div>
+<div class="blog-card-meta">11 min read</div>
+</a>
+<a class="blog-card fade-up stagger-3" href="/blog/worst-month-budgeting-method/">
+<div class="blog-card-tag">Strategy</div>
+<div class="blog-card-title">The Worst-Month Budgeting Method Explained</div>
+<div class="blog-card-desc">Set your fixed cost budget based on your lowest-income month. If it holds up then, it holds up all year. Here's how to find that number.</div>
+<div class="blog-card-meta">6 min read</div>
+</a>
+</div>
+<a class="view-all-link fade-up" href="/blog/">View all posts <span class="arrow-right">→</span></a>
+</div>
+</section>
+<!-- SOURCES -->
+<section aria-label="Data sources" class="section lp-sources-section">
+<div class="section-inner">
+<div class="section-header fade-up">
+<div class="section-label">Our Data</div>
+<h2 class="section-title">Where the numbers come from</h2>
+<p class="section-sub">Every calculator on Skip the Surprise is built from published, verifiable sources. No made-up averages. No outdated guesses.</p>
+</div>
+<div class="lp-sources-grid fade-up">
+<div class="lp-source-item">
+<div class="lp-source-name">CVMA &amp; AVMA</div>
+<div class="lp-source-desc">Canadian and American veterinary associations — annual pet cost surveys, veterinary pricing benchmarks</div>
+</div>
+<div class="lp-source-item">
+<div class="lp-source-name">CRA &amp; IRS</div>
+<div class="lp-source-desc">Canada Revenue Agency and IRS — current tax brackets, self-employment tax rates, CPP contribution rules</div>
+</div>
+<div class="lp-source-item">
+<div class="lp-source-name">Statistics Canada &amp; BLS</div>
+<div class="lp-source-desc">Statistics Canada and the US Bureau of Labor Statistics — regional cost of living, food CPI, veterinary services inflation</div>
+</div>
+<div class="lp-source-item">
+<div class="lp-source-name">Trupanion &amp; OFA</div>
+<div class="lp-source-desc">Breed-specific pet insurance claims data and Orthopedic Foundation for Animals health prevalence rates</div>
+</div>
+<div class="lp-source-item">
+<div class="lp-source-name">APPA &amp; AKC</div>
+<div class="lp-source-desc">American Pet Products Association annual expenditure report and American Kennel Club breed health standards</div>
+</div>
+<div class="lp-source-item">
+<div class="lp-source-name">USITC &amp; CBSA</div>
+<div class="lp-source-desc">US International Trade Commission and Canada Border Services Agency — tariff schedules and import duty rates</div>
+</div>
+<div class="lp-source-item">
+<div class="lp-source-name">LendingTree &amp; C+R Research</div>
+<div class="lp-source-desc">Cost of raising a child studies and subscription spending behavioral research</div>
+</div>
+<div class="lp-source-item">
+<div class="lp-source-name">USDA ERS</div>
+<div class="lp-source-desc">US Department of Agriculture Economic Research Service — household food expenditure plans and grocery cost benchmarks</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FOOTER -->
+<div class="ad-container" style="text-align:center;margin:24px auto;max-width:728px;min-height:90px;"><ins class="adsbygoogle" data-ad-client="ca-pub-9661407658009326" data-ad-format="auto" data-ad-slot="auto" data-full-width-responsive="true" style="display:block"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+<footer class="footer">
+<div class="footer-inner">
+<div class="footer-top">
+<div>
+<div class="footer-brand-name">Skip the Surprise</div>
+<div class="footer-brand-desc">The internet's most honest cost calculators. Free, private, no signup. Built for Canada and the US.</div>
+<div class="footer-privacy-note">
+<span class="footer-privacy-icon">🔒</span>
             Your data never leaves your browser
           </div>
-        </div>
-        <div class="footer-links-grid">
-          <div>
-            <div class="footer-links-title">Calculators</div>
-            <ul class="footer-links-list">
-              <li><a href="/calculators/irregular-income-tax/">Irregular Income Tax</a></li>
-              <li><a href="/calculators/subscription-graveyard/">Subscription Graveyard</a></li>
-              <li><a href="/calculators/tariff-cost/">Tariff Cost</a></li>
-              <li><a href="/calculators/pet-cost/">Pet Lifetime Cost</a></li>
-              <li><a href="/calculators/food-budget/">Food Budget Planner</a></li>
-              <li><a href="/calculators/">All Calculators</a></li>
-            </ul>
-          </div>
-          <div>
-            <div class="footer-links-title">Categories</div>
-            <ul class="footer-links-list">
-              <li><a href="/calculators/?category=finance">Financial &amp; Self-Employed</a></li>
-              <li><a href="/calculators/?category=pets">Pets &amp; Animals</a></li>
-              <li><a href="/calculators/?category=kids">Kids &amp; Family</a></li>
-              <li><a href="/calculators/?category=housing">Housing &amp; Rent</a></li>
-              <li><a href="/calculators/?category=vehicle">Vehicle &amp; Transport</a></li>
-              <li><a href="/calculators/?category=tariffs">Tariffs &amp; Import</a></li>
-            </ul>
-          </div>
-          <div>
-            <div class="footer-links-title">More Categories</div>
-            <ul class="footer-links-list">
-              <li><a href="/calculators/?category=health">Health &amp; Medical</a></li>
-              <li><a href="/calculators/?category=subscriptions">Subscriptions</a></li>
-              <li><a href="/calculators/?category=food">Food &amp; Grocery</a></li>
-              <li><a href="/calculators/?category=education">Education</a></li>
-              <li><a href="/calculators/?category=events">Weddings &amp; Events</a></li>
-              <li><a href="/calculators/?category=debt">Debt &amp; Money</a></li>
-            </ul>
-          </div>
-          <div>
-            <div class="footer-links-title">Site</div>
-            <ul class="footer-links-list">
-              <li><a href="/blog/">Blog</a></li>
-              <li><a href="/calculators/">Browse All</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>&#169; 2026 Skip the Surprise. Free cost calculators for Canada and the US.</span>
-        <span>No data collected. No account required. Ever.</span>
-      </div>
-    </div>
-  </footer>
-
-  <script>
+</div>
+<div class="footer-links-grid">
+<div>
+<div class="footer-links-title">Calculators</div>
+<ul class="footer-links-list">
+<li><a href="/">Irregular Income Tax</a></li>
+<li><a href="/calculators/subscription-graveyard/">Subscription Graveyard</a></li>
+<li><a href="/calculators/tariff-cost/">Tariff Cost</a></li>
+<li><a href="/calculators/pet-cost/">Pet Lifetime Cost</a></li>
+<li><a href="/calculators/food-budget/">Food Budget Planner</a></li>
+<li><a href="/calculators/">All Calculators</a></li>
+</ul>
+</div>
+<div>
+<div class="footer-links-title">Categories</div>
+<ul class="footer-links-list">
+<li><a href="/calculators/?category=finance">Financial &amp; Self-Employed</a></li>
+<li><a href="/calculators/?category=pets">Pets &amp; Animals</a></li>
+<li><a href="/calculators/?category=kids">Kids &amp; Family</a></li>
+<li><a href="/calculators/?category=housing">Housing &amp; Rent</a></li>
+<li><a href="/calculators/?category=vehicle">Vehicle &amp; Transport</a></li>
+<li><a href="/calculators/?category=tariffs">Tariffs &amp; Import</a></li>
+</ul>
+</div>
+<div>
+<div class="footer-links-title">More Categories</div>
+<ul class="footer-links-list">
+<li><a href="/calculators/?category=health">Health &amp; Medical</a></li>
+<li><a href="/calculators/?category=subscriptions">Subscriptions</a></li>
+<li><a href="/calculators/?category=food">Food &amp; Grocery</a></li>
+<li><a href="/calculators/?category=education">Education</a></li>
+<li><a href="/calculators/?category=events">Weddings &amp; Events</a></li>
+<li><a href="/calculators/?category=debt">Debt &amp; Money</a></li>
+</ul>
+</div>
+<div>
+<div class="footer-links-title">Site</div>
+<ul class="footer-links-list">
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/calculators/">Browse All</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© 2026 Skip the Surprise. Free cost calculators for Canada and the US.</span>
+<span>No data collected. No account required. Ever.</span>
+</div>
+</div>
+</footer>
+<script>
     // Scroll animation observer
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {

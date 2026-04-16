@@ -1,23 +1,22 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blog &mdash; Skip the Surprise</title>
-  <meta name="description" content="Practical tax and money guides for freelancers, contractors, and self-employed workers. Know what to set aside, how to plan for slow months, and how to stop stressing about tax season." />
-  <meta name="robots" content="index, follow" />
-  <meta property="og:title" content="Blog &mdash; Skip the Surprise" />
-  <meta property="og:description" content="Practical tax and money guides for freelancers, contractors, and self-employed workers." />
-  <meta property="og:type" content="website" />
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Blog — Skip the Surprise</title>
+<meta content="Guides on budgeting, taxes, and finances for freelancers, gig workers, and self-employed people." name="description"/>
+<meta content="index, follow" name="robots"/>
+<meta content="Blog — Skip the Surprise" property="og:title"/>
+<meta content="Guides on budgeting, taxes, and finances for freelancers, gig workers, and self-employed people." property="og:description"/>
+<meta content="website" property="og:type"/>
+<link href="/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
+<style>
     *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
@@ -442,547 +441,623 @@
       .nav-hamburger { display: flex; flex-direction: column; align-items: center; justify-content: center; }
       .blog-grid { grid-template-columns: 1fr; }
     }
-  </style>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9661407658009326" crossorigin="anonymous"></script>
-</head>
+  
+    .breadcrumb {
+      font-size: 0.8rem;
+      color: #888;
+      margin-bottom: 0.75rem;
+    }
+    .breadcrumb a {
+      color: #888;
+      text-decoration: none;
+    }
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+    .breadcrumb span.sep {
+      margin: 0 0.35em;
+    }
+    .related-calculators, .blog-cta, .calculator-cta, .hub-crosslink {
+      max-width: 1100px;
+      margin: 2rem auto 0;
+      padding: 1.25rem 1.5rem;
+      border: 1px solid var(--gray-200, #e5e7eb);
+      border-radius: 16px;
+      background: var(--gray-50, #f9fafb);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .related-calculators h2, .calculator-cta h2 {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+    .related-calculators ul {
+      margin: 0.75rem 0 0;
+      padding-left: 1.25rem;
+    }
+    .related-calculators li + li {
+      margin-top: 0.5rem;
+    }
+    .blog-cta p, .calculator-cta p, .hub-crosslink p {
+      margin: 0;
+    }
+    .cta-button {
+      display: inline-block;
+      margin-top: 0.9rem;
+      padding: 0.75rem 1.1rem;
+      border-radius: 10px;
+      background: var(--blue-600, #2563eb);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+
+    .nav-brand {
+      display: inline-flex;
+      align-items: center;
+      flex: 0 1 auto;
+      min-width: 0;
+      max-width: 100%;
+    }
+
+    .nav-brand img,
+    .nav-logo img {
+      display: block;
+      width: auto;
+      height: auto;
+      max-height: 44px;
+      max-width: min(100%, 44px);
+      object-fit: contain;
+    }
+
+    .nav-inner {
+      min-height: 88px;
+      height: auto;
+      padding: 8px 0;
+    }
+
+    .ad-container {
+      min-height: 0 !important;
+      overflow: hidden;
+    }
+
+    @media (max-width: 720px) {
+      .nav {
+        padding: 0 1rem;
+      }
+
+      .nav-inner {
+        min-height: 96px;
+        height: auto;
+        gap: 0.75rem;
+        align-items: center;
+      }
+
+      .nav-brand img,
+      .nav-logo img {
+        max-height: 40px;
+        max-width: min(100%, 40px);
+      }
+
+      .nav-brand {
+        flex: 0 0 auto;
+      }
+
+      .nav-hamburger {
+        flex-shrink: 0;
+      }
+
+      .nav-cta {
+        flex-shrink: 0;
+      }
+
+      .nav-mobile-toggle {
+        flex: 0 0 auto;
+        margin-left: auto;
+      }
+
+      .ad-container,
+      .adsbygoogle,
+      .adsbygoogle-noablate {
+        display: none !important;
+        min-height: 0 !important;
+        height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+    }
+</style>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9661407658009326"></script>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/></noscript><link href="https://skipthesurprise.com/blog" rel="canonical"><meta content="https://skipthesurprise.com/logo-small.png" property="og:image"/><meta content="https://skipthesurprise.com/blog" property="og:url"/></link></head>
 <body>
-
-  <!-- NAV -->
-  <nav class="nav" aria-label="Site navigation" style="position:relative;">
-    <div class="nav-inner">
-      <a href="/" class="nav-brand"><img src="/logo-header.png" alt="Skip the Surprise" style="height:75px;"></a>
-      <div class="nav-links">
-        <a href="/" class="nav-link">Calculator</a>
-        <a href="/calculators/" class="nav-link">Calculators</a>
-        <a href="/blog/" class="nav-link active">Blog</a>
-      </div>
-      <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile-menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </button>
-      <a href="/" class="nav-cta">Try the Calculator</a>
-    </div>
-    <div class="nav-dropdown" id="nav-mobile-menu" role="menu">
-      <a href="/" class="nav-link" role="menuitem">Calculator</a>
-      <a href="/calculators/" class="nav-link" role="menuitem">Calculators</a>
-      <a href="/blog/" class="nav-link" role="menuitem">Blog</a>
-    </div>
-  </nav>
-
-  <!-- HERO -->
-  <section class="blog-hero">
-    <div class="blog-hero-eyebrow">Freelance Finance</div>
-    <h1>Tax and Money Guides for Self-Employed Workers</h1>
-    <p>No fluff. Practical advice on what to set aside, how to plan for slow months, and how to stop dreading tax season.</p>
-  </section>
-
-  <!-- TAX PLANNING & COMPLIANCE -->
-  <section class="blog-section">
-    <div class="container">
-      <div class="section-label">Tax Planning &amp; Compliance</div>
-      <h2 class="section-title">Taxes for Self-Employed Workers</h2>
-      <p class="section-sub">What you actually owe, when to pay it, and how to keep more of what you earn.</p>
-
-      <div class="blog-grid">
-
-        <div class="blog-card">
-          <div class="blog-card-meta">
-            <span class="blog-card-tag">Tax Planning</span>
-            <span>April 10, 2026</span>
-            <span>8 min read</span>
-          </div>
-          <h2>How Much Should I Set Aside for Taxes if I'm Self-Employed?</h2>
-          <p class="blog-card-excerpt">The 25-30% rule is a starting point, not the answer. Here's how to calculate your actual tax set-aside based on income, province or state, and real deductions so you're never caught short at filing time.</p>
-          <a href="/blog/how-much-set-aside-taxes-self-employed/" class="blog-card-link">
+<!-- NAV -->
+<nav aria-label="Site navigation" class="nav" style="position:relative;">
+<div class="nav-inner">
+<a class="nav-brand" href="/"><img alt="Skip the Surprise - Free Cost Calculators" src="/logo-small.png" class="site-logo"/></a>
+<div class="nav-links">
+<a class="nav-link" href="/">Calculator</a>
+<a class="nav-link" href="/calculators/">Calculators</a>
+<a class="nav-link active" href="/blog/">Blog</a>
+</div>
+<button aria-controls="nav-mobile-menu" aria-expanded="false" aria-label="Open menu" class="nav-hamburger">
+<span class="bar"></span>
+<span class="bar"></span>
+<span class="bar"></span>
+</button>
+<a class="nav-cta" href="/">Try the Calculator</a>
+</div>
+<div class="nav-dropdown" id="nav-mobile-menu" role="menu">
+<a class="nav-link" href="/" role="menuitem">Calculator</a>
+<a class="nav-link" href="/calculators/" role="menuitem">Calculators</a>
+<a class="nav-link" href="/blog/" role="menuitem">Blog</a>
+</div>
+</nav>
+<!-- HERO -->
+<section class="blog-hero">
+<div class="blog-hero-eyebrow">Freelance Finance</div>
+<h1>Tax and Money Guides for Self-Employed Workers</h1>
+<p>No fluff. Practical advice on what to set aside, how to plan for slow months, and how to stop dreading tax season.</p>
+</section>
+<!-- TAX PLANNING & COMPLIANCE -->
+<section class="blog-section">
+<div class="container">
+<div class="section-label">Tax Planning &amp; Compliance</div>
+<h2 class="section-title">Taxes for Self-Employed Workers</h2>
+<p class="section-sub">What you actually owe, when to pay it, and how to keep more of what you earn.</p>
+<div class="blog-grid">
+<div class="blog-card">
+<div class="blog-card-meta">
+<span class="blog-card-tag">Tax Planning</span>
+<span>April 10, 2026</span>
+<span>8 min read</span>
+</div>
+<h2>How Much Should I Set Aside for Taxes if I'm Self-Employed?</h2>
+<p class="blog-card-excerpt">The 25-30% rule is a starting point, not the answer. Here's how to calculate your actual tax set-aside based on income, province or state, and real deductions so you're never caught short at filing time.</p>
+<a class="blog-card-link" href="/blog/how-much-set-aside-taxes-self-employed/">
             Read article
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </a>
-        </div>
-
-        <div class="blog-card">
-          <div class="blog-card-meta">
-            <span class="blog-card-tag">Tax Planning</span>
-            <span>April 10, 2026</span>
-            <span>8 min read</span>
-          </div>
-          <h2>Self-Employment Tax Rate Explained: The 15.3% You Need to Know About</h2>
-          <p class="blog-card-excerpt">The 15.3% self-employment tax catches most freelancers off guard. Here's exactly how SE tax works, how to calculate it, and what you can do to reduce what you owe.</p>
-          <a href="/blog/self-employment-tax-rate-explained/" class="blog-card-link">
+            <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"></path></svg>
+</a>
+</div>
+<div class="blog-card">
+<div class="blog-card-meta">
+<span class="blog-card-tag">Tax Planning</span>
+<span>April 10, 2026</span>
+<span>8 min read</span>
+</div>
+<h2>Self-Employment Tax Rate Explained: The 15.3% You Need to Know About</h2>
+<p class="blog-card-excerpt">The 15.3% self-employment tax catches most freelancers off guard. Here's exactly how SE tax works, how to calculate it, and what you can do to reduce what you owe.</p>
+<a class="blog-card-link" href="/blog/self-employment-tax-rate-explained/">
             Read article
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </a>
-        </div>
-
-        <div class="blog-card">
-          <div class="blog-card-meta">
-            <span class="blog-card-tag">Tax Planning</span>
-            <span>April 10, 2026</span>
-            <span>10 min read</span>
-          </div>
-          <h2>Quarterly Estimated Tax Payments: A Complete Guide for Self-Employed Workers</h2>
-          <p class="blog-card-excerpt">Who needs to pay quarterly estimated taxes, IRS and CRA deadlines, how to calculate your quarterly amounts, and what happens if you underpay. A practical guide for freelancers and self-employed workers.</p>
-          <a href="/blog/quarterly-estimated-tax-payments-guide/" class="blog-card-link">
+            <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"></path></svg>
+</a>
+</div>
+<div class="blog-card">
+<div class="blog-card-meta">
+<span class="blog-card-tag">Tax Planning</span>
+<span>April 10, 2026</span>
+<span>10 min read</span>
+</div>
+<h2>Quarterly Estimated Tax Payments: A Complete Guide for Self-Employed Workers</h2>
+<p class="blog-card-excerpt">Who needs to pay quarterly estimated taxes, IRS and CRA deadlines, how to calculate your quarterly amounts, and what happens if you underpay. A practical guide for freelancers and self-employed workers.</p>
+<a class="blog-card-link" href="/blog/quarterly-estimated-tax-payments-guide/">
             Read article
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </a>
-        </div>
-
-        <div class="blog-card">
-          <div class="blog-card-meta">
-            <span class="blog-card-tag">Tax Deductions</span>
-            <span>April 10, 2026</span>
-            <span>9 min read</span>
-          </div>
-          <h2>Top Tax Deductions Every Freelancer Should Know About</h2>
-          <p class="blog-card-excerpt">Home office, mileage, equipment, software, health insurance, retirement, professional development, meals, internet, and phone. The full freelancer tax deductions guide with what actually qualifies.</p>
-          <a href="/blog/freelancer-tax-deductions-guide/" class="blog-card-link">
+            <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"></path></svg>
+</a>
+</div>
+<div class="blog-card">
+<div class="blog-card-meta">
+<span class="blog-card-tag">Tax Deductions</span>
+<span>April 10, 2026</span>
+<span>9 min read</span>
+</div>
+<h2>Top Tax Deductions Every Freelancer Should Know About</h2>
+<p class="blog-card-excerpt">Home office, mileage, equipment, software, health insurance, retirement, professional development, meals, internet, and phone. The full freelancer tax deductions guide with what actually qualifies.</p>
+<a class="blog-card-link" href="/blog/freelancer-tax-deductions-guide/">
             Read article
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </a>
-        </div>
-
-        <div class="blog-card">
-          <div class="blog-card-meta">
-            <span class="blog-card-tag">Tax Planning</span>
-            <span>April 10, 2026</span>
-            <span>9 min read</span>
-          </div>
-          <h2>10 Tax Mistakes Freelancers Make (And How to Avoid Them)</h2>
-          <p class="blog-card-excerpt">From skipping quarterly payments to missing deductions, these are the most common freelancer tax mistakes and exactly how to fix each one before it costs you.</p>
-          <a href="/blog/freelancer-tax-mistakes/" class="blog-card-link">
+            <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"></path></svg>
+</a>
+</div>
+<div class="blog-card">
+<div class="blog-card-meta">
+<span class="blog-card-tag">Tax Planning</span>
+<span>April 10, 2026</span>
+<span>9 min read</span>
+</div>
+<h2>10 Tax Mistakes Freelancers Make (And How to Avoid Them)</h2>
+<p class="blog-card-excerpt">From skipping quarterly payments to missing deductions, these are the most common freelancer tax mistakes and exactly how to fix each one before it costs you.</p>
+<a class="blog-card-link" href="/blog/freelancer-tax-mistakes/">
             Read article
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </a>
-        </div>
-
-        <div class="blog-card">
-          <div class="blog-card-meta">
-            <span class="blog-card-tag">Tax Deductions</span>
-            <span>April 10, 2026</span>
-            <span>11 min read</span>
-          </div>
-          <h2>Tracking Mileage for Tax Deductions: A Complete Guide for Self-Employed Workers</h2>
-          <p class="blog-card-excerpt">How to track mileage for self-employed tax deductions in the US and Canada. IRS standard mileage rate, CRA rates, what qualifies, and the best methods to log business trips.</p>
-          <a href="/blog/tracking-mileage-self-employed/" class="blog-card-link">
+            <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"></path></svg>
+</a>
+</div>
+<div class="blog-card">
+<div class="blog-card-meta">
+<span class="blog-card-tag">Tax Deductions</span>
+<span>April 10, 2026</span>
+<span>11 min read</span>
+</div>
+<h2>Tracking Mileage for Tax Deductions: A Complete Guide for Self-Employed Workers</h2>
+<p class="blog-card-excerpt">How to track mileage for self-employed tax deductions in the US and Canada. IRS standard mileage rate, CRA rates, what qualifies, and the best methods to log business trips.</p>
+<a class="blog-card-link" href="/blog/tracking-mileage-self-employed/">
             Read article
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </a>
-        </div>
-
-        <div class="blog-card">
-          <div class="blog-card-meta">
-            <span class="blog-card-tag">Tax Planning</span>
-            <span>April 10, 2026</span>
-            <span>11 min read</span>
-          </div>
-          <h2>Managing Taxes with Multiple Income Streams: A Freelancer's Guide</h2>
-          <p class="blog-card-excerpt">How to track, report, and plan taxes when you have multiple income streams, multiple clients, or a mix of freelance and employment income. Practical guidance for freelancers in Canada and the US.</p>
-          <a href="/blog/multiple-income-streams-tax-guide/" class="blog-card-link">
+            <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"></path></svg>
+</a>
+</div>
+<div class="blog-card">
+<div class="blog-card-meta">
+<span class="blog-card-tag">Tax Planning</span>
+<span>April 10, 2026</span>
+<span>11 min read</span>
+</div>
+<h2>Managing Taxes with Multiple Income Streams: A Freelancer's Guide</h2>
+<p class="blog-card-excerpt">How to track, report, and plan taxes when you have multiple income streams, multiple clients, or a mix of freelance and employment income. Practical guidance for freelancers in Canada and the US.</p>
+<a class="blog-card-link" href="/blog/multiple-income-streams-tax-guide/">
             Read article
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </a>
-        </div>
-
-        <div class="blog-card">
-          <div class="blog-card-meta">
-            <span class="blog-card-tag">Tax Planning</span>
-            <span>April 10, 2026</span>
-            <span>12 min read</span>
-          </div>
-          <h2>Tax Planning for Seasonal Businesses: How to Manage Taxes When Revenue Is Concentrated</h2>
-          <p class="blog-card-excerpt">How seasonal businesses and workers manage concentrated revenue for tax purposes: cash flow planning, installment strategies, income smoothing, and avoiding underpayment penalties.</p>
-          <a href="/blog/seasonal-business-tax-planning/" class="blog-card-link">
+            <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"></path></svg>
+</a>
+</div>
+<div class="blog-card">
+<div class="blog-card-meta">
+<span class="blog-card-tag">Tax Planning</span>
+<span>April 10, 2026</span>
+<span>12 min read</span>
+</div>
+<h2>Tax Planning for Seasonal Businesses: How to Manage Taxes When Revenue Is Concentrated</h2>
+<p class="blog-card-excerpt">How seasonal businesses and workers manage concentrated revenue for tax purposes: cash flow planning, installment strategies, income smoothing, and avoiding underpayment penalties.</p>
+<a class="blog-card-link" href="/blog/seasonal-business-tax-planning/">
             Read article
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </a>
-        </div>
-
-        <div class="blog-card">
-          <div class="blog-card-meta">
-            <span class="blog-card-tag">Tax Planning</span>
-            <span>April 10, 2026</span>
-            <span>9 min read</span>
-          </div>
-          <h2>Year-End Tax Checklist for Self-Employed Workers</h2>
-          <p class="blog-card-excerpt">A practical year-end tax checklist for freelancers and self-employed workers. Cover your income, deductions, retirement contributions, and tax payments before the calendar flips.</p>
-          <a href="/blog/year-end-tax-checklist-self-employed/" class="blog-card-link">
+            <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"></path></svg>
+</a>
+</div>
+<div class="blog-card">
+<div class="blog-card-meta">
+<span class="blog-card-tag">Tax Planning</span>
+<span>April 10, 2026</span>
+<span>9 min read</span>
+</div>
+<h2>Year-End Tax Checklist for Self-Employed Workers</h2>
+<p class="blog-card-excerpt">A practical year-end tax checklist for freelancers and self-employed workers. Cover your income, deductions, retirement contributions, and tax payments before the calendar flips.</p>
+<a class="blog-card-link" href="/blog/year-end-tax-checklist-self-employed/">
             Read article
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </a>
-        </div>
-
-        <div class="blog-card">
-          <div class="blog-card-meta">
-            <span class="blog-card-tag">Canada</span>
-            <span>April 10, 2026</span>
-            <span>9 min read</span>
-          </div>
-          <h2>Self-Employed Tax Calculator for Canadians: Federal and Provincial Rates Explained</h2>
-          <p class="blog-card-excerpt">Understand CPP contributions, federal tax brackets, Ontario/BC/Alberta provincial rates, GST/HST obligations, and CRA quarterly instalments as a Canadian self-employed worker.</p>
-          <a href="/blog/self-employed-tax-calculator-canada/" class="blog-card-link">
+            <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"></path></svg>
+</a>
+</div>
+<div class="blog-card">
+<div class="blog-card-meta">
+<span class="blog-card-tag">Canada</span>
+<span>April 10, 2026</span>
+<span>9 min read</span>
+</div>
+<h2>Self-Employed Tax Calculator for Canadians: Federal and Provincial Rates Explained</h2>
+<p class="blog-card-excerpt">Understand CPP contributions, federal tax brackets, Ontario/BC/Alberta provincial rates, GST/HST obligations, and CRA quarterly instalments as a Canadian self-employed worker.</p>
+<a class="blog-card-link" href="/blog/self-employed-tax-calculator-canada/">
             Read article
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- BUDGETING & CASH FLOW -->
-  <section class="blog-section">
-    <div class="container">
-      <div class="section-label">Budgeting &amp; Cash Flow</div>
-      <h2 class="section-title">Managing Money on Variable Income</h2>
-      <p class="section-sub">Systems that hold up when income swings month to month.</p>
-
-      <div class="blog-grid">
-
-        <div class="blog-card">
-          <div class="blog-card-meta">
-            <span class="blog-card-tag">Budgeting</span>
-            <span>April 10, 2026</span>
-            <span>8 min read</span>
-          </div>
-          <h2>How to Budget with Irregular Income: A Practical Guide</h2>
-          <p class="blog-card-excerpt">Traditional budgets break for freelancers and self-employed workers. Learn the worst-month method, zero-based budgeting for variable income, priority tiers, and how to build a real income buffer.</p>
-          <a href="/blog/how-to-budget-irregular-income/" class="blog-card-link">
+            <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- BUDGETING & CASH FLOW -->
+<section class="blog-section">
+<div class="container">
+<div class="section-label">Budgeting &amp; Cash Flow</div>
+<h2 class="section-title">Managing Money on Variable Income</h2>
+<p class="section-sub">Systems that hold up when income swings month to month.</p>
+<div class="blog-grid">
+<div class="blog-card">
+<div class="blog-card-meta">
+<span class="blog-card-tag">Budgeting</span>
+<span>April 10, 2026</span>
+<span>8 min read</span>
+</div>
+<h2>How to Budget with Irregular Income: A Practical Guide</h2>
+<p class="blog-card-excerpt">Traditional budgets break for freelancers and self-employed workers. Learn the worst-month method, zero-based budgeting for variable income, priority tiers, and how to build a real income buffer.</p>
+<a class="blog-card-link" href="/blog/how-to-budget-irregular-income/">
             Read article
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </a>
-        </div>
-
-        <div class="blog-card">
-          <div class="blog-card-meta">
-            <span class="blog-card-tag">Budgeting</span>
-            <span>April 10, 2026</span>
-            <span>9 min read</span>
-          </div>
-          <h2>The Worst-Month Budgeting Method: Why You Should Budget From Your Lowest Month</h2>
-          <p class="blog-card-excerpt">Stop budgeting from your average or best month. Here's how the worst-month budgeting method works, how to calculate your safe spending number, and what to do with the surplus in good months.</p>
-          <a href="/blog/worst-month-budgeting-method/" class="blog-card-link">
+            <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"></path></svg>
+</a>
+</div>
+<div class="blog-card">
+<div class="blog-card-meta">
+<span class="blog-card-tag">Budgeting</span>
+<span>April 10, 2026</span>
+<span>9 min read</span>
+</div>
+<h2>The Worst-Month Budgeting Method: Why You Should Budget From Your Lowest Month</h2>
+<p class="blog-card-excerpt">Stop budgeting from your average or best month. Here's how the worst-month budgeting method works, how to calculate your safe spending number, and what to do with the surplus in good months.</p>
+<a class="blog-card-link" href="/blog/worst-month-budgeting-method/">
             Read article
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </a>
-        </div>
-
-        <div class="blog-card">
-          <div class="blog-card-meta">
-            <span class="blog-card-tag">Emergency Fund</span>
-            <span>April 10, 2026</span>
-            <span>8 min read</span>
-          </div>
-          <h2>How to Build an Emergency Fund on Irregular Income</h2>
-          <p class="blog-card-excerpt">Freelancers and self-employed workers need larger emergency funds and different contribution strategies. Here's how to build yours when income varies month to month.</p>
-          <a href="/blog/emergency-fund-irregular-income/" class="blog-card-link">
+            <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"></path></svg>
+</a>
+</div>
+<div class="blog-card">
+<div class="blog-card-meta">
+<span class="blog-card-tag">Emergency Fund</span>
+<span>April 10, 2026</span>
+<span>8 min read</span>
+</div>
+<h2>How to Build an Emergency Fund on Irregular Income</h2>
+<p class="blog-card-excerpt">Freelancers and self-employed workers need larger emergency funds and different contribution strategies. Here's how to build yours when income varies month to month.</p>
+<a class="blog-card-link" href="/blog/emergency-fund-irregular-income/">
             Read article
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </a>
-        </div>
-
-        <div class="blog-card">
-          <div class="blog-card-meta">
-            <span class="blog-card-tag">Income Planning</span>
-            <span>April 10, 2026</span>
-            <span>9 min read</span>
-          </div>
-          <h2>Self-Employed Take-Home Pay Explained: What You Actually Keep</h2>
-          <p class="blog-card-excerpt">Gross income is not what you take home. Learn how self-employment tax, income tax, deductions, and common mistakes affect your real after-tax income as a freelancer or contractor.</p>
-          <a href="/blog/self-employed-take-home-pay-explained/" class="blog-card-link">
+            <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"></path></svg>
+</a>
+</div>
+<div class="blog-card">
+<div class="blog-card-meta">
+<span class="blog-card-tag">Income Planning</span>
+<span>April 10, 2026</span>
+<span>9 min read</span>
+</div>
+<h2>Self-Employed Take-Home Pay Explained: What You Actually Keep</h2>
+<p class="blog-card-excerpt">Gross income is not what you take home. Learn how self-employment tax, income tax, deductions, and common mistakes affect your real after-tax income as a freelancer or contractor.</p>
+<a class="blog-card-link" href="/blog/self-employed-take-home-pay-explained/">
             Read article
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </a>
-        </div>
-
-        <div class="blog-card">
-          <div class="blog-card-meta">
-            <span class="blog-card-tag">Cash Flow</span>
-            <span>April 10, 2026</span>
-            <span>10 min read</span>
-          </div>
-          <h2>Income Smoothing for Freelancers: How to Create Stability from Variable Revenue</h2>
-          <p class="blog-card-excerpt">Freelance income smoothing explained: how to build a cash flow buffer, pay yourself a stable salary, and stop living month-to-month on feast-or-famine revenue.</p>
-          <a href="/blog/freelance-income-smoothing/" class="blog-card-link">
+            <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"></path></svg>
+</a>
+</div>
+<div class="blog-card">
+<div class="blog-card-meta">
+<span class="blog-card-tag">Cash Flow</span>
+<span>April 10, 2026</span>
+<span>10 min read</span>
+</div>
+<h2>Income Smoothing for Freelancers: How to Create Stability from Variable Revenue</h2>
+<p class="blog-card-excerpt">Freelance income smoothing explained: how to build a cash flow buffer, pay yourself a stable salary, and stop living month-to-month on feast-or-famine revenue.</p>
+<a class="blog-card-link" href="/blog/freelance-income-smoothing/">
             Read article
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </a>
-        </div>
-
-        <div class="blog-card">
-          <div class="blog-card-meta">
-            <span class="blog-card-tag">Cash Flow</span>
-            <span>April 10, 2026</span>
-            <span>11 min read</span>
-          </div>
-          <h2>How Late Invoice Payments Destroy Your Cash Flow (And What to Do About It)</h2>
-          <p class="blog-card-excerpt">Freelance invoice payment delays are one of the biggest cash flow killers in self-employment. Here is how to fix your payment terms, chase overdue invoices, and stop late payments before they start.</p>
-          <a href="/blog/invoice-payment-delays-cash-flow/" class="blog-card-link">
+            <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"></path></svg>
+</a>
+</div>
+<div class="blog-card">
+<div class="blog-card-meta">
+<span class="blog-card-tag">Cash Flow</span>
+<span>April 10, 2026</span>
+<span>11 min read</span>
+</div>
+<h2>How Late Invoice Payments Destroy Your Cash Flow (And What to Do About It)</h2>
+<p class="blog-card-excerpt">Freelance invoice payment delays are one of the biggest cash flow killers in self-employment. Here is how to fix your payment terms, chase overdue invoices, and stop late payments before they start.</p>
+<a class="blog-card-link" href="/blog/invoice-payment-delays-cash-flow/">
             Read article
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </a>
-        </div>
-
-        <div class="blog-card">
-          <div class="blog-card-meta">
-            <span class="blog-card-tag">Budgeting</span>
-            <span>April 10, 2026</span>
-            <span>9 min read</span>
-          </div>
-          <h2>The Profit First Method for Freelancers: A Simple System for Variable Income</h2>
-          <p class="blog-card-excerpt">How freelancers and self-employed workers can apply the Profit First method to variable income, allocating percentages, setting up bank accounts, and actually paying yourself first.</p>
-          <a href="/blog/profit-first-method-freelancers/" class="blog-card-link">
+            <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"></path></svg>
+</a>
+</div>
+<div class="blog-card">
+<div class="blog-card-meta">
+<span class="blog-card-tag">Budgeting</span>
+<span>April 10, 2026</span>
+<span>9 min read</span>
+</div>
+<h2>The Profit First Method for Freelancers: A Simple System for Variable Income</h2>
+<p class="blog-card-excerpt">How freelancers and self-employed workers can apply the Profit First method to variable income, allocating percentages, setting up bank accounts, and actually paying yourself first.</p>
+<a class="blog-card-link" href="/blog/profit-first-method-freelancers/">
             Read article
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </a>
-        </div>
-
-        <div class="blog-card">
-          <div class="blog-card-meta">
-            <span class="blog-card-tag">Retirement</span>
-            <span>April 10, 2026</span>
-            <span>10 min read</span>
-          </div>
-          <h2>Retirement Savings for the Self-Employed: SEP-IRA, Solo 401k, and RRSP Options</h2>
-          <p class="blog-card-excerpt">A practical guide to retirement savings for freelancers and the self-employed. How SEP-IRAs, Solo 401(k)s, and RRSPs work, contribution limits, and which account fits your income situation.</p>
-          <a href="/blog/retirement-savings-self-employed/" class="blog-card-link">
+            <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"></path></svg>
+</a>
+</div>
+<div class="blog-card">
+<div class="blog-card-meta">
+<span class="blog-card-tag">Retirement</span>
+<span>April 10, 2026</span>
+<span>10 min read</span>
+</div>
+<h2>Retirement Savings for the Self-Employed: SEP-IRA, Solo 401k, and RRSP Options</h2>
+<p class="blog-card-excerpt">A practical guide to retirement savings for freelancers and the self-employed. How SEP-IRAs, Solo 401(k)s, and RRSPs work, contribution limits, and which account fits your income situation.</p>
+<a class="blog-card-link" href="/blog/retirement-savings-self-employed/">
             Read article
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- BUSINESS & CAREER -->
-  <section class="blog-section">
-    <div class="container">
-      <div class="section-label">Business &amp; Career</div>
-      <h2 class="section-title">Building a Sustainable Freelance Business</h2>
-      <p class="section-sub">Structure, systems, and strategy for the long game.</p>
-
-      <div class="blog-grid">
-
-        <div class="blog-card">
-          <div class="blog-card-meta">
-            <span class="blog-card-tag">Business Structure</span>
-            <span>April 10, 2026</span>
-            <span>12 min read</span>
-          </div>
-          <h2>Should I Incorporate as a Freelancer? Sole Proprietorship vs. LLC vs. Corporation</h2>
-          <p class="blog-card-excerpt">Sole proprietorship, LLC, and corporation compared for freelancers. When incorporation makes financial sense, what it actually costs, and how to decide what structure fits where you are now.</p>
-          <a href="/blog/should-i-incorporate-freelancer/" class="blog-card-link">
+            <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- BUSINESS & CAREER -->
+<section class="blog-section">
+<div class="container">
+<div class="section-label">Business &amp; Career</div>
+<h2 class="section-title">Building a Sustainable Freelance Business</h2>
+<p class="section-sub">Structure, systems, and strategy for the long game.</p>
+<div class="blog-grid">
+<div class="blog-card">
+<div class="blog-card-meta">
+<span class="blog-card-tag">Business Structure</span>
+<span>April 10, 2026</span>
+<span>12 min read</span>
+</div>
+<h2>Should I Incorporate as a Freelancer? Sole Proprietorship vs. LLC vs. Corporation</h2>
+<p class="blog-card-excerpt">Sole proprietorship, LLC, and corporation compared for freelancers. When incorporation makes financial sense, what it actually costs, and how to decide what structure fits where you are now.</p>
+<a class="blog-card-link" href="/blog/should-i-incorporate-freelancer/">
             Read article
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </a>
-        </div>
-
-        <div class="blog-card">
-          <div class="blog-card-meta">
-            <span class="blog-card-tag">Pricing</span>
-            <span>April 10, 2026</span>
-            <span>10 min read</span>
-          </div>
-          <h2>When and How to Raise Your Rates as a Freelancer</h2>
-          <p class="blog-card-excerpt">A practical framework for raising your freelance rates. How to know when you're undercharging, how to communicate a rate increase to existing clients, and how to price new work correctly the first time.</p>
-          <a href="/blog/raising-rates-freelancer-guide/" class="blog-card-link">
+            <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"></path></svg>
+</a>
+</div>
+<div class="blog-card">
+<div class="blog-card-meta">
+<span class="blog-card-tag">Pricing</span>
+<span>April 10, 2026</span>
+<span>10 min read</span>
+</div>
+<h2>When and How to Raise Your Rates as a Freelancer</h2>
+<p class="blog-card-excerpt">A practical framework for raising your freelance rates. How to know when you're undercharging, how to communicate a rate increase to existing clients, and how to price new work correctly the first time.</p>
+<a class="blog-card-link" href="/blog/raising-rates-freelancer-guide/">
             Read article
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </a>
-        </div>
-
-        <div class="blog-card">
-          <div class="blog-card-meta">
-            <span class="blog-card-tag">Bookkeeping</span>
-            <span>April 10, 2026</span>
-            <span>9 min read</span>
-          </div>
-          <h2>Bookkeeping Basics for Freelancers: What to Track and How to Stay Organized</h2>
-          <p class="blog-card-excerpt">A practical guide to freelancer bookkeeping: what income and expenses to track, how to separate business and personal finances, and simple systems that actually hold up.</p>
-          <a href="/blog/bookkeeping-basics-freelancers/" class="blog-card-link">
+            <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"></path></svg>
+</a>
+</div>
+<div class="blog-card">
+<div class="blog-card-meta">
+<span class="blog-card-tag">Bookkeeping</span>
+<span>April 10, 2026</span>
+<span>9 min read</span>
+</div>
+<h2>Bookkeeping Basics for Freelancers: What to Track and How to Stay Organized</h2>
+<p class="blog-card-excerpt">A practical guide to freelancer bookkeeping: what income and expenses to track, how to separate business and personal finances, and simple systems that actually hold up.</p>
+<a class="blog-card-link" href="/blog/bookkeeping-basics-freelancers/">
             Read article
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </a>
-        </div>
-
-        <div class="blog-card">
-          <div class="blog-card-meta">
-            <span class="blog-card-tag">Banking</span>
-            <span>April 10, 2026</span>
-            <span>9 min read</span>
-          </div>
-          <h2>Why Every Freelancer Needs a Separate Business Bank Account</h2>
-          <p class="blog-card-excerpt">Mixing personal and freelance money in one account is a tax nightmare waiting to happen. Here's why a separate business bank account matters and how to set one up the right way.</p>
-          <a href="/blog/separate-business-bank-account/" class="blog-card-link">
+            <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"></path></svg>
+</a>
+</div>
+<div class="blog-card">
+<div class="blog-card-meta">
+<span class="blog-card-tag">Banking</span>
+<span>April 10, 2026</span>
+<span>9 min read</span>
+</div>
+<h2>Why Every Freelancer Needs a Separate Business Bank Account</h2>
+<p class="blog-card-excerpt">Mixing personal and freelance money in one account is a tax nightmare waiting to happen. Here's why a separate business bank account matters and how to set one up the right way.</p>
+<a class="blog-card-link" href="/blog/separate-business-bank-account/">
             Read article
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </a>
-        </div>
-
-        <div class="blog-card">
-          <div class="blog-card-meta">
-            <span class="blog-card-tag">Health Insurance</span>
-            <span>April 10, 2026</span>
-            <span>10 min read</span>
-          </div>
-          <h2>Health Insurance for the Self-Employed: Your Options and Tax Benefits</h2>
-          <p class="blog-card-excerpt">A practical guide to health insurance for freelancers and independent contractors. Marketplace plans, health share programs, the self-employed health insurance deduction, and how to lower your actual cost.</p>
-          <a href="/blog/health-insurance-self-employed/" class="blog-card-link">
+            <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"></path></svg>
+</a>
+</div>
+<div class="blog-card">
+<div class="blog-card-meta">
+<span class="blog-card-tag">Health Insurance</span>
+<span>April 10, 2026</span>
+<span>10 min read</span>
+</div>
+<h2>Health Insurance for the Self-Employed: Your Options and Tax Benefits</h2>
+<p class="blog-card-excerpt">A practical guide to health insurance for freelancers and independent contractors. Marketplace plans, health share programs, the self-employed health insurance deduction, and how to lower your actual cost.</p>
+<a class="blog-card-link" href="/blog/health-insurance-self-employed/">
             Read article
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </a>
-        </div>
-
-        <div class="blog-card">
-          <div class="blog-card-meta">
-            <span class="blog-card-tag">Recession Prep</span>
-            <span>April 10, 2026</span>
-            <span>10 min read</span>
-          </div>
-          <h2>How to Recession-Proof Your Freelance Finances</h2>
-          <p class="blog-card-excerpt">Practical strategies for freelancers to protect income, build cash reserves, diversify clients, and survive an economic downturn without panic.</p>
-          <a href="/blog/freelancer-recession-proof-finances/" class="blog-card-link">
+            <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"></path></svg>
+</a>
+</div>
+<div class="blog-card">
+<div class="blog-card-meta">
+<span class="blog-card-tag">Recession Prep</span>
+<span>April 10, 2026</span>
+<span>10 min read</span>
+</div>
+<h2>How to Recession-Proof Your Freelance Finances</h2>
+<p class="blog-card-excerpt">Practical strategies for freelancers to protect income, build cash reserves, diversify clients, and survive an economic downturn without panic.</p>
+<a class="blog-card-link" href="/blog/freelancer-recession-proof-finances/">
             Read article
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- LIFE SITUATIONS -->
-  <section class="blog-section">
-    <div class="container">
-      <div class="section-label">Life Situations</div>
-      <h2 class="section-title">Guides for Your Specific Income Type</h2>
-      <p class="section-sub">Targeted advice whether you're a gig worker, creator, first-year freelancer, or someone juggling multiple income sources.</p>
-
-      <div class="blog-grid">
-
-        <div class="blog-card">
-          <div class="blog-card-meta">
-            <span class="blog-card-tag">Gig Economy</span>
-            <span>April 10, 2026</span>
-            <span>9 min read</span>
-          </div>
-          <h2>Gig Worker Tax Guide: What Uber, DoorDash, and Freelance Workers Need to Know</h2>
-          <p class="blog-card-excerpt">1099 income, self-employment tax, mileage tracking, quarterly payments, and the most common mistakes gig workers make on their taxes, explained plainly.</p>
-          <a href="/blog/gig-worker-tax-guide/" class="blog-card-link">
+            <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- LIFE SITUATIONS -->
+<section class="blog-section">
+<div class="container">
+<div class="section-label">Life Situations</div>
+<h2 class="section-title">Guides for Your Specific Income Type</h2>
+<p class="section-sub">Targeted advice whether you're a gig worker, creator, first-year freelancer, or someone juggling multiple income sources.</p>
+<div class="blog-grid">
+<div class="blog-card">
+<div class="blog-card-meta">
+<span class="blog-card-tag">Gig Economy</span>
+<span>April 10, 2026</span>
+<span>9 min read</span>
+</div>
+<h2>Gig Worker Tax Guide: What Uber, DoorDash, and Freelance Workers Need to Know</h2>
+<p class="blog-card-excerpt">1099 income, self-employment tax, mileage tracking, quarterly payments, and the most common mistakes gig workers make on their taxes, explained plainly.</p>
+<a class="blog-card-link" href="/blog/gig-worker-tax-guide/">
             Read article
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </a>
-        </div>
-
-        <div class="blog-card">
-          <div class="blog-card-meta">
-            <span class="blog-card-tag">Side Hustle</span>
-            <span>April 10, 2026</span>
-            <span>8 min read</span>
-          </div>
-          <h2>Side Hustle Taxes: What You Need to Know When You Have a Day Job and Extra Income</h2>
-          <p class="blog-card-excerpt">Learn when side income becomes taxable, how it stacks on your W-2 bracket, what expenses you can deduct, and when to make estimated payments even when you already have an employer.</p>
-          <a href="/blog/side-hustle-tax-guide/" class="blog-card-link">
+            <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"></path></svg>
+</a>
+</div>
+<div class="blog-card">
+<div class="blog-card-meta">
+<span class="blog-card-tag">Side Hustle</span>
+<span>April 10, 2026</span>
+<span>8 min read</span>
+</div>
+<h2>Side Hustle Taxes: What You Need to Know When You Have a Day Job and Extra Income</h2>
+<p class="blog-card-excerpt">Learn when side income becomes taxable, how it stacks on your W-2 bracket, what expenses you can deduct, and when to make estimated payments even when you already have an employer.</p>
+<a class="blog-card-link" href="/blog/side-hustle-tax-guide/">
             Read article
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </a>
-        </div>
-
-        <div class="blog-card">
-          <div class="blog-card-meta">
-            <span class="blog-card-tag">Commission Income</span>
-            <span>April 10, 2026</span>
-            <span>10 min read</span>
-          </div>
-          <h2>How to Budget on Commission Income: A Guide for Sales Professionals</h2>
-          <p class="blog-card-excerpt">Commission income is unpredictable by design. Learn how to budget from your base, handle windfall months, manage the draw system, and build real financial stability on variable pay.</p>
-          <a href="/blog/commission-income-budgeting/" class="blog-card-link">
+            <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"></path></svg>
+</a>
+</div>
+<div class="blog-card">
+<div class="blog-card-meta">
+<span class="blog-card-tag">Commission Income</span>
+<span>April 10, 2026</span>
+<span>10 min read</span>
+</div>
+<h2>How to Budget on Commission Income: A Guide for Sales Professionals</h2>
+<p class="blog-card-excerpt">Commission income is unpredictable by design. Learn how to budget from your base, handle windfall months, manage the draw system, and build real financial stability on variable pay.</p>
+<a class="blog-card-link" href="/blog/commission-income-budgeting/">
             Read article
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </a>
-        </div>
-
-        <div class="blog-card">
-          <div class="blog-card-meta">
-            <span class="blog-card-tag">Creators</span>
-            <span>April 10, 2026</span>
-            <span>11 min read</span>
-          </div>
-          <h2>Tax Planning for Content Creators: YouTube, TikTok, and Instagram Income</h2>
-          <p class="blog-card-excerpt">Creator income tax guide covering YouTube AdSense, brand deals, TikTok Creator Fund, sponsorships, and merchandise. What you owe, what you can deduct, and how to plan quarterly payments.</p>
-          <a href="/blog/tax-planning-for-creators/" class="blog-card-link">
+            <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"></path></svg>
+</a>
+</div>
+<div class="blog-card">
+<div class="blog-card-meta">
+<span class="blog-card-tag">Creators</span>
+<span>April 10, 2026</span>
+<span>11 min read</span>
+</div>
+<h2>Tax Planning for Content Creators: YouTube, TikTok, and Instagram Income</h2>
+<p class="blog-card-excerpt">Creator income tax guide covering YouTube AdSense, brand deals, TikTok Creator Fund, sponsorships, and merchandise. What you owe, what you can deduct, and how to plan quarterly payments.</p>
+<a class="blog-card-link" href="/blog/tax-planning-for-creators/">
             Read article
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </a>
-        </div>
-
-        <div class="blog-card">
-          <div class="blog-card-meta">
-            <span class="blog-card-tag">New Freelancers</span>
-            <span>April 10, 2026</span>
-            <span>10 min read</span>
-          </div>
-          <h2>Your First Year Freelancing: A Financial Survival Guide</h2>
-          <p class="blog-card-excerpt">Practical money management for new freelancers: tax set-asides, dry-month reserves, invoicing habits, and building financial stability when your income is unpredictable from day one.</p>
-          <a href="/blog/first-year-freelancing-finances/" class="blog-card-link">
+            <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"></path></svg>
+</a>
+</div>
+<div class="blog-card">
+<div class="blog-card-meta">
+<span class="blog-card-tag">New Freelancers</span>
+<span>April 10, 2026</span>
+<span>10 min read</span>
+</div>
+<h2>Your First Year Freelancing: A Financial Survival Guide</h2>
+<p class="blog-card-excerpt">Practical money management for new freelancers: tax set-asides, dry-month reserves, invoicing habits, and building financial stability when your income is unpredictable from day one.</p>
+<a class="blog-card-link" href="/blog/first-year-freelancing-finances/">
             Read article
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </a>
-        </div>
-
-        <div class="blog-card">
-          <div class="blog-card-meta">
-            <span class="blog-card-tag">Income Cycles</span>
-            <span>April 10, 2026</span>
-            <span>11 min read</span>
-          </div>
-          <h2>The Feast or Famine Cycle: How to Break Free from Freelance Income Swings</h2>
-          <p class="blog-card-excerpt">Irregular freelance income isn't inevitable. Here's why the feast-or-famine cycle happens, what keeps it going, and the concrete steps to build steadier income as a freelancer.</p>
-          <a href="/blog/feast-or-famine-freelancing/" class="blog-card-link">
+            <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"></path></svg>
+</a>
+</div>
+<div class="blog-card">
+<div class="blog-card-meta">
+<span class="blog-card-tag">Income Cycles</span>
+<span>April 10, 2026</span>
+<span>11 min read</span>
+</div>
+<h2>The Feast or Famine Cycle: How to Break Free from Freelance Income Swings</h2>
+<p class="blog-card-excerpt">Irregular freelance income isn't inevitable. Here's why the feast-or-famine cycle happens, what keeps it going, and the concrete steps to build steadier income as a freelancer.</p>
+<a class="blog-card-link" href="/blog/feast-or-famine-freelancing/">
             Read article
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </a>
-        </div>
-
-        <div class="blog-card">
-          <div class="blog-card-meta">
-            <span class="blog-card-tag">Household Budgeting</span>
-            <span>April 10, 2026</span>
-            <span>9 min read</span>
-          </div>
-          <h2>Budgeting When One Spouse Has Irregular Income</h2>
-          <p class="blog-card-excerpt">How couples can build a household budget that works when one partner earns variable or freelance income. A practical system that handles good months and slow ones without stress.</p>
-          <a href="/blog/spouse-income-irregular-budget/" class="blog-card-link">
+            <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"></path></svg>
+</a>
+</div>
+<div class="blog-card">
+<div class="blog-card-meta">
+<span class="blog-card-tag">Household Budgeting</span>
+<span>April 10, 2026</span>
+<span>9 min read</span>
+</div>
+<h2>Budgeting When One Spouse Has Irregular Income</h2>
+<p class="blog-card-excerpt">How couples can build a household budget that works when one partner earns variable or freelance income. A practical system that handles good months and slow ones without stress.</p>
+<a class="blog-card-link" href="/blog/spouse-income-irregular-budget/">
             Read article
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA STRIP -->
-  <section class="cta-strip">
-    <h2>Know your exact numbers before tax season hits.</h2>
-    <p>The free Irregular Income Tax Calculator shows you what to set aside each month, what you can actually spend, and how much runway you have in a slow month.</p>
-    <a href="/" class="btn-primary">Try the Free Calculator</a>
-  </section>
-
-  <!-- FOOTER -->
-    <div class="ad-container" style="text-align:center;margin:24px auto;max-width:728px;min-height:90px;"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9661407658009326" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
-
-  <footer>
-    <div class="footer-inner">
-      <p class="footer-disclaimer">
+            <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA STRIP -->
+<section class="cta-strip">
+<h2>Know your exact numbers before tax season hits.</h2>
+<p>The free Irregular Income Tax Calculator shows you what to set aside each month, what you can actually spend, and how much runway you have in a slow month.</p>
+<a class="btn-primary" href="/">Try the Free Calculator</a>
+</section>
+<!-- FOOTER -->
+<div class="ad-container" style="text-align:center;margin:24px auto;max-width:728px;min-height:90px;"><ins class="adsbygoogle" data-ad-client="ca-pub-9661407658009326" data-ad-format="auto" data-ad-slot="auto" data-full-width-responsive="true" style="display:block"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+<section class="hub-crosslink"><p>Need to run the numbers? <a href="/calculators/">Use our free calculators</a> to estimate costs instantly.</p></section><footer>
+<div class="footer-inner">
+<p class="footer-disclaimer">
         Educational content only. Not tax or legal advice. Always consult a qualified accountant or tax professional for advice specific to your situation.
       </p>
-      <p class="footer-copy">&#169; 2026 Skip the Surprise. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <script>
+<p class="footer-copy">© 2026 Skip the Surprise. All rights reserved.</p>
+</div>
+</footer>
+<script>
     (function() {
       var btn = document.querySelector('.nav-hamburger');
       var dropdown = document.getElementById('nav-mobile-menu');
@@ -1001,6 +1076,5 @@
       });
     })();
   </script>
-
 </body>
 </html>

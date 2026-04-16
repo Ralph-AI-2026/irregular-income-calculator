@@ -1,26 +1,25 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tariff Calculator 2026 - How Much Are Tariffs Costing You?</title>
-  <meta name="description" content="Calculate your personal household tariff cost in 2026. See how much tariffs add to groceries, clothing, electronics, vehicles, and more. Real data from Yale Budget Lab, Tax Foundation, and BLS." />
-  <meta name="keywords" content="tariff calculator 2026, tariff cost calculator, household tariff cost, how much are tariffs costing me, tariff impact calculator, consumer tariff burden, tariff cost by income" />
-  <meta name="robots" content="index, follow" />
-  <meta property="og:title" content="Tariff Calculator 2026 - How Much Are Tariffs Costing You?" />
-  <meta property="og:description" content="The average American household pays $3,800-$4,900/year in tariff costs. Calculate YOUR number." />
-  <meta property="og:type" content="website" />
-  <link rel="canonical" href="https://skipthesurprise.com/calculators/tariff-cost/" />
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
-
-  <script type="application/ld+json">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tariff Cost Calculator — Import Price Impact</title>
+<meta content="Calculate how tariffs affect the price of imported goods for your business or household. Free tool." name="description"/>
+<meta content="tariff calculator 2026, tariff cost calculator, household tariff cost, how much are tariffs costing me, tariff impact calculator, consumer tariff burden, tariff cost by income" name="keywords"/>
+<meta content="index, follow" name="robots"/>
+<meta content="Tariff Cost Calculator — Import Price Impact" property="og:title"/>
+<meta content="Calculate how tariffs affect the price of imported goods for your business or household. Free tool." property="og:description"/>
+<meta content="website" property="og:type"/>
+<link href="https://skipthesurprise.com/calculators/tariff-cost/" rel="canonical"/>
+<link href="/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -68,10 +67,8 @@
     ]
   }
   </script>
-
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9661407658009326" crossorigin="anonymous"></script>
-
-  <style>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9661407658009326"></script>
+<style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
@@ -611,546 +608,669 @@
       .hero-stats { gap: 1.25rem; }
       .results-grid { grid-template-columns: 1fr; }
     }
-  </style>
-</head>
+  
+    .breadcrumb {
+      font-size: 0.8rem;
+      color: #888;
+      margin-bottom: 0.75rem;
+    }
+    .breadcrumb a {
+      color: #888;
+      text-decoration: none;
+    }
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+    .breadcrumb span.sep {
+      margin: 0 0.35em;
+    }
+    .related-calculators, .blog-cta, .calculator-cta, .hub-crosslink {
+      max-width: 1100px;
+      margin: 2rem auto 0;
+      padding: 1.25rem 1.5rem;
+      border: 1px solid var(--gray-200, #e5e7eb);
+      border-radius: 16px;
+      background: var(--gray-50, #f9fafb);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .related-calculators h2, .calculator-cta h2 {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+    .related-calculators ul {
+      margin: 0.75rem 0 0;
+      padding-left: 1.25rem;
+    }
+    .related-calculators li + li {
+      margin-top: 0.5rem;
+    }
+    .blog-cta p, .calculator-cta p, .hub-crosslink p {
+      margin: 0;
+    }
+    .cta-button {
+      display: inline-block;
+      margin-top: 0.9rem;
+      padding: 0.75rem 1.1rem;
+      border-radius: 10px;
+      background: var(--blue-600, #2563eb);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+
+    .nav-brand {
+      display: inline-flex;
+      align-items: center;
+      flex: 0 1 auto;
+      min-width: 0;
+      max-width: 100%;
+    }
+
+    .nav-brand img,
+    .nav-logo img {
+      display: block;
+      width: auto;
+      height: auto;
+      max-height: 44px;
+      max-width: min(100%, 44px);
+      object-fit: contain;
+    }
+
+    .nav-inner {
+      min-height: 88px;
+      height: auto;
+      padding: 8px 0;
+    }
+
+    .ad-container {
+      min-height: 0 !important;
+      overflow: hidden;
+    }
+
+    @media (max-width: 720px) {
+      .nav {
+        padding: 0 1rem;
+      }
+
+      .nav-inner {
+        min-height: 96px;
+        height: auto;
+        gap: 0.75rem;
+        align-items: center;
+      }
+
+      .nav-brand img,
+      .nav-logo img {
+        max-height: 40px;
+        max-width: min(100%, 40px);
+      }
+
+      .nav-brand {
+        flex: 0 0 auto;
+      }
+
+      .nav-hamburger {
+        flex-shrink: 0;
+      }
+
+      .nav-cta {
+        flex-shrink: 0;
+      }
+
+      .nav-mobile-toggle {
+        flex: 0 0 auto;
+        margin-left: auto;
+      }
+
+      .ad-container,
+      .adsbygoogle,
+      .adsbygoogle-noablate {
+        display: none !important;
+        min-height: 0 !important;
+        height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+    }
+</style>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/></noscript><meta content="https://skipthesurprise.com/logo-small.png" property="og:image"/><meta content="https://skipthesurprise.com/calculators/tariff-cost/" property="og:url"/><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://skipthesurprise.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Calculators",
+      "item": "https://skipthesurprise.com/calculators"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Tariff Cost Calculator — Import Price Impact",
+      "item": "https://skipthesurprise.com/calculators/tariff-cost/"
+    }
+  ]
+}</script><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Tariff Cost Calculator — Import Price Impact",
+  "url": "https://skipthesurprise.com/calculators/tariff-cost/",
+  "description": "Calculate how tariffs affect the price of imported goods for your business or household. Free tool.",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}</script></head>
 <body>
-
-  <!-- NAV -->
-  <nav class="nav" aria-label="Site navigation" style="position:relative;">
-    <div class="nav-inner">
-      <a href="/" class="nav-brand"><img src="/logo-header.png" alt="Skip the Surprise" style="height:75px;"></a>
-      <div class="nav-links">
-        <a href="#calculator" class="nav-link">Calculator</a>
-        <a href="#product-lookup" class="nav-link">Product Lookup</a>
-        <a href="/" class="nav-link">All Calculators</a>
-        <a href="/blog/" class="nav-link">Blog</a>
-      </div>
-      <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile-menu">
-        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-      </button>
-      <a href="#calculator" class="nav-cta">Calculate Now</a>
+<!-- NAV -->
+<nav aria-label="Site navigation" class="nav" style="position:relative;">
+<div class="nav-inner">
+<a class="nav-brand" href="/"><img alt="Skip the Surprise - Free Cost Calculators" src="/logo-small.png" class="site-logo"/></a>
+<div class="nav-links">
+<a class="nav-link" href="#calculator">Calculator</a>
+<a class="nav-link" href="#product-lookup">Product Lookup</a>
+<a class="nav-link" href="/">All Calculators</a>
+<a class="nav-link" href="/blog/">Blog</a>
+</div>
+<button aria-controls="nav-mobile-menu" aria-expanded="false" aria-label="Open menu" class="nav-hamburger">
+<span class="bar"></span><span class="bar"></span><span class="bar"></span>
+</button>
+<a class="nav-cta" href="#calculator">Calculate Now</a>
+</div>
+<div class="nav-dropdown" id="nav-mobile-menu" role="menu">
+<a href="#calculator" role="menuitem">Calculator</a>
+<a href="#product-lookup" role="menuitem">Product Lookup</a>
+<a href="/" role="menuitem">All Calculators</a>
+<a href="/blog/" role="menuitem">Blog</a>
+</div>
+</nav>
+<!-- HERO -->
+<section aria-labelledby="hero-heading" class="hero">
+<div class="hero-badge">
+<svg aria-hidden="true" fill="none" height="12" viewbox="0 0 12 12" width="12">
+<circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.5"></circle>
+<path d="M6 3.5V6.5L7.5 8" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path>
+</svg>
+      2026 Household Tariff Calculator  |  Updated April 2026
     </div>
-    <div class="nav-dropdown" id="nav-mobile-menu" role="menu">
-      <a href="#calculator" role="menuitem">Calculator</a>
-      <a href="#product-lookup" role="menuitem">Product Lookup</a>
-      <a href="/" role="menuitem">All Calculators</a>
-      <a href="/blog/" role="menuitem">Blog</a>
-    </div>
-  </nav>
-
-  <!-- HERO -->
-  <section class="hero" aria-labelledby="hero-heading">
-    <div class="hero-badge">
-      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-        <circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.5"/>
-        <path d="M6 3.5V6.5L7.5 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-      </svg>
-      2026 Household Tariff Calculator &nbsp;|&nbsp; Updated April 2026
-    </div>
-    <h1 id="hero-heading">
+<nav aria-label="Breadcrumb" class="breadcrumb"><a href="/">Home</a><span class="sep">&gt;</span><a href="/calculators/">Calculators</a><span class="sep">&gt;</span><span aria-current="page">Tariff Cost Calculator — Import Price Impact</span></nav><h1 id="hero-heading">
       Tariff Calculator 2026<br/><span>How Much Are Tariffs Costing You?</span>
-    </h1>
-    <p class="hero-sub">
+</h1>
+<p class="hero-sub">
       Enter your household profile and monthly spending. See the real dollar cost tariffs are adding to your groceries, clothing, electronics, car, and more. US and Canada supported.
     </p>
-    <div class="hero-quick-answer">
-      <p><strong>The average American household pays $3,800 - $4,900 per year in tariff costs as of 2026.</strong></p>
-      <p>Lower-income households spend up to <strong>5.3% of income</strong> on tariffs vs <strong>1.8%</strong> for the highest earners.</p>
-      <p class="source">Sources: Yale Budget Lab, Tax Foundation, Peterson Institute for International Economics</p>
-    </div>
-    <a href="#calculator" class="hero-cta">
+<div class="hero-quick-answer">
+<p><strong>The average American household pays $3,800 - $4,900 per year in tariff costs as of 2026.</strong></p>
+<p>Lower-income households spend up to <strong>5.3% of income</strong> on tariffs vs <strong>1.8%</strong> for the highest earners.</p>
+<p class="source">Sources: Yale Budget Lab, Tax Foundation, Peterson Institute for International Economics</p>
+</div>
+<a class="hero-cta" href="#calculator">
       Calculate My Tariff Cost
-      <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3l6 6-6 6M3 9h12"/></svg>
-    </a>
-    <div class="hero-stats">
-      <div class="hero-stat"><div class="hero-stat-num">7</div><div class="hero-stat-label">Categories</div></div>
-      <div class="hero-stat"><div class="hero-stat-num">50+</div><div class="hero-stat-label">Products</div></div>
-      <div class="hero-stat"><div class="hero-stat-num">US + CA</div><div class="hero-stat-label">Countries</div></div>
-      <div class="hero-stat"><div class="hero-stat-num">Free</div><div class="hero-stat-label">Always</div></div>
-    </div>
-  </section>
-
-  <!-- Ad 1 -->
-  <div style="text-align:center;margin:24px auto;max-width:728px;min-height:90px;"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9661407658009326" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
-
-  <!-- CALCULATOR -->
-  <section class="calculator-section" id="calculator" aria-labelledby="calc-heading">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-label">Personal Tariff Impact</div>
-        <h2 class="section-title" id="calc-heading">Calculate Your Household Tariff Cost</h2>
-        <p class="section-sub">Adjust the sliders to match your spending. Everything runs in your browser. Nothing is sent anywhere.</p>
-      </div>
-
-      <div class="calc-layout">
-        <!-- SIDEBAR: Profile + Controls -->
-        <div class="calc-sidebar">
-          <div class="calc-header-bar">
-            <div class="calc-header-icon" aria-hidden="true">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round">
-                <path d="M8 1a4 4 0 0 1 4 4c0 2.5-4 6-4 6S4 7.5 4 5a4 4 0 0 1 4-4z"/>
-                <circle cx="8" cy="5" r="1.5"/>
-              </svg>
-            </div>
-            <h2>Household Profile</h2>
-          </div>
-          <div class="sidebar-body">
-
-            <div class="field-group">
-              <label class="field-label" for="country">Country</label>
-              <select id="country">
-                <option value="US">United States</option>
-                <option value="CA">Canada</option>
-              </select>
-            </div>
-
-            <div class="field-group" id="stateGroup">
-              <label class="field-label" for="state">State</label>
-              <select id="state"></select>
-            </div>
-
-            <div class="field-group">
-              <label class="field-label" for="householdSize">Household Size</label>
-              <select id="householdSize">
-                <option value="1">1 person</option>
-                <option value="2">2 people</option>
-                <option value="3" selected>3 people</option>
-                <option value="4">4 people</option>
-                <option value="5">5 people</option>
-                <option value="6">6 people</option>
-                <option value="7">7 people</option>
-                <option value="8">8+ people</option>
-              </select>
-            </div>
-
-            <div class="field-group">
-              <label class="field-label" for="incomeBracket">Annual Household Income</label>
-              <select id="incomeBracket">
-                <option value="25000">Under $30,000</option>
-                <option value="40000">$30,000 - $50,000</option>
-                <option value="62500">$50,000 - $75,000</option>
-                <option value="87500" selected>$75,000 - $100,000</option>
-                <option value="125000">$100,000 - $150,000</option>
-                <option value="200000">$150,000+</option>
-              </select>
-            </div>
-
-            <hr style="border:none;border-top:1px solid var(--gray-200);margin:1.25rem 0;">
-
-            <p style="font-size:0.82rem;font-weight:700;color:var(--gray-700);margin-bottom:1rem;">Monthly Spending by Category</p>
-
-            <!-- Groceries -->
-            <div class="slider-group">
-              <div class="slider-header">
-                <span class="slider-label">Groceries &amp; Food</span>
-                <span class="slider-value" id="groceries-val">$800</span>
-              </div>
-              <div class="slider-hint">Tariff: 4-12% on imported food items</div>
-              <input type="range" id="groceries" min="0" max="3000" step="25" value="800" />
-              <div class="origin-select">
-                <label style="font-size:0.72rem;color:var(--gray-500);">Primary origin:
+      <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 18 18"><path d="M9 3l6 6-6 6M3 9h12"></path></svg>
+</a>
+<div class="hero-stats">
+<div class="hero-stat"><div class="hero-stat-num">7</div><div class="hero-stat-label">Categories</div></div>
+<div class="hero-stat"><div class="hero-stat-num">50+</div><div class="hero-stat-label">Products</div></div>
+<div class="hero-stat"><div class="hero-stat-num">US + CA</div><div class="hero-stat-label">Countries</div></div>
+<div class="hero-stat"><div class="hero-stat-num">Free</div><div class="hero-stat-label">Always</div></div>
+</div>
+</section>
+<!-- Ad 1 -->
+<div style="text-align:center;margin:24px auto;max-width:728px;min-height:90px;"><ins class="adsbygoogle" data-ad-client="ca-pub-9661407658009326" data-ad-format="auto" data-ad-slot="auto" data-full-width-responsive="true" style="display:block"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+<!-- CALCULATOR -->
+<section aria-labelledby="calc-heading" class="calculator-section" id="calculator">
+<div class="container">
+<div class="section-header">
+<div class="section-label">Personal Tariff Impact</div>
+<h2 class="section-title" id="calc-heading">Calculate Your Household Tariff Cost</h2>
+<p class="section-sub">Adjust the sliders to match your spending. Everything runs in your browser. Nothing is sent anywhere.</p>
+</div>
+<div class="calc-layout">
+<!-- SIDEBAR: Profile + Controls -->
+<div class="calc-sidebar">
+<div class="calc-header-bar">
+<div aria-hidden="true" class="calc-header-icon">
+<svg fill="none" height="16" stroke="white" stroke-linecap="round" stroke-width="1.5" viewbox="0 0 16 16" width="16">
+<path d="M8 1a4 4 0 0 1 4 4c0 2.5-4 6-4 6S4 7.5 4 5a4 4 0 0 1 4-4z"></path>
+<circle cx="8" cy="5" r="1.5"></circle>
+</svg>
+</div>
+<h2>Household Profile</h2>
+</div>
+<div class="sidebar-body">
+<div class="field-group">
+<label class="field-label" for="country">Country</label>
+<select id="country">
+<option value="US">United States</option>
+<option value="CA">Canada</option>
+</select>
+</div>
+<div class="field-group" id="stateGroup">
+<label class="field-label" for="state">State</label>
+<select id="state"></select>
+</div>
+<div class="field-group">
+<label class="field-label" for="householdSize">Household Size</label>
+<select id="householdSize">
+<option value="1">1 person</option>
+<option value="2">2 people</option>
+<option selected="" value="3">3 people</option>
+<option value="4">4 people</option>
+<option value="5">5 people</option>
+<option value="6">6 people</option>
+<option value="7">7 people</option>
+<option value="8">8+ people</option>
+</select>
+</div>
+<div class="field-group">
+<label class="field-label" for="incomeBracket">Annual Household Income</label>
+<select id="incomeBracket">
+<option value="25000">Under $30,000</option>
+<option value="40000">$30,000 - $50,000</option>
+<option value="62500">$50,000 - $75,000</option>
+<option selected="" value="87500">$75,000 - $100,000</option>
+<option value="125000">$100,000 - $150,000</option>
+<option value="200000">$150,000+</option>
+</select>
+</div>
+<hr style="border:none;border-top:1px solid var(--gray-200);margin:1.25rem 0;"/>
+<p style="font-size:0.82rem;font-weight:700;color:var(--gray-700);margin-bottom:1rem;">Monthly Spending by Category</p>
+<!-- Groceries -->
+<div class="slider-group">
+<div class="slider-header">
+<span class="slider-label">Groceries &amp; Food</span>
+<span class="slider-value" id="groceries-val">$800</span>
+</div>
+<div class="slider-hint">Tariff: 4-12% on imported food items</div>
+<input id="groceries" max="3000" min="0" step="25" type="range" value="800"/>
+<div class="origin-select">
+<label style="font-size:0.72rem;color:var(--gray-500);">Primary origin:
                   <select id="groceries-origin">
-                    <option value="mixed" selected>Mixed / Varies</option>
-                    <option value="china">Mostly China</option>
-                    <option value="domestic">Mostly Domestic</option>
-                  </select>
-                </label>
-              </div>
-            </div>
-
-            <!-- Clothing -->
-            <div class="slider-group">
-              <div class="slider-header">
-                <span class="slider-label">Clothing &amp; Footwear</span>
-                <span class="slider-value" id="clothing-val">$200</span>
-              </div>
-              <div class="slider-hint">Tariff: 12-32% depending on origin</div>
-              <input type="range" id="clothing" min="0" max="2000" step="25" value="200" />
-              <div class="origin-select">
-                <label style="font-size:0.72rem;color:var(--gray-500);">Primary origin:
+<option selected="" value="mixed">Mixed / Varies</option>
+<option value="china">Mostly China</option>
+<option value="domestic">Mostly Domestic</option>
+</select>
+</label>
+</div>
+</div>
+<!-- Clothing -->
+<div class="slider-group">
+<div class="slider-header">
+<span class="slider-label">Clothing &amp; Footwear</span>
+<span class="slider-value" id="clothing-val">$200</span>
+</div>
+<div class="slider-hint">Tariff: 12-32% depending on origin</div>
+<input id="clothing" max="2000" min="0" step="25" type="range" value="200"/>
+<div class="origin-select">
+<label style="font-size:0.72rem;color:var(--gray-500);">Primary origin:
                   <select id="clothing-origin">
-                    <option value="mixed" selected>Mixed / Varies</option>
-                    <option value="china">Mostly China</option>
-                    <option value="domestic">Mostly Domestic</option>
-                  </select>
-                </label>
-              </div>
-            </div>
-
-            <!-- Electronics -->
-            <div class="slider-group">
-              <div class="slider-header">
-                <span class="slider-label">Electronics &amp; Appliances</span>
-                <span class="slider-value" id="electronics-val">$150</span>
-              </div>
-              <div class="slider-hint">Tariff: 7.5-25% on phones, laptops, TVs</div>
-              <input type="range" id="electronics" min="0" max="2000" step="25" value="150" />
-              <div class="origin-select">
-                <label style="font-size:0.72rem;color:var(--gray-500);">Primary origin:
+<option selected="" value="mixed">Mixed / Varies</option>
+<option value="china">Mostly China</option>
+<option value="domestic">Mostly Domestic</option>
+</select>
+</label>
+</div>
+</div>
+<!-- Electronics -->
+<div class="slider-group">
+<div class="slider-header">
+<span class="slider-label">Electronics &amp; Appliances</span>
+<span class="slider-value" id="electronics-val">$150</span>
+</div>
+<div class="slider-hint">Tariff: 7.5-25% on phones, laptops, TVs</div>
+<input id="electronics" max="2000" min="0" step="25" type="range" value="150"/>
+<div class="origin-select">
+<label style="font-size:0.72rem;color:var(--gray-500);">Primary origin:
                   <select id="electronics-origin">
-                    <option value="mixed" selected>Mixed / Varies</option>
-                    <option value="china">Mostly China</option>
-                    <option value="domestic">Mostly Domestic</option>
-                  </select>
-                </label>
-              </div>
-            </div>
-
-            <!-- Vehicles -->
-            <div class="slider-group">
-              <div class="slider-header">
-                <span class="slider-label">Vehicles &amp; Auto Parts</span>
-                <span class="slider-value" id="vehicles-val">$0</span>
-              </div>
-              <div class="slider-hint">Tariff: 2.5-25%. Set monthly payment or annual amount / 12</div>
-              <input type="range" id="vehicles" min="0" max="2000" step="25" value="0" />
-              <div class="origin-select">
-                <label style="font-size:0.72rem;color:var(--gray-500);">Vehicle origin:
+<option selected="" value="mixed">Mixed / Varies</option>
+<option value="china">Mostly China</option>
+<option value="domestic">Mostly Domestic</option>
+</select>
+</label>
+</div>
+</div>
+<!-- Vehicles -->
+<div class="slider-group">
+<div class="slider-header">
+<span class="slider-label">Vehicles &amp; Auto Parts</span>
+<span class="slider-value" id="vehicles-val">$0</span>
+</div>
+<div class="slider-hint">Tariff: 2.5-25%. Set monthly payment or annual amount / 12</div>
+<input id="vehicles" max="2000" min="0" step="25" type="range" value="0"/>
+<div class="origin-select">
+<label style="font-size:0.72rem;color:var(--gray-500);">Vehicle origin:
                   <select id="vehicles-origin">
-                    <option value="mixed" selected>Mixed / USMCA</option>
-                    <option value="china">China</option>
-                    <option value="japan">Japan / Korea</option>
-                    <option value="europe">Europe</option>
-                    <option value="domestic">Domestic</option>
-                  </select>
-                </label>
-              </div>
-            </div>
-
-            <!-- Home Goods -->
-            <div class="slider-group">
-              <div class="slider-header">
-                <span class="slider-label">Home Goods &amp; Furniture</span>
-                <span class="slider-value" id="homegoods-val">$200</span>
-              </div>
-              <div class="slider-hint">Tariff: 0-25% on furniture, tools, cleaning</div>
-              <input type="range" id="homegoods" min="0" max="2000" step="25" value="200" />
-              <div class="origin-select">
-                <label style="font-size:0.72rem;color:var(--gray-500);">Primary origin:
+<option selected="" value="mixed">Mixed / USMCA</option>
+<option value="china">China</option>
+<option value="japan">Japan / Korea</option>
+<option value="europe">Europe</option>
+<option value="domestic">Domestic</option>
+</select>
+</label>
+</div>
+</div>
+<!-- Home Goods -->
+<div class="slider-group">
+<div class="slider-header">
+<span class="slider-label">Home Goods &amp; Furniture</span>
+<span class="slider-value" id="homegoods-val">$200</span>
+</div>
+<div class="slider-hint">Tariff: 0-25% on furniture, tools, cleaning</div>
+<input id="homegoods" max="2000" min="0" step="25" type="range" value="200"/>
+<div class="origin-select">
+<label style="font-size:0.72rem;color:var(--gray-500);">Primary origin:
                   <select id="homegoods-origin">
-                    <option value="mixed" selected>Mixed / Varies</option>
-                    <option value="china">Mostly China</option>
-                    <option value="domestic">Mostly Domestic</option>
-                  </select>
-                </label>
-              </div>
-            </div>
-
-            <!-- Toys -->
-            <div class="slider-group">
-              <div class="slider-header">
-                <span class="slider-label">Toys &amp; Children's Items</span>
-                <span class="slider-value" id="toys-val">$50</span>
-              </div>
-              <div class="slider-hint">Tariff: 0-25% on toys, games, baby gear</div>
-              <input type="range" id="toys" min="0" max="1000" step="10" value="50" />
-              <div class="origin-select">
-                <label style="font-size:0.72rem;color:var(--gray-500);">Primary origin:
+<option selected="" value="mixed">Mixed / Varies</option>
+<option value="china">Mostly China</option>
+<option value="domestic">Mostly Domestic</option>
+</select>
+</label>
+</div>
+</div>
+<!-- Toys -->
+<div class="slider-group">
+<div class="slider-header">
+<span class="slider-label">Toys &amp; Children's Items</span>
+<span class="slider-value" id="toys-val">$50</span>
+</div>
+<div class="slider-hint">Tariff: 0-25% on toys, games, baby gear</div>
+<input id="toys" max="1000" min="0" step="10" type="range" value="50"/>
+<div class="origin-select">
+<label style="font-size:0.72rem;color:var(--gray-500);">Primary origin:
                   <select id="toys-origin">
-                    <option value="mixed" selected>Mixed / Varies</option>
-                    <option value="china">Mostly China</option>
-                    <option value="domestic">Mostly Domestic</option>
-                  </select>
-                </label>
-              </div>
-            </div>
-
-            <!-- Medical -->
-            <div class="slider-group">
-              <div class="slider-header">
-                <span class="slider-label">Medical &amp; Health Products</span>
-                <span class="slider-value" id="medical-val">$100</span>
-              </div>
-              <div class="slider-hint">Tariff: varies. OTC meds, supplements, devices</div>
-              <input type="range" id="medical" min="0" max="1500" step="25" value="100" />
-              <div class="origin-select">
-                <label style="font-size:0.72rem;color:var(--gray-500);">Primary origin:
+<option selected="" value="mixed">Mixed / Varies</option>
+<option value="china">Mostly China</option>
+<option value="domestic">Mostly Domestic</option>
+</select>
+</label>
+</div>
+</div>
+<!-- Medical -->
+<div class="slider-group">
+<div class="slider-header">
+<span class="slider-label">Medical &amp; Health Products</span>
+<span class="slider-value" id="medical-val">$100</span>
+</div>
+<div class="slider-hint">Tariff: varies. OTC meds, supplements, devices</div>
+<input id="medical" max="1500" min="0" step="25" type="range" value="100"/>
+<div class="origin-select">
+<label style="font-size:0.72rem;color:var(--gray-500);">Primary origin:
                   <select id="medical-origin">
-                    <option value="mixed" selected>Mixed / Varies</option>
-                    <option value="china">Mostly China</option>
-                    <option value="domestic">Mostly Domestic</option>
-                  </select>
-                </label>
-              </div>
-            </div>
-
-            <hr style="border:none;border-top:1px solid var(--gray-200);margin:1.25rem 0;">
-
-            <!-- Tariffs removed toggle -->
-            <label class="toggle-row" id="removedToggle">
-              <div class="toggle-switch">
-                <input type="checkbox" id="tariffsRemoved" />
-                <span class="toggle-track"></span>
-              </div>
-              <span class="toggle-label">What if tariffs were removed?</span>
-            </label>
-
-          </div>
-        </div>
-
-        <!-- MAIN: Results -->
-        <div class="calc-main">
-          <!-- Top-level results -->
-          <div class="results-grid" id="resultsGrid">
-            <div class="result-card primary">
-              <div class="result-card-label">Annual Tariff Cost</div>
-              <div class="result-card-value" id="res-annual">$0</div>
-              <div class="result-card-sub" id="res-annual-sub">Total hidden tariff cost per year</div>
-            </div>
-            <div class="result-card monthly">
-              <div class="result-card-label">Monthly Tariff Cost</div>
-              <div class="result-card-value" id="res-monthly">$0</div>
-              <div class="result-card-sub">Extra you pay each month</div>
-            </div>
-            <div class="result-card daily">
-              <div class="result-card-label">Daily Tariff Cost</div>
-              <div class="result-card-value" id="res-daily">$0</div>
-              <div class="result-card-sub" id="res-daily-sub">You're paying this every single day</div>
-            </div>
-          </div>
-
-          <!-- Income % and national comparison -->
-          <div class="results-grid" style="grid-template-columns: 1fr 1fr;">
-            <div class="result-card" style="border-left: 4px solid var(--green-600);">
-              <div class="result-card-label">% of Your Income</div>
-              <div class="result-card-value" id="res-income-pct" style="color:var(--green-700);">0%</div>
-              <div class="result-card-sub" id="res-income-sub">of household income goes to tariff costs</div>
-            </div>
-            <div class="result-card" style="border-left: 4px solid var(--amber-600);">
-              <div class="result-card-label">vs. National Average</div>
-              <div class="result-card-value" id="res-vs-national" style="color:var(--amber-700);">--</div>
-              <div class="result-card-sub" id="res-vs-national-sub">Average household: ~$4,200/yr</div>
-            </div>
-          </div>
-
-          <!-- Status banner -->
-          <div class="status-banner minimal" id="statusBanner">
-            <div class="status-banner-title">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="8" cy="8" r="6"/><path d="M8 5v3M8 11h.01"/></svg>
-              <span id="statusTitle">Adjust your spending to see results</span>
-            </div>
-            <span id="statusMsg">Move the sliders on the left to match your household spending patterns.</span>
-          </div>
-
-          <!-- Chart -->
-          <div class="chart-card">
-            <h3>Tariff Cost Breakdown by Category</h3>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;">
-              <div class="chart-container">
-                <canvas id="tariffChart"></canvas>
-              </div>
-              <div>
-                <div class="chart-legend" id="chartLegend"></div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Before vs After comparison -->
-          <div class="chart-card">
-            <h3>Before Tariffs vs After Tariffs</h3>
-            <div id="beforeAfterBars"></div>
-          </div>
-
-          <!-- Historical comparison -->
-          <div class="historical-card">
-            <h3>Your Tariff Cost: 2024 vs 2026</h3>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;">
-              <div style="text-align:center;padding:1.5rem;background:var(--blue-50);border-radius:var(--radius-md);">
-                <div style="font-size:0.75rem;font-weight:700;color:var(--blue-600);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.5rem;">2024 (Pre-escalation)</div>
-                <div style="font-size:2rem;font-weight:800;color:var(--blue-700);" id="res-2024">$0</div>
-                <div style="font-size:0.78rem;color:var(--gray-500);margin-top:0.25rem;">Baseline tariff rates</div>
-              </div>
-              <div style="text-align:center;padding:1.5rem;background:var(--red-50);border-radius:var(--radius-md);">
-                <div style="font-size:0.75rem;font-weight:700;color:var(--red-600);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.5rem;">2026 (Current rates)</div>
-                <div style="font-size:2rem;font-weight:800;color:var(--red-700);" id="res-2026">$0</div>
-                <div style="font-size:0.78rem;color:var(--gray-500);margin-top:0.25rem;" id="res-increase">Increase from tariff escalation</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Income bracket comparison -->
-          <div class="bracket-card">
-            <h3>Tariff Burden by Income Bracket</h3>
-            <p style="font-size:0.85rem;color:var(--gray-600);margin-bottom:1.5rem;">Lower-income households pay a disproportionately higher share of their income. Your bracket is highlighted.</p>
-            <div id="bracketRows"></div>
-          </div>
-
-          <!-- Share -->
-          <div class="share-block">
-            <div class="share-block-title">Share Your Result</div>
-            <div class="share-text-display" id="shareTextDisplay">Tariffs are costing my household $0/year. Check yours at skipthesurprise.com/calculators/tariff-cost/</div>
-            <button class="share-copy-btn" id="shareCopyBtn" type="button">
-              <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="4" y="4" width="8" height="8" rx="1.5"/><path d="M1 9V2a1 1 0 0 1 1-1h7"/></svg>
+<option selected="" value="mixed">Mixed / Varies</option>
+<option value="china">Mostly China</option>
+<option value="domestic">Mostly Domestic</option>
+</select>
+</label>
+</div>
+</div>
+<hr style="border:none;border-top:1px solid var(--gray-200);margin:1.25rem 0;"/>
+<!-- Tariffs removed toggle -->
+<label class="toggle-row" id="removedToggle">
+<div class="toggle-switch">
+<input id="tariffsRemoved" type="checkbox"/>
+<span class="toggle-track"></span>
+</div>
+<span class="toggle-label">What if tariffs were removed?</span>
+</label>
+</div>
+</div>
+<!-- MAIN: Results -->
+<div class="calc-main">
+<!-- Top-level results -->
+<div class="results-grid" id="resultsGrid">
+<div class="result-card primary">
+<div class="result-card-label">Annual Tariff Cost</div>
+<div class="result-card-value" id="res-annual">$0</div>
+<div class="result-card-sub" id="res-annual-sub">Total hidden tariff cost per year</div>
+</div>
+<div class="result-card monthly">
+<div class="result-card-label">Monthly Tariff Cost</div>
+<div class="result-card-value" id="res-monthly">$0</div>
+<div class="result-card-sub">Extra you pay each month</div>
+</div>
+<div class="result-card daily">
+<div class="result-card-label">Daily Tariff Cost</div>
+<div class="result-card-value" id="res-daily">$0</div>
+<div class="result-card-sub" id="res-daily-sub">You're paying this every single day</div>
+</div>
+</div>
+<!-- Income % and national comparison -->
+<div class="results-grid" style="grid-template-columns: 1fr 1fr;">
+<div class="result-card" style="border-left: 4px solid var(--green-600);">
+<div class="result-card-label">% of Your Income</div>
+<div class="result-card-value" id="res-income-pct" style="color:var(--green-700);">0%</div>
+<div class="result-card-sub" id="res-income-sub">of household income goes to tariff costs</div>
+</div>
+<div class="result-card" style="border-left: 4px solid var(--amber-600);">
+<div class="result-card-label">vs. National Average</div>
+<div class="result-card-value" id="res-vs-national" style="color:var(--amber-700);">--</div>
+<div class="result-card-sub" id="res-vs-national-sub">Average household: ~$4,200/yr</div>
+</div>
+</div>
+<!-- Status banner -->
+<div class="status-banner minimal" id="statusBanner">
+<div class="status-banner-title">
+<svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 16 16" width="16"><circle cx="8" cy="8" r="6"></circle><path d="M8 5v3M8 11h.01"></path></svg>
+<span id="statusTitle">Adjust your spending to see results</span>
+</div>
+<span id="statusMsg">Move the sliders on the left to match your household spending patterns.</span>
+</div>
+<!-- Chart -->
+<div class="chart-card">
+<h3>Tariff Cost Breakdown by Category</h3>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;">
+<div class="chart-container">
+<canvas id="tariffChart"></canvas>
+</div>
+<div>
+<div class="chart-legend" id="chartLegend"></div>
+</div>
+</div>
+</div>
+<!-- Before vs After comparison -->
+<div class="chart-card">
+<h3>Before Tariffs vs After Tariffs</h3>
+<div id="beforeAfterBars"></div>
+</div>
+<!-- Historical comparison -->
+<div class="historical-card">
+<h3>Your Tariff Cost: 2024 vs 2026</h3>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;">
+<div style="text-align:center;padding:1.5rem;background:var(--blue-50);border-radius:var(--radius-md);">
+<div style="font-size:0.75rem;font-weight:700;color:var(--blue-600);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.5rem;">2024 (Pre-escalation)</div>
+<div id="res-2024" style="font-size:2rem;font-weight:800;color:var(--blue-700);">$0</div>
+<div style="font-size:0.78rem;color:var(--gray-500);margin-top:0.25rem;">Baseline tariff rates</div>
+</div>
+<div style="text-align:center;padding:1.5rem;background:var(--red-50);border-radius:var(--radius-md);">
+<div style="font-size:0.75rem;font-weight:700;color:var(--red-600);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.5rem;">2026 (Current rates)</div>
+<div id="res-2026" style="font-size:2rem;font-weight:800;color:var(--red-700);">$0</div>
+<div id="res-increase" style="font-size:0.78rem;color:var(--gray-500);margin-top:0.25rem;">Increase from tariff escalation</div>
+</div>
+</div>
+</div>
+<!-- Income bracket comparison -->
+<div class="bracket-card">
+<h3>Tariff Burden by Income Bracket</h3>
+<p style="font-size:0.85rem;color:var(--gray-600);margin-bottom:1.5rem;">Lower-income households pay a disproportionately higher share of their income. Your bracket is highlighted.</p>
+<div id="bracketRows"></div>
+</div>
+<!-- Share -->
+<div class="share-block">
+<div class="share-block-title">Share Your Result</div>
+<div class="share-text-display" id="shareTextDisplay">Tariffs are costing my household $0/year. Check yours at skipthesurprise.com/calculators/tariff-cost/</div>
+<button class="share-copy-btn" id="shareCopyBtn" type="button">
+<svg fill="none" height="13" stroke="currentColor" stroke-linecap="round" stroke-width="1.5" viewbox="0 0 13 13" width="13"><rect height="8" rx="1.5" width="8" x="4" y="4"></rect><path d="M1 9V2a1 1 0 0 1 1-1h7"></path></svg>
               Copy to clipboard
             </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Ad 2 -->
-  <div style="text-align:center;margin:24px auto;max-width:728px;min-height:90px;"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9661407658009326" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
-
-  <!-- PRODUCT LOOKUP -->
-  <section class="calculator-section" id="product-lookup" style="background:var(--white);">
-    <div class="container">
-      <div class="product-lookup-card">
-        <h3>Product Tariff Lookup</h3>
-        <p style="font-size:0.9rem;color:var(--gray-600);margin-bottom:1.25rem;">Search 50+ common consumer products to see their estimated tariff rate.</p>
-        <div class="product-search-wrap">
-          <input type="text" id="productSearch" placeholder="Search a product... (iPhone, bananas, Nike shoes, washing machine)" autocomplete="off" />
-        </div>
-        <div class="product-results" id="productResults"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- HOW TARIFFS WORK -->
-  <section class="how-section" aria-labelledby="how-heading">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-label">Under the Hood</div>
-        <h2 class="section-title" id="how-heading">How Tariffs Hit Your Wallet</h2>
-        <p class="section-sub">Tariffs are taxes paid at the border on imported goods. Here is how they flow through to your household budget.</p>
-      </div>
-      <div class="steps-grid">
-        <div class="step-card">
-          <div class="step-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 5h14M3 10h14M3 15h8"/></svg></div>
-          <div class="step-title">Multiple Tariff Layers Stack</div>
-          <p class="step-body">Your products may face Section 301 China tariffs (25-100%), Section 232 steel/aluminum (25%), the universal Section 122 baseline (10%), plus existing MFN rates. These layers stack, compounding the final cost.</p>
-        </div>
-        <div class="step-card">
-          <div class="step-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="6" width="14" height="10" rx="2"/><path d="M7 6V4a3 3 0 0 1 6 0v2"/></svg></div>
-          <div class="step-title">80-100% Passed to Consumers</div>
-          <p class="step-body">Research consistently shows importers pass most tariff costs downstream. Retailers absorb some margin but the majority lands on your receipt. You pay the tariff, not the government collecting it.</p>
-        </div>
-        <div class="step-card">
-          <div class="step-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="10" cy="10" r="7"/><path d="M10 6v4l3 3"/></svg></div>
-          <div class="step-title">USMCA Exemptions Exist</div>
-          <p class="step-body">Goods originating within the US, Canada, or Mexico may qualify for USMCA tariff exemptions. But many consumer products contain components from outside North America, so the exemption often only partially applies.</p>
-        </div>
-        <div class="step-card">
-          <div class="step-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2 15l4-4 3 3 4-6 5 5"/><path d="M14 5h4v4"/></svg></div>
-          <div class="step-title">Regressive Impact</div>
-          <p class="step-body">Lower-income households spend a larger share of income on tariffed necessities like food, clothing, and household goods. The effective tariff rate as a percentage of income is 2-3x higher for low-income families.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CANADIAN SECTION -->
-  <section class="canada-section" id="canada-section">
-    <div class="container">
-      <div class="canada-card">
-        <h3>Canadian Tariff Impact</h3>
-        <p style="font-size:0.9rem;color:var(--gray-600);margin-bottom:1.5rem;">Canada has implemented retaliatory tariffs on US goods. Here is how it affects Canadian households.</p>
-        <div class="canada-grid">
-          <div class="canada-item">
-            <h4>Retaliatory Tariffs on US Goods</h4>
-            <p>Canada imposed 25% retaliatory tariffs on a wide range of American products including vehicles, steel, aluminum, and select consumer goods. Canadian consumers pay more for American-made products.</p>
-          </div>
-          <div class="canada-item">
-            <h4>Cross-Border Shopping Impact</h4>
-            <p>The CBSA personal exemption remains $200 CAD for 24-48 hour trips and $800 CAD for 7+ day trips. Above those thresholds, Canadian retaliatory duties now apply to US-origin goods you bring back.</p>
-          </div>
-          <div class="canada-item">
-            <h4>CAD Pricing Considerations</h4>
-            <p>All costs shown for Canadian users are in CAD. The exchange rate amplifies tariff impact since many goods are priced in USD. A 25% tariff on a USD-priced product costs even more in Canadian dollars.</p>
-          </div>
-          <div class="canada-item">
-            <h4>CBSA Duty Rates</h4>
-            <p>Personal imports above exemption thresholds face CBSA duties ranging from 0-20% depending on the product category, plus 5% GST (or HST depending on province). The retaliatory tariff stacks on top of these existing rates.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="faq-section" aria-labelledby="faq-heading">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-label">Common Questions</div>
-        <h2 class="section-title" id="faq-heading">Tariff Calculator FAQ</h2>
-      </div>
-      <div class="faq-list" role="list">
-        <div class="faq-item" role="listitem">
-          <button class="faq-question" aria-expanded="false">
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Ad 2 -->
+<div style="text-align:center;margin:24px auto;max-width:728px;min-height:90px;"><ins class="adsbygoogle" data-ad-client="ca-pub-9661407658009326" data-ad-format="auto" data-ad-slot="auto" data-full-width-responsive="true" style="display:block"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+<!-- PRODUCT LOOKUP -->
+<section class="calculator-section" id="product-lookup" style="background:var(--white);">
+<div class="container">
+<div class="product-lookup-card">
+<h3>Product Tariff Lookup</h3>
+<p style="font-size:0.9rem;color:var(--gray-600);margin-bottom:1.25rem;">Search 50+ common consumer products to see their estimated tariff rate.</p>
+<div class="product-search-wrap">
+<input autocomplete="off" id="productSearch" placeholder="Search a product... (iPhone, bananas, Nike shoes, washing machine)" type="text"/>
+</div>
+<div class="product-results" id="productResults"></div>
+</div>
+</div>
+</section>
+<!-- HOW TARIFFS WORK -->
+<section aria-labelledby="how-heading" class="how-section">
+<div class="container">
+<div class="section-header">
+<div class="section-label">Under the Hood</div>
+<h2 class="section-title" id="how-heading">How Tariffs Hit Your Wallet</h2>
+<p class="section-sub">Tariffs are taxes paid at the border on imported goods. Here is how they flow through to your household budget.</p>
+</div>
+<div class="steps-grid">
+<div class="step-card">
+<div class="step-icon"><svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-width="1.5" viewbox="0 0 20 20" width="20"><path d="M3 5h14M3 10h14M3 15h8"></path></svg></div>
+<div class="step-title">Multiple Tariff Layers Stack</div>
+<p class="step-body">Your products may face Section 301 China tariffs (25-100%), Section 232 steel/aluminum (25%), the universal Section 122 baseline (10%), plus existing MFN rates. These layers stack, compounding the final cost.</p>
+</div>
+<div class="step-card">
+<div class="step-icon"><svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-width="1.5" viewbox="0 0 20 20" width="20"><rect height="10" rx="2" width="14" x="3" y="6"></rect><path d="M7 6V4a3 3 0 0 1 6 0v2"></path></svg></div>
+<div class="step-title">80-100% Passed to Consumers</div>
+<p class="step-body">Research consistently shows importers pass most tariff costs downstream. Retailers absorb some margin but the majority lands on your receipt. You pay the tariff, not the government collecting it.</p>
+</div>
+<div class="step-card">
+<div class="step-icon"><svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-width="1.5" viewbox="0 0 20 20" width="20"><circle cx="10" cy="10" r="7"></circle><path d="M10 6v4l3 3"></path></svg></div>
+<div class="step-title">USMCA Exemptions Exist</div>
+<p class="step-body">Goods originating within the US, Canada, or Mexico may qualify for USMCA tariff exemptions. But many consumer products contain components from outside North America, so the exemption often only partially applies.</p>
+</div>
+<div class="step-card">
+<div class="step-icon"><svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-width="1.5" viewbox="0 0 20 20" width="20"><path d="M2 15l4-4 3 3 4-6 5 5"></path><path d="M14 5h4v4"></path></svg></div>
+<div class="step-title">Regressive Impact</div>
+<p class="step-body">Lower-income households spend a larger share of income on tariffed necessities like food, clothing, and household goods. The effective tariff rate as a percentage of income is 2-3x higher for low-income families.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CANADIAN SECTION -->
+<section class="canada-section" id="canada-section">
+<div class="container">
+<div class="canada-card">
+<h3>Canadian Tariff Impact</h3>
+<p style="font-size:0.9rem;color:var(--gray-600);margin-bottom:1.5rem;">Canada has implemented retaliatory tariffs on US goods. Here is how it affects Canadian households.</p>
+<div class="canada-grid">
+<div class="canada-item">
+<h4>Retaliatory Tariffs on US Goods</h4>
+<p>Canada imposed 25% retaliatory tariffs on a wide range of American products including vehicles, steel, aluminum, and select consumer goods. Canadian consumers pay more for American-made products.</p>
+</div>
+<div class="canada-item">
+<h4>Cross-Border Shopping Impact</h4>
+<p>The CBSA personal exemption remains $200 CAD for 24-48 hour trips and $800 CAD for 7+ day trips. Above those thresholds, Canadian retaliatory duties now apply to US-origin goods you bring back.</p>
+</div>
+<div class="canada-item">
+<h4>CAD Pricing Considerations</h4>
+<p>All costs shown for Canadian users are in CAD. The exchange rate amplifies tariff impact since many goods are priced in USD. A 25% tariff on a USD-priced product costs even more in Canadian dollars.</p>
+</div>
+<div class="canada-item">
+<h4>CBSA Duty Rates</h4>
+<p>Personal imports above exemption thresholds face CBSA duties ranging from 0-20% depending on the product category, plus 5% GST (or HST depending on province). The retaliatory tariff stacks on top of these existing rates.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ -->
+<section aria-labelledby="faq-heading" class="faq-section">
+<div class="container">
+<div class="section-header">
+<div class="section-label">Common Questions</div>
+<h2 class="section-title" id="faq-heading">Tariff Calculator FAQ</h2>
+</div>
+<div class="faq-list" role="list">
+<div class="faq-item" role="listitem">
+<button aria-expanded="false" class="faq-question">
             How much are tariffs costing the average American household in 2026?
-            <svg class="faq-icon" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M11 5v12M5 11h12"/></svg>
-          </button>
-          <div class="faq-answer" role="region"><div class="faq-answer-inner">The average American household pays between $3,800 and $4,900 per year in tariff costs as of 2026, according to analysis from Yale Budget Lab and the Tax Foundation. The exact amount depends on household spending patterns, income level, and whether major purchases like vehicles are included. Lower-income households pay a disproportionately higher share of their income toward tariffs.</div></div>
-        </div>
-        <div class="faq-item" role="listitem">
-          <button class="faq-question" aria-expanded="false">
+            <svg class="faq-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 22 22"><path d="M11 5v12M5 11h12"></path></svg>
+</button>
+<div class="faq-answer" role="region"><div class="faq-answer-inner">The average American household pays between $3,800 and $4,900 per year in tariff costs as of 2026, according to analysis from Yale Budget Lab and the Tax Foundation. The exact amount depends on household spending patterns, income level, and whether major purchases like vehicles are included. Lower-income households pay a disproportionately higher share of their income toward tariffs.</div></div>
+</div>
+<div class="faq-item" role="listitem">
+<button aria-expanded="false" class="faq-question">
             Do lower-income households pay more in tariffs?
-            <svg class="faq-icon" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M11 5v12M5 11h12"/></svg>
-          </button>
-          <div class="faq-answer" role="region"><div class="faq-answer-inner">Yes. Tariffs are regressive. Households earning under $30,000 may spend up to 5.3% of their income on tariffs, while households earning over $150,000 typically spend around 1.8%. This is because necessities like food, clothing, and household goods make up a larger share of lower-income budgets, and these categories carry significant tariff rates.</div></div>
-        </div>
-        <div class="faq-item" role="listitem">
-          <button class="faq-question" aria-expanded="false">
+            <svg class="faq-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 22 22"><path d="M11 5v12M5 11h12"></path></svg>
+</button>
+<div class="faq-answer" role="region"><div class="faq-answer-inner">Yes. Tariffs are regressive. Households earning under $30,000 may spend up to 5.3% of their income on tariffs, while households earning over $150,000 typically spend around 1.8%. This is because necessities like food, clothing, and household goods make up a larger share of lower-income budgets, and these categories carry significant tariff rates.</div></div>
+</div>
+<div class="faq-item" role="listitem">
+<button aria-expanded="false" class="faq-question">
             What goods have the highest tariff rates in 2026?
-            <svg class="faq-icon" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M11 5v12M5 11h12"/></svg>
-          </button>
-          <div class="faq-answer" role="region"><div class="faq-answer-inner">Clothing and footwear carry some of the highest consumer tariff rates at 12-32%. Vehicles face 25% on imports (27.5% from China). Electronics range from 7.5-25%. Toys from China face 25%. Section 301 tariffs on Chinese goods add surcharges of 25-100% on specific categories. Chinese EVs face tariffs up to 100%.</div></div>
-        </div>
-        <div class="faq-item" role="listitem">
-          <button class="faq-question" aria-expanded="false">
+            <svg class="faq-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 22 22"><path d="M11 5v12M5 11h12"></path></svg>
+</button>
+<div class="faq-answer" role="region"><div class="faq-answer-inner">Clothing and footwear carry some of the highest consumer tariff rates at 12-32%. Vehicles face 25% on imports (27.5% from China). Electronics range from 7.5-25%. Toys from China face 25%. Section 301 tariffs on Chinese goods add surcharges of 25-100% on specific categories. Chinese EVs face tariffs up to 100%.</div></div>
+</div>
+<div class="faq-item" role="listitem">
+<button aria-expanded="false" class="faq-question">
             How do Canadian tariffs differ from US tariffs?
-            <svg class="faq-icon" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M11 5v12M5 11h12"/></svg>
-          </button>
-          <div class="faq-answer" role="region"><div class="faq-answer-inner">Canada has implemented retaliatory 25% tariffs on many US goods. Canadian households face different duty structures through the CBSA, with cross-border shopping exemptions of $200 CAD (24-48hr) and $800 CAD (7+ days). USMCA provides some exemptions for qualifying North American goods, but many products still carry significant duties due to non-qualifying components.</div></div>
-        </div>
-        <div class="faq-item" role="listitem">
-          <button class="faq-question" aria-expanded="false">
+            <svg class="faq-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 22 22"><path d="M11 5v12M5 11h12"></path></svg>
+</button>
+<div class="faq-answer" role="region"><div class="faq-answer-inner">Canada has implemented retaliatory 25% tariffs on many US goods. Canadian households face different duty structures through the CBSA, with cross-border shopping exemptions of $200 CAD (24-48hr) and $800 CAD (7+ days). USMCA provides some exemptions for qualifying North American goods, but many products still carry significant duties due to non-qualifying components.</div></div>
+</div>
+<div class="faq-item" role="listitem">
+<button aria-expanded="false" class="faq-question">
             What can I do to reduce my household tariff burden?
-            <svg class="faq-icon" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M11 5v12M5 11h12"/></svg>
-          </button>
-          <div class="faq-answer" role="region"><div class="faq-answer-inner">Buy domestically produced goods where available (especially clothing and produce). Shop secondhand for clothing, furniture, and appliances. Delay large electronics or vehicle purchases if possible. Check product origin labels before buying. Consider brands that manufacture in USMCA countries. Knowing your tariff cost number is the first step to making intentional substitution decisions.</div></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- DATA SOURCES -->
-  <section class="sources-section" aria-labelledby="sources-heading">
-    <div class="container">
-      <div class="sources-inner">
-        <div class="sources-title" id="sources-heading">Data Sources</div>
-        <ul class="sources-list">
-          <li><strong>Yale Budget Lab</strong> -- Household tariff burden analysis by income quintile and consumer spending category pass-through modeling (budgetlab.yale.edu).</li>
-          <li><strong>Tax Foundation</strong> -- Tariff tracker, effective tariff rate calculations, and consumer impact estimates (taxfoundation.org).</li>
-          <li><strong>U.S. Bureau of Labor Statistics (BLS)</strong> -- Consumer Expenditure Survey (CE) data used for average household spending by income bracket and category.</li>
-          <li><strong>USITC Harmonized Tariff Schedule</strong> -- Official tariff rates by HTS code for consumer product categories.</li>
-          <li><strong>Peterson Institute for International Economics</strong> -- Analysis of tariff incidence, consumer welfare costs, and regressive impact by income level.</li>
-          <li><strong>Canada Border Services Agency (CBSA)</strong> -- Canadian duty rates, personal import thresholds, and retaliatory tariff schedules on US goods.</li>
-        </ul>
-        <span class="last-updated">Last updated: April 2026</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Ad 3 -->
-  <div style="text-align:center;margin:24px auto;max-width:728px;min-height:90px;"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9661407658009326" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-links">
-        <a href="/">All Calculators</a>
-        <a href="/blog/">Blog</a>
-        <a href="mailto:hello@skipthesurprise.com">Contact</a>
-      </div>
-      <p class="footer-disclaimer">
+            <svg class="faq-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 22 22"><path d="M11 5v12M5 11h12"></path></svg>
+</button>
+<div class="faq-answer" role="region"><div class="faq-answer-inner">Buy domestically produced goods where available (especially clothing and produce). Shop secondhand for clothing, furniture, and appliances. Delay large electronics or vehicle purchases if possible. Check product origin labels before buying. Consider brands that manufacture in USMCA countries. Knowing your tariff cost number is the first step to making intentional substitution decisions.</div></div>
+</div>
+</div>
+</div>
+</section>
+<!-- DATA SOURCES -->
+<section aria-labelledby="sources-heading" class="sources-section">
+<div class="container">
+<div class="sources-inner">
+<div class="sources-title" id="sources-heading">Data Sources</div>
+<ul class="sources-list">
+<li><strong>Yale Budget Lab</strong> -- Household tariff burden analysis by income quintile and consumer spending category pass-through modeling (budgetlab.yale.edu).</li>
+<li><strong>Tax Foundation</strong> -- Tariff tracker, effective tariff rate calculations, and consumer impact estimates (taxfoundation.org).</li>
+<li><strong>U.S. Bureau of Labor Statistics (BLS)</strong> -- Consumer Expenditure Survey (CE) data used for average household spending by income bracket and category.</li>
+<li><strong>USITC Harmonized Tariff Schedule</strong> -- Official tariff rates by HTS code for consumer product categories.</li>
+<li><strong>Peterson Institute for International Economics</strong> -- Analysis of tariff incidence, consumer welfare costs, and regressive impact by income level.</li>
+<li><strong>Canada Border Services Agency (CBSA)</strong> -- Canadian duty rates, personal import thresholds, and retaliatory tariff schedules on US goods.</li>
+</ul>
+<span class="last-updated">Last updated: April 2026</span>
+</div>
+</div>
+</section>
+<!-- Ad 3 -->
+<div style="text-align:center;margin:24px auto;max-width:728px;min-height:90px;"><ins class="adsbygoogle" data-ad-client="ca-pub-9661407658009326" data-ad-format="auto" data-ad-slot="auto" data-full-width-responsive="true" style="display:block"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+<!-- FOOTER -->
+<section aria-label="Related Calculators" class="related-calculators"><h2>Related Calculators</h2><ul><li><a href="/calculators/food-budget/">Food Budget Calculator — Monthly Estimate</a></li><li><a href="/calculators/child-cost/">Cost of Raising a Child Calculator</a></li><li><a href="/calculators/subscription-graveyard/">Subscription Graveyard Calculator</a></li></ul></section><section class="blog-cta"><p>Want to learn more? <a href="/blog/">Read our blog</a> for budgeting tips, tax guides, and financial strategies for freelancers and self-employed workers.</p></section><footer>
+<div class="footer-inner">
+<div class="footer-links">
+<a href="/">All Calculators</a>
+<a href="/blog/">Blog</a>
+<a href="mailto:hello@skipthesurprise.com">Contact</a>
+</div>
+<p class="footer-disclaimer">
         This calculator provides estimates only. Tariff rates are blended averages based on publicly reported 2026 trade policy, Yale Budget Lab analysis, Tax Foundation data, and BLS Consumer Expenditure Survey figures. Actual consumer prices depend on specific products, retailers, and supply chains. This tool is for educational and planning purposes only and does not constitute financial or legal advice.
       </p>
-      <p class="footer-copy">&copy; 2026 Skip the Surprise</p>
-    </div>
-  </footer>
-
-  <script>
+<p class="footer-copy">© 2026 Skip the Surprise</p>
+</div>
+</footer>
+<script>
   // ========================
   // DATA
   // ========================
@@ -1643,6 +1763,5 @@
     });
   });
   </script>
-
 </body>
 </html>
