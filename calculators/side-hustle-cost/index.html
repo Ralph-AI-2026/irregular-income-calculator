@@ -293,6 +293,20 @@
     .form-group select:focus, .form-group input:focus { outline: none; border-color: var(--blue-500); box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }
     .form-hint { font-size: 0.72rem; color: var(--gray-400); margin-top: 0.15rem; }
 
+    /* INPUT VALIDATION ERROR */
+    .form-group input.input-error, .form-group select.input-error {
+      border-color: var(--red-600);
+      box-shadow: 0 0 0 3px rgba(220,38,38,0.1);
+    }
+    .form-error-msg {
+      font-size: 0.72rem;
+      color: var(--red-600);
+      font-weight: 500;
+      margin-top: 0.1rem;
+      display: none;
+    }
+    .form-error-msg.visible { display: block; }
+
     /* SLIDER */
     .slider-group { margin-bottom: 1rem; }
     .slider-label { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.4rem; }
@@ -333,11 +347,77 @@
     }
     .toggle-btn:first-child { border-radius: var(--radius-sm) 0 0 var(--radius-sm); border-right: none; }
     .toggle-btn:last-child { border-radius: 0 var(--radius-sm) var(--radius-sm) 0; }
+    .toggle-btn:only-child { border-radius: var(--radius-sm); border-right: 1.5px solid var(--gray-300); }
     .toggle-btn.active {
       background: var(--blue-600);
       color: var(--white);
       border-color: var(--blue-600);
     }
+
+    /* MODE TOGGLE (Quick/Advanced, Forward/Reverse) */
+    .mode-toggle-row { display: flex; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+    .mode-toggle-group { display: flex; gap: 0; }
+    .mode-toggle-group .toggle-btn { padding: 0.5rem 0.9rem; font-size: 0.8rem; }
+    .mode-toggle-group .toggle-btn:first-child { border-radius: var(--radius-sm) 0 0 var(--radius-sm); border-right: none; }
+    .mode-toggle-group .toggle-btn:last-child { border-radius: 0 var(--radius-sm) var(--radius-sm) 0; border-left: none; }
+    .mode-toggle-label { font-size: 0.75rem; font-weight: 600; color: var(--gray-500); margin-bottom: 0.3rem; text-transform: uppercase; letter-spacing: 0.04em; }
+
+    /* ADVANCED FIELDS HIDDEN BY DEFAULT */
+    .advanced-fields { display: none; }
+    .advanced-fields.visible { display: block; }
+
+    /* VEHICLE FIELDS COLLAPSIBLE */
+    .vehicle-fields { transition: max-height 0.3s ease, opacity 0.3s ease; overflow: hidden; max-height: 500px; opacity: 1; }
+    .vehicle-fields.collapsed { max-height: 0; opacity: 0; margin: 0; padding: 0; }
+    .vehicle-collapsed-note { display: none; font-size: 0.8rem; color: var(--gray-500); font-style: italic; margin-bottom: 1rem; }
+    .vehicle-collapsed-note.visible { display: block; }
+
+    /* INFO ICON TOOLTIP */
+    .info-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--gray-200);
+      color: var(--gray-600);
+      font-size: 0.65rem;
+      font-weight: 700;
+      cursor: help;
+      position: relative;
+      margin-left: 0.3rem;
+      vertical-align: middle;
+      flex-shrink: 0;
+    }
+    .info-icon .info-tooltip {
+      display: none;
+      position: absolute;
+      bottom: calc(100% + 6px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--gray-900);
+      color: var(--white);
+      font-size: 0.72rem;
+      font-weight: 400;
+      padding: 0.5rem 0.65rem;
+      border-radius: var(--radius-sm);
+      width: 220px;
+      line-height: 1.4;
+      z-index: 50;
+      text-align: left;
+      box-shadow: var(--shadow-md);
+    }
+    .info-icon .info-tooltip::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 5px solid transparent;
+      border-top-color: var(--gray-900);
+    }
+    .info-icon:hover .info-tooltip { display: block; }
 
     /* RESULTS */
     .results-hidden { display: none; }
@@ -394,12 +474,38 @@
       padding: 0.6rem 0.75rem; background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: var(--radius-sm);
       font-size: 0.875rem;
     }
-    .deduction-item .dl-label { color: var(--gray-700); font-weight: 500; }
+    .deduction-item .dl-label { color: var(--gray-700); font-weight: 500; display: flex; align-items: center; }
     .deduction-item .dl-amount { font-weight: 700; }
     .deduction-item .dl-amount.negative { color: var(--red-600); }
     .deduction-item .dl-amount.positive { color: var(--green-700); }
     .deduction-item.total { background: var(--hustle-900); color: var(--white); border-color: var(--hustle-700); font-weight: 700; }
     .deduction-item.total .dl-amount { color: var(--white); font-size: 1rem; }
+
+    /* QUARTERLY TAX REMINDER */
+    .quarterly-reminder {
+      background: var(--amber-50);
+      border: 1.5px solid var(--amber-100);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.25rem;
+      margin-top: 1rem;
+    }
+    .quarterly-reminder .qr-title { font-size: 0.82rem; font-weight: 700; color: var(--amber-700); margin-bottom: 0.5rem; }
+    .quarterly-reminder .qr-amount { font-size: 1.1rem; font-weight: 800; color: var(--amber-700); margin-bottom: 0.5rem; }
+    .quarterly-reminder .qr-dates { font-size: 0.78rem; color: var(--gray-600); line-height: 1.5; }
+
+    /* DAY JOB COMPARISON */
+    .dayjob-comparison {
+      background: var(--blue-50);
+      border: 1.5px solid var(--blue-100);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    .dayjob-comparison .dj-title { font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--blue-600); margin-bottom: 0.75rem; }
+    .dayjob-comparison .dj-rate { font-size: 1.75rem; font-weight: 800; color: var(--blue-700); }
+    .dayjob-comparison .dj-label { font-size: 0.8rem; color: var(--gray-500); margin-top: 0.25rem; }
+    .dayjob-comparison .dj-breakdown { font-size: 0.78rem; color: var(--gray-500); margin-top: 0.75rem; line-height: 1.6; }
 
     /* CHART */
     .chart-container { position: relative; height: 320px; margin: 1rem 0; }
@@ -438,6 +544,22 @@
       transition: background 0.15s;
     }
     .copy-btn:hover { background: rgba(255,255,255,0.25); }
+
+    /* BUTTON GROUP */
+    .button-group { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+    .reset-btn {
+      padding: 0.85rem 2rem;
+      font-size: 1rem;
+      border-radius: var(--radius-md);
+      background: var(--gray-200);
+      color: var(--gray-700);
+      border: 1.5px solid var(--gray-300);
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background 0.15s;
+    }
+    .reset-btn:hover { background: var(--gray-300); }
 
     /* AD */
     .ad-container { text-align: center; margin: 1.5rem auto; max-width: 728px; min-height: 90px; }
@@ -536,6 +658,29 @@
 <!-- AD SLOT 1 -->
 <div class="ad-container"><ins class="adsbygoogle" data-ad-client="ca-pub-9661407658009326" data-ad-format="auto" data-ad-slot="auto" data-full-width-responsive="true" style="display:block"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
 <div class="main">
+
+<!-- MODE TOGGLES -->
+<div class="calc-section">
+<div class="calc-section-title">Calculator Mode</div>
+<p class="calc-section-sub">Choose your mode and detail level.</p>
+<div class="mode-toggle-row">
+<div>
+<div class="mode-toggle-label">Direction</div>
+<div class="mode-toggle-group">
+<button class="toggle-btn active" id="toggleForward" onclick="setDirection('forward')">I earn $X -- what do I keep?</button>
+<button class="toggle-btn" id="toggleReverse" onclick="setDirection('reverse')">I need $X net -- what must I gross?</button>
+</div>
+</div>
+<div>
+<div class="mode-toggle-label">Detail Level</div>
+<div class="mode-toggle-group">
+<button class="toggle-btn active" id="toggleQuick" onclick="setDetailLevel('quick')">Quick Estimate</button>
+<button class="toggle-btn" id="toggleAdvanced" onclick="setDetailLevel('advanced')">Advanced</button>
+</div>
+</div>
+</div>
+</div>
+
 <!-- STEP 1: COUNTRY -->
 <div class="calc-section">
 <div class="calc-section-title"><span class="icon">1</span> Where Are You?</div>
@@ -543,6 +688,32 @@
 <div class="toggle-group">
 <button class="toggle-btn active" onclick="setCountry('US')" id="toggleUS">USA (USD)</button>
 <button class="toggle-btn" onclick="setCountry('CA')" id="toggleCA">Canada (CAD)</button>
+</div>
+<!-- Canada Province Dropdown (appears when Canada selected) -->
+<div class="form-row" id="caProvinceRow" style="display:none;">
+<div class="form-group">
+<label for="province">Province / Territory</label>
+<select id="province">
+<option value="AB">Alberta</option>
+<option value="BC">British Columbia</option>
+<option value="SK">Saskatchewan</option>
+<option value="MB">Manitoba</option>
+<option value="ON" selected>Ontario</option>
+<option value="QC">Quebec</option>
+<option value="NB">New Brunswick</option>
+<option value="NS">Nova Scotia</option>
+<option value="PE">Prince Edward Island</option>
+<option value="NL">Newfoundland &amp; Labrador</option>
+<option value="NT">Northwest Territories</option>
+<option value="NU">Nunavut</option>
+<option value="YT">Yukon</option>
+</select>
+</div>
+<div class="form-group">
+<label for="otherIncomeCA">Other Annual Income (CAD)</label>
+<input id="otherIncomeCA" min="0" step="100" type="number" value="0" placeholder="0"/>
+<div class="form-hint">Employment or other income (affects your bracket)</div>
+</div>
 </div>
 </div>
 
@@ -566,12 +737,13 @@
 <label for="platformFee">Platform Fees (%)</label>
 <input id="platformFee" min="0" max="50" step="0.5" type="number" value="20"/>
 <div class="form-hint">Typical: DoorDash 15-20%, Uber 25%, Instacart 5-10%</div>
+<div class="form-error-msg" id="platformFeeError"></div>
 </div>
 </div>
 </div>
 
-<!-- STEP 3: EARNINGS & HOURS -->
-<div class="calc-section">
+<!-- STEP 3: EARNINGS & HOURS (FORWARD MODE) -->
+<div class="calc-section" id="forwardEarnings">
 <div class="calc-section-title"><span class="icon">3</span> Your Earnings</div>
 <p class="calc-section-sub">Enter what the app shows you (before any deductions).</p>
 <div class="form-row">
@@ -579,10 +751,31 @@
 <label for="grossWeekly">Gross Weekly Earnings ($)</label>
 <input id="grossWeekly" min="0" step="1" type="number" value="750" placeholder="750"/>
 <div class="form-hint">What the app says you earned this week</div>
+<div class="form-error-msg" id="grossWeeklyError"></div>
 </div>
 <div class="form-group">
 <label for="hoursPerWeek">Hours Worked Per Week</label>
-<input id="hoursPerWeek" min="1" max="80" step="0.5" type="number" value="30" placeholder="30"/>
+<input id="hoursPerWeek" min="1" max="168" step="0.5" type="number" value="30" placeholder="30"/>
+<div class="form-error-msg" id="hoursPerWeekError"></div>
+</div>
+</div>
+</div>
+
+<!-- STEP 3: REVERSE MODE -->
+<div class="calc-section" id="reverseEarnings" style="display:none;">
+<div class="calc-section-title"><span class="icon">3</span> Your Target Take-Home</div>
+<p class="calc-section-sub">How much do you want to actually take home per month after everything?</p>
+<div class="form-row">
+<div class="form-group">
+<label for="targetNetMonthly">Desired Monthly Net Income ($)</label>
+<input id="targetNetMonthly" min="0" step="50" type="number" value="2000" placeholder="2000"/>
+<div class="form-hint">The amount you want in your pocket each month</div>
+<div class="form-error-msg" id="targetNetMonthlyError"></div>
+</div>
+<div class="form-group">
+<label for="reverseHoursPerWeek">Hours You Can Work Per Week</label>
+<input id="reverseHoursPerWeek" min="1" max="168" step="0.5" type="number" value="30" placeholder="30"/>
+<div class="form-error-msg" id="reverseHoursPerWeekError"></div>
 </div>
 </div>
 </div>
@@ -591,15 +784,22 @@
 <div class="calc-section">
 <div class="calc-section-title"><span class="icon">4</span> Your Expenses</div>
 <p class="calc-section-sub">The costs the app never shows you. Set any to $0 if not applicable.</p>
+
+<!-- Vehicle collapsed note (shown when Freelance selected) -->
+<div class="vehicle-collapsed-note" id="vehicleCollapsedNote">Vehicle expenses are hidden because Freelance/Contract work typically does not involve driving. Switch platform to show them.</div>
+
+<div class="vehicle-fields" id="vehicleFields">
 <div class="form-row">
 <div class="form-group">
 <label for="gasWeekly">Gas / Fuel Per Week ($)</label>
 <input id="gasWeekly" min="0" step="1" type="number" value="80" placeholder="80"/>
+<div class="form-error-msg" id="gasWeeklyError"></div>
 </div>
 <div class="form-group">
 <label for="maintenanceWeekly">Vehicle Maintenance Per Week ($)</label>
 <input id="maintenanceWeekly" min="0" step="1" type="number" value="25" placeholder="25"/>
 <div class="form-hint">Oil changes, tires, brakes, repairs averaged out</div>
+<div class="form-error-msg" id="maintenanceWeeklyError"></div>
 </div>
 </div>
 <div class="form-row">
@@ -607,29 +807,35 @@
 <label for="insuranceWeekly">Extra Insurance Per Week ($)</label>
 <input id="insuranceWeekly" min="0" step="1" type="number" value="15" placeholder="15"/>
 <div class="form-hint">Rideshare/delivery insurance premium above personal</div>
-</div>
-<div class="form-group">
-<label for="phoneMonthly">Phone / Data Monthly ($)</label>
-<input id="phoneMonthly" min="0" step="1" type="number" value="40" placeholder="40"/>
-<div class="form-hint">Portion of your plan used for gig work</div>
-</div>
-</div>
-<div class="form-row">
-<div class="form-group">
-<label for="otherWeekly">Other Weekly Expenses ($)</label>
-<input id="otherWeekly" min="0" step="1" type="number" value="0" placeholder="0"/>
-<div class="form-hint">Supplies, insulated bags, equipment, etc.</div>
+<div class="form-error-msg" id="insuranceWeeklyError"></div>
 </div>
 <div class="form-group" id="mileageGroup">
 <label for="milesPerWeek" id="mileageLabel">Miles Driven Per Week</label>
 <input id="milesPerWeek" min="0" step="1" type="number" value="300" placeholder="300"/>
 <div class="form-hint" id="mileageHint">Used to calculate your mileage deduction ($0.67/mi)</div>
+<div class="form-error-msg" id="milesPerWeekError"></div>
 </div>
 </div>
 </div>
 
-<!-- STEP 5: TAX SITUATION -->
-<div class="calc-section">
+<div class="form-row">
+<div class="form-group">
+<label for="phoneMonthly">Phone / Data Monthly ($)</label>
+<input id="phoneMonthly" min="0" step="1" type="number" value="40" placeholder="40"/>
+<div class="form-hint">Portion of your plan used for gig work</div>
+<div class="form-error-msg" id="phoneMonthlyError"></div>
+</div>
+<div class="form-group">
+<label for="otherWeekly">Other Weekly Expenses ($)</label>
+<input id="otherWeekly" min="0" step="1" type="number" value="0" placeholder="0"/>
+<div class="form-hint">Supplies, insulated bags, equipment, etc.</div>
+<div class="form-error-msg" id="otherWeeklyError"></div>
+</div>
+</div>
+</div>
+
+<!-- STEP 5: TAX SITUATION (ADVANCED ONLY) -->
+<div class="calc-section advanced-fields" id="taxSection">
 <div class="calc-section-title"><span class="icon">5</span> Your Tax Situation</div>
 <p class="calc-section-sub">We need this to estimate your tax liability accurately.</p>
 <div class="form-row" id="usTaxRow">
@@ -649,7 +855,7 @@
 </div>
 <div class="form-row" id="usStateRow">
 <div class="form-group">
-<label for="stateTax">State/Provincial Tax Rate (%)</label>
+<label for="stateTax">State Income Tax Rate (%)</label>
 <input id="stateTax" min="0" max="15" step="0.1" type="number" value="5"/>
 <div class="form-hint">US average ~5%. Some states (TX, FL, WA) = 0%</div>
 </div>
@@ -662,36 +868,14 @@
 <div class="form-hint">Most sole proprietors qualify for this deduction</div>
 </div>
 </div>
-<div class="form-row" id="caProvinceRow" style="display:none;">
-<div class="form-group">
-<label for="province">Province</label>
-<select id="province">
-<option value="AB">Alberta (10%)</option>
-<option value="BC">British Columbia (5.06-20.5%)</option>
-<option value="MB">Manitoba (10.8-17.4%)</option>
-<option value="NB">New Brunswick (9.4-19.5%)</option>
-<option value="NL">Newfoundland (8.7-21.8%)</option>
-<option value="NS">Nova Scotia (8.79-21%)</option>
-<option value="NT">Northwest Territories (5.9-14.05%)</option>
-<option value="NU">Nunavut (4-11.5%)</option>
-<option value="ON" selected>Ontario (5.05-13.16%)</option>
-<option value="PE">Prince Edward Island (9.65-18.75%)</option>
-<option value="QC">Quebec (14-25.75%)</option>
-<option value="SK">Saskatchewan (10.5-14.5%)</option>
-<option value="YT">Yukon (6.4-15%)</option>
-</select>
-</div>
-<div class="form-group">
-<label for="otherIncomeCA">Other Annual Income (CAD)</label>
-<input id="otherIncomeCA" min="0" step="100" type="number" value="0" placeholder="0"/>
-<div class="form-hint">Employment or other income (affects your bracket)</div>
-</div>
-</div>
 </div>
 
-<!-- CALCULATE BUTTON -->
+<!-- CALCULATE + RESET BUTTONS -->
 <div style="text-align:center;margin-bottom:2rem;">
+<div class="button-group">
 <button class="add-btn" onclick="calculate()" style="padding:0.85rem 2.5rem;font-size:1rem;border-radius:var(--radius-md);background:var(--blue-600);color:var(--white);border:none;font-weight:700;cursor:pointer;font-family:inherit;transition:background 0.15s;">Calculate My Real Earnings</button>
+<button class="reset-btn" onclick="resetAll()">Reset</button>
+</div>
 </div>
 
 <!-- RESULTS -->
@@ -718,6 +902,14 @@
 <div class="think-line" id="thinkLine"></div>
 <div class="big-number" id="trueWeekly"></div>
 <div class="big-label">per week after everything</div>
+</div>
+
+<!-- RESULT: DAY JOB COMPARISON -->
+<div class="dayjob-comparison" id="dayjobComparison">
+<div class="dj-title">Day Job Equivalent</div>
+<div class="dj-rate" id="djRate"></div>
+<div class="dj-label">equivalent day job hourly rate</div>
+<div class="dj-breakdown" id="djBreakdown"></div>
 </div>
 
 <!-- RESULT 3: BREAKDOWN -->
@@ -767,6 +959,14 @@
 <div class="calc-section-title">Tax Breakdown</div>
 <p class="calc-section-sub">Detailed tax liability on your gig income.</p>
 <div class="deduction-list" id="taxBreakdown"></div>
+<div class="quarterly-reminder" id="quarterlyReminder"></div>
+</div>
+
+<!-- RESULT: REVERSE CALCULATOR OUTPUT -->
+<div class="calc-section" id="reverseResultSection" style="display:none;">
+<div class="calc-section-title">What You Need to Gross</div>
+<p class="calc-section-sub">To hit your target take-home, here is what you need to earn before deductions.</p>
+<div class="breakdown-grid" id="reverseBreakdownGrid"></div>
 </div>
 
 <!-- RESULT 8: SHARE -->
@@ -790,7 +990,7 @@
 <footer>
 <div class="footer-inner">
 <p class="footer-disclaimer">
-Educational content only. Tax estimates are approximate and based on 2026 rates. Not tax or legal advice. Always consult a qualified accountant or tax professional for advice specific to your situation.
+This calculator provides estimates for planning purposes. Actual tax liability depends on your complete tax return. Consult a tax professional for accurate planning. Not tax advice. Tax estimates are approximate and based on 2026 rates.
 </p>
 <p class="footer-copy">&copy; 2026 Skip the Surprise. All rights reserved.</p>
 </div>
@@ -815,8 +1015,13 @@ Educational content only. Tax estimates are approximate and based on 2026 rates.
 
   // --- STATE ---
   var country = 'US';
+  var calcDirection = 'forward'; // 'forward' or 'reverse'
+  var detailLevel = 'quick'; // 'quick' or 'advanced'
   var pieChartInstance = null;
   var lastCalcData = null;
+
+  // --- STORAGE KEY ---
+  var STORAGE_KEY = 'sideHustleCostCalc';
 
   // --- PLATFORM FEE PRESETS ---
   var PLATFORM_FEES = {
@@ -826,6 +1031,59 @@ Educational content only. Tax estimates are approximate and based on 2026 rates.
     skipthedishes: 15,
     freelance: 0,
     other: 10
+  };
+
+  // --- CANADA GST/HST/PST RATES BY PROVINCE ---
+  var CA_SALES_TAX = {
+    AB: { rate: 0.05, label: '5% GST' },
+    BC: { rate: 0.12, label: '5% GST + 7% PST' },
+    SK: { rate: 0.11, label: '5% GST + 6% PST' },
+    MB: { rate: 0.12, label: '5% GST + 7% RST' },
+    ON: { rate: 0.13, label: '13% HST' },
+    QC: { rate: 0.14975, label: '5% GST + 9.975% QST' },
+    NB: { rate: 0.15, label: '15% HST' },
+    NS: { rate: 0.15, label: '15% HST' },
+    PE: { rate: 0.15, label: '15% HST' },
+    NL: { rate: 0.15, label: '15% HST' },
+    NT: { rate: 0.05, label: '5% GST' },
+    NU: { rate: 0.05, label: '5% GST' },
+    YT: { rate: 0.05, label: '5% GST' }
+  };
+
+  // --- TAX ITEM EXPLANATIONS ---
+  var TAX_EXPLANATIONS = {
+    se_tax: 'Self-employment tax covers Social Security and Medicare. As a gig worker, you pay both the employee and employer halves.',
+    social_security: 'Social Security tax funds retirement and disability benefits. Employees split this with employers, but self-employed workers pay both halves (12.4%).',
+    medicare: 'Medicare tax funds health insurance for those 65+. Self-employed workers pay both halves (2.9% total).',
+    se_deduction: 'The IRS lets you deduct 50% of your self-employment tax from your gross income, reducing your income tax.',
+    qbi: 'The Qualified Business Income deduction lets eligible self-employed workers deduct 20% of their net business income from taxable income.',
+    fed_tax: 'Federal income tax on your gig earnings, calculated using marginal tax brackets based on your total income.',
+    state_tax: 'State income tax varies by state. Some states like TX, FL, WA, and NV have no state income tax.',
+    cpp: 'Canada Pension Plan contributions are mandatory for self-employed workers. You pay both the employee and employer portions (11.9% total).',
+    cpp2: 'CPP2 is a second-ceiling contribution on earnings between the first and second yearly maximums, at a combined rate of 5.95%.',
+    prov_tax: 'Provincial/territorial income tax calculated using marginal brackets specific to your province.',
+    gst_hst: 'If your annual self-employment revenue exceeds $30,000, you must register for and collect GST/HST. The rate depends on your province.',
+    mileage: 'A tax deduction based on distance driven for work. Reduces your taxable income, not your actual expenses.'
+  };
+
+  // --- DIRECTION TOGGLE ---
+  window.setDirection = function(dir) {
+    calcDirection = dir;
+    document.getElementById('toggleForward').classList.toggle('active', dir === 'forward');
+    document.getElementById('toggleReverse').classList.toggle('active', dir === 'reverse');
+    document.getElementById('forwardEarnings').style.display = dir === 'forward' ? '' : 'none';
+    document.getElementById('reverseEarnings').style.display = dir === 'reverse' ? '' : 'none';
+  };
+
+  // --- DETAIL LEVEL TOGGLE ---
+  window.setDetailLevel = function(level) {
+    detailLevel = level;
+    document.getElementById('toggleQuick').classList.toggle('active', level === 'quick');
+    document.getElementById('toggleAdvanced').classList.toggle('active', level === 'advanced');
+    var advFields = document.querySelectorAll('.advanced-fields');
+    for (var i = 0; i < advFields.length; i++) {
+      advFields[i].classList.toggle('visible', level === 'advanced');
+    }
   };
 
   // --- COUNTRY TOGGLE ---
@@ -857,7 +1115,7 @@ Educational content only. Tax estimates are approximate and based on 2026 rates.
       document.getElementById('mileageHint').textContent = 'Used to calculate your mileage deduction ($0.67/mi)';
     }
 
-    // Update state tax hint
+    // Update state tax visibility
     if (c === 'CA') {
       document.getElementById('stateTax').closest('.form-group').style.display = 'none';
     } else {
@@ -871,12 +1129,17 @@ Educational content only. Tax estimates are approximate and based on 2026 rates.
     if (fee !== undefined) {
       document.getElementById('platformFee').value = fee;
     }
-    // Hide vehicle fields for freelance
+    // Collapse/show vehicle fields for freelance
     var isNonDriving = this.value === 'freelance';
-    document.getElementById('gasWeekly').value = isNonDriving ? 0 : document.getElementById('gasWeekly').value;
-    document.getElementById('maintenanceWeekly').value = isNonDriving ? 0 : document.getElementById('maintenanceWeekly').value;
-    document.getElementById('insuranceWeekly').value = isNonDriving ? 0 : document.getElementById('insuranceWeekly').value;
-    document.getElementById('milesPerWeek').value = isNonDriving ? 0 : document.getElementById('milesPerWeek').value;
+    var vehicleFields = document.getElementById('vehicleFields');
+    var collapsedNote = document.getElementById('vehicleCollapsedNote');
+    if (isNonDriving) {
+      vehicleFields.classList.add('collapsed');
+      collapsedNote.classList.add('visible');
+    } else {
+      vehicleFields.classList.remove('collapsed');
+      collapsedNote.classList.remove('visible');
+    }
   });
 
   // --- HELPERS ---
@@ -884,14 +1147,132 @@ Educational content only. Tax estimates are approximate and based on 2026 rates.
   function fmt(n) { return getCurrency() + n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ','); }
   function fmtBig(n) { return getCurrency() + Math.round(n).toLocaleString(); }
 
-  // --- US TAX CALCULATION ---
+  function infoIcon(key) {
+    var text = TAX_EXPLANATIONS[key] || '';
+    if (!text) return '';
+    return '<span class="info-icon" tabindex="0" aria-label="More info">?<span class="info-tooltip">' + text + '</span></span>';
+  }
+
+  // --- INPUT VALIDATION ---
+  function clearErrors() {
+    var errors = document.querySelectorAll('.form-error-msg');
+    for (var i = 0; i < errors.length; i++) {
+      errors[i].textContent = '';
+      errors[i].classList.remove('visible');
+    }
+    var inputs = document.querySelectorAll('.input-error');
+    for (var j = 0; j < inputs.length; j++) {
+      inputs[j].classList.remove('input-error');
+    }
+  }
+
+  function showError(inputId, message) {
+    var input = document.getElementById(inputId);
+    var errorEl = document.getElementById(inputId + 'Error');
+    if (input) input.classList.add('input-error');
+    if (errorEl) {
+      errorEl.textContent = message;
+      errorEl.classList.add('visible');
+    }
+  }
+
+  function validateInputs() {
+    clearErrors();
+    var valid = true;
+
+    if (calcDirection === 'forward') {
+      var gross = parseFloat(document.getElementById('grossWeekly').value);
+      if (isNaN(gross) || gross < 0) { showError('grossWeekly', 'Enter a valid amount (0 or more)'); valid = false; }
+      if (gross === 0 || document.getElementById('grossWeekly').value === '') { showError('grossWeekly', 'Gross earnings are required'); valid = false; }
+
+      var hours = parseFloat(document.getElementById('hoursPerWeek').value);
+      if (isNaN(hours) || hours <= 0) { showError('hoursPerWeek', 'Enter hours greater than 0'); valid = false; }
+      else if (hours > 168) { showError('hoursPerWeek', 'Maximum 168 hours per week'); valid = false; }
+    } else {
+      var target = parseFloat(document.getElementById('targetNetMonthly').value);
+      if (isNaN(target) || target <= 0 || document.getElementById('targetNetMonthly').value === '') { showError('targetNetMonthly', 'Enter a valid target amount'); valid = false; }
+
+      var rHours = parseFloat(document.getElementById('reverseHoursPerWeek').value);
+      if (isNaN(rHours) || rHours <= 0) { showError('reverseHoursPerWeek', 'Enter hours greater than 0'); valid = false; }
+      else if (rHours > 168) { showError('reverseHoursPerWeek', 'Maximum 168 hours per week'); valid = false; }
+    }
+
+    // Validate expense fields (negative check)
+    var expenseFields = ['gasWeekly', 'maintenanceWeekly', 'insuranceWeekly', 'phoneMonthly', 'otherWeekly', 'milesPerWeek'];
+    for (var i = 0; i < expenseFields.length; i++) {
+      var el = document.getElementById(expenseFields[i]);
+      var val = parseFloat(el.value);
+      if (!isNaN(val) && val < 0) {
+        showError(expenseFields[i], 'Cannot be negative');
+        valid = false;
+      }
+    }
+
+    var platformFeeVal = parseFloat(document.getElementById('platformFee').value);
+    if (!isNaN(platformFeeVal) && (platformFeeVal < 0 || platformFeeVal > 100)) {
+      showError('platformFee', 'Must be between 0 and 100');
+      valid = false;
+    }
+
+    return valid;
+  }
+
+  // --- US TAX CALCULATION (MARGINAL DIFFERENCE METHOD) ---
+  function calcUSBracketTax(taxableIncome, brackets) {
+    var tax = 0;
+    var remaining = taxableIncome;
+    var prevLimit = 0;
+    for (var i = 0; i < brackets.length; i++) {
+      var bracketWidth = brackets[i].limit - prevLimit;
+      var taxable = Math.min(remaining, bracketWidth);
+      tax += taxable * brackets[i].rate;
+      remaining -= taxable;
+      prevLimit = brackets[i].limit;
+      if (remaining <= 0) break;
+    }
+    return tax;
+  }
+
+  function getUSBrackets(filingStatus) {
+    if (filingStatus === 'married') {
+      return [
+        { limit: 23850, rate: 0.10 },
+        { limit: 96950, rate: 0.12 },
+        { limit: 206700, rate: 0.22 },
+        { limit: 394600, rate: 0.24 },
+        { limit: 501050, rate: 0.32 },
+        { limit: 751600, rate: 0.35 },
+        { limit: Infinity, rate: 0.37 }
+      ];
+    } else if (filingStatus === 'head') {
+      return [
+        { limit: 17000, rate: 0.10 },
+        { limit: 64850, rate: 0.12 },
+        { limit: 103350, rate: 0.22 },
+        { limit: 197300, rate: 0.24 },
+        { limit: 250525, rate: 0.32 },
+        { limit: 626350, rate: 0.35 },
+        { limit: Infinity, rate: 0.37 }
+      ];
+    } else {
+      return [
+        { limit: 11925, rate: 0.10 },
+        { limit: 48475, rate: 0.12 },
+        { limit: 103350, rate: 0.22 },
+        { limit: 197300, rate: 0.24 },
+        { limit: 250525, rate: 0.32 },
+        { limit: 626350, rate: 0.35 },
+        { limit: Infinity, rate: 0.37 }
+      ];
+    }
+  }
+
   function calcUSTax(annualGigNet, otherIncome, filingStatus, stateTaxRate, claimQbi) {
     // Self-employment tax
-    var seTaxableIncome = annualGigNet * 0.9235; // 92.35% is subject to SE tax
-    var seTax = seTaxableIncome * 0.153; // 15.3%
-    var ssSplit = Math.min(seTaxableIncome, 168600) * 0.124; // SS cap 2026
+    var seTaxableIncome = annualGigNet * 0.9235;
+    var ssSplit = Math.min(seTaxableIncome, 168600) * 0.124;
     var medicareSplit = seTaxableIncome * 0.029;
-    seTax = ssSplit + medicareSplit;
+    var seTax = ssSplit + medicareSplit;
 
     // Deduction for employer-equivalent SE tax
     var seDeduction = seTax / 2;
@@ -902,62 +1283,24 @@ Educational content only. Tax estimates are approximate and based on 2026 rates.
       qbiDeduction = annualGigNet * 0.20;
     }
 
-    // Taxable income
+    // Standard deduction
     var standardDeduction = filingStatus === 'married' ? 30000 : (filingStatus === 'head' ? 22500 : 15000);
-    var totalIncome = annualGigNet + otherIncome - seDeduction - qbiDeduction;
-    var taxableIncome = Math.max(0, totalIncome - standardDeduction);
 
-    // Federal brackets (2026 simplified)
-    var fedTax = 0;
-    var brackets;
-    if (filingStatus === 'married') {
-      brackets = [
-        { limit: 23850, rate: 0.10 },
-        { limit: 96950, rate: 0.12 },
-        { limit: 206700, rate: 0.22 },
-        { limit: 394600, rate: 0.24 },
-        { limit: 501050, rate: 0.32 },
-        { limit: 751600, rate: 0.35 },
-        { limit: Infinity, rate: 0.37 }
-      ];
-    } else if (filingStatus === 'head') {
-      brackets = [
-        { limit: 17000, rate: 0.10 },
-        { limit: 64850, rate: 0.12 },
-        { limit: 103350, rate: 0.22 },
-        { limit: 197300, rate: 0.24 },
-        { limit: 250525, rate: 0.32 },
-        { limit: 626350, rate: 0.35 },
-        { limit: Infinity, rate: 0.37 }
-      ];
-    } else {
-      brackets = [
-        { limit: 11925, rate: 0.10 },
-        { limit: 48475, rate: 0.12 },
-        { limit: 103350, rate: 0.22 },
-        { limit: 197300, rate: 0.24 },
-        { limit: 250525, rate: 0.32 },
-        { limit: 626350, rate: 0.35 },
-        { limit: Infinity, rate: 0.37 }
-      ];
-    }
+    var brackets = getUSBrackets(filingStatus);
 
-    var remaining = taxableIncome;
-    var prevLimit = 0;
-    for (var i = 0; i < brackets.length; i++) {
-      var bracketWidth = brackets[i].limit - prevLimit;
-      var taxable = Math.min(remaining, bracketWidth);
-      fedTax += taxable * brackets[i].rate;
-      remaining -= taxable;
-      prevLimit = brackets[i].limit;
-      if (remaining <= 0) break;
-    }
+    // Tax on (other income alone)
+    var otherTaxableIncome = Math.max(0, otherIncome - standardDeduction);
+    var taxOnOtherAlone = calcUSBracketTax(otherTaxableIncome, brackets);
 
-    // Proportion gig income's share of total fed tax
-    var gigShare = otherIncome > 0 ? (annualGigNet / (annualGigNet + otherIncome)) : 1;
-    var gigFedTax = fedTax * gigShare;
+    // Tax on (other income + gig income combined)
+    var combinedIncome = annualGigNet + otherIncome - seDeduction - qbiDeduction;
+    var combinedTaxable = Math.max(0, combinedIncome - standardDeduction);
+    var taxOnCombined = calcUSBracketTax(combinedTaxable, brackets);
 
-    // State tax (flat rate approximation)
+    // Gig income's true marginal federal tax = difference
+    var gigFedTax = Math.max(0, taxOnCombined - taxOnOtherAlone);
+
+    // State tax (flat rate on gig income)
     var gigStateTax = annualGigNet * stateTaxRate;
 
     return {
@@ -973,7 +1316,7 @@ Educational content only. Tax estimates are approximate and based on 2026 rates.
     };
   }
 
-  // --- CANADA TAX CALCULATION ---
+  // --- CANADA TAX CALCULATION (MARGINAL DIFFERENCE METHOD) ---
   var PROV_RATES = {
     AB: [{ limit: 148269, rate: 0.10 }, { limit: 177922, rate: 0.12 }, { limit: 237230, rate: 0.13 }, { limit: 355845, rate: 0.14 }, { limit: Infinity, rate: 0.15 }],
     BC: [{ limit: 47937, rate: 0.0506 }, { limit: 95875, rate: 0.077 }, { limit: 110076, rate: 0.105 }, { limit: 133664, rate: 0.1229 }, { limit: 181232, rate: 0.147 }, { limit: 252752, rate: 0.168 }, { limit: Infinity, rate: 0.205 }],
@@ -1009,7 +1352,7 @@ Educational content only. Tax estimates are approximate and based on 2026 rates.
     // CPP (2026): 11.9% on self-employment income between $3,500 and $71,300
     var cppMax = 71300;
     var cppExempt = 3500;
-    var cppRate = 0.119; // both employee + employer portions
+    var cppRate = 0.119;
     var cppPensionable = Math.min(Math.max(annualGigNet - cppExempt, 0), cppMax - cppExempt);
     var cppContribution = cppPensionable * cppRate;
 
@@ -1033,34 +1376,42 @@ Educational content only. Tax estimates are approximate and based on 2026 rates.
       { limit: Infinity, rate: 0.33 }
     ];
 
-    var totalIncome = annualGigNet + otherIncome - cppDeduction;
-    var basicPersonal = 16129; // 2026 BPA
-    var taxableIncome = Math.max(0, totalIncome - basicPersonal);
+    var basicPersonal = 16129;
 
-    var fedTax = calcBracketTax(taxableIncome, fedBrackets);
-    var gigShare = otherIncome > 0 ? (annualGigNet / (annualGigNet + otherIncome)) : 1;
-    var gigFedTax = fedTax * gigShare;
-
-    // Provincial tax
+    // Tax on other income alone
+    var otherTaxableIncome = Math.max(0, otherIncome - basicPersonal);
+    var fedTaxOnOther = calcBracketTax(otherTaxableIncome, fedBrackets);
     var provBrackets = PROV_RATES[province] || PROV_RATES['ON'];
-    var provTax = calcBracketTax(taxableIncome, provBrackets);
-    var gigProvTax = provTax * gigShare;
+    var provTaxOnOther = calcBracketTax(otherTaxableIncome, provBrackets);
 
-    // GST/HST (only if > $30K annual)
+    // Tax on combined income
+    var combinedIncome = annualGigNet + otherIncome - cppDeduction;
+    var combinedTaxable = Math.max(0, combinedIncome - basicPersonal);
+    var fedTaxOnCombined = calcBracketTax(combinedTaxable, fedBrackets);
+    var provTaxOnCombined = calcBracketTax(combinedTaxable, provBrackets);
+
+    // Gig income's marginal tax = difference
+    var gigFedTax = Math.max(0, fedTaxOnCombined - fedTaxOnOther);
+    var gigProvTax = Math.max(0, provTaxOnCombined - provTaxOnOther);
+
+    // GST/HST (only if > $30K annual revenue)
     var gstHst = 0;
     var gstNote = '';
+    var salesTaxInfo = CA_SALES_TAX[province] || CA_SALES_TAX['ON'];
     if (annualGigNet > 30000) {
-      gstHst = annualGigNet * 0.05; // Simplified: GST only. HST varies by province.
-      gstNote = 'You exceed $30K and must register for GST/HST';
+      gstHst = annualGigNet * salesTaxInfo.rate;
+      gstNote = 'You exceed $30K and must register for GST/HST (' + salesTaxInfo.label + ')';
     }
 
     return {
       cpp: totalCpp,
+      cpp2: cpp2Contribution,
       cppDeduction: cppDeduction,
       fedTax: gigFedTax,
       provTax: gigProvTax,
       gstHst: gstHst,
       gstNote: gstNote,
+      gstLabel: salesTaxInfo.label,
       totalTax: totalCpp + gigFedTax + gigProvTax + gstHst,
       effectiveRate: annualGigNet > 0 ? ((totalCpp + gigFedTax + gigProvTax + gstHst) / annualGigNet * 100) : 0
     };
@@ -1069,9 +1420,8 @@ Educational content only. Tax estimates are approximate and based on 2026 rates.
   // --- MILEAGE DEDUCTION ---
   function calcMileageDeduction(milesPerWeek) {
     if (country === 'US') {
-      return milesPerWeek * 52 * 0.67; // $0.67/mile 2026
+      return milesPerWeek * 52 * 0.67;
     } else {
-      // Canada: $0.70/km first 5000, $0.64/km after
       var annualKm = milesPerWeek * 52;
       if (annualKm <= 5000) {
         return annualKm * 0.70;
@@ -1081,22 +1431,116 @@ Educational content only. Tax estimates are approximate and based on 2026 rates.
     }
   }
 
-  // --- CALCULATE ---
-  window.calculate = function() {
+  // --- SAVE TO LOCALSTORAGE ---
+  function saveInputs() {
+    try {
+      var data = {
+        country: country,
+        direction: calcDirection,
+        detailLevel: detailLevel,
+        platform: document.getElementById('platform').value,
+        platformFee: document.getElementById('platformFee').value,
+        grossWeekly: document.getElementById('grossWeekly').value,
+        hoursPerWeek: document.getElementById('hoursPerWeek').value,
+        targetNetMonthly: document.getElementById('targetNetMonthly').value,
+        reverseHoursPerWeek: document.getElementById('reverseHoursPerWeek').value,
+        gasWeekly: document.getElementById('gasWeekly').value,
+        maintenanceWeekly: document.getElementById('maintenanceWeekly').value,
+        insuranceWeekly: document.getElementById('insuranceWeekly').value,
+        phoneMonthly: document.getElementById('phoneMonthly').value,
+        otherWeekly: document.getElementById('otherWeekly').value,
+        milesPerWeek: document.getElementById('milesPerWeek').value,
+        filingStatus: document.getElementById('filingStatus').value,
+        otherIncome: document.getElementById('otherIncome').value,
+        stateTax: document.getElementById('stateTax').value,
+        claimQbi: document.getElementById('claimQbi').value,
+        province: document.getElementById('province').value,
+        otherIncomeCA: document.getElementById('otherIncomeCA').value
+      };
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    } catch(e) {}
+  }
+
+  function loadInputs() {
+    try {
+      var raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) return;
+      var data = JSON.parse(raw);
+      if (data.platform) document.getElementById('platform').value = data.platform;
+      if (data.platformFee) document.getElementById('platformFee').value = data.platformFee;
+      if (data.grossWeekly) document.getElementById('grossWeekly').value = data.grossWeekly;
+      if (data.hoursPerWeek) document.getElementById('hoursPerWeek').value = data.hoursPerWeek;
+      if (data.targetNetMonthly) document.getElementById('targetNetMonthly').value = data.targetNetMonthly;
+      if (data.reverseHoursPerWeek) document.getElementById('reverseHoursPerWeek').value = data.reverseHoursPerWeek;
+      if (data.gasWeekly) document.getElementById('gasWeekly').value = data.gasWeekly;
+      if (data.maintenanceWeekly) document.getElementById('maintenanceWeekly').value = data.maintenanceWeekly;
+      if (data.insuranceWeekly) document.getElementById('insuranceWeekly').value = data.insuranceWeekly;
+      if (data.phoneMonthly) document.getElementById('phoneMonthly').value = data.phoneMonthly;
+      if (data.otherWeekly) document.getElementById('otherWeekly').value = data.otherWeekly;
+      if (data.milesPerWeek) document.getElementById('milesPerWeek').value = data.milesPerWeek;
+      if (data.filingStatus) document.getElementById('filingStatus').value = data.filingStatus;
+      if (data.otherIncome) document.getElementById('otherIncome').value = data.otherIncome;
+      if (data.stateTax) document.getElementById('stateTax').value = data.stateTax;
+      if (data.claimQbi) document.getElementById('claimQbi').value = data.claimQbi;
+      if (data.province) document.getElementById('province').value = data.province;
+      if (data.otherIncomeCA) document.getElementById('otherIncomeCA').value = data.otherIncomeCA;
+
+      if (data.country) setCountry(data.country);
+      if (data.direction) setDirection(data.direction);
+      if (data.detailLevel) setDetailLevel(data.detailLevel);
+
+      // Re-apply platform collapse state
+      var isFreelance = document.getElementById('platform').value === 'freelance';
+      if (isFreelance) {
+        document.getElementById('vehicleFields').classList.add('collapsed');
+        document.getElementById('vehicleCollapsedNote').classList.add('visible');
+      }
+    } catch(e) {}
+  }
+
+  // --- RESET ---
+  window.resetAll = function() {
+    try { localStorage.removeItem(STORAGE_KEY); } catch(e) {}
+    document.getElementById('platform').value = 'doordash';
+    document.getElementById('platformFee').value = 18;
+    document.getElementById('grossWeekly').value = 750;
+    document.getElementById('hoursPerWeek').value = 30;
+    document.getElementById('targetNetMonthly').value = 2000;
+    document.getElementById('reverseHoursPerWeek').value = 30;
+    document.getElementById('gasWeekly').value = 80;
+    document.getElementById('maintenanceWeekly').value = 25;
+    document.getElementById('insuranceWeekly').value = 15;
+    document.getElementById('phoneMonthly').value = 40;
+    document.getElementById('otherWeekly').value = 0;
+    document.getElementById('milesPerWeek').value = 300;
+    document.getElementById('filingStatus').value = 'single';
+    document.getElementById('otherIncome').value = 0;
+    document.getElementById('stateTax').value = 5;
+    document.getElementById('claimQbi').value = 'yes';
+    document.getElementById('province').value = 'ON';
+    document.getElementById('otherIncomeCA').value = 0;
+    setCountry('US');
+    setDirection('forward');
+    setDetailLevel('quick');
+    clearErrors();
+    document.getElementById('results').classList.add('results-hidden');
+    document.getElementById('vehicleFields').classList.remove('collapsed');
+    document.getElementById('vehicleCollapsedNote').classList.remove('visible');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  // --- FORWARD CALCULATE ---
+  function calculateForward() {
     var grossWeekly = parseFloat(document.getElementById('grossWeekly').value) || 0;
     var hoursPerWeek = parseFloat(document.getElementById('hoursPerWeek').value) || 1;
     var platformFee = parseFloat(document.getElementById('platformFee').value) / 100 || 0;
-    var gasWeekly = parseFloat(document.getElementById('gasWeekly').value) || 0;
-    var maintenanceWeekly = parseFloat(document.getElementById('maintenanceWeekly').value) || 0;
-    var insuranceWeekly = parseFloat(document.getElementById('insuranceWeekly').value) || 0;
+    var isFreelance = document.getElementById('platform').value === 'freelance';
+    var gasWeekly = isFreelance ? 0 : (parseFloat(document.getElementById('gasWeekly').value) || 0);
+    var maintenanceWeekly = isFreelance ? 0 : (parseFloat(document.getElementById('maintenanceWeekly').value) || 0);
+    var insuranceWeekly = isFreelance ? 0 : (parseFloat(document.getElementById('insuranceWeekly').value) || 0);
     var phoneMonthly = parseFloat(document.getElementById('phoneMonthly').value) || 0;
     var otherWeekly = parseFloat(document.getElementById('otherWeekly').value) || 0;
-    var milesPerWeek = parseFloat(document.getElementById('milesPerWeek').value) || 0;
-
-    if (grossWeekly <= 0) {
-      alert('Enter your gross weekly earnings to calculate.');
-      return;
-    }
+    var milesPerWeek = isFreelance ? 0 : (parseFloat(document.getElementById('milesPerWeek').value) || 0);
 
     // Weekly calculations
     var platformFeeAmount = grossWeekly * platformFee;
@@ -1107,14 +1551,10 @@ Educational content only. Tax estimates are approximate and based on 2026 rates.
 
     // Annual
     var annualGross = grossWeekly * 52;
-    var annualFees = platformFeeAmount * 52;
-    var annualExpenses = totalExpensesWeekly * 52;
     var annualNetBeforeTax = netBeforeTax * 52;
 
-    // Mileage deduction (reduces taxable income, not actual cash out)
+    // Mileage deduction
     var mileageDeduction = calcMileageDeduction(milesPerWeek);
-    var phoneDeduction = phoneMonthly * 12;
-    var totalDeductions = mileageDeduction + phoneDeduction;
 
     // Taxable income after deductions
     var taxableGigIncome = Math.max(0, annualNetBeforeTax - mileageDeduction);
@@ -1122,14 +1562,14 @@ Educational content only. Tax estimates are approximate and based on 2026 rates.
     // Tax calculation
     var taxResult;
     if (country === 'US') {
-      var filingStatus = document.getElementById('filingStatus').value;
-      var otherIncome = parseFloat(document.getElementById('otherIncome').value) || 0;
-      var stateTaxRate = (parseFloat(document.getElementById('stateTax').value) || 0) / 100;
-      var claimQbi = document.getElementById('claimQbi').value === 'yes';
+      var filingStatus = detailLevel === 'advanced' ? document.getElementById('filingStatus').value : 'single';
+      var otherIncome = detailLevel === 'advanced' ? (parseFloat(document.getElementById('otherIncome').value) || 0) : 0;
+      var stateTaxRate = detailLevel === 'advanced' ? ((parseFloat(document.getElementById('stateTax').value) || 0) / 100) : 0.05;
+      var claimQbi = detailLevel === 'advanced' ? (document.getElementById('claimQbi').value === 'yes') : true;
       taxResult = calcUSTax(taxableGigIncome, otherIncome, filingStatus, stateTaxRate, claimQbi);
     } else {
       var province = document.getElementById('province').value;
-      var otherIncomeCA = parseFloat(document.getElementById('otherIncomeCA').value) || 0;
+      var otherIncomeCA = detailLevel === 'advanced' ? (parseFloat(document.getElementById('otherIncomeCA').value) || 0) : 0;
       taxResult = calcCATax(taxableGigIncome, otherIncomeCA, province);
     }
 
@@ -1151,8 +1591,8 @@ Educational content only. Tax estimates are approximate and based on 2026 rates.
       actualHourly: actualHourly,
       hoursPerWeek: hoursPerWeek,
       annualGross: annualGross,
-      annualFees: annualFees,
-      annualExpenses: annualExpenses,
+      annualFees: platformFeeAmount * 52,
+      annualExpenses: totalExpensesWeekly * 52,
       annualTax: annualTax,
       trueNetAnnual: trueNetAnnual,
       gasWeekly: gasWeekly,
@@ -1161,86 +1601,239 @@ Educational content only. Tax estimates are approximate and based on 2026 rates.
       phoneWeekly: phoneWeekly,
       otherWeekly: otherWeekly,
       mileageDeduction: mileageDeduction,
-      taxResult: taxResult
+      milesPerWeek: milesPerWeek,
+      taxResult: taxResult,
+      platformFee: platformFee
     };
 
+    renderResults(lastCalcData);
+  }
+
+  // --- REVERSE CALCULATE ---
+  function calculateReverse() {
+    var targetNetMonthly = parseFloat(document.getElementById('targetNetMonthly').value) || 0;
+    var hoursPerWeek = parseFloat(document.getElementById('reverseHoursPerWeek').value) || 1;
+    var platformFee = parseFloat(document.getElementById('platformFee').value) / 100 || 0;
+    var isFreelance = document.getElementById('platform').value === 'freelance';
+    var gasWeekly = isFreelance ? 0 : (parseFloat(document.getElementById('gasWeekly').value) || 0);
+    var maintenanceWeekly = isFreelance ? 0 : (parseFloat(document.getElementById('maintenanceWeekly').value) || 0);
+    var insuranceWeekly = isFreelance ? 0 : (parseFloat(document.getElementById('insuranceWeekly').value) || 0);
+    var phoneMonthly = parseFloat(document.getElementById('phoneMonthly').value) || 0;
+    var otherWeekly = parseFloat(document.getElementById('otherWeekly').value) || 0;
+    var milesPerWeek = isFreelance ? 0 : (parseFloat(document.getElementById('milesPerWeek').value) || 0);
+
+    var targetNetWeekly = targetNetMonthly / 4.33;
+    var phoneWeekly = phoneMonthly / 4.33;
+    var totalExpensesWeekly = gasWeekly + maintenanceWeekly + insuranceWeekly + phoneWeekly + otherWeekly;
+
+    // Binary search for the gross weekly that yields targetNetWeekly
+    var lo = 0, hi = 50000, mid, netAtMid;
+    for (var iter = 0; iter < 100; iter++) {
+      mid = (lo + hi) / 2;
+      netAtMid = computeNetFromGross(mid, platformFee, totalExpensesWeekly, milesPerWeek, hoursPerWeek);
+      if (netAtMid < targetNetWeekly) {
+        lo = mid;
+      } else {
+        hi = mid;
+      }
+    }
+    var requiredGross = mid;
+    var requiredGrossHourly = requiredGross / hoursPerWeek;
+
+    // Now run full forward calc with this gross
+    document.getElementById('grossWeekly').value = Math.round(requiredGross);
+    document.getElementById('hoursPerWeek').value = hoursPerWeek;
+    calculateForward();
+
+    // Show reverse result section
+    document.getElementById('reverseResultSection').style.display = '';
+    document.getElementById('reverseBreakdownGrid').innerHTML =
+      '<div class="breakdown-card"><div class="period">Required Gross / Week</div><div class="amount">' + fmt(requiredGross) + '</div></div>' +
+      '<div class="breakdown-card"><div class="period">Required Gross / Hour</div><div class="amount">' + fmt(requiredGrossHourly) + '</div></div>' +
+      '<div class="breakdown-card"><div class="period">Target Net / Month</div><div class="amount">' + fmt(targetNetMonthly) + '</div></div>' +
+      '<div class="breakdown-card"><div class="period">Hours / Week</div><div class="amount">' + hoursPerWeek + '</div></div>';
+  }
+
+  function computeNetFromGross(grossWeekly, platformFee, totalExpensesWeekly, milesPerWeek, hoursPerWeek) {
+    var platformFeeAmount = grossWeekly * platformFee;
+    var afterFees = grossWeekly - platformFeeAmount;
+    var netBeforeTax = afterFees - totalExpensesWeekly;
+    var annualNetBeforeTax = netBeforeTax * 52;
+    var mileageDeduction = calcMileageDeduction(milesPerWeek);
+    var taxableGigIncome = Math.max(0, annualNetBeforeTax - mileageDeduction);
+
+    var taxResult;
+    if (country === 'US') {
+      var filingStatus = detailLevel === 'advanced' ? document.getElementById('filingStatus').value : 'single';
+      var otherIncome = detailLevel === 'advanced' ? (parseFloat(document.getElementById('otherIncome').value) || 0) : 0;
+      var stateTaxRate = detailLevel === 'advanced' ? ((parseFloat(document.getElementById('stateTax').value) || 0) / 100) : 0.05;
+      var claimQbi = detailLevel === 'advanced' ? (document.getElementById('claimQbi').value === 'yes') : true;
+      taxResult = calcUSTax(taxableGigIncome, otherIncome, filingStatus, stateTaxRate, claimQbi);
+    } else {
+      var province = document.getElementById('province').value;
+      var otherIncomeCA = detailLevel === 'advanced' ? (parseFloat(document.getElementById('otherIncomeCA').value) || 0) : 0;
+      taxResult = calcCATax(taxableGigIncome, otherIncomeCA, province);
+    }
+
+    var weeklyTax = taxResult.totalTax / 52;
+    return netBeforeTax - weeklyTax;
+  }
+
+  // --- MAIN CALCULATE ---
+  window.calculate = function() {
+    if (!validateInputs()) return;
+
+    if (calcDirection === 'reverse') {
+      calculateReverse();
+    } else {
+      document.getElementById('reverseResultSection').style.display = 'none';
+      calculateForward();
+    }
+
+    saveInputs();
+  };
+
+  // --- RENDER RESULTS ---
+  function renderResults(d) {
     // Show results
     document.getElementById('results').classList.remove('results-hidden');
 
     // Reality check
-    document.getElementById('perceivedRate').textContent = fmt(perceivedHourly) + '/hr';
-    document.getElementById('actualRate').textContent = fmt(actualHourly) + '/hr';
+    document.getElementById('perceivedRate').textContent = fmt(d.perceivedHourly) + '/hr';
+    document.getElementById('actualRate').textContent = fmt(d.actualHourly) + '/hr';
 
     // Hero card
     document.getElementById('thinkLine').textContent =
-      'The app shows ' + fmt(grossWeekly) + '/week. You actually keep ' + fmt(trueNetWeekly) + '/week.';
-    document.getElementById('trueWeekly').textContent = fmtBig(trueNetWeekly);
+      'The app shows ' + fmt(d.grossWeekly) + '/week. You actually keep ' + fmt(d.trueNetWeekly) + '/week.';
+    document.getElementById('trueWeekly').textContent = fmtBig(d.trueNetWeekly);
 
     // Breakdown grid
-    var monthlyNet = trueNetWeekly * 4.33;
+    var monthlyNet = d.trueNetWeekly * 4.33;
     document.getElementById('breakdownGrid').innerHTML =
-      '<div class="breakdown-card"><div class="period">Hourly</div><div class="amount">' + fmt(actualHourly) + '</div></div>' +
-      '<div class="breakdown-card"><div class="period">Weekly</div><div class="amount">' + fmt(trueNetWeekly) + '</div></div>' +
+      '<div class="breakdown-card"><div class="period">Hourly</div><div class="amount">' + fmt(d.actualHourly) + '</div></div>' +
+      '<div class="breakdown-card"><div class="period">Weekly</div><div class="amount">' + fmt(d.trueNetWeekly) + '</div></div>' +
       '<div class="breakdown-card"><div class="period">Monthly</div><div class="amount">' + fmtBig(monthlyNet) + '</div></div>' +
-      '<div class="breakdown-card"><div class="period">Yearly</div><div class="amount">' + fmtBig(trueNetAnnual) + '</div></div>';
+      '<div class="breakdown-card"><div class="period">Yearly</div><div class="amount">' + fmtBig(d.trueNetAnnual) + '</div></div>';
+
+    // Day job comparison
+    renderDayJobComparison(d);
 
     // Deduction waterfall
     var dlHtml = '';
-    dlHtml += '<div class="deduction-item"><span class="dl-label">Gross Earnings</span><span class="dl-amount positive">' + fmt(grossWeekly) + '/wk</span></div>';
-    dlHtml += '<div class="deduction-item"><span class="dl-label">Platform Fees (' + (platformFee * 100).toFixed(0) + '%)</span><span class="dl-amount negative">-' + fmt(platformFeeAmount) + '</span></div>';
-    if (gasWeekly > 0) dlHtml += '<div class="deduction-item"><span class="dl-label">Gas / Fuel</span><span class="dl-amount negative">-' + fmt(gasWeekly) + '</span></div>';
-    if (maintenanceWeekly > 0) dlHtml += '<div class="deduction-item"><span class="dl-label">Vehicle Maintenance</span><span class="dl-amount negative">-' + fmt(maintenanceWeekly) + '</span></div>';
-    if (insuranceWeekly > 0) dlHtml += '<div class="deduction-item"><span class="dl-label">Insurance</span><span class="dl-amount negative">-' + fmt(insuranceWeekly) + '</span></div>';
-    if (phoneWeekly > 0) dlHtml += '<div class="deduction-item"><span class="dl-label">Phone / Data</span><span class="dl-amount negative">-' + fmt(phoneWeekly) + '</span></div>';
-    if (otherWeekly > 0) dlHtml += '<div class="deduction-item"><span class="dl-label">Other Expenses</span><span class="dl-amount negative">-' + fmt(otherWeekly) + '</span></div>';
-    dlHtml += '<div class="deduction-item"><span class="dl-label">Taxes (est.)</span><span class="dl-amount negative">-' + fmt(weeklyTax) + '</span></div>';
-    dlHtml += '<div class="deduction-item total"><span class="dl-label">Your True Take-Home</span><span class="dl-amount">' + fmt(trueNetWeekly) + '/wk</span></div>';
+    dlHtml += '<div class="deduction-item"><span class="dl-label">Gross Earnings</span><span class="dl-amount positive">' + fmt(d.grossWeekly) + '/wk</span></div>';
+    dlHtml += '<div class="deduction-item"><span class="dl-label">Platform Fees (' + (d.platformFee * 100).toFixed(0) + '%)</span><span class="dl-amount negative">-' + fmt(d.platformFeeAmount) + '</span></div>';
+    if (d.gasWeekly > 0) dlHtml += '<div class="deduction-item"><span class="dl-label">Gas / Fuel</span><span class="dl-amount negative">-' + fmt(d.gasWeekly) + '</span></div>';
+    if (d.maintenanceWeekly > 0) dlHtml += '<div class="deduction-item"><span class="dl-label">Vehicle Maintenance</span><span class="dl-amount negative">-' + fmt(d.maintenanceWeekly) + '</span></div>';
+    if (d.insuranceWeekly > 0) dlHtml += '<div class="deduction-item"><span class="dl-label">Insurance</span><span class="dl-amount negative">-' + fmt(d.insuranceWeekly) + '</span></div>';
+    if (d.phoneWeekly > 0) dlHtml += '<div class="deduction-item"><span class="dl-label">Phone / Data</span><span class="dl-amount negative">-' + fmt(d.phoneWeekly) + '</span></div>';
+    if (d.otherWeekly > 0) dlHtml += '<div class="deduction-item"><span class="dl-label">Other Expenses</span><span class="dl-amount negative">-' + fmt(d.otherWeekly) + '</span></div>';
+    dlHtml += '<div class="deduction-item"><span class="dl-label">Taxes (est.)</span><span class="dl-amount negative">-' + fmt(d.weeklyTax) + '</span></div>';
+    dlHtml += '<div class="deduction-item total"><span class="dl-label">Your True Take-Home</span><span class="dl-amount">' + fmt(d.trueNetWeekly) + '/wk</span></div>';
     document.getElementById('deductionList').innerHTML = dlHtml;
 
     // Tax breakdown
     var taxHtml = '';
+    var tr = d.taxResult;
     if (country === 'US') {
-      taxHtml += '<div class="deduction-item"><span class="dl-label">Social Security (12.4%)</span><span class="dl-amount negative">-' + fmtBig(taxResult.ssSplit) + '/yr</span></div>';
-      taxHtml += '<div class="deduction-item"><span class="dl-label">Medicare (2.9%)</span><span class="dl-amount negative">-' + fmtBig(taxResult.medicareSplit) + '/yr</span></div>';
-      taxHtml += '<div class="deduction-item"><span class="dl-label">Federal Income Tax</span><span class="dl-amount negative">-' + fmtBig(taxResult.fedTax) + '/yr</span></div>';
-      taxHtml += '<div class="deduction-item"><span class="dl-label">State Income Tax</span><span class="dl-amount negative">-' + fmtBig(taxResult.stateTax) + '/yr</span></div>';
-      if (taxResult.seDeduction > 0) taxHtml += '<div class="deduction-item"><span class="dl-label">SE Tax Deduction (saves you)</span><span class="dl-amount positive">+' + fmtBig(taxResult.seDeduction) + '</span></div>';
-      if (taxResult.qbiDeduction > 0) taxHtml += '<div class="deduction-item"><span class="dl-label">QBI Deduction (20%)</span><span class="dl-amount positive">+' + fmtBig(taxResult.qbiDeduction) + '</span></div>';
-      if (mileageDeduction > 0) taxHtml += '<div class="deduction-item"><span class="dl-label">Mileage Deduction (' + (milesPerWeek * 52).toLocaleString() + ' mi x $0.67)</span><span class="dl-amount positive">+' + fmtBig(mileageDeduction) + '</span></div>';
+      taxHtml += '<div class="deduction-item"><span class="dl-label">Social Security (12.4%)' + infoIcon('social_security') + '</span><span class="dl-amount negative">-' + fmtBig(tr.ssSplit) + '/yr</span></div>';
+      taxHtml += '<div class="deduction-item"><span class="dl-label">Medicare (2.9%)' + infoIcon('medicare') + '</span><span class="dl-amount negative">-' + fmtBig(tr.medicareSplit) + '/yr</span></div>';
+      taxHtml += '<div class="deduction-item"><span class="dl-label">Federal Income Tax' + infoIcon('fed_tax') + '</span><span class="dl-amount negative">-' + fmtBig(tr.fedTax) + '/yr</span></div>';
+      taxHtml += '<div class="deduction-item"><span class="dl-label">State Income Tax' + infoIcon('state_tax') + '</span><span class="dl-amount negative">-' + fmtBig(tr.stateTax) + '/yr</span></div>';
+      if (tr.seDeduction > 0) taxHtml += '<div class="deduction-item"><span class="dl-label">SE Tax Deduction (saves you)' + infoIcon('se_deduction') + '</span><span class="dl-amount positive">+' + fmtBig(tr.seDeduction) + '</span></div>';
+      if (tr.qbiDeduction > 0) taxHtml += '<div class="deduction-item"><span class="dl-label">QBI Deduction (20%)' + infoIcon('qbi') + '</span><span class="dl-amount positive">+' + fmtBig(tr.qbiDeduction) + '</span></div>';
+      if (d.mileageDeduction > 0) taxHtml += '<div class="deduction-item"><span class="dl-label">Mileage Deduction (' + (d.milesPerWeek * 52).toLocaleString() + ' mi x $0.67)' + infoIcon('mileage') + '</span><span class="dl-amount positive">+' + fmtBig(d.mileageDeduction) + '</span></div>';
     } else {
-      taxHtml += '<div class="deduction-item"><span class="dl-label">CPP Contributions (11.9%)</span><span class="dl-amount negative">-' + fmtBig(taxResult.cpp) + '/yr</span></div>';
-      taxHtml += '<div class="deduction-item"><span class="dl-label">Federal Income Tax</span><span class="dl-amount negative">-' + fmtBig(taxResult.fedTax) + '/yr</span></div>';
-      taxHtml += '<div class="deduction-item"><span class="dl-label">Provincial Income Tax</span><span class="dl-amount negative">-' + fmtBig(taxResult.provTax) + '/yr</span></div>';
-      if (taxResult.gstHst > 0) taxHtml += '<div class="deduction-item"><span class="dl-label">GST/HST Owing</span><span class="dl-amount negative">-' + fmtBig(taxResult.gstHst) + '/yr</span></div>';
-      if (taxResult.gstNote) taxHtml += '<div class="deduction-item"><span class="dl-label" style="color:var(--amber-700);font-size:0.78rem;">' + taxResult.gstNote + '</span><span class="dl-amount"></span></div>';
-      if (mileageDeduction > 0) taxHtml += '<div class="deduction-item"><span class="dl-label">Vehicle Deduction (' + (milesPerWeek * 52).toLocaleString() + ' km)</span><span class="dl-amount positive">+' + fmtBig(mileageDeduction) + '</span></div>';
+      taxHtml += '<div class="deduction-item"><span class="dl-label">CPP Contributions (11.9%)' + infoIcon('cpp') + '</span><span class="dl-amount negative">-' + fmtBig(tr.cpp) + '/yr</span></div>';
+      if (tr.cpp2 > 0) taxHtml += '<div class="deduction-item"><span class="dl-label">CPP2 Contributions' + infoIcon('cpp2') + '</span><span class="dl-amount negative">-' + fmtBig(tr.cpp2) + '/yr</span></div>';
+      taxHtml += '<div class="deduction-item"><span class="dl-label">Federal Income Tax' + infoIcon('fed_tax') + '</span><span class="dl-amount negative">-' + fmtBig(tr.fedTax) + '/yr</span></div>';
+      taxHtml += '<div class="deduction-item"><span class="dl-label">Provincial Income Tax' + infoIcon('prov_tax') + '</span><span class="dl-amount negative">-' + fmtBig(tr.provTax) + '/yr</span></div>';
+      if (tr.gstHst > 0) taxHtml += '<div class="deduction-item"><span class="dl-label">GST/HST Owing (' + tr.gstLabel + ')' + infoIcon('gst_hst') + '</span><span class="dl-amount negative">-' + fmtBig(tr.gstHst) + '/yr</span></div>';
+      if (tr.gstNote) taxHtml += '<div class="deduction-item"><span class="dl-label" style="color:var(--amber-700);font-size:0.78rem;">' + tr.gstNote + '</span><span class="dl-amount"></span></div>';
+      if (d.mileageDeduction > 0) taxHtml += '<div class="deduction-item"><span class="dl-label">Vehicle Deduction (' + (d.milesPerWeek * 52).toLocaleString() + ' km)' + infoIcon('mileage') + '</span><span class="dl-amount positive">+' + fmtBig(d.mileageDeduction) + '</span></div>';
     }
-    taxHtml += '<div class="deduction-item total"><span class="dl-label">Total Tax Liability</span><span class="dl-amount">' + fmtBig(annualTax) + '/yr (' + taxResult.effectiveRate.toFixed(1) + '% effective)</span></div>';
+    taxHtml += '<div class="deduction-item total"><span class="dl-label">Total Tax Liability</span><span class="dl-amount">' + fmtBig(d.annualTax) + '/yr (' + tr.effectiveRate.toFixed(1) + '% effective)</span></div>';
     document.getElementById('taxBreakdown').innerHTML = taxHtml;
 
+    // Quarterly tax reminder
+    renderQuarterlyReminder(d.annualTax);
+
     // Pie chart
-    renderPieChart(grossWeekly, platformFeeAmount, totalExpensesWeekly, weeklyTax, trueNetWeekly);
+    renderPieChart(d.grossWeekly, d.platformFeeAmount, d.totalExpensesWeekly, d.weeklyTax, d.trueNetWeekly);
 
     // Annual table
-    renderAnnualTable(grossWeekly, platformFeeAmount, gasWeekly, maintenanceWeekly, insuranceWeekly, phoneWeekly, otherWeekly, weeklyTax, trueNetWeekly);
+    renderAnnualTable(d.grossWeekly, d.platformFeeAmount, d.gasWeekly, d.maintenanceWeekly, d.insuranceWeekly, d.phoneWeekly, d.otherWeekly, d.weeklyTax, d.trueNetWeekly);
 
     // Share text
     var platformName = document.getElementById('platform').options[document.getElementById('platform').selectedIndex].text;
     document.getElementById('shareText').innerHTML =
-      'I thought I was making <strong>' + fmt(perceivedHourly) + '/hr</strong> on ' + platformName + '.<br>' +
-      'After fees, expenses, and taxes, my real rate is <strong>' + fmt(actualHourly) + '/hr</strong>.<br>' +
-      'That is <strong>' + fmtBig(trueNetAnnual) + '/year</strong> take-home.';
+      'I thought I was making <strong>' + fmt(d.perceivedHourly) + '/hr</strong> on ' + platformName + '.<br>' +
+      'After fees, expenses, and taxes, my real rate is <strong>' + fmt(d.actualHourly) + '/hr</strong>.<br>' +
+      'That is <strong>' + fmtBig(d.trueNetAnnual) + '/year</strong> take-home.';
 
     // Scroll
     document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
-  };
+  }
+
+  // --- DAY JOB COMPARISON ---
+  function renderDayJobComparison(d) {
+    // A day job at $X/hr provides: employer SS match (7.65%), health insurance (~$6k/yr), PTO (~10 days = ~$X)
+    // Net gig hourly = d.actualHourly
+    // Day job equivalent: What hourly rate W-2 job gives same disposable income?
+    // Gig worker pays: full SE tax, no benefits, no PTO, no employer health contribution
+    // Employer benefits value estimate:
+    var annualNet = d.trueNetAnnual;
+    var hoursPerYear = d.hoursPerWeek * 52;
+
+    // Value of employer benefits (conservative estimates):
+    var healthInsuranceValue = 6000; // ~$500/mo employer contribution
+    var employerSSMatch = 0.0765; // employer pays 7.65% on top
+    var ptoValue = 10 * 8; // 10 days PTO = 80 hours
+
+    // To match: annualNet = (dayJobHourly * hoursPerYear) * (1 - employeeTaxRate) - employeeHealthPremium
+    // Simplified: dayJobHourly such that after ~25% effective employee tax, plus benefits, equals gig net
+    // Working backwards: dayJobHourly * (hoursPerYear + ptoHours) * (1 - 0.22) + healthInsuranceValue = annualNet + healthInsuranceValue
+    // dayJobHourly = annualNet / ((hoursPerYear) * (1 - 0.22))
+    // But really: to MATCH the gig net, the day job pays less per hour because of benefits
+    // adjustedAnnualNeed = annualNet + healthInsuranceValue
+    // grossDayJobSalary = adjustedAnnualNeed / (1 - effectiveEmployeeRate)
+    var effectiveEmployeeRate = 0.22; // rough average employee tax burden
+    var adjustedAnnual = annualNet;
+    var equivalentGrossSalary = adjustedAnnual / (1 - effectiveEmployeeRate);
+    var equivalentHourly = equivalentGrossSalary / hoursPerYear;
+
+    // But day job also gives health + PTO + SS match on top, so a LOWER hourly is equivalent
+    var benefitsPerHour = (healthInsuranceValue + (equivalentHourly * ptoValue)) / hoursPerYear;
+    var dayJobEquivHourly = Math.max(0, equivalentHourly - benefitsPerHour);
+
+    document.getElementById('djRate').textContent = fmt(dayJobEquivHourly) + '/hr';
+    document.getElementById('djBreakdown').innerHTML =
+      'To match your gig net pay of ' + fmtBig(annualNet) + '/yr, you would need a traditional W-2 job paying about ' + fmt(dayJobEquivHourly) + '/hr.<br>' +
+      'This accounts for employer-paid benefits: ~' + fmtBig(healthInsuranceValue) + '/yr health insurance, employer SS/Medicare match (7.65%), and ~10 days PTO.';
+  }
+
+  // --- QUARTERLY TAX REMINDER ---
+  function renderQuarterlyReminder(annualTax) {
+    var quarterlyAmount = annualTax / 4;
+    var html = '';
+    if (country === 'US') {
+      html = '<div class="qr-title">Estimated Quarterly Tax Payments</div>' +
+        '<div class="qr-amount">' + fmt(quarterlyAmount) + ' per quarter</div>' +
+        '<div class="qr-dates">Due dates: <strong>Jan 15</strong>, <strong>Apr 15</strong>, <strong>Jun 15</strong>, <strong>Sep 15</strong><br>' +
+        'Pay using IRS Form 1040-ES or IRS Direct Pay</div>';
+    } else {
+      html = '<div class="qr-title">CRA Instalment Payments</div>' +
+        '<div class="qr-amount">' + fmt(quarterlyAmount) + ' per quarter</div>' +
+        '<div class="qr-dates">Due dates: <strong>Mar 15</strong>, <strong>Jun 15</strong>, <strong>Sep 15</strong>, <strong>Dec 15</strong><br>' +
+        'Pay through CRA My Account or your bank</div>';
+    }
+    document.getElementById('quarterlyReminder').innerHTML = html;
+  }
 
   // --- PIE CHART ---
   function renderPieChart(gross, fees, expenses, tax, net) {
     if (pieChartInstance) pieChartInstance.destroy();
     var ctx = document.getElementById('pieChart').getContext('2d');
 
-    // Handle negative net (show as 0 in pie, add to expenses)
     var displayNet = Math.max(0, net);
     var displayTax = Math.max(0, tax);
 
@@ -1300,8 +1893,8 @@ Educational content only. Tax estimates are approximate and based on 2026 rates.
       var cls = row.cls ? ' class="' + row.cls + '"' : '';
       html += '<tr><td' + cls + '>' + row.label + '</td>';
       html += '<td' + cls + '>' + (row.w < 0 ? '-' : '') + fmt(Math.abs(weekly)) + '</td>';
-      html += '<td' + cls + '>' + (row.w < 0 ? '-' : '') + fmtBig(Math.abs(monthly)) + '</td>';
-      html += '<td' + cls + '>' + (row.w < 0 ? '-' : '') + fmtBig(Math.abs(annual)) + '</td></tr>';
+      html += '<td' + cls + '>' + (row.w < 0 ? '-' : '') + fmt(Math.abs(monthly)) + '</td>';
+      html += '<td' + cls + '>' + (row.w < 0 ? '-' : '') + fmt(Math.abs(annual)) + '</td></tr>';
     });
     document.getElementById('annualTableBody').innerHTML = html;
   }
@@ -1318,9 +1911,9 @@ Educational content only. Tax estimates are approximate and based on 2026 rates.
 
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(text).then(function() {
-        var confirm = document.getElementById('copyConfirm');
-        confirm.style.display = '';
-        setTimeout(function() { confirm.style.display = 'none'; }, 2000);
+        var el = document.getElementById('copyConfirm');
+        el.style.display = '';
+        setTimeout(function() { el.style.display = 'none'; }, 2000);
       });
     } else {
       var ta = document.createElement('textarea');
@@ -1329,14 +1922,17 @@ Educational content only. Tax estimates are approximate and based on 2026 rates.
       ta.select();
       document.execCommand('copy');
       document.body.removeChild(ta);
-      var confirm = document.getElementById('copyConfirm');
-      confirm.style.display = '';
-      setTimeout(function() { confirm.style.display = 'none'; }, 2000);
+      var el = document.getElementById('copyConfirm');
+      el.style.display = '';
+      setTimeout(function() { el.style.display = 'none'; }, 2000);
     }
   };
 
   // --- INIT ---
   setCountry('US');
+  setDirection('forward');
+  setDetailLevel('quick');
+  loadInputs();
 })();
 </script>
 </body>
