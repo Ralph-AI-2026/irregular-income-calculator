@@ -622,6 +622,61 @@
     }
 </style>
 <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/></noscript>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XYCZCVXDVH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XYCZCVXDVH');
+</script>
+<!-- Supabase JS SDK (UMD) -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<!-- Skip the Surprise account module -->
+<script src="/assets/skip-account.js"></script>
+<style>
+  /* Save result banner - shown after calculate() runs */
+  .save-result-banner {
+    display: none;
+    background: var(--green-50);
+    border: 1.5px solid var(--green-100);
+    border-radius: var(--radius-lg);
+    padding: 1.25rem 1.5rem;
+    margin-top: 1.5rem;
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .save-result-banner.visible { display: flex; }
+  .save-result-banner .save-banner-text { font-size: 0.95rem; color: var(--gray-700); font-weight: 500; }
+  .save-result-banner .save-banner-text strong { color: var(--gray-900); }
+  .save-btn {
+    background: var(--blue-600); color: var(--white); border: none;
+    border-radius: var(--radius-md); padding: 0.65rem 1.5rem;
+    font-size: 0.9rem; font-weight: 700; font-family: inherit;
+    cursor: pointer; transition: background 0.15s; white-space: nowrap;
+  }
+  .save-btn:hover { background: var(--blue-700); }
+  .save-btn:disabled { background: var(--green-600); cursor: default; }
+  .save-confirm {
+    display: none;
+    background: var(--green-50);
+    border: 1.5px solid var(--green-100);
+    border-radius: var(--radius-lg);
+    padding: 1rem 1.5rem;
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+    color: var(--green-700);
+    font-weight: 600;
+    text-align: center;
+  }
+  .save-confirm.visible { display: block; }
+  .save-confirm a { color: var(--blue-600); text-decoration: none; font-weight: 700; }
+  .save-confirm a:hover { text-decoration: underline; }
+</style>
 </head>
 <body>
 <!-- NAV -->
@@ -983,6 +1038,15 @@
 
 <!-- AD SLOT 3 -->
 <div class="ad-container"><ins class="adsbygoogle" data-ad-client="ca-pub-9661407658009326" data-ad-format="auto" data-ad-slot="auto" data-full-width-responsive="true" style="display:block"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+
+<!-- SAVE RESULT BANNER (soft gate - result always shows, saving is optional) -->
+<div class="save-result-banner" id="save-result-banner">
+  <div class="save-banner-text"><strong>Want to keep these numbers?</strong> Save this result to your free account and access it anytime.</div>
+  <button class="save-btn" id="save-result-btn" onclick="handleSaveResult()">Save this result</button>
+</div>
+<div class="save-confirm" id="save-confirm">
+  Saved to your profile. <a href="/account/">View all saved results</a>
+</div>
 </div><!-- /results -->
 </div><!-- /main -->
 <!-- RELATED -->
@@ -1692,6 +1756,18 @@ This calculator provides estimates for planning purposes. Actual tax liability d
     }
 
     saveInputs();
+    if (typeof gtag === 'function') { gtag('event', 'calculate', { calculator: 'side-hustle-cost' }); }
+
+    // Show the soft-gate save banner (result is already shown above - saving is optional)
+    var banner = document.getElementById('save-result-banner');
+    var confirm = document.getElementById('save-confirm');
+    var saveBtn = document.getElementById('save-result-btn');
+    if (banner) {
+      banner.classList.add('visible');
+      // Reset save button in case it was previously used
+      if (saveBtn) { saveBtn.disabled = false; saveBtn.textContent = 'Save this result'; }
+      if (confirm) confirm.classList.remove('visible');
+    }
   };
 
   // --- RENDER RESULTS ---
@@ -1927,6 +2003,91 @@ This calculator provides estimates for planning purposes. Actual tax liability d
       el.style.display = '';
       setTimeout(function() { el.style.display = 'none'; }, 2000);
     }
+  };
+
+  // --- SAVE RESULT (soft gate) ---
+  // Builds a short human label from the current form state
+  function buildSaveTitle() {
+    var platform = document.getElementById('platform');
+    var platformLabel = platform ? platform.options[platform.selectedIndex].text : 'Side Hustle';
+    var gross = document.getElementById('grossWeekly') ? document.getElementById('grossWeekly').value : '';
+    if (gross) {
+      return platformLabel + ' - $' + gross + '/week';
+    }
+    return platformLabel + ' true cost estimate';
+  }
+
+  // Capture current form inputs for saving
+  function captureInputs() {
+    return {
+      country: country,
+      platform: document.getElementById('platform') ? document.getElementById('platform').value : '',
+      platformFee: document.getElementById('platformFee') ? document.getElementById('platformFee').value : '',
+      grossWeekly: document.getElementById('grossWeekly') ? document.getElementById('grossWeekly').value : '',
+      hoursPerWeek: document.getElementById('hoursPerWeek') ? document.getElementById('hoursPerWeek').value : '',
+      gasWeekly: document.getElementById('gasWeekly') ? document.getElementById('gasWeekly').value : '',
+      maintenanceWeekly: document.getElementById('maintenanceWeekly') ? document.getElementById('maintenanceWeekly').value : '',
+      insuranceWeekly: document.getElementById('insuranceWeekly') ? document.getElementById('insuranceWeekly').value : '',
+      phoneMonthly: document.getElementById('phoneMonthly') ? document.getElementById('phoneMonthly').value : '',
+      otherWeekly: document.getElementById('otherWeekly') ? document.getElementById('otherWeekly').value : '',
+      milesPerWeek: document.getElementById('milesPerWeek') ? document.getElementById('milesPerWeek').value : ''
+    };
+  }
+
+  // Capture key results for display on the profile page
+  function captureResults() {
+    if (!lastCalcData) return {};
+    return {
+      country: country,
+      trueNetWeekly: lastCalcData.trueNetWeekly != null ? parseFloat(lastCalcData.trueNetWeekly.toFixed(2)) : null,
+      actualHourly: lastCalcData.actualHourly != null ? parseFloat(lastCalcData.actualHourly.toFixed(2)) : null,
+      perceivedHourly: lastCalcData.perceivedHourly != null ? parseFloat(lastCalcData.perceivedHourly.toFixed(2)) : null,
+      trueNetAnnual: lastCalcData.trueNetAnnual != null ? parseFloat(lastCalcData.trueNetAnnual.toFixed(2)) : null,
+      grossWeekly: lastCalcData.grossWeekly != null ? parseFloat(lastCalcData.grossWeekly.toFixed(2)) : null
+    };
+  }
+
+  function doSave() {
+    if (!lastCalcData || typeof window.SkipAccount === 'undefined') return;
+    var saveBtn = document.getElementById('save-result-btn');
+    var confirm = document.getElementById('save-confirm');
+    if (saveBtn) { saveBtn.disabled = true; saveBtn.textContent = 'Saving...'; }
+
+    window.SkipAccount.saveCalculation({
+      calculator: 'side-hustle-cost',
+      title: buildSaveTitle(),
+      inputs: captureInputs(),
+      results: captureResults()
+    }).then(function () {
+      if (saveBtn) { saveBtn.textContent = 'Saved'; }
+      if (confirm) { confirm.classList.add('visible'); }
+    }).catch(function (err) {
+      if (saveBtn) { saveBtn.disabled = false; saveBtn.textContent = 'Save this result'; }
+      alert('Could not save. Please try again.');
+    });
+  }
+
+  // Called when user clicks "Save this result"
+  window.handleSaveResult = function () {
+    if (typeof window.SkipAccount === 'undefined') {
+      alert('Save feature is temporarily unavailable. Please try again in a moment.');
+      return;
+    }
+    window.SkipAccount.getUserAsync().then(function (user) {
+      if (user) {
+        // Already signed in - save immediately
+        doSave();
+      } else {
+        // Open auth modal; on success, auto-save
+        window.SkipAccount.openAuthModal(function () {
+          doSave();
+        });
+      }
+    }).catch(function () {
+      window.SkipAccount.openAuthModal(function () {
+        doSave();
+      });
+    });
   };
 
   // --- INIT ---

@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Admin | Skip the Surprise</title>
+<meta content="noindex, nofollow" name="robots"/>
+<link href="/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/></noscript>
+<!-- Supabase JS SDK (UMD) -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<!-- Skip the Surprise account module -->
+<script src="/assets/skip-account.js"></script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --blue-900: #0f2744;
+  --blue-800: #1a3a5c;
+  --blue-700: #1e4976;
+  --blue-600: #2563eb;
+  --blue-500: #3b82f6;
+  --blue-100: #dbeafe;
+  --blue-50: #eff6ff;
+  --green-700: #15803d;
+  --green-600: #16a34a;
+  --green-500: #22c55e;
+  --green-100: #dcfce7;
+  --green-50: #f0fdf4;
+  --red-700: #b91c1c;
+  --red-600: #dc2626;
+  --red-100: #fee2e2;
+  --gray-900: #111827;
+  --gray-800: #1f2937;
+  --gray-700: #374151;
+  --gray-600: #4b5563;
+  --gray-500: #6b7280;
+  --gray-400: #9ca3af;
+  --gray-300: #d1d5db;
+  --gray-200: #e5e7eb;
+  --gray-100: #f3f4f6;
+  --gray-50: #f9fafb;
+  --white: #ffffff;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.05);
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: var(--gray-50);
+  color: var(--gray-900);
+  min-height: 100vh;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.admin-header {
+  background: var(--blue-900);
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.admin-header h1 { font-size: 1.2rem; font-weight: 700; letter-spacing: -0.01em; }
+.admin-header .header-right { display: flex; align-items: center; gap: 1rem; font-size: 0.85rem; }
+.admin-header .user-email { color: var(--blue-100); }
+
+.btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.55rem 1.25rem;
+  border-radius: var(--radius-md);
+  font-size: 0.85rem; font-weight: 600; font-family: inherit;
+  border: none; cursor: pointer; transition: background 0.15s;
+  text-decoration: none;
+}
+.btn-primary { background: var(--blue-600); color: #fff; }
+.btn-primary:hover { background: var(--blue-700); }
+.btn-danger { background: var(--red-600); color: #fff; }
+.btn-danger:hover { background: var(--red-700); }
+.btn-ghost { background: transparent; color: var(--blue-100); border: 1.5px solid rgba(255,255,255,0.25); }
+.btn-ghost:hover { background: rgba(255,255,255,0.1); }
+
+.container { max-width: 1200px; margin: 0 auto; padding: 2rem 1.5rem; }
+
+/* Auth gate */
+.auth-gate {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  min-height: calc(100vh - 64px);
+  text-align: center; padding: 2rem;
+}
+.auth-gate h2 { font-size: 1.4rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--gray-900); }
+.auth-gate p { color: var(--gray-600); margin-bottom: 1.5rem; font-size: 0.95rem; }
+
+.not-authorized {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  min-height: calc(100vh - 64px);
+  text-align: center; padding: 2rem;
+}
+.not-authorized h2 { font-size: 1.4rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--red-600); }
+.not-authorized p { color: var(--gray-600); font-size: 0.95rem; }
+
+/* Dashboard */
+.dashboard { display: none; }
+.dashboard.visible { display: block; }
+
+.section-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+.section-header {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--gray-100);
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  background: var(--gray-50);
+}
+.section-header h2 { font-size: 1rem; font-weight: 700; color: var(--gray-900); }
+.section-header .count-badge {
+  background: var(--blue-100); color: var(--blue-700);
+  border-radius: 999px; padding: 0.2rem 0.7rem;
+  font-size: 0.78rem; font-weight: 700;
+}
+
+table {
+  width: 100%; border-collapse: collapse;
+  font-size: 0.85rem;
+}
+thead th {
+  background: var(--gray-50); text-align: left;
+  padding: 0.7rem 1rem; font-weight: 600; font-size: 0.8rem;
+  color: var(--gray-600); text-transform: uppercase; letter-spacing: 0.04em;
+  border-bottom: 1px solid var(--gray-200);
+}
+tbody td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--gray-100);
+  color: var(--gray-700);
+  vertical-align: top;
+  word-break: break-word;
+  max-width: 300px;
+}
+tbody tr:last-child td { border-bottom: none; }
+tbody tr:hover { background: var(--gray-50); }
+
+.email-cell { font-weight: 500; color: var(--gray-900); }
+.date-cell { color: var(--gray-500); white-space: nowrap; }
+.calc-badge {
+  display: inline-block;
+  background: var(--blue-50); color: var(--blue-700);
+  border-radius: var(--radius-sm); padding: 0.15rem 0.55rem;
+  font-size: 0.75rem; font-weight: 600; white-space: nowrap;
+}
+.result-snippet {
+  color: var(--gray-600); font-size: 0.8rem;
+  max-width: 260px; overflow: hidden; text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.title-cell { font-weight: 500; color: var(--gray-800); }
+
+.loading-row td { text-align: center; color: var(--gray-400); padding: 2rem; }
+.empty-row td { text-align: center; color: var(--gray-400); padding: 2rem; }
+.error-row td { text-align: center; color: var(--red-600); padding: 2rem; }
+
+.refresh-btn {
+  background: none; border: 1px solid var(--gray-300);
+  border-radius: var(--radius-sm); padding: 0.35rem 0.75rem;
+  font-size: 0.78rem; font-weight: 600; font-family: inherit;
+  color: var(--gray-600); cursor: pointer; transition: all 0.15s;
+}
+.refresh-btn:hover { background: var(--gray-100); color: var(--gray-900); }
+
+@media (max-width: 768px) {
+  .admin-header { padding: 0.85rem 1rem; }
+  .container { padding: 1rem; }
+  table { font-size: 0.8rem; }
+  thead th, tbody td { padding: 0.6rem 0.75rem; }
+}
+</style>
+</head>
+<body>
+
+<header class="admin-header">
+  <h1>Skip the Surprise -- Admin</h1>
+  <div class="header-right">
+    <span class="user-email" id="adminUserEmail"></span>
+    <button class="btn btn-ghost" onclick="handleSignOut()">Sign out</button>
+  </div>
+</header>
+
+<!-- AUTH GATE (shown when not signed in) -->
+<div class="auth-gate" id="authGate">
+  <h2>Admin access required</h2>
+  <p>Sign in with the admin account to view this page.</p>
+  <button class="btn btn-primary" onclick="handleSignIn()">Sign in</button>
+</div>
+
+<!-- NOT AUTHORIZED (shown when signed in but wrong account) -->
+<div class="not-authorized" id="notAuthorized" style="display:none;">
+  <h2>Not authorized</h2>
+  <p>This page is restricted to the site admin.<br/>Sign in with the correct account.</p>
+  <div style="margin-top:1.25rem;">
+    <button class="btn btn-ghost" style="background:var(--gray-200);color:var(--gray-700);" onclick="handleSignOut()">Sign out and try again</button>
+  </div>
+</div>
+
+<!-- DASHBOARD (shown when authorized) -->
+<div class="dashboard" id="dashboard">
+  <div class="container">
+
+    <!-- Section A: Signups -->
+    <div class="section-card">
+      <div class="section-header">
+        <h2>Signups</h2>
+        <div style="display:flex;align-items:center;gap:0.75rem;">
+          <span class="count-badge" id="signupCount">--</span>
+          <button class="refresh-btn" onclick="loadSignups()">Refresh</button>
+        </div>
+      </div>
+      <div style="overflow-x:auto;">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Email</th>
+              <th>Signed up</th>
+            </tr>
+          </thead>
+          <tbody id="signupsBody">
+            <tr class="loading-row"><td colspan="3">Loading...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Section B: Saved Calculations -->
+    <div class="section-card">
+      <div class="section-header">
+        <h2>Saved Calculations</h2>
+        <div style="display:flex;align-items:center;gap:0.75rem;">
+          <span class="count-badge" id="calcCount">--</span>
+          <button class="refresh-btn" onclick="loadSavedCalcs()">Refresh</button>
+        </div>
+      </div>
+      <div style="overflow-x:auto;">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>User</th>
+              <th>Calculator</th>
+              <th>Title</th>
+              <th>Key results</th>
+              <th>Saved at</th>
+            </tr>
+          </thead>
+          <tbody id="calcsBody">
+            <tr class="loading-row"><td colspan="6">Loading...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+(function() {
+  var SUPABASE_URL = 'https://eiarfecnutloupdyapkx.supabase.co';
+  var SUPABASE_ANON_KEY = 'sb_publishable_XdYrFxZbr8qyf-K2_NUf4g_nmyJT8tS';
+  var ADMIN_EMAIL = 'jrpkennedy@gmail.com';
+  var adminSupabase = null;
+
+  function initAdminClient() {
+    if (window.supabase && window.supabase.createClient) {
+      adminSupabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    }
+  }
+
+  function fmtDate(iso) {
+    if (!iso) return '--';
+    try {
+      var d = new Date(iso);
+      return d.toLocaleDateString('en-CA', { year: 'numeric', month: 'short', day: 'numeric' }) +
+             ' ' + d.toLocaleTimeString('en-CA', { hour: '2-digit', minute: '2-digit' });
+    } catch(e) { return iso; }
+  }
+
+  function escHtml(str) {
+    if (str === null || str === undefined) return '';
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  function resultSnippet(results) {
+    if (!results) return '--';
+    try {
+      var obj = typeof results === 'string' ? JSON.parse(results) : results;
+      var parts = [];
+      Object.keys(obj).forEach(function(k) {
+        if (k === '_title') return;
+        var v = obj[k];
+        if (v !== null && v !== undefined && v !== '') {
+          parts.push(k + ': ' + v);
+        }
+      });
+      return parts.slice(0, 4).join(' | ') || '--';
+    } catch(e) { return String(results).slice(0, 120); }
+  }
+
+  // ==================
+  // AUTH CHECKS
+  // ==================
+  function showAuthGate() {
+    document.getElementById('authGate').style.display = '';
+    document.getElementById('notAuthorized').style.display = 'none';
+    document.getElementById('dashboard').classList.remove('visible');
+  }
+
+  function showNotAuthorized(email) {
+    document.getElementById('authGate').style.display = 'none';
+    document.getElementById('notAuthorized').style.display = '';
+    document.getElementById('dashboard').classList.remove('visible');
+  }
+
+  function showDashboard(email) {
+    document.getElementById('authGate').style.display = 'none';
+    document.getElementById('notAuthorized').style.display = 'none';
+    document.getElementById('adminUserEmail').textContent = email;
+    document.getElementById('dashboard').classList.add('visible');
+    loadSignups();
+    loadSavedCalcs();
+  }
+
+  function checkAuth() {
+    if (!window.SkipAccount) {
+      // SDK not ready yet, retry
+      setTimeout(checkAuth, 200);
+      return;
+    }
+    window.SkipAccount.getUserAsync().then(function(user) {
+      if (!user) {
+        showAuthGate();
+      } else if (user.email !== ADMIN_EMAIL) {
+        showNotAuthorized(user.email);
+      } else {
+        showDashboard(user.email);
+      }
+    }).catch(function() {
+      showAuthGate();
+    });
+  }
+
+  window.handleSignIn = function() {
+    if (!window.SkipAccount) {
+      alert('Auth module not loaded yet. Please wait a moment and try again.');
+      return;
+    }
+    window.SkipAccount.openAuthModal(function() {
+      checkAuth();
+    });
+  };
+
+  window.handleSignOut = function() {
+    if (!window.SkipAccount) return;
+    window.SkipAccount.signOut().then(function() {
+      window.location.reload();
+    }).catch(function() {
+      window.location.reload();
+    });
+  };
+
+  // ==================
+  // DATA LOADING
+  // ==================
+  window.loadSignups = function() {
+    if (!adminSupabase) {
+      document.getElementById('signupsBody').innerHTML =
+        '<tr class="error-row"><td colspan="3">Supabase client not initialized.</td></tr>';
+      return;
+    }
+    document.getElementById('signupsBody').innerHTML =
+      '<tr class="loading-row"><td colspan="3">Loading...</td></tr>';
+    document.getElementById('signupCount').textContent = '...';
+
+    adminSupabase
+      .from('skip_profiles')
+      .select('*')
+      .order('created_at', { ascending: false })
+      .then(function(resp) {
+        var data = resp.data;
+        var error = resp.error;
+        if (error) {
+          document.getElementById('signupsBody').innerHTML =
+            '<tr class="error-row"><td colspan="3">Error: ' + escHtml(error.message) + '</td></tr>';
+          return;
+        }
+        if (!data || data.length === 0) {
+          document.getElementById('signupsBody').innerHTML =
+            '<tr class="empty-row"><td colspan="3">No signups yet.</td></tr>';
+          document.getElementById('signupCount').textContent = '0';
+          return;
+        }
+        document.getElementById('signupCount').textContent = data.length;
+        var html = '';
+        data.forEach(function(row, i) {
+          html += '<tr>' +
+            '<td style="color:var(--gray-400);font-size:0.78rem;">' + (i + 1) + '</td>' +
+            '<td class="email-cell">' + escHtml(row.email || '--') + '</td>' +
+            '<td class="date-cell">' + fmtDate(row.created_at) + '</td>' +
+            '</tr>';
+        });
+        document.getElementById('signupsBody').innerHTML = html;
+      })
+      .catch(function(err) {
+        document.getElementById('signupsBody').innerHTML =
+          '<tr class="error-row"><td colspan="3">Request failed: ' + escHtml(String(err)) + '</td></tr>';
+      });
+  };
+
+  window.loadSavedCalcs = function() {
+    if (!adminSupabase) {
+      document.getElementById('calcsBody').innerHTML =
+        '<tr class="error-row"><td colspan="6">Supabase client not initialized.</td></tr>';
+      return;
+    }
+    document.getElementById('calcsBody').innerHTML =
+      '<tr class="loading-row"><td colspan="6">Loading...</td></tr>';
+    document.getElementById('calcCount').textContent = '...';
+
+    // First load all profiles for email lookup
+    adminSupabase
+      .from('skip_profiles')
+      .select('id, email')
+      .then(function(profilesResp) {
+        var profileMap = {};
+        if (profilesResp.data) {
+          profilesResp.data.forEach(function(p) {
+            profileMap[p.id] = p.email;
+          });
+        }
+
+        // Then load saved calculations
+        adminSupabase
+          .from('skip_saved_calculations')
+          .select('*')
+          .order('created_at', { ascending: false })
+          .then(function(resp) {
+            var data = resp.data;
+            var error = resp.error;
+            if (error) {
+              document.getElementById('calcsBody').innerHTML =
+                '<tr class="error-row"><td colspan="6">Error: ' + escHtml(error.message) + '</td></tr>';
+              return;
+            }
+            if (!data || data.length === 0) {
+              document.getElementById('calcsBody').innerHTML =
+                '<tr class="empty-row"><td colspan="6">No saved calculations yet.</td></tr>';
+              document.getElementById('calcCount').textContent = '0';
+              return;
+            }
+            document.getElementById('calcCount').textContent = data.length;
+            var html = '';
+            data.forEach(function(row, i) {
+              var userEmail = profileMap[row.user_id] || row.user_id || '--';
+              var snippet = resultSnippet(row.results);
+              html += '<tr>' +
+                '<td style="color:var(--gray-400);font-size:0.78rem;">' + (i + 1) + '</td>' +
+                '<td class="email-cell">' + escHtml(userEmail) + '</td>' +
+                '<td><span class="calc-badge">' + escHtml(row.calculator || '--') + '</span></td>' +
+                '<td class="title-cell">' + escHtml(row.title || '--') + '</td>' +
+                '<td class="result-snippet" title="' + escHtml(snippet) + '">' + escHtml(snippet) + '</td>' +
+                '<td class="date-cell">' + fmtDate(row.created_at) + '</td>' +
+                '</tr>';
+            });
+            document.getElementById('calcsBody').innerHTML = html;
+          })
+          .catch(function(err) {
+            document.getElementById('calcsBody').innerHTML =
+              '<tr class="error-row"><td colspan="6">Request failed: ' + escHtml(String(err)) + '</td></tr>';
+          });
+      })
+      .catch(function() {
+        // If profile fetch fails, still try calcs without email enrichment
+        adminSupabase
+          .from('skip_saved_calculations')
+          .select('*')
+          .order('created_at', { ascending: false })
+          .then(function(resp) {
+            var data = resp.data;
+            var error = resp.error;
+            if (error) {
+              document.getElementById('calcsBody').innerHTML =
+                '<tr class="error-row"><td colspan="6">Error: ' + escHtml(error.message) + '</td></tr>';
+              return;
+            }
+            if (!data || data.length === 0) {
+              document.getElementById('calcsBody').innerHTML =
+                '<tr class="empty-row"><td colspan="6">No saved calculations yet.</td></tr>';
+              document.getElementById('calcCount').textContent = '0';
+              return;
+            }
+            document.getElementById('calcCount').textContent = data.length;
+            var html = '';
+            data.forEach(function(row, i) {
+              var snippet = resultSnippet(row.results);
+              html += '<tr>' +
+                '<td style="color:var(--gray-400);font-size:0.78rem;">' + (i + 1) + '</td>' +
+                '<td class="email-cell">' + escHtml(row.user_id || '--') + '</td>' +
+                '<td><span class="calc-badge">' + escHtml(row.calculator || '--') + '</span></td>' +
+                '<td class="title-cell">' + escHtml(row.title || '--') + '</td>' +
+                '<td class="result-snippet" title="' + escHtml(snippet) + '">' + escHtml(snippet) + '</td>' +
+                '<td class="date-cell">' + fmtDate(row.created_at) + '</td>' +
+                '</tr>';
+            });
+            document.getElementById('calcsBody').innerHTML = html;
+          });
+      });
+  };
+
+  // ==================
+  // INIT
+  // ==================
+  // Init admin Supabase client once SDK is available
+  function waitForSdk() {
+    if (window.supabase && window.supabase.createClient) {
+      initAdminClient();
+      checkAuth();
+    } else {
+      setTimeout(waitForSdk, 100);
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', waitForSdk);
+  } else {
+    waitForSdk();
+  }
+})();
+</script>
+</body>
+</html>

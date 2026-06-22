@@ -1233,6 +1233,45 @@
         padding: 0 !important;
       }
     }
+  /* Save result banner */
+  .save-result-banner {
+    background: var(--green-50, #f0fdf4);
+    border: 1.5px solid var(--green-100, #dcfce7);
+    border-radius: var(--radius-lg, 16px);
+    padding: 1.25rem 1.5rem;
+    margin-top: 1.5rem;
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .save-result-banner.visible { display: flex; }
+  .save-result-banner .save-banner-text { font-size: 0.95rem; color: var(--gray-700, #374151); font-weight: 500; }
+  .save-result-banner .save-banner-text strong { color: var(--gray-900, #111827); }
+  .save-btn {
+    background: var(--blue-600, #2563eb); color: #fff; border: none;
+    border-radius: var(--radius-md, 10px); padding: 0.65rem 1.5rem;
+    font-size: 0.9rem; font-weight: 700; font-family: inherit;
+    cursor: pointer; transition: background 0.15s; white-space: nowrap;
+  }
+  .save-btn:hover { background: var(--blue-700, #1e4976); }
+  .save-btn:disabled { background: var(--green-600, #16a34a); cursor: default; }
+  .save-confirm {
+    display: none;
+    background: var(--green-50, #f0fdf4);
+    border: 1.5px solid var(--green-100, #dcfce7);
+    border-radius: var(--radius-lg, 16px);
+    padding: 1rem 1.5rem;
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+    color: var(--green-700, #15803d);
+    font-weight: 600;
+    text-align: center;
+  }
+  .save-confirm.visible { display: block; }
+  .save-confirm a { color: var(--blue-600, #2563eb); text-decoration: none; font-weight: 700; }
+  .save-confirm a:hover { text-decoration: underline; }
 </style>
 <script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9661407658009326"></script>
 <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/></noscript><link href="https://skipthesurprise.com/calculators/subscription-graveyard/" rel="canonical"><meta content="https://skipthesurprise.com/logo-small.png" property="og:image"/>
@@ -1275,7 +1314,20 @@
     "price": "0",
     "priceCurrency": "USD"
   }
-}</script></link></head>
+}</script></link><!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XYCZCVXDVH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XYCZCVXDVH');
+</script>
+<!-- Supabase JS SDK (UMD) -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<!-- Skip the Surprise account module -->
+<script src="/assets/skip-account.js"></script>
+</head>
 <body>
 <!-- NAV -->
 <nav aria-label="Site navigation" class="nav" style="position:relative;">
@@ -1503,6 +1555,14 @@
           Copy to share
         </button>
 </div>
+<!-- SAVE RESULT BANNER (soft gate - result always shows, saving is optional) -->
+<div class="save-result-banner" id="save-result-banner">
+  <div class="save-banner-text"><strong>Want to keep these numbers?</strong> Save this result to your free account and access it anytime.</div>
+  <button class="save-btn" id="save-result-btn" onclick="handleSaveResult()">Save this result</button>
+</div>
+<div class="save-confirm" id="save-confirm">
+  Saved to your profile. <a href="/account/">View all saved results</a>
+</div>
 </div>
 </section>
 <!-- CANCELLATION GUIDE -->
@@ -1628,7 +1688,7 @@
 </div>
 </section>
 <!-- FOOTER -->
-<section aria-label="Related Calculators" class="related-calculators"><h2>Related Calculators</h2><ul><li><a href="/calculators/food-budget/">Food Budget Calculator — Monthly Estimate</a></li><li><a href="/calculators/coffee-cost/">Coffee Cost Calculator — Daily vs. Monthly</a></li><li><a href="/calculators/tariff-cost/">Tariff Cost Calculator — Import Price Impact</a></li></ul></section><section class="blog-cta"><p>Want to learn more? <a href="/blog/">Read our blog</a> for budgeting tips, tax guides, and financial strategies for freelancers and self-employed workers.</p></section><footer class="footer">
+<section aria-label="Related Calculators" class="related-calculators"><h2>Related Calculators</h2><ul><li><a href="/calculators/food-budget/">Food Budget Calculator, Monthly Estimate</a></li><li><a href="/calculators/coffee-cost/">Coffee Cost Calculator, Daily vs. Monthly</a></li><li><a href="/calculators/tariff-cost/">Tariff Cost Calculator, Import Price Impact</a></li></ul></section><section class="blog-cta"><p>Want to learn more? <a href="/blog/">Read our blog</a> for budgeting tips, tax guides, and financial strategies for freelancers and self-employed workers.</p></section><footer class="footer">
 <p>© 2026 <a href="/">Skip the Surprise</a>. All calculators are free and run entirely in your browser. No data is collected or stored.</p>
 </footer>
 <script>
@@ -1637,6 +1697,7 @@
     ============================================= */
     const CAD_MULTIPLIER = 1.25;
     let isCAD = false;
+    let _hasCalculated = false;
 
     const POPULAR_SUBS = [
       { name: 'Netflix', price: 15.49, category: 'Streaming' },
@@ -1916,6 +1977,8 @@
 
       renderQuickAdd();
       renderSubList();
+      // If results are already on screen, refresh them so the totals reflect the new currency.
+      if (_hasCalculated) calculate();
     });
 
     /* =============================================
@@ -1924,9 +1987,22 @@
     document.getElementById('calcBtn').addEventListener('click', () => {
       if (subscriptions.length === 0 && annualCharges.length === 0) return;
       calculate();
+      if (typeof gtag === 'function') { gtag('event', 'calculate', { calculator: 'subscription-graveyard' }); }
+      // Reveal save banner
+      _lastCalcInputs = { subscriptionCount: subscriptions.length, annualChargesCount: annualCharges.length };
+      _lastCalcResults = { _title: 'Subscription audit -- ' + document.getElementById('resTotalMonthly').textContent + '/mo', totalMonthly: document.getElementById('resTotalMonthly').textContent, totalAnnual: document.getElementById('resTotalAnnual').textContent, zombieMonthly: document.getElementById('resZombie').textContent };
+      var _saveBanner = document.getElementById('save-result-banner');
+      var _saveConfirm = document.getElementById('save-confirm');
+      var _saveBtn = document.getElementById('save-result-btn');
+      if (_saveBanner) {
+        _saveBanner.classList.add('visible');
+        if (_saveBtn) { _saveBtn.disabled = false; _saveBtn.textContent = 'Save this result'; }
+        if (_saveConfirm) { _saveConfirm.classList.remove('visible'); }
+      }
     });
 
     function calculate() {
+      _hasCalculated = true;
       // Monthly totals
       const allMonthly = subscriptions.reduce((sum, s) => sum + s.price, 0);
       const enabledMonthly = subscriptions.filter(s => s.enabled).reduce((sum, s) => sum + s.price, 0);
@@ -2187,6 +2263,46 @@
        INIT
     ============================================= */
     renderQuickAdd();
+
+  // --- SAVE RESULT ---
+  var _lastCalcInputs = null;
+  var _lastCalcResults = null;
+
+  function doSave() {
+    if (typeof window.SkipAccount === 'undefined') return;
+    var saveBtn = document.getElementById('save-result-btn');
+    var confirmEl = document.getElementById('save-confirm');
+    if (saveBtn) { saveBtn.disabled = true; saveBtn.textContent = 'Saving...'; }
+
+    window.SkipAccount.saveCalculation({
+      calculator: 'subscription-graveyard',
+      title: _lastCalcResults ? _lastCalcResults._title || 'Subscription audit estimate' : 'Subscription audit estimate',
+      inputs: _lastCalcInputs || {},
+      results: _lastCalcResults || {}
+    }).then(function() {
+      if (saveBtn) { saveBtn.textContent = 'Saved'; }
+      if (confirmEl) { confirmEl.classList.add('visible'); }
+    }).catch(function() {
+      if (saveBtn) { saveBtn.disabled = false; saveBtn.textContent = 'Save this result'; }
+      alert('Could not save. Please try again.');
+    });
+  }
+
+  window.handleSaveResult = function() {
+    if (typeof window.SkipAccount === 'undefined') {
+      alert('Save feature is temporarily unavailable. Please try again in a moment.');
+      return;
+    }
+    window.SkipAccount.getUserAsync().then(function(user) {
+      if (user) {
+        doSave();
+      } else {
+        window.SkipAccount.openAuthModal(function() { doSave(); });
+      }
+    }).catch(function() {
+      window.SkipAccount.openAuthModal(function() { doSave(); });
+    });
+  };
   </script>
 </body>
 </html>

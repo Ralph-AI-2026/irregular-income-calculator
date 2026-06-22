@@ -4,10 +4,10 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Food Budget Calculator — Monthly Estimate</title>
+<title>Food Budget Calculator, Monthly Estimate</title>
 <meta content="Calculate your monthly food budget based on household size, diet type, and grocery habits. Free tool." name="description"/>
 <meta content="index, follow" name="robots"/>
-<meta content="Food Budget Calculator — Monthly Estimate" property="og:title"/>
+<meta content="Food Budget Calculator, Monthly Estimate" property="og:title"/>
 <meta content="Calculate your monthly food budget based on household size, diet type, and grocery habits. Free tool." property="og:description"/>
 <meta content="website" property="og:type"/>
 <meta content="grocery budget calculator, food budget by household size, USDA food plan calculator, how much should I spend on groceries, monthly food budget planner, cost per meal calculator, 2026 grocery budget" name="keywords"/>
@@ -1452,11 +1452,50 @@
         padding: 0 !important;
       }
     }
+  /* Save result banner */
+  .save-result-banner {
+    background: var(--green-50, #f0fdf4);
+    border: 1.5px solid var(--green-100, #dcfce7);
+    border-radius: var(--radius-lg, 16px);
+    padding: 1.25rem 1.5rem;
+    margin-top: 1.5rem;
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .save-result-banner.visible { display: flex; }
+  .save-result-banner .save-banner-text { font-size: 0.95rem; color: var(--gray-700, #374151); font-weight: 500; }
+  .save-result-banner .save-banner-text strong { color: var(--gray-900, #111827); }
+  .save-btn {
+    background: var(--blue-600, #2563eb); color: #fff; border: none;
+    border-radius: var(--radius-md, 10px); padding: 0.65rem 1.5rem;
+    font-size: 0.9rem; font-weight: 700; font-family: inherit;
+    cursor: pointer; transition: background 0.15s; white-space: nowrap;
+  }
+  .save-btn:hover { background: var(--blue-700, #1e4976); }
+  .save-btn:disabled { background: var(--green-600, #16a34a); cursor: default; }
+  .save-confirm {
+    display: none;
+    background: var(--green-50, #f0fdf4);
+    border: 1.5px solid var(--green-100, #dcfce7);
+    border-radius: var(--radius-lg, 16px);
+    padding: 1rem 1.5rem;
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+    color: var(--green-700, #15803d);
+    font-weight: 600;
+    text-align: center;
+  }
+  .save-confirm.visible { display: block; }
+  .save-confirm a { color: var(--blue-600, #2563eb); text-decoration: none; font-weight: 700; }
+  .save-confirm a:hover { text-decoration: underline; }
 </style>
 <script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9661407658009326"></script>
 <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/></noscript><link href="https://skipthesurprise.com/calculators/food-budget/" rel="canonical"><meta content="https://skipthesurprise.com/logo-small.png" property="og:image"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="Food Budget Calculator — Monthly Estimate" name="twitter:title"/>
+<meta content="Food Budget Calculator, Monthly Estimate" name="twitter:title"/>
 <meta content="Calculate your monthly food budget based on household size, diet type, and grocery habits. Free tool." name="twitter:description"/>
 <meta content="https://skipthesurprise.com/logo-small.png" name="twitter:image"/><meta content="https://skipthesurprise.com/calculators/food-budget/" property="og:url"/><script type="application/ld+json">{
   "@context": "https://schema.org",
@@ -1477,14 +1516,14 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Food Budget Calculator — Monthly Estimate",
+      "name": "Food Budget Calculator, Monthly Estimate",
       "item": "https://skipthesurprise.com/calculators/food-budget/"
     }
   ]
 }</script><script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Food Budget Calculator — Monthly Estimate",
+  "name": "Food Budget Calculator, Monthly Estimate",
   "url": "https://skipthesurprise.com/calculators/food-budget/",
   "description": "Calculate your monthly food budget based on household size, diet type, and grocery habits. Free tool.",
   "applicationCategory": "FinanceApplication",
@@ -1494,7 +1533,20 @@
     "price": "0",
     "priceCurrency": "USD"
   }
-}</script></link></head>
+}</script></link><!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XYCZCVXDVH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XYCZCVXDVH');
+</script>
+<!-- Supabase JS SDK (UMD) -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<!-- Skip the Surprise account module -->
+<script src="/assets/skip-account.js"></script>
+</head>
 <body>
 <!-- NAV -->
 <nav aria-label="Site navigation" class="nav" style="position:relative;">
@@ -1525,7 +1577,7 @@
 </svg>
       Free Grocery Budget Tool - 2026
     </div>
-<nav aria-label="Breadcrumb" class="breadcrumb"><a href="/">Home</a><span class="sep">&gt;</span><a href="/calculators/">Calculators</a><span class="sep">&gt;</span><span aria-current="page">Food Budget Calculator — Monthly Estimate</span></nav><h1 id="hero-heading">
+<nav aria-label="Breadcrumb" class="breadcrumb"><a href="/">Home</a><span class="sep">&gt;</span><a href="/calculators/">Calculators</a><span class="sep">&gt;</span><span aria-current="page">Food Budget Calculator, Monthly Estimate</span></nav><h1 id="hero-heading">
 <span>Grocery Budget</span> Calculator 2026
     </h1>
 <p class="hero-sub">
@@ -1873,6 +1925,14 @@
                   </button>
 </div>
 <div class="data-source-note">Data updated for 2026 using USDA monthly food plan reports.</div>
+<!-- SAVE RESULT BANNER (soft gate - result always shows, saving is optional) -->
+<div class="save-result-banner" id="save-result-banner">
+  <div class="save-banner-text"><strong>Want to keep these numbers?</strong> Save this result to your free account and access it anytime.</div>
+  <button class="save-btn" id="save-result-btn" onclick="handleSaveResult()">Save this result</button>
+</div>
+<div class="save-confirm" id="save-confirm">
+  Saved to your profile. <a href="/account/">View all saved results</a>
+</div>
 </div>
 </div>
 </div>
@@ -2242,7 +2302,7 @@
 </section>
 <!-- FOOTER -->
 <div class="ad-container" style="text-align:center;margin:24px auto;max-width:728px;min-height:90px;"><ins class="adsbygoogle" data-ad-client="ca-pub-9661407658009326" data-ad-format="auto" data-ad-slot="auto" data-full-width-responsive="true" style="display:block"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
-<section aria-label="Related Calculators" class="related-calculators"><h2>Related Calculators</h2><ul><li><a href="/calculators/child-cost/">Cost of Raising a Child Calculator</a></li><li><a href="/calculators/pet-cost/">Pet Cost Calculator — Annual &amp; Monthly</a></li><li><a href="/calculators/subscription-graveyard/">Subscription Graveyard Calculator</a></li></ul></section><section class="blog-cta"><p>Want to learn more? <a href="/blog/">Read our blog</a> for budgeting tips, tax guides, and financial strategies for freelancers and self-employed workers.</p></section><footer>
+<section aria-label="Related Calculators" class="related-calculators"><h2>Related Calculators</h2><ul><li><a href="/calculators/child-cost/">Cost of Raising a Child Calculator</a></li><li><a href="/calculators/pet-cost/">Pet Cost Calculator, Annual &amp; Monthly</a></li><li><a href="/calculators/subscription-graveyard/">Subscription Graveyard Calculator</a></li></ul></section><section class="blog-cta"><p>Want to learn more? <a href="/blog/">Read our blog</a> for budgeting tips, tax guides, and financial strategies for freelancers and self-employed workers.</p></section><footer>
 <div class="footer-inner">
 <p class="footer-disclaimer">
         Educational estimates only. Not financial or dietary advice. This calculator uses USDA monthly food plan 2026 figures, BLS Regional Price Parities, and Yale Budget Lab tariff research to help you plan your grocery budget. Actual grocery costs vary by store, household habits, and local market conditions. USDA plan figures are updated annually. For official SNAP eligibility, visit benefits.gov.
@@ -2618,6 +2678,18 @@
       }
       const results = calculate();
       showResults(results);
+      if (typeof gtag === 'function') { gtag('event', 'calculate', { calculator: 'food-budget' }); }
+      // Reveal save banner
+      _lastCalcInputs = { householdSize: document.getElementById('householdSize').value, region: document.getElementById('stateSelect').value, currentBudget: document.getElementById('currentBudget').value };
+      _lastCalcResults = { _title: 'Food budget -- ' + document.getElementById('currentBudget').value + '/mo for ' + document.getElementById('householdSize').value + ' people', gap: document.getElementById('res-gap').textContent, weekly: document.getElementById('res-weekly').textContent, mealCost: document.getElementById('res-meal').textContent };
+      var _saveBanner = document.getElementById('save-result-banner');
+      var _saveConfirm = document.getElementById('save-confirm');
+      var _saveBtn = document.getElementById('save-result-btn');
+      if (_saveBanner) {
+        _saveBanner.classList.add('visible');
+        if (_saveBtn) { _saveBtn.disabled = false; _saveBtn.textContent = 'Save this result'; }
+        if (_saveConfirm) { _saveConfirm.classList.remove('visible'); }
+      }
     });
 
     /* =============================================
@@ -2678,6 +2750,46 @@
         }
       });
     });
+
+    // --- SAVE RESULT ---
+    var _lastCalcInputs = null;
+    var _lastCalcResults = null;
+
+    function doSave() {
+      if (typeof window.SkipAccount === 'undefined') return;
+      var saveBtn = document.getElementById('save-result-btn');
+      var confirmEl = document.getElementById('save-confirm');
+      if (saveBtn) { saveBtn.disabled = true; saveBtn.textContent = 'Saving...'; }
+
+      window.SkipAccount.saveCalculation({
+        calculator: 'food-budget',
+        title: _lastCalcResults ? _lastCalcResults._title || 'Food budget estimate' : 'Food budget estimate',
+        inputs: _lastCalcInputs || {},
+        results: _lastCalcResults || {}
+      }).then(function() {
+        if (saveBtn) { saveBtn.textContent = 'Saved'; }
+        if (confirmEl) { confirmEl.classList.add('visible'); }
+      }).catch(function() {
+        if (saveBtn) { saveBtn.disabled = false; saveBtn.textContent = 'Save this result'; }
+        alert('Could not save. Please try again.');
+      });
+    }
+
+    window.handleSaveResult = function() {
+      if (typeof window.SkipAccount === 'undefined') {
+        alert('Save feature is temporarily unavailable. Please try again in a moment.');
+        return;
+      }
+      window.SkipAccount.getUserAsync().then(function(user) {
+        if (user) {
+          doSave();
+        } else {
+          window.SkipAccount.openAuthModal(function() { doSave(); });
+        }
+      }).catch(function() {
+        window.SkipAccount.openAuthModal(function() { doSave(); });
+      });
+    };
   </script>
 </body>
 </html>

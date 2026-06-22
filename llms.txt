@@ -5,11 +5,15 @@
 Skip the Surprise is a free calculator platform that helps people understand the real cost of life's biggest decisions. All calculators work for both Canada and the United States. No data is stored or transmitted. Every calculation runs entirely in the user's browser.
 
 ## Live Calculators
-- [Irregular Income Tax Calculator](/calculators/irregular-income-tax/): Calculate tax reserves and safe spending for self-employed workers with variable income
-- [Pet Lifetime Cost Calculator](/calculators/pet-cost/): 63 breed database with health risk scores, inflation-adjusted lifetime projections, Canadian and US pricing
-- [Subscription Graveyard Calculator](/calculators/subscription-graveyard/): Audit recurring subscriptions and find hidden costs
-- [Tariff Cost Calculator](/calculators/tariff-cost/): Calculate import duties and tariff impact on purchases
-- [Food Budget Planner](/calculators/food-budget/): Plan grocery budgets by household size and dietary preferences
+- [Side Hustle True Cost Calculator](/calculators/side-hustle-cost/): Calculate real take-home pay for gig and freelance workers after self-employment tax, platform fees, gas, and vehicle costs. USA and Canada supported.
+- [Coffee Cost Calculator](/calculators/coffee-cost/): Build your real coffee order with chain presets for Starbucks, Tim Hortons, Dunkin, and 15+ more. See daily, monthly, and annual cost with tip, tax, and food. Find your home-brew break-even point.
+- [EV vs Gas True Cost Calculator](/calculators/ev-true-cost/): Compare the real 5-10 year total cost of owning an EV vs a gas car. Includes insurance premium, tire wear, charger installation, cold weather penalty, and depreciation. USA and Canada supported.
+- [Food Budget Calculator](/calculators/food-budget/): Plan grocery and food spending by household size. Monthly budget based on USDA cost data, broken down by meal type.
+- [Import Duty Calculator](/calculators/import-duty/): Calculate what a Temu, Shein, or AliExpress order really costs after customs duty, import tax, and carrier handling fees. Canada and US supported with 2026 CBSA-verified rates.
+- [Pet Lifetime Cost Calculator](/calculators/pet-cost/): 63 breed database with health risk scores, inflation-adjusted lifetime projections, and Canadian and US pricing. Dogs and cats.
+- [Subscription Graveyard Calculator](/calculators/subscription-graveyard/): Audit recurring subscriptions and find hidden costs. The average household wastes over $1,100 a year on services they no longer use.
+- [Tariff Cost Calculator](/calculators/tariff-cost/): Enter monthly spending by category and see the real dollar cost that tariffs are adding to groceries, clothing, electronics, and car payments.
+- [Cost of Raising a Child Calculator](/calculators/child-cost/): Calculate the real cost of raising a child to age 18 with state-by-state data, 12 cost categories, opportunity cost analysis, and a personalized verdict for both US and Canada.
 
 ## Categories
 Financial & Self-Employed, Pets & Animals, Kids & Family, Housing & Rent, Food & Grocery, Vehicle & Transport, Health & Medical, Subscriptions, Tariffs & Import, Education, Weddings & Events, Debt & Money Habits

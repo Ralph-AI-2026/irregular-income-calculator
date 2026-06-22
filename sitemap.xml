@@ -288,4 +288,22 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://skipthesurprise.com/calculators/ev-true-cost/</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skipthesurprise.com/blog/ev-vs-gas-canada-province/</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://skipthesurprise.com/blog/hidden-costs-ev-2026/</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
